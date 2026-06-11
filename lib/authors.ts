@@ -40,10 +40,9 @@ const AUTHORS: Record<string, AuthorProfile> = {
     name: 'Thomas Budin',
     role: 'Founder & writer, Horse to Unicorn',
     bio: 'Weekly marketing and systems thinking for technical founders and operators. The thesis: ship a 1.5× product with a 10× story.',
-    // Drop /public/authors/thomas.jpg and /public/authors/thomas-signature.png
-    // then uncomment these to enable. Until then the footer falls back to
-    // initials + the signatureText below.
-    // avatar: '/authors/thomas.jpg',
+    avatar: '/authors/htu-author-thomasbudin.png',
+    // Drop /public/authors/thomas-signature.png and uncomment to enable the
+    // handwritten signature above the author card.
     // signature: '/authors/thomas-signature.png',
     signatureText: '— Thomas',
     links: [{ label: 'About', href: '/about' }],
