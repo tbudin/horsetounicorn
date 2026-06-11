@@ -12,6 +12,7 @@
  * Idempotent — re-running overwrites. Original MDX is left in place; delete
  * it manually after the migration looks good.
  */
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
@@ -149,7 +150,9 @@ function migratePost(file: string): { slug: string; status: 'published' | 'draft
 
   const blocks = markdownToBlocks(content);
   const metadata: ArticleMetadata = {
+    id: crypto.randomUUID(),
     slug,
+    previousSlugs: [],
     title: fm.title ?? slug,
     description: fm.description,
     date: fm.publishedAt ?? new Date().toISOString().slice(0, 10),

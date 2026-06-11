@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { ArticleLayout } from '@/components/article/article-layout';
 import { ArticleAuthor } from '@/components/article/article-footer';
 import { ArticleShare } from '@/components/article/article-share';
@@ -7,14 +7,29 @@ import { BuyMeACoffee } from '@/components/buy-me-a-coffee';
 import { NextReading } from '@/components/article/next-reading';
 import { RenderDocument } from '@/components/article/render-document';
 import { SubscribeSection } from '@/components/subscribe-section';
-import { loadArticle, listArticles, listPublishedArticles } from '@/lib/articles';
+import {
+  listArticles,
+  listPublishedArticles,
+  loadArticleById,
+  resolveSlug,
+} from '@/lib/articles';
 import { getAuthor } from '@/lib/authors';
 import { getChartsFor } from '../_charts';
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return listArticles().map((a) => ({ slug: a.slug }));
+  // Pre-render the current slug AND every previous slug. The previous-slug
+  // pages render a permanent redirect (308) to the canonical URL — so old
+  // bookmarks, backlinks, and Google's cache all stay valid forever.
+  const params: { slug: string }[] = [];
+  for (const a of listArticles()) {
+    params.push({ slug: a.slug });
+    for (const old of a.previousSlugs ?? []) {
+      params.push({ slug: old });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({
@@ -23,10 +38,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const resolved = resolveSlug(slug);
+  if (!resolved) return { title: 'Article not found' };
   try {
-    const { metadata } = loadArticle(slug);
+    const { metadata } = loadArticleById(resolved.id);
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
-    const url = `${siteUrl}/articles/${slug}`;
+    const url = `${siteUrl}/articles/${resolved.currentSlug}`;
     // Fall back to the auto-generated site OG image when the article has no cover.
     const defaultOg = `${siteUrl}/opengraph-image`;
     const ogImage = metadata.cover ?? defaultOg;
@@ -63,21 +80,30 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const resolved = resolveSlug(slug);
+  if (!resolved) notFound();
+
+  // Old slug → 308 to canonical. Lives indefinitely so search engines and
+  // backlinks pointing at the previous URL keep working.
+  if (!resolved.isCurrent) {
+    permanentRedirect(`/articles/${resolved.currentSlug}`);
+  }
+
   let article;
   try {
-    article = loadArticle(slug);
+    article = loadArticleById(resolved.id);
   } catch {
     notFound();
   }
 
   const { metadata, document } = article;
-  const charts = await getChartsFor(slug);
+  const charts = await getChartsFor(resolved.id);
   const author = getAuthor(metadata.author);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
-  const articleUrl = `${siteUrl}/articles/${slug}`;
+  const articleUrl = `${siteUrl}/articles/${resolved.currentSlug}`;
 
   const upNext = listPublishedArticles()
-    .filter((a) => a.slug !== slug)
+    .filter((a) => a.id !== resolved.id)
     .slice(0, 2);
 
   return (

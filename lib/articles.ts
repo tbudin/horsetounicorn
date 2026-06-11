@@ -88,7 +88,19 @@ export interface BroadcastRecord {
 }
 
 export interface ArticleMetadata {
+  /**
+   * Immutable UUID. Set once at creation, used to key every slug-
+   * agnostic file path (folders, charts, R2 keys). Articles can rename
+   * freely without ever touching this.
+   */
+  id: string;
+  /** Current URL slug. Changes are tracked in `previousSlugs[]`. */
   slug: string;
+  /**
+   * Old slugs this article has been published under. Each one serves a
+   * permanent 308 redirect to the current `slug`. Newest-first.
+   */
+  previousSlugs?: string[];
   title: string;
   subtitle?: string;
   /** One-line summary used in lists, OG tags, RSS. */
@@ -117,8 +129,8 @@ export interface ArticleMetadata {
 
 const ARTICLES_DIR = path.join(process.cwd(), 'content', 'articles');
 
-function articleDir(slug: string): string {
-  return path.join(ARTICLES_DIR, slug);
+function articleDir(id: string): string {
+  return path.join(ARTICLES_DIR, id);
 }
 
 export interface LoadedArticle {
@@ -126,15 +138,76 @@ export interface LoadedArticle {
   document: ArticleDocument;
 }
 
-/** Read an article's metadata + document from disk. Throws if missing. */
-export function loadArticle(slug: string): LoadedArticle {
-  const dir = articleDir(slug);
+/**
+ * Slug → article resolution table. Built once, cached for the lifetime of
+ * the process. Both the current slug and every previous slug map to the
+ * article's id; the `isCurrent` flag tells routing whether to render the
+ * page or 308 to the canonical URL.
+ */
+interface SlugIndex {
+  bySlug: Map<string, { id: string; isCurrent: boolean }>;
+  currentSlugById: Map<string, string>;
+}
+
+let _slugIndex: SlugIndex | null = null;
+
+function buildSlugIndex(): SlugIndex {
+  const bySlug = new Map<string, { id: string; isCurrent: boolean }>();
+  const currentSlugById = new Map<string, string>();
+  if (!fs.existsSync(ARTICLES_DIR)) return { bySlug, currentSlugById };
+  for (const id of fs.readdirSync(ARTICLES_DIR)) {
+    const metaPath = path.join(ARTICLES_DIR, id, 'metadata.json');
+    if (!fs.existsSync(metaPath)) continue;
+    const meta = JSON.parse(
+      fs.readFileSync(metaPath, 'utf8'),
+    ) as ArticleMetadata;
+    if (!meta.id) continue; // unmigrated article — skip
+    currentSlugById.set(meta.id, meta.slug);
+    bySlug.set(meta.slug, { id: meta.id, isCurrent: true });
+    for (const old of meta.previousSlugs ?? []) {
+      if (!bySlug.has(old)) bySlug.set(old, { id: meta.id, isCurrent: false });
+    }
+  }
+  return { bySlug, currentSlugById };
+}
+
+function getSlugIndex(): SlugIndex {
+  if (!_slugIndex) _slugIndex = buildSlugIndex();
+  return _slugIndex;
+}
+
+/** Force a refresh of the slug index — called after admin writes. */
+export function invalidateSlugIndex(): void {
+  _slugIndex = null;
+}
+
+/**
+ * Resolve a URL slug to an article ID. Returns `null` for unknown slugs.
+ * `isCurrent` is true for the article's live slug, false for any slug in
+ * its `previousSlugs[]` history.
+ */
+export function resolveSlug(slug: string): {
+  id: string;
+  currentSlug: string;
+  isCurrent: boolean;
+} | null {
+  const idx = getSlugIndex();
+  const hit = idx.bySlug.get(slug);
+  if (!hit) return null;
+  const current = idx.currentSlugById.get(hit.id);
+  if (!current) return null;
+  return { id: hit.id, currentSlug: current, isCurrent: hit.isCurrent };
+}
+
+/** Load an article by its immutable UUID. Throws if not present. */
+export function loadArticleById(id: string): LoadedArticle {
+  const dir = articleDir(id);
   const metaPath = path.join(dir, 'metadata.json');
   const contentPath = path.join(dir, 'content.json');
 
   if (!fs.existsSync(metaPath) || !fs.existsSync(contentPath)) {
     throw new Error(
-      `Article "${slug}" is missing metadata.json or content.json in ${dir}`,
+      `Article "${id}" is missing metadata.json or content.json in ${dir}`,
     );
   }
 
@@ -154,6 +227,22 @@ export function loadArticle(slug: string): LoadedArticle {
   return { metadata, document };
 }
 
+/**
+ * Load an article by its current slug. Previous slugs throw — callers
+ * that want redirect-on-old-slug behaviour should use `resolveSlug()`
+ * first to check `isCurrent`, then `loadArticleById()`.
+ */
+export function loadArticle(slug: string): LoadedArticle {
+  const resolved = resolveSlug(slug);
+  if (!resolved) throw new Error(`Article "${slug}" not found`);
+  if (!resolved.isCurrent) {
+    throw new Error(
+      `Article "${slug}" is a previous slug for "${resolved.currentSlug}"`,
+    );
+  }
+  return loadArticleById(resolved.id);
+}
+
 /** List every article on disk (regardless of status). */
 export function listArticles(): ArticleMetadata[] {
   if (!fs.existsSync(ARTICLES_DIR)) return [];
@@ -166,7 +255,7 @@ export function listArticles(): ArticleMetadata[] {
         fs.existsSync(path.join(ARTICLES_DIR, name, 'metadata.json'))
       );
     })
-    .map((slug) => loadArticle(slug).metadata)
+    .map((id) => loadArticleById(id).metadata)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
