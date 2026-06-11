@@ -1,5 +1,6 @@
 import {
   Body,
+  Button,
   Container,
   Head,
   Hr,
@@ -17,12 +18,19 @@ export interface DonationThanksEmailProps {
   amount: string;
   /** Site origin used in copy + the header banner URL. */
   siteUrl: string;
+  /**
+   * When the donor isn't already on the subscriber list, the webhook
+   * generates a one-click confirmation URL. Clicking it subscribes them
+   * directly — the donation already proved they own the email address.
+   */
+  subscribeUrl?: string;
 }
 
 export function DonationThanksEmail({
   firstName,
   amount,
   siteUrl,
+  subscribeUrl,
 }: DonationThanksEmailProps) {
   const host = siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
   const greeting = firstName ? firstName : 'friend';
@@ -55,6 +63,25 @@ export function DonationThanksEmail({
             </Link>{' '}
             has the archive.
           </Text>
+
+          {subscribeUrl ? (
+            <>
+              <Hr style={hr} />
+              <Text style={paragraph}>
+                One more thing — you're not on the newsletter yet. If you'd
+                like the next post in your inbox too, you can subscribe with
+                one click:
+              </Text>
+              <Button href={subscribeUrl} style={button}>
+                Subscribe to the newsletter
+              </Button>
+              <Text style={paragraphSmall}>
+                One email a week. Unsubscribe with one click in every
+                newsletter.
+              </Text>
+            </>
+          ) : null}
+
           <Text style={paragraph}>— Tom</Text>
           <Hr style={hr} />
           <Text style={footer}>
@@ -98,6 +125,25 @@ const paragraph = {
 const link = {
   color: '#9E0A71',
   textDecoration: 'underline',
+};
+
+const button = {
+  background: '#9E0A71',
+  color: '#ffffff',
+  padding: '12px 20px',
+  borderRadius: '6px',
+  display: 'inline-block',
+  fontSize: '15px',
+  fontWeight: 500,
+  textDecoration: 'none',
+  margin: '8px 0 12px',
+};
+
+const paragraphSmall = {
+  fontSize: '13px',
+  lineHeight: '1.5',
+  margin: '4px 0 16px',
+  color: '#666',
 };
 
 const hr = {

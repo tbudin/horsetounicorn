@@ -25,7 +25,13 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { render } from '@react-email/components';
 import { DonationThanksEmail } from '@/emails/donation-thanks';
-import { getEmailFrom, getEmailReplyTo, getResend } from '@/lib/resend';
+import {
+  getAudienceId,
+  getEmailFrom,
+  getEmailReplyTo,
+  getResend,
+} from '@/lib/resend';
+import { signConfirmToken } from '@/lib/subscribe-tokens';
 
 // We need the raw body to verify the Stripe signature.
 export const runtime = 'nodejs';
@@ -117,15 +123,36 @@ export async function POST(req: Request) {
   const currency = session.currency ?? 'usd';
   const amount = formatAmount(amountCents, currency);
 
-  // Resend's mail send.
+  // Look up the donor in Resend. If they're not already in the audience —
+  // OR they're there but unsubscribed — the thank-you email includes a
+  // one-click subscribe CTA. The donation already proved they own the
+  // email, so the link drops them straight into /subscribe/confirm.
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.horsetounicorn.com';
+  const resend = getResend();
+  let alreadySubscribed = false;
+  try {
+    const got = await resend.contacts.get({
+      audienceId: getAudienceId(),
+      email: donorEmail,
+    });
+    alreadySubscribed = !!got.data?.email && !got.data.unsubscribed;
+  } catch {
+    // Contact missing → keep alreadySubscribed false, surface the CTA.
+  }
+
+  let subscribeUrl: string | undefined;
+  if (!alreadySubscribed) {
+    const token = await signConfirmToken(donorEmail);
+    subscribeUrl = `${siteUrl}/subscribe/confirm?token=${encodeURIComponent(token)}`;
+  }
+
   const html = await render(
-    DonationThanksEmail({ firstName, amount, siteUrl }),
+    DonationThanksEmail({ firstName, amount, siteUrl, subscribeUrl }),
   );
 
   try {
-    await getResend().emails.send({
+    await resend.emails.send({
       from: getEmailFrom(),
       to: donorEmail,
       subject: 'Thanks for the coffee ☕',
