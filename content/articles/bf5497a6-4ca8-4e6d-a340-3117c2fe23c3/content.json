@@ -6,7 +6,16 @@
       "content": [
         {
           "type": "text",
-          "text": "I got married three days ago. I mention this not because it belongs in a data essay, but because it is the reason this one exists. Yesterday afternoon, coming back from a vendor where I had give back our consigned accessories, I got a taxi across Singapore with a very friendly driver. Our conversation went from wedding to having kids"
+          "text": "Monday afternoon, a cooling breeze, a gloomy sky, I am tired. My wife of three day had to fly in the morning to Bangkok. I put my AirPods on, I am not in the mood for a conversation. I duck into my grab. I tell my the driver I might fall asleep quickly. "
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Somehow we start a long conversation. How much do you make as a grab driver?"
         }
       ]
     },
@@ -19,12 +28,12 @@
         },
         {
           "type": "text",
-          "text": "0.87 in 2025",
           "marks": [
             {
               "type": "bold"
             }
-          ]
+          ],
+          "text": "0.87 in 2025"
         },
         {
           "type": "text",
@@ -83,11 +92,7 @@
       "content": [
         {
           "type": "text",
-          "text": "On raw search interest, South Korea, which has the lowest fertility rate ever recorded for a nation, around 0.75, leads the entire world, with Singapore close behind. But divide each country’s interest by the number of babies it actually has, and the ranking inverts: Singapore jumps to first (the taxi driver’s own country, searching harder per child than anywhere on earth), with tiny, wealthy Slovenia beside it. The countries where the most babies are actually born (India, where roughly one in six of the world’s babies arrives, or Nigeria, which now has more births than all of Europe combined) sink to the floor. The chart toggles between raw interest, per birth and per capita, and between a linear and a log scale that spreads out the crowded low end."
-        },
-        {
-          "type": "text",
-          "text": " Switch the chart’s topic and the leaders shuffle: “baby formula” skews Anglophone and US-led, “infant feeding” leans towards China and the Commonwealth, but the per-child pattern survives intact."
+          "text": "On raw search interest, South Korea, which has the lowest fertility rate ever recorded for a nation, around 0.75, leads the entire world, with Singapore close behind. But divide each country’s interest by the number of babies it actually has, and the ranking inverts: Singapore jumps to first (the taxi driver’s own country, searching harder per child than anywhere on earth), with tiny, wealthy Slovenia beside it. The countries where the most babies are actually born (India, where roughly one in six of the world’s babies arrives, or Nigeria, which now has more births than all of Europe combined) sink to the floor. The chart toggles between raw interest, per birth and per capita, and between a linear and a log scale that spreads out the crowded low end. Switch the chart’s topic and the leaders shuffle: “baby formula” skews Anglophone and US-led, “infant feeding” leans towards China and the Commonwealth, but the per-child pattern survives intact."
         }
       ]
     },
@@ -172,12 +177,12 @@
         },
         {
           "type": "text",
-          "text": "baseline",
           "marks": [
             {
               "type": "italic"
             }
-          ]
+          ],
+          "text": "baseline"
         },
         {
           "type": "text",
@@ -185,12 +190,12 @@
         },
         {
           "type": "text",
-          "text": "spikes",
           "marks": [
             {
               "type": "italic"
             }
-          ]
+          ],
+          "text": "spikes"
         },
         {
           "type": "text",
@@ -235,12 +240,12 @@
         },
         {
           "type": "text",
-          "text": "attention",
           "marks": [
             {
               "type": "italic"
             }
-          ]
+          ],
+          "text": "attention"
         },
         {
           "type": "text",
@@ -405,12 +410,12 @@
         },
         {
           "type": "text",
-          "text": "conversation",
           "marks": [
             {
               "type": "italic"
             }
-          ]
+          ],
+          "text": "conversation"
         },
         {
           "type": "text",
@@ -518,12 +523,12 @@
         },
         {
           "type": "text",
-          "text": "before",
           "marks": [
             {
               "type": "italic"
             }
-          ]
+          ],
+          "text": "before"
         },
         {
           "type": "text",
