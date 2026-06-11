@@ -75,51 +75,72 @@ export function SubscribeForm({ inverted = false }: { inverted?: boolean }) {
   const pending = status.kind === 'pending';
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
-      <input
-        type="email"
-        required
-        placeholder="you@domain.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        disabled={pending}
-        aria-label="Email address"
-        autoComplete="email"
+    <div className="w-full max-w-md">
+      <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-2">
+        <input
+          type="email"
+          required
+          placeholder="you@domain.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={pending}
+          aria-label="Email address"
+          autoComplete="email"
+          className={cn(
+            'flex-1 h-10 rounded-md px-3 py-2 text-sm transition-colors',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+            'disabled:cursor-not-allowed disabled:opacity-50',
+            inverted
+              ? 'bg-white text-ink placeholder:text-ink-subtle border border-white focus-visible:ring-white/40 focus-visible:ring-offset-burgundy'
+              : 'bg-background text-ink placeholder:text-ink-subtle border border-input focus-visible:ring-ring focus-visible:ring-offset-background',
+          )}
+        />
+        {/* Honeypot — hidden via inline style and aria-hidden so screen
+            readers ignore it. Tab-removed so keyboard users can't reach it. */}
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          aria-hidden
+          style={{
+            position: 'absolute',
+            left: '-10000px',
+            top: 'auto',
+            width: 1,
+            height: 1,
+            overflow: 'hidden',
+          }}
+        />
+        <button
+          type="submit"
+          disabled={pending}
+          className={inverted ? 'btn-puffy-inverse' : 'btn-puffy'}
+        >
+          {pending ? 'Sending…' : 'Subscribe'}
+        </button>
+      </form>
+      <p
         className={cn(
-          'flex-1 h-10 rounded-md px-3 py-2 text-sm transition-colors',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-          'disabled:cursor-not-allowed disabled:opacity-50',
-          inverted
-            ? 'bg-white text-ink placeholder:text-ink-subtle border border-white focus-visible:ring-white/40 focus-visible:ring-offset-burgundy'
-            : 'bg-background text-ink placeholder:text-ink-subtle border border-input focus-visible:ring-ring focus-visible:ring-offset-background',
+          'mt-3 text-[11px] leading-relaxed',
+          inverted ? 'text-white/80' : 'text-ink-subtle',
         )}
-      />
-      {/* Honeypot — hidden via inline style and aria-hidden so screen
-          readers ignore it. Tab-removed so keyboard users can't reach it. */}
-      <input
-        type="text"
-        name="company"
-        tabIndex={-1}
-        autoComplete="off"
-        value={company}
-        onChange={(e) => setCompany(e.target.value)}
-        aria-hidden
-        style={{
-          position: 'absolute',
-          left: '-10000px',
-          top: 'auto',
-          width: 1,
-          height: 1,
-          overflow: 'hidden',
-        }}
-      />
-      <button
-        type="submit"
-        disabled={pending}
-        className={inverted ? 'btn-puffy-inverse' : 'btn-puffy'}
       >
-        {pending ? 'Sending…' : 'Subscribe'}
-      </button>
-    </form>
+        By subscribing you agree to receive Horse to Unicorn by email.
+        Unsubscribe with one click any time. See our{' '}
+        <a
+          href="/privacy"
+          className={cn(
+            'underline',
+            inverted ? 'text-white hover:text-white/90' : 'hover:text-burgundy',
+          )}
+        >
+          privacy policy
+        </a>
+        .
+      </p>
+    </div>
   );
 }

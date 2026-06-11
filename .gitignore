@@ -44,3 +44,7 @@ next-env.d.ts
 
 # local tooling artefacts
 .claude/
+
+# subscriber backups — written by `pnpm backup:subscribers`. Personal data,
+# keep out of git.
+/backups

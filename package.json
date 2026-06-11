@@ -13,7 +13,8 @@
     "data": "tsx scripts/build-article-data.ts",
     "migrate:posts": "tsx scripts/migrate-posts-to-articles.ts",
     "migrate:docs": "tsx scripts/migrate-blocks-to-document.ts",
-    "recrop": "tsx scripts/recrop-images.ts"
+    "recrop": "tsx scripts/recrop-images.ts",
+    "backup:subscribers": "tsx --env-file-if-exists=.env scripts/backup-subscribers.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1066.0",

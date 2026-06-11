@@ -57,25 +57,34 @@ export async function POST(req: Request) {
     );
   }
 
-  // If the contact was already there AND unsubscribed previously, flip them
-  // back to subscribed. Resend doesn't bubble this back via contacts.create
-  // when the contact already exists, so we call update explicitly.
+  type Outcome = 'new' | 'resubscribed' | 'already-confirmed';
+  let outcome: Outcome = 'new';
+
+  // If the contact already exists, fetch them so we can tell whether they
+  // were unsubscribed and we just re-subscribed them.
   if (isAlreadyExists(created.error)) {
+    let wasUnsubscribed = false;
+    try {
+      const got = await resend.contacts.get({ audienceId, email });
+      wasUnsubscribed = !!got.data?.unsubscribed;
+    } catch {
+      // Best-effort — fall back to 'already-confirmed' if we can't read.
+    }
     try {
       await resend.contacts.update({ audienceId, email, unsubscribed: false });
     } catch {
-      // Non-fatal: subscriber is already subscribed.
+      // Non-fatal — they're either still subscribed or will be next attempt.
     }
+    outcome = wasUnsubscribed ? 'resubscribed' : 'already-confirmed';
   }
 
-  // Send the welcome email only for first-time confirmations. We treat a
-  // missing `error` as "newly added" — the simplest heuristic, and the
-  // worst case is a returning subscriber gets the welcome again.
+  // Send the welcome email only the first time. Returning subscribers and
+  // already-confirmed ones don't get spammed.
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.horsetounicorn.com';
   const unsubToken = await signUnsubscribeToken(email);
   const unsubscribeUrl = `${siteUrl}/unsubscribe?token=${encodeURIComponent(unsubToken)}`;
 
-  if (!created.error) {
+  if (outcome === 'new') {
     const html = await render(WelcomeEmail({ siteUrl, unsubscribeUrl }));
     await resend.emails.send({
       from: getEmailFrom(),
@@ -90,7 +99,7 @@ export async function POST(req: Request) {
     });
   }
 
-  return NextResponse.json({ ok: true, email });
+  return NextResponse.json({ ok: true, email, outcome });
 }
 
 function isAlreadyExists(err: unknown): boolean {
