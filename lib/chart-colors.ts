@@ -1,5 +1,4 @@
 // Brand palette — define once, import into every chart file.
-// Source: brand spec in CLAUDE.md / movie-recommender brief.
 
 // -- Primary (burgundy family) ----------------------------------------
 export const BURGUNDY = '#9E0A71';

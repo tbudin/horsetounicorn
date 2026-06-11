@@ -42,5 +42,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# claude / agent artefacts
+# local tooling artefacts
 .claude/
