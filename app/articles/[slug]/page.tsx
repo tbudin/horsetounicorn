@@ -87,19 +87,19 @@ export default async function ArticlePage({
       date={metadata.date}
       readingTime={metadata.readingTime}
       footer={
-        <ArticleShare
-          url={articleUrl}
-          title={metadata.title}
-          description={metadata.description ?? metadata.subtitle}
-        />
+        <>
+          <BuyMeACoffee />
+          <ArticleShare
+            url={articleUrl}
+            title={metadata.title}
+            description={metadata.description ?? metadata.subtitle}
+          />
+        </>
       }
       wideFooter={
         <>
           <div className="mx-auto max-w-[720px]">
             <ArticleAuthor author={author} />
-            <div className="mt-8 flex justify-center">
-              <BuyMeACoffee />
-            </div>
             <hr className="separator mt-16" />
           </div>
           <NextReading articles={upNext} />
