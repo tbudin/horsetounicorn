@@ -24,7 +24,20 @@
       "content": [
         {
           "type": "text",
-          "text": "I am curious. I check online. Singapore is at 0.87 in 2025, below the replacement rate, the lowest resident births in its recorded history."
+          "text": "I am curious. I check online. Singapore is at "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "0.87 in 2025"
+        },
+        {
+          "type": "text",
+          "text": ", below the replacement rate, the lowest resident births in its recorded history."
         }
       ]
     },
@@ -33,7 +46,20 @@
       "content": [
         {
           "type": "text",
-          "text": "I am at the age where conversations around kids keep happening. Lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
+          "text": "I am at the age where conversations around kids keep happening. Lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "what the world actually wants to know about feeding its children"
+        },
+        {
+          "type": "text",
+          "text": "."
         }
       ]
     },
@@ -42,7 +68,7 @@
       "content": [
         {
           "type": "text",
-          "text": "My conversation that my grab driver uncovered a first surprise."
+          "text": "My conversation with that my grab driver uncovered a first surprise."
         }
       ]
     },
