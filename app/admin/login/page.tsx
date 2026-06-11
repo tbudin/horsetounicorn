@@ -13,8 +13,8 @@ export default async function AdminLoginPage({
 }) {
   const { next } = await searchParams;
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-sm border border-[#F0E8EE] p-8">
+    <div className="min-h-screen flex justify-center px-4 pt-16 md:pt-24">
+      <div className="w-full max-w-sm h-fit border border-[#F0E8EE] p-8">
         <h1 className="font-serif text-2xl font-medium text-ink-heading mb-1">
           Sign in to admin
         </h1>
