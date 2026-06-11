@@ -5,6 +5,7 @@ import {
   Head,
   Hr,
   Html,
+  Img,
   Link,
   Preview,
   Text,
@@ -29,7 +30,13 @@ export function PostBroadcastEmail({
       <Preview>{description}</Preview>
       <Body style={body}>
         <Container style={container}>
-          <Text style={brand}>Horse to Unicorn</Text>
+          <Img
+            src={`${siteUrl}/brand/htu-email-header.png`}
+            alt="Horse to Unicorn"
+            width="560"
+            height="112"
+            style={headerImg}
+          />
           <Hr style={hr} />
           <Text style={heading}>{title}</Text>
           <Text style={paragraph}>{description}</Text>
@@ -71,13 +78,11 @@ const container = {
   maxWidth: '560px',
 };
 
-const brand = {
-  fontFamily: 'Georgia, "Times New Roman", serif',
-  fontSize: '14px',
-  color: '#666',
-  margin: '0',
-  textTransform: 'uppercase' as const,
-  letterSpacing: '0.1em',
+const headerImg = {
+  width: '100%',
+  height: 'auto',
+  display: 'block',
+  margin: '0 0 8px',
 };
 
 const heading = {

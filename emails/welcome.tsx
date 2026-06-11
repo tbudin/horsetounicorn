@@ -4,6 +4,7 @@ import {
   Head,
   Hr,
   Html,
+  Img,
   Link,
   Preview,
   Text,
@@ -22,7 +23,13 @@ export function WelcomeEmail({ siteUrl, unsubscribeUrl }: WelcomeEmailProps) {
       <Preview>Welcome to Horse to Unicorn.</Preview>
       <Body style={body}>
         <Container style={container}>
-          <Text style={heading}>Horse to Unicorn</Text>
+          <Img
+            src={`${siteUrl}/brand/htu-email-header.png`}
+            alt="Horse to Unicorn"
+            width="560"
+            height="112"
+            style={headerImg}
+          />
           <Hr style={hr} />
           <Text style={paragraph}>Hi,</Text>
           <Text style={paragraph}>
@@ -63,6 +70,13 @@ const container = {
   margin: '0 auto',
   padding: '40px 20px',
   maxWidth: '560px',
+};
+
+const headerImg = {
+  width: '100%',
+  height: 'auto',
+  display: 'block',
+  margin: '0 0 8px',
 };
 
 const heading = {
