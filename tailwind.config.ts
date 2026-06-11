@@ -110,8 +110,9 @@ const config: Config = {
               h2: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
               h3: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
               h4: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
-              // Inherit body weight (400) — no visual bold on <strong>.
-              strong: { fontWeight: 'inherit' },
+              // Semibold reads as clearly bolder than 400 body without
+              // competing with the 700 headings.
+              strong: { fontWeight: '600' },
               'code::before': { content: 'none' },
               'code::after': { content: 'none' },
             },

@@ -1,6 +1,8 @@
-import { listPublishedArticles } from '@/lib/articles';
+import { listArticlesForAdmin } from '@/lib/articles';
 
-export const dynamic = 'force-static';
+// Re-fetch from GitHub every 10 minutes so newly published articles flow
+// to feed readers without waiting for the next Vercel build.
+export const revalidate = 600;
 
 function escapeXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, (c) =>
@@ -8,9 +10,11 @@ function escapeXml(unsafe: string): string {
   );
 }
 
-export function GET() {
+export async function GET() {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
-  const articles = listPublishedArticles();
+  const articles = (await listArticlesForAdmin()).filter(
+    (a) => a.status === 'published',
+  );
 
   const items = articles
     .map(

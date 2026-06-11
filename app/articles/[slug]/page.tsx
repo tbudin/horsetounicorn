@@ -44,9 +44,10 @@ export async function generateMetadata({
     const { metadata } = loadArticleById(resolved.id);
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
     const url = `${siteUrl}/articles/${resolved.currentSlug}`;
-    // Fall back to the auto-generated site OG image when the article has no cover.
-    const defaultOg = `${siteUrl}/opengraph-image`;
-    const ogImage = metadata.cover ?? defaultOg;
+    // OG + Twitter images come from app/articles/[slug]/opengraph-image.tsx —
+    // Next.js auto-discovers the colocated file. We deliberately leave the
+    // openGraph.images / twitter.images fields off so the dynamic generator
+    // is the single source of truth.
     return {
       title: metadata.title,
       description: metadata.description ?? metadata.subtitle,
@@ -60,13 +61,11 @@ export async function generateMetadata({
         publishedTime: metadata.publishedAt ?? metadata.date,
         authors: [metadata.author ?? 'Thomas Budin'],
         tags: metadata.tags,
-        images: [{ url: ogImage, alt: metadata.title }],
       },
       twitter: {
         card: 'summary_large_image',
         title: metadata.title,
         description: metadata.description ?? metadata.subtitle,
-        images: [ogImage],
       },
     };
   } catch {
