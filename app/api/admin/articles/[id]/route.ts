@@ -1,9 +1,13 @@
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
-import { loadArticle, type ArticleMetadata } from '@/lib/articles';
+import {
+  invalidateSlugIndex,
+  loadArticleById,
+  type ArticleMetadata,
+} from '@/lib/articles';
 import type { ArticleDocument } from '@/lib/article-doc';
-import { renameArticleFolder, saveArticleFiles } from '@/lib/storage';
+import { saveArticleFiles } from '@/lib/storage';
 
 // -- Document schema -----------------------------------------------------
 // We accept the full TipTap-style document. Validation here is light: a
@@ -45,9 +49,9 @@ const PutBody = z.object({
 
 export async function PUT(
   req: Request,
-  { params }: { params: Promise<{ slug: string }> },
+  { params }: { params: Promise<{ id: string }> },
 ) {
-  const { slug } = await params;
+  const { id } = await params;
 
   let parsed: z.infer<typeof PutBody>;
   try {
@@ -61,41 +65,38 @@ export async function PUT(
 
   let current;
   try {
-    current = loadArticle(slug);
+    current = loadArticleById(id);
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });
   }
+  const oldSlug = current.metadata.slug;
 
-  // Detect a slug rename. Do this BEFORE writing blocks/metadata so we
-  // write to the new directory.
-  let effectiveSlug = slug;
+  // Slug rename = pure metadata update. We append the old slug to
+  // previousSlugs[] so /articles/<old-slug> keeps 308-ing to the new one.
   let renamed = false;
-  if (parsed.metadata?.slug && parsed.metadata.slug !== slug) {
-    try {
-      await renameArticleFolder(
-        slug,
-        parsed.metadata.slug,
-        `Rename article ${slug} → ${parsed.metadata.slug}`,
-      );
-      effectiveSlug = parsed.metadata.slug;
-      renamed = true;
-    } catch (err) {
-      return NextResponse.json(
-        { ok: false, error: (err as Error).message },
-        { status: 400 },
-      );
-    }
+  let nextSlug = oldSlug;
+  let nextPreviousSlugs = current.metadata.previousSlugs ?? [];
+  if (parsed.metadata?.slug && parsed.metadata.slug !== oldSlug) {
+    nextSlug = parsed.metadata.slug;
+    renamed = true;
+    // Newest-first; de-dup so a slug never appears twice.
+    nextPreviousSlugs = [
+      oldSlug,
+      ...nextPreviousSlugs.filter((s) => s !== oldSlug && s !== nextSlug),
+    ];
   }
 
   const writes: { metadata?: string; document?: string } = {};
   if (parsed.document) {
     writes.document = JSON.stringify(parsed.document as ArticleDocument, null, 2);
   }
-  if (parsed.metadata) {
+  if (parsed.metadata || renamed) {
     const merged: ArticleMetadata = {
       ...current.metadata,
       ...parsed.metadata,
-      slug: effectiveSlug,
+      id, // id is immutable — guard against accidental override
+      slug: nextSlug,
+      previousSlugs: nextPreviousSlugs,
     };
     writes.metadata = JSON.stringify(merged, null, 2);
   }
@@ -103,12 +104,12 @@ export async function PUT(
   if (writes.metadata != null || writes.document != null) {
     try {
       await saveArticleFiles({
-        slug: effectiveSlug,
+        articleId: id,
         metadata: writes.metadata,
         document: writes.document,
         message: renamed
-          ? `Update article ${effectiveSlug} (renamed from ${slug})`
-          : `Update article ${effectiveSlug}`,
+          ? `Rename slug ${oldSlug} → ${nextSlug}`
+          : `Update article ${nextSlug}`,
       });
     } catch (err) {
       return NextResponse.json(
@@ -118,21 +119,27 @@ export async function PUT(
     }
   }
 
-  // Revalidate
-  revalidatePath(`/articles/${effectiveSlug}`);
-  if (renamed) revalidatePath(`/articles/${slug}`);
+  invalidateSlugIndex();
+  revalidatePath(`/articles/${nextSlug}`);
+  if (renamed) revalidatePath(`/articles/${oldSlug}`);
   revalidatePath('/articles');
 
-  return NextResponse.json({ ok: true, slug: effectiveSlug, renamed });
+  return NextResponse.json({
+    ok: true,
+    id,
+    slug: nextSlug,
+    renamed,
+    previousSlugs: nextPreviousSlugs,
+  });
 }
 
 export async function GET(
   _req: Request,
-  { params }: { params: Promise<{ slug: string }> },
+  { params }: { params: Promise<{ id: string }> },
 ) {
-  const { slug } = await params;
+  const { id } = await params;
   try {
-    const article = loadArticle(slug);
+    const article = loadArticleById(id);
     return NextResponse.json({ ok: true, article });
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });

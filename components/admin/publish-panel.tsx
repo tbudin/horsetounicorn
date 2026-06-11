@@ -21,7 +21,7 @@ type Action =
   | 'archive';
 
 export interface PublishPanelProps {
-  slug: string;
+  articleId: string;
   status: ArticleStatus;
   hasInnerCircleAudience: boolean;
   hasMainAudience: boolean;
@@ -30,7 +30,7 @@ export interface PublishPanelProps {
 }
 
 export function PublishPanel({
-  slug,
+  articleId,
   status,
   hasInnerCircleAudience,
   hasMainAudience,
@@ -67,7 +67,7 @@ export function PublishPanel({
     setError(null);
     setInfo(null);
     try {
-      const res = await fetch(`/api/admin/articles/${slug}/publish`, {
+      const res = await fetch(`/api/admin/articles/${articleId}/publish`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, delayMinutes: delay }),

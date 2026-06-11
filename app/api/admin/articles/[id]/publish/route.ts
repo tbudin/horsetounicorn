@@ -3,7 +3,12 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { render } from '@react-email/components';
 import { PostBroadcastEmail } from '@/emails/post-broadcast';
-import { loadArticle, type ArticleStatus, type ArticleMetadata } from '@/lib/articles';
+import {
+  invalidateSlugIndex,
+  loadArticleById,
+  type ArticleStatus,
+  type ArticleMetadata,
+} from '@/lib/articles';
 import { saveArticleFiles } from '@/lib/storage';
 import {
   getAudienceId,
@@ -35,9 +40,9 @@ const Body = z.object({
 
 export async function POST(
   req: Request,
-  { params }: { params: Promise<{ slug: string }> },
+  { params }: { params: Promise<{ id: string }> },
 ) {
-  const { slug } = await params;
+  const { id } = await params;
 
   let body: z.infer<typeof Body>;
   try {
@@ -51,11 +56,12 @@ export async function POST(
 
   let article;
   try {
-    article = loadArticle(slug);
+    article = loadArticleById(id);
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });
   }
   const { metadata } = article;
+  const slug = metadata.slug;
 
   // Status guards
   if (body.action === 'main' && metadata.status === 'draft') {
@@ -70,10 +76,11 @@ export async function POST(
 
   async function persist(meta: ArticleMetadata, action: string) {
     await saveArticleFiles({
-      slug,
+      articleId: id,
       metadata: JSON.stringify(meta, null, 2),
       message: `${action} ${slug}`,
     });
+    invalidateSlugIndex();
   }
 
   // -- Pure status transitions (no email) --------------------------------

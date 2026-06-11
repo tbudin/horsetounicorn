@@ -69,22 +69,24 @@ function uniqueLocalFilename(dir: string, desired: string): string {
  * Admin image upload.
  *
  * multipart/form-data:
- *   slug — article slug (string)
- *   kind — 'inline' (default) or 'cover'
- *   file — the image
+ *   articleId — owning article id (UUID)
+ *   kind      — 'inline' (default) or 'cover'
+ *   file      — the image
  *
  * Cropped to 3:2 (raster) and persisted via `lib/storage/saveImage`. In
  * production (R2 env vars set) the image lands in the bucket and a CDN URL
- * is returned. Locally it lands in /public/articles/[slug]/.
+ * is returned. Locally it lands in /public/articles/[articleId]/.
  */
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 export async function POST(req: Request) {
   const form = await req.formData();
-  const slug = form.get('slug');
+  const articleId = form.get('articleId');
   const kind = (form.get('kind') as string | null) ?? 'inline';
   const file = form.get('file');
 
-  if (typeof slug !== 'string' || !slug.match(/^[a-z0-9-]+$/)) {
-    return NextResponse.json({ ok: false, error: 'Invalid slug' }, { status: 400 });
+  if (typeof articleId !== 'string' || !UUID_RE.test(articleId)) {
+    return NextResponse.json({ ok: false, error: 'Invalid articleId' }, { status: 400 });
   }
   if (kind !== 'inline' && kind !== 'cover') {
     return NextResponse.json(
@@ -118,7 +120,7 @@ export async function POST(req: Request) {
     // extension doesn't leave a stale file. Remote bucket overwrites the
     // same key — a different extension would leave the old key behind, but
     // that's a niche corner-case.
-    removeLocalCoverFiles(slug);
+    removeLocalCoverFiles(articleId);
     filename = `cover${ext}`;
   } else {
     const baseName = sanitizeFilename(file.name) || `image${ext}`;
@@ -130,14 +132,14 @@ export async function POST(req: Request) {
       filename = `${Date.now().toString(36)}-${stem}${finalExt}`;
     } else {
       // Local mode: dedup by suffixing -2, -3, …
-      const dir = path.join(process.cwd(), 'public', 'articles', slug, 'images');
+      const dir = path.join(process.cwd(), 'public', 'articles', articleId, 'images');
       fs.mkdirSync(dir, { recursive: true });
       filename = uniqueLocalFilename(dir, baseName);
     }
   }
 
   const publicUrl = await saveImage({
-    slug,
+    articleId,
     kind,
     filename,
     body: buffer,

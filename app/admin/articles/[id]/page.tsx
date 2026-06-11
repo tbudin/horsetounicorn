@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { loadArticle, type ArticleStatus } from '@/lib/articles';
+import { loadArticleById, type ArticleStatus } from '@/lib/articles';
 import { formatDate } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { ArticleLayout } from '@/components/article/article-layout';
@@ -25,17 +25,18 @@ const STATUS_CLASS: Record<ArticleStatus, string> = {
 export default async function AdminArticlePreview({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ id: string }>;
 }) {
-  const { slug } = await params;
+  const { id } = await params;
   let article;
   try {
-    article = loadArticle(slug);
+    article = loadArticleById(id);
   } catch {
     notFound();
   }
   const { metadata, document } = article;
-  const charts = await getChartsFor(slug);
+  const charts = await getChartsFor(id);
+  const slug = metadata.slug;
 
   const registered = Object.keys(charts);
   const referenced = Array.from(new Set(collectChartNames(document.content)));
@@ -70,7 +71,7 @@ export default async function AdminArticlePreview({
           </span>
           <div className="flex items-center gap-3">
             <Link
-              href={`/admin/articles/${slug}/edit`}
+              href={`/admin/articles/${id}/edit`}
               className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90"
             >
               Edit
@@ -122,7 +123,7 @@ export default async function AdminArticlePreview({
       </section>
 
       <PublishPanel
-        slug={slug}
+        articleId={id}
         status={metadata.status}
         hasInnerCircleAudience={Boolean(process.env.RESEND_INNER_CIRCLE_AUDIENCE_ID)}
         hasMainAudience={Boolean(process.env.RESEND_AUDIENCE_ID)}

@@ -30,8 +30,8 @@ import {
 // -- Command catalog -----------------------------------------------------
 
 export interface SlashContext {
-  /** Article slug — needed by image upload and chart picker. */
-  slug: string;
+  /** Article id (UUID) — used by image upload + chart picker error copy. */
+  articleId: string;
   /** Chart names available to the current article. */
   availableCharts: string[];
 }
@@ -134,7 +134,7 @@ const COMMANDS: SlashCommand[] = [
     run: (editor, range, ctx) => {
       if (ctx.availableCharts.length === 0) {
         window.alert(
-          `No charts registered for "${ctx.slug}". Add a chart component to app/articles/_charts/${ctx.slug}/ first.`,
+          `No charts registered for this article. Add a chart component to app/articles/_charts/${ctx.articleId}/ first.`,
         );
         return;
       }
@@ -209,7 +209,7 @@ const COMMANDS: SlashCommand[] = [
         const file = input.files?.[0];
         if (!file) return;
         const form = new FormData();
-        form.append('slug', ctx.slug);
+        form.append('articleId', ctx.articleId);
         form.append('file', file);
         const res = await fetch('/api/admin/upload', { method: 'POST', body: form });
         const data = (await res.json()) as { ok: boolean; url?: string; error?: string };

@@ -264,39 +264,6 @@ export function listPublishedArticles(): ArticleMetadata[] {
   return listArticles().filter((a) => a.status === 'published');
 }
 
-// -- Filesystem writers (used by admin API routes) -----------------------
-
-export function saveMetadata(slug: string, metadata: ArticleMetadata): void {
-  const dir = articleDir(slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(
-    path.join(dir, 'metadata.json'),
-    JSON.stringify(metadata, null, 2),
-    'utf8',
-  );
-}
-
-export function saveBlocks(slug: string, blocks: Block[]): void {
-  const dir = articleDir(slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(
-    path.join(dir, 'content.json'),
-    JSON.stringify(blocks, null, 2),
-    'utf8',
-  );
-}
-
-/** Save the article document (TipTap JSON). */
-export function saveDocument(slug: string, doc: ArticleDocument): void {
-  const dir = articleDir(slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(
-    path.join(dir, 'content.json'),
-    JSON.stringify(doc, null, 2),
-    'utf8',
-  );
-}
-
 // -- Legacy block → document migration ---------------------------------
 
 /**
@@ -414,74 +381,12 @@ function htmlToInline(html: string): InlineNode[] {
 import type { InlineNode, TextNode } from './article-doc';
 
 /**
- * Rename an article on disk. Also renames the matching chart folder so the
- * dynamic registry keeps working. Throws if the target slug is already
- * taken, or if the source doesn't exist.
- */
-export function renameArticle(fromSlug: string, toSlug: string): void {
-  if (fromSlug === toSlug) return;
-  if (!/^[a-z0-9-]+$/.test(toSlug)) {
-    throw new Error('Slug must be lowercase letters, digits and hyphens only');
-  }
-  const fromDir = articleDir(fromSlug);
-  const toDir = articleDir(toSlug);
-  if (!fs.existsSync(fromDir)) {
-    throw new Error(`Article "${fromSlug}" does not exist`);
-  }
-  if (fs.existsSync(toDir)) {
-    throw new Error(`Slug "${toSlug}" already exists`);
-  }
-  fs.renameSync(fromDir, toDir);
-
-  // Move chart folder if any
-  const chartFrom = path.join(
-    process.cwd(),
-    'app',
-    'articles',
-    '_charts',
-    fromSlug,
-  );
-  const chartTo = path.join(
-    process.cwd(),
-    'app',
-    'articles',
-    '_charts',
-    toSlug,
-  );
-  if (fs.existsSync(chartFrom) && !fs.existsSync(chartTo)) {
-    fs.renameSync(chartFrom, chartTo);
-    // Also update the chart registry index so the dynamic loader still finds it.
-    const registryPath = path.join(
-      process.cwd(),
-      'app',
-      'articles',
-      '_charts',
-      'index.ts',
-    );
-    if (fs.existsSync(registryPath)) {
-      let registry = fs.readFileSync(registryPath, 'utf8');
-      // Replace 'fromSlug' as a single-quoted key
-      registry = registry.replace(
-        new RegExp(`'${fromSlug.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}'`, 'g'),
-        `'${toSlug}'`,
-      );
-      // Replace ./fromSlug path
-      registry = registry.replace(
-        new RegExp(`\\./${fromSlug.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'g'),
-        `./${toSlug}`,
-      );
-      fs.writeFileSync(registryPath, registry, 'utf8');
-    }
-  }
-}
-
-/**
- * List chart names (kebab-case, no extension) available for a given article
- * slug. Reads app/articles/_charts/[slug]/ directly. Used by the editor's
+ * List chart names (kebab-case, no extension) available for a given article.
+ * Reads app/articles/_charts/[articleId]/ directly. Used by the editor's
  * chart-block picker.
  */
-export function listChartsForSlug(slug: string): string[] {
-  const dir = path.join(process.cwd(), 'app', 'articles', '_charts', slug);
+export function listChartsForId(articleId: string): string[] {
+  const dir = path.join(process.cwd(), 'app', 'articles', '_charts', articleId);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)

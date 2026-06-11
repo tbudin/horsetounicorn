@@ -53,14 +53,14 @@ import { createSlashCommands } from './slash-menu';
 // -- Top-level editor ----------------------------------------------------
 
 export interface RichArticleEditorProps {
-  slug: string;
+  articleId: string;
   initialMetadata: ArticleMetadata;
   initialDocument: ArticleDocument;
   availableCharts: string[];
 }
 
 export function RichArticleEditor({
-  slug,
+  articleId,
   initialMetadata,
   initialDocument,
   availableCharts,
@@ -106,9 +106,9 @@ export function RichArticleEditor({
       ImageNode,
       VideoNode,
       CalloutNode,
-      createSlashCommands({ slug, availableCharts }),
+      createSlashCommands({ articleId, availableCharts }),
     ],
-    [slug, availableCharts],
+    [articleId, availableCharts],
   );
 
   const editor = useEditor({
@@ -131,7 +131,7 @@ export function RichArticleEditor({
     setSaving(true);
     setError(null);
     try {
-      const res = await fetch(`/api/admin/articles/${slug}`, {
+      const res = await fetch(`/api/admin/articles/${articleId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ metadata, document }),
@@ -148,11 +148,9 @@ export function RichArticleEditor({
       }
       setLastSavedAt(new Date());
       setDirty(false);
-      if (data.renamed && data.slug && data.slug !== slug) {
-        router.replace(`/admin/articles/${data.slug}/edit`);
-      } else {
-        router.refresh();
-      }
+      // Slug renames now reuse the same URL (admin paths are keyed by id),
+      // so a router.refresh is enough — no replace.
+      router.refresh();
     } catch {
       setError('Network error');
     } finally {
@@ -196,7 +194,7 @@ export function RichArticleEditor({
                 <Toolbar
                   editor={editor}
                   availableCharts={availableCharts}
-                  slug={slug}
+                  articleId={articleId}
                 />
                 <EditorContent editor={editor} />
               </>
@@ -204,7 +202,11 @@ export function RichArticleEditor({
           </section>
         </TabsContent>
         <TabsContent value="metadata">
-          <MetadataForm metadata={metadata} onChange={setMetadata} />
+          <MetadataForm
+            metadata={metadata}
+            onChange={setMetadata}
+            articleId={articleId}
+          />
         </TabsContent>
       </Tabs>
     </div>
@@ -216,11 +218,11 @@ export function RichArticleEditor({
 function Toolbar({
   editor,
   availableCharts,
-  slug,
+  articleId,
 }: {
   editor: Editor;
   availableCharts: string[];
-  slug: string;
+  articleId: string;
 }) {
   const onLink = useCallback(() => {
     const prev = editor.getAttributes('link').href ?? '';
@@ -236,7 +238,7 @@ function Toolbar({
   const onInsertChart = useCallback(() => {
     if (availableCharts.length === 0) {
       window.alert(
-        `No charts registered for "${slug}". Add a chart component to app/articles/_charts/${slug}/ first.`,
+        `No charts registered for this article. Add a chart component to app/articles/_charts/${articleId}/ first.`,
       );
       return;
     }
@@ -254,7 +256,7 @@ function Toolbar({
         attrs: { chartName: choice, caption: caption || null },
       })
       .run();
-  }, [editor, availableCharts, slug]);
+  }, [editor, availableCharts, articleId]);
 
   const onInsertCallout = useCallback(() => {
     const headline = window.prompt('Headline (optional)') ?? '';
@@ -292,7 +294,7 @@ function Toolbar({
       const file = input.files?.[0];
       if (!file) return;
       const form = new FormData();
-      form.append('slug', slug);
+      form.append('articleId', articleId);
       form.append('file', file);
       const res = await fetch('/api/admin/upload', { method: 'POST', body: form });
       const data = (await res.json()) as { ok: boolean; url?: string; error?: string };
@@ -312,7 +314,7 @@ function Toolbar({
         .run();
     };
     input.click();
-  }, [editor, slug]);
+  }, [editor, articleId]);
 
   const onInsertVideo = useCallback(() => {
     const url = window.prompt('Video URL (YouTube, Vimeo, or direct MP4)');
@@ -460,9 +462,11 @@ const AUTHOR_OPTIONS: string[] = listAuthors().map((a) => a.name);
 function MetadataForm({
   metadata,
   onChange,
+  articleId,
 }: {
   metadata: ArticleMetadata;
   onChange: (m: ArticleMetadata) => void;
+  articleId: string;
 }) {
   const set = <K extends keyof ArticleMetadata>(key: K, value: ArticleMetadata[K]) =>
     onChange({ ...metadata, [key]: value });
@@ -487,8 +491,9 @@ function MetadataForm({
           pattern="[a-z0-9-]+"
         />
         <p className="mt-1 text-[10px] text-ink-subtle">
-          Renames the article folder on save. URL becomes{' '}
-          <code className="font-mono">/articles/{metadata.slug}</code>.
+          Public URL becomes{' '}
+          <code className="font-mono">/articles/{metadata.slug}</code>. The old
+          slug keeps 308-redirecting to this one.
         </p>
       </Field>
       <Field label="Title" id="md-title">
@@ -531,7 +536,7 @@ function MetadataForm({
       </div>
       <Field label="Cover image">
         <CoverField
-          slug={metadata.slug}
+          articleId={articleId}
           value={metadata.cover}
           onChange={(v) => set('cover', v)}
         />
@@ -597,11 +602,11 @@ function MetadataForm({
 }
 
 function CoverField({
-  slug,
+  articleId,
   value,
   onChange,
 }: {
-  slug: string;
+  articleId: string;
   value?: string;
   onChange: (v: string | undefined) => void;
 }) {
@@ -615,7 +620,7 @@ function CoverField({
     setError(null);
     try {
       const form = new FormData();
-      form.append('slug', slug);
+      form.append('articleId', articleId);
       form.append('kind', 'cover');
       form.append('file', file);
       const res = await fetch('/api/admin/upload', { method: 'POST', body: form });
@@ -679,8 +684,9 @@ function CoverField({
       </div>
       {error ? <p className="text-xs text-burgundy">{error}</p> : null}
       <p className="text-[10px] text-ink-subtle">
-        Saved to <code className="font-mono">/public/articles/{slug}/cover.&lt;ext&gt;</code> —
-        overwrites any previous cover.
+        Saved under{' '}
+        <code className="font-mono">/articles/{articleId}/cover.&lt;ext&gt;</code>{' '}
+        — overwrites any previous cover.
       </p>
     </div>
   );

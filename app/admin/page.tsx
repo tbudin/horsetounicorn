@@ -74,9 +74,9 @@ function ArticleList({
       ) : (
         <ul className="divide-y divide-[#EEE6EC] border border-[#EEE6EC] bg-white">
           {articles.map((a) => (
-            <li key={a.slug}>
+            <li key={a.id}>
               <Link
-                href={`/admin/articles/${a.slug}`}
+                href={`/admin/articles/${a.id}`}
                 className="flex items-center gap-4 px-4 py-3 hover:bg-[#FAF7F9] transition-colors"
               >
                 <span

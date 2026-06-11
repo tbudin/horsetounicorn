@@ -15,12 +15,12 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { commitFiles, isGitHubConfigured, listRepoPaths } from './github';
+import { commitFiles, isGitHubConfigured } from './github';
 import { isR2Configured, uploadToR2 } from './r2';
 
 export interface SaveImageOptions {
-  /** Owning article slug. Used as the path prefix. */
-  slug: string;
+  /** Owning article id (UUID). Becomes the storage path prefix. */
+  articleId: string;
   /** 'cover' replaces the cover; 'inline' adds an inline image. */
   kind: 'cover' | 'inline';
   /** Sanitised filename including extension, e.g. "screenshot.png". */
@@ -39,7 +39,7 @@ export interface SaveImageOptions {
  * site-relative URL — same behaviour as before.
  */
 export async function saveImage({
-  slug,
+  articleId,
   kind,
   filename,
   body,
@@ -47,8 +47,8 @@ export async function saveImage({
 }: SaveImageOptions): Promise<string> {
   const key =
     kind === 'cover'
-      ? `articles/${slug}/${filename}`
-      : `articles/${slug}/images/${filename}`;
+      ? `articles/${articleId}/${filename}`
+      : `articles/${articleId}/images/${filename}`;
 
   if (isR2Configured()) {
     return uploadToR2(key, body, contentType);
@@ -64,13 +64,13 @@ export async function saveImage({
 /**
  * Remove every existing `cover.*` file before a fresh cover is written, so
  * the article never has two covers floating around. Local mode only — in
- * remote mode the new cover commits as `articles/<slug>/cover.<ext>` and
+ * remote mode the new cover commits as `articles/<id>/cover.<ext>` and
  * R2 just overwrites any prior key with the same name (different extension
  * would leave a stale key behind, accepted trade-off).
  */
-export function removeLocalCoverFiles(slug: string): void {
+export function removeLocalCoverFiles(articleId: string): void {
   if (isR2Configured()) return;
-  const dir = path.join(process.cwd(), 'public', 'articles', slug);
+  const dir = path.join(process.cwd(), 'public', 'articles', articleId);
   if (!fs.existsSync(dir)) return;
   for (const f of fs.readdirSync(dir)) {
     if (/^cover\.(png|jpe?g|gif|webp|svg)$/i.test(f)) {
@@ -80,7 +80,7 @@ export function removeLocalCoverFiles(slug: string): void {
 }
 
 export interface SaveArticleOptions {
-  slug: string;
+  articleId: string;
   metadata?: string;
   document?: string;
   /** Commit message when committing to GitHub. */
@@ -90,14 +90,19 @@ export interface SaveArticleOptions {
 /**
  * Persist one or both article files atomically. In remote mode this is a
  * single GitHub commit; in local mode it's a pair of fs writes.
+ *
+ * Because every article folder is now keyed by its immutable id, slug
+ * changes are pure metadata edits — no folder moves, no image-URL
+ * rewrites, no chart-registry updates. The old `renameArticleFolder()`
+ * is gone for that reason.
  */
 export async function saveArticleFiles({
-  slug,
+  articleId,
   metadata,
   document,
   message,
 }: SaveArticleOptions): Promise<void> {
-  const repoPath = (file: string) => `content/articles/${slug}/${file}`;
+  const repoPath = (file: string) => `content/articles/${articleId}/${file}`;
   const writes: { path: string; content: string }[] = [];
   if (metadata != null) writes.push({ path: repoPath('metadata.json'), content: metadata });
   if (document != null) writes.push({ path: repoPath('content.json'), content: document });
@@ -109,95 +114,11 @@ export async function saveArticleFiles({
   }
 
   // Local fallback.
-  const dir = path.join(process.cwd(), 'content', 'articles', slug);
+  const dir = path.join(process.cwd(), 'content', 'articles', articleId);
   fs.mkdirSync(dir, { recursive: true });
   for (const w of writes) {
     const file = w.path.split('/').pop()!;
     fs.writeFileSync(path.join(dir, file), w.content, 'utf8');
-  }
-}
-
-/**
- * Rename an article folder. Commits a single tree update in remote mode;
- * mirrors the legacy filesystem rename in local mode (also moves the
- * matching chart folder and rewrites the chart registry).
- *
- * In remote mode, images stored at the old slug's R2 keys are NOT moved —
- * their URLs remain valid because the editor stored absolute URLs. Only
- * the `content/articles/<slug>/` folder is renamed.
- */
-export async function renameArticleFolder(
-  fromSlug: string,
-  toSlug: string,
-  message: string,
-): Promise<void> {
-  if (fromSlug === toSlug) return;
-  if (!/^[a-z0-9-]+$/.test(toSlug)) {
-    throw new Error('Slug must be lowercase letters, digits and hyphens only');
-  }
-
-  if (isGitHubConfigured()) {
-    const oldPrefix = `content/articles/${fromSlug}`;
-    const newPrefix = `content/articles/${toSlug}`;
-    const oldPaths = await listRepoPaths(oldPrefix);
-    if (oldPaths.length === 0) {
-      throw new Error(`Article "${fromSlug}" does not exist on the remote`);
-    }
-    const newPaths = await listRepoPaths(newPrefix);
-    if (newPaths.length > 0) {
-      throw new Error(`Slug "${toSlug}" already exists on the remote`);
-    }
-    // Read each file from the local checkout (still present in the bundle)
-    // so we can re-write it under the new prefix. Fall back to fetching from
-    // GitHub if a file isn't on disk yet (unlikely but defensive).
-    const writes: { path: string; content: string }[] = [];
-    for (const p of oldPaths) {
-      const localPath = path.join(process.cwd(), p);
-      const content = fs.existsSync(localPath)
-        ? fs.readFileSync(localPath, 'utf8')
-        : '';
-      const newPath = newPrefix + p.slice(oldPrefix.length);
-      writes.push({ path: newPath, content });
-    }
-    await commitFiles({ writes, deletePaths: oldPaths, message });
-    return;
-  }
-
-  // Local fallback — preserve the prior behaviour (also moves chart folder
-  // + rewrites the chart registry index).
-  const fromDir = path.join(process.cwd(), 'content', 'articles', fromSlug);
-  const toDir = path.join(process.cwd(), 'content', 'articles', toSlug);
-  if (!fs.existsSync(fromDir)) {
-    throw new Error(`Article "${fromSlug}" does not exist`);
-  }
-  if (fs.existsSync(toDir)) {
-    throw new Error(`Slug "${toSlug}" already exists`);
-  }
-  fs.renameSync(fromDir, toDir);
-
-  const chartFrom = path.join(process.cwd(), 'app', 'articles', '_charts', fromSlug);
-  const chartTo = path.join(process.cwd(), 'app', 'articles', '_charts', toSlug);
-  if (fs.existsSync(chartFrom) && !fs.existsSync(chartTo)) {
-    fs.renameSync(chartFrom, chartTo);
-    const registryPath = path.join(
-      process.cwd(),
-      'app',
-      'articles',
-      '_charts',
-      'index.ts',
-    );
-    if (fs.existsSync(registryPath)) {
-      let registry = fs.readFileSync(registryPath, 'utf8');
-      registry = registry.replace(
-        new RegExp(`'${fromSlug.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}'`, 'g'),
-        `'${toSlug}'`,
-      );
-      registry = registry.replace(
-        new RegExp(`\\./${fromSlug.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'g'),
-        `./${toSlug}`,
-      );
-      fs.writeFileSync(registryPath, registry, 'utf8');
-    }
   }
 }
 

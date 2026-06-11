@@ -1,38 +1,38 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { loadArticle, listChartsForSlug } from '@/lib/articles';
+import { loadArticleById, listChartsForId } from '@/lib/articles';
 import { RichArticleEditor } from '@/components/admin/rich-article-editor';
 
 export default async function AdminArticleEditPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ id: string }>;
 }) {
-  const { slug } = await params;
+  const { id } = await params;
   let article;
   try {
-    article = loadArticle(slug);
+    article = loadArticleById(id);
   } catch {
     notFound();
   }
-  const availableCharts = listChartsForSlug(slug);
+  const availableCharts = listChartsForId(id);
 
   return (
     <div className="space-y-4">
       <div className="flex items-baseline justify-between gap-4">
         <Link
-          href={`/admin/articles/${slug}`}
+          href={`/admin/articles/${id}`}
           className="text-xs text-ink-subtle hover:text-ink-heading"
         >
           ← Preview
         </Link>
         <p className="text-xs text-ink-subtle">
-          Editing <code className="font-mono">{slug}</code>
+          Editing <code className="font-mono">{article.metadata.slug}</code>
         </p>
       </div>
 
       <RichArticleEditor
-        slug={slug}
+        articleId={id}
         initialMetadata={article.metadata}
         initialDocument={article.document}
         availableCharts={availableCharts}
