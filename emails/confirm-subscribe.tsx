@@ -1,5 +1,6 @@
 import {
   Body,
+  Button,
   Container,
   Head,
   Hr,
@@ -9,42 +10,44 @@ import {
   Text,
 } from '@react-email/components';
 
-export interface WelcomeEmailProps {
+export interface ConfirmSubscribeEmailProps {
+  /** Absolute URL the user clicks to confirm the subscription. */
+  confirmUrl: string;
+  /** Site origin used in the footer copy. */
   siteUrl: string;
-  unsubscribeUrl: string;
 }
 
-export function WelcomeEmail({ siteUrl, unsubscribeUrl }: WelcomeEmailProps) {
+export function ConfirmSubscribeEmail({ confirmUrl, siteUrl }: ConfirmSubscribeEmailProps) {
   const host = siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
   return (
     <Html>
       <Head />
-      <Preview>Welcome to Horse to Unicorn.</Preview>
+      <Preview>One click to confirm your Horse to Unicorn subscription.</Preview>
       <Body style={body}>
         <Container style={container}>
           <Text style={heading}>Horse to Unicorn</Text>
           <Hr style={hr} />
           <Text style={paragraph}>Hi,</Text>
           <Text style={paragraph}>
-            Thanks for confirming. You'll get one email a week — marketing and
-            systems thinking for technical founders and operators. No fluff, no
-            spam.
+            Tap the button below to confirm you want to receive Horse to Unicorn —
+            one email a week on marketing and systems thinking for technical
+            founders and operators.
           </Text>
+          <Button href={confirmUrl} style={button}>
+            Confirm my subscription
+          </Button>
           <Text style={paragraph}>
-            While you wait for the next post, the archive lives at{' '}
-            <Link href={siteUrl} style={link}>
-              {host}
+            Or copy this link into your browser:
+            <br />
+            <Link href={confirmUrl} style={link}>
+              {confirmUrl}
             </Link>
-            .
           </Text>
-          <Text style={paragraph}>— Tom</Text>
           <Hr style={hr} />
           <Text style={footer}>
-            You're getting this because you confirmed at {host}.{' '}
-            <Link href={unsubscribeUrl} style={footerLink}>
-              Unsubscribe
-            </Link>
-            .
+            You're getting this because someone — hopefully you — entered this
+            email address at {host}. If that wasn't you, just ignore this email
+            and you won't be subscribed.
           </Text>
         </Container>
       </Body>
@@ -78,9 +81,22 @@ const paragraph = {
   margin: '12px 0',
 };
 
+const button = {
+  background: '#9E0A71',
+  color: '#ffffff',
+  padding: '12px 20px',
+  borderRadius: '6px',
+  display: 'inline-block',
+  fontSize: '15px',
+  fontWeight: 500,
+  textDecoration: 'none',
+  margin: '8px 0 16px',
+};
+
 const link = {
   color: '#9E0A71',
   textDecoration: 'underline',
+  wordBreak: 'break-all' as const,
 };
 
 const hr = {
@@ -92,9 +108,4 @@ const footer = {
   color: '#666',
   fontSize: '12px',
   lineHeight: '1.5',
-};
-
-const footerLink = {
-  color: '#666',
-  textDecoration: 'underline',
 };
