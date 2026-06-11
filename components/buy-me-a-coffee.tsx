@@ -14,20 +14,14 @@ export function BuyMeACoffee() {
   const url = process.env.NEXT_PUBLIC_STRIPE_TIP_URL;
   if (!url) return null;
   return (
-    <section
-      aria-labelledby="article-tip-heading"
-      // No bottom separator + no margin-bottom: the <ArticleShare> below
-      // contributes its own top separator, so the two sections share one
-      // dividing line instead of stacking two.
-      className="mt-12"
-    >
+    <section aria-labelledby="article-tip-heading" className="my-12">
       <hr className="separator" />
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 py-5">
         <h2
           id="article-tip-heading"
           className="text-[11px] uppercase tracking-wider text-ink-subtle data-num"
         >
-          If you think this article is worth a coffee
+          If you liked this
         </h2>
         <a
           href={url}
@@ -39,6 +33,7 @@ export function BuyMeACoffee() {
           <span>Buy me a coffee</span>
         </a>
       </div>
+      <hr className="separator" />
     </section>
   );
 }
