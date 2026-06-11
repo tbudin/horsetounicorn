@@ -62,6 +62,7 @@ export async function POST(req: Request) {
       description: metadata.description ?? metadata.subtitle ?? '',
       postUrl: articleUrl,
       siteUrl,
+      tipUrl: process.env.NEXT_PUBLIC_STRIPE_TIP_URL,
     }),
   );
 

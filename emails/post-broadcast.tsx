@@ -16,6 +16,8 @@ export interface PostBroadcastEmailProps {
   description: string;
   postUrl: string;
   siteUrl: string;
+  /** Optional Stripe Payment Link (or any tip URL). Omitted → CTA hidden. */
+  tipUrl?: string;
 }
 
 export function PostBroadcastEmail({
@@ -23,6 +25,7 @@ export function PostBroadcastEmail({
   description,
   postUrl,
   siteUrl,
+  tipUrl,
 }: PostBroadcastEmailProps) {
   return (
     <Html>
@@ -47,6 +50,15 @@ export function PostBroadcastEmail({
             (Charts are interactive on the site — they're not rendered in this email.)
           </Text>
           <Text style={paragraph}>— Tom</Text>
+          {tipUrl ? (
+            <Text style={tipLine}>
+              If you liked this,{' '}
+              <Link href={tipUrl} style={tipLink}>
+                ☕ buy me a coffee
+              </Link>
+              .
+            </Text>
+          ) : null}
           <Hr style={hr} />
           <Text style={footer}>
             You're getting this because you subscribed at{' '}
@@ -121,6 +133,19 @@ const button = {
 const link = {
   color: '#9E0A71',
   textDecoration: 'underline',
+};
+
+const tipLine = {
+  fontSize: '14px',
+  lineHeight: '1.6',
+  color: '#666',
+  margin: '20px 0 0',
+};
+
+const tipLink = {
+  color: '#9E0A71',
+  textDecoration: 'underline',
+  fontWeight: 500,
 };
 
 const hr = {

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArticleLayout } from '@/components/article/article-layout';
 import { ArticleAuthor } from '@/components/article/article-footer';
 import { ArticleShare } from '@/components/article/article-share';
+import { BuyMeACoffee } from '@/components/buy-me-a-coffee';
 import { NextReading } from '@/components/article/next-reading';
 import { RenderDocument } from '@/components/article/render-document';
 import { SubscribeSection } from '@/components/subscribe-section';
@@ -96,6 +97,9 @@ export default async function ArticlePage({
         <>
           <div className="mx-auto max-w-[720px]">
             <ArticleAuthor author={author} />
+            <div className="mt-8 flex justify-center">
+              <BuyMeACoffee />
+            </div>
             <hr className="separator mt-16" />
           </div>
           <NextReading articles={upNext} />
