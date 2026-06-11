@@ -110,9 +110,9 @@ const config: Config = {
               h2: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
               h3: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
               h4: { fontFamily: join('fontFamily.serif'), letterSpacing: '0.005em', lineHeight: 1.2, fontWeight: '700' },
-              // Semibold reads as clearly bolder than 400 body without
-              // competing with the 700 headings.
-              strong: { fontWeight: '600' },
+              // Match the native browser default for <strong>. 600 was
+              // too subtle against 400 Roboto Serif body copy at 17px.
+              strong: { fontWeight: '700' },
               'code::before': { content: 'none' },
               'code::after': { content: 'none' },
             },
