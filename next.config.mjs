@@ -1,0 +1,22 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'substackcdn.com' },
+      { protocol: 'https', hostname: 'substack-post-media.s3.amazonaws.com' },
+    ],
+  },
+  async redirects() {
+    return [
+      // Substack URL shape → new article URLs (for when the domain switches).
+      { source: '/p/:slug', destination: '/articles/:slug', permanent: true },
+      // Old internal /posts URLs → /articles (legacy compatibility during the
+      // transition; safe to remove later).
+      { source: '/posts', destination: '/articles', permanent: true },
+      { source: '/posts/:slug', destination: '/articles/:slug', permanent: true },
+    ];
+  },
+};
+
+export default nextConfig;

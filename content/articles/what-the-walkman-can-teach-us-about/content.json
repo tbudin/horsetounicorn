@@ -1,0 +1,1165 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Last week, we looked at the "
+        },
+        {
+          "type": "text",
+          "text": "danger of staying opportunistic in the long run",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.horsetounicorn.com/p/if-you-dont-choose-you-lose",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Today we’re going to talk about how founders get stuck in the ‘big vision’ of their offer, and what you can use to get out of it.",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.horsetounicorn.com/p/if-you-dont-choose-you-lose",
+                "target": "_blank"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If you feel like you’re stuck in a never-ending cycle of production and your launch date keeps getting pushed back, this one is for you."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s dive in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Here is today’s menu:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ "
+        },
+        {
+          "type": "text",
+          "text": "The Insight",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Simpler products win faster adoption 📚 "
+        },
+        {
+          "type": "text",
+          "text": "The Business Case",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": The story of Sony’s Walkman 🧩 "
+        },
+        {
+          "type": "text",
+          "text": "The Framework",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Core features, biases and psychology to launch on time 🧪 "
+        },
+        {
+          "type": "text",
+          "text": "The Test Lab",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Your action plan for next week"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/what-the-walkman-can-teach-us-about/images/d1a329e5-db58-49fb-a020-30d81524457f.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**⛳️ The Insight**"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Simpler Products Win Faster Adoption**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Your offer doesn’t need to be the complete package at launch. It just needs to do one thing well enough."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Launch with a single, memorable feature that clearly defines your product. Everything else can be added to a roadmap later. The reason is simple: we’re quicker to latch onto unique ideas than we are to understand complex propositions."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The fewer decisions your customers have to make to “get” you, the faster they’ll adopt your product."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Just know that forces pulling you towards bloated roadmaps are real and constant. Understanding these traps is the first step to resisting them."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Inside View Bias**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Behavioural economics calls this the inside view bias: overweighting internal excitement over market evidence. That’s why product teams often:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Ship features they personally find exciting (engineer’s bias)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Optimise for visual polish over core adoption (designer’s bias)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Assume their own habits represent the market (founder’s bias)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Clayton Christensen’s "
+        },
+        {
+          "type": "text",
+          "text": "Jobs to Be Done",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " theory reminds us: customers don’t “buy” features, they “hire” products to do jobs in their lives. Ignore the job, and you risk building the wrong thing."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Behavioural Psychology in Feature Focus**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Several principles explain why “one core feature” works."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "On the customer side:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Cognitive Load Theory",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": People can only process a limited amount of new information at once. Fewer features means faster comprehension and recall (Sweller, 1988)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Von Restorff Effect",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Distinct items are remembered more than those that blend in. A single standout feature increases memorability (Hedwig von Restorff, 1933)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Choice Overload",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Too many options reduce satisfaction and decision speed (Iyengar & Lepper, 2000)."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "On the builder side:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "False Consensus Effect",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Believing customers share your vision and priorities."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Action Bias",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Equating more features with more progress."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Ambiguity Aversion",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Overcompensating for uncertainty by making the product appeal to everyone."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**De-Risking Without Small-Scale Software Tests**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "In software, you can run small-scale tests before a full rollout. But hardware requires large-scale production, making feature choices riskier. Here are some of the mitigation strategies you can implement:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Pre-market prototypes in high-context environments",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Test early prototypes, focusing on use patterns, not just feedback forms."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Constrained MVP builds",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Build the simplest viable hardware around the core feature; avoid locking in complex, irreversible design decisions until absolutely necessary."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Narrative testing before production",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Validate the story you want the market to believe. If people can’t clearly repeat your product’s one-line benefit back to you, the feature set is still too diffuse."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "High-fidelity mockups",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Use industrial design models or video walkthroughs to gauge desire before committing to tooling."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Anchor on category creation or domination",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": If your product is breaking new ground, over-communicate and simplify. If you’re entering an existing category, differentiate through the most visible, memorable feature."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**📚 The Business Case**"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Story of Sony’s Walkman**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Sony’s co-founder "
+        },
+        {
+          "type": "text",
+          "text": "Masaru Ibuka",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " requested the engineering team to develop a version of the Pressman to listen to his opera recordings while flying. In 1979, "
+        },
+        {
+          "type": "text",
+          "text": "Akio Morita",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", Sony’s other co-founder, led the production of the new Walkman. After a few prototypes, they deliberately "
+        },
+        {
+          "type": "text",
+          "text": "excluded the radio",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The radio was the most popular way to listen to music. Technically, it was trivial to add; commercially, it was very sensible to have. So why exclude it? They realised that by making the Walkman all about carrying cassettes, it would be very clear that it was a whole new audio device for the new generation."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The Walkman wasn’t the radio_; it was your own personal music companion, wherever you went._"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This simple yet clever strategy worked wonders. Within just two years, “Walkman” became a catchphrase for all portable cassette players. It was a mental monopoly that Sony built, and still remembered today."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/what-the-walkman-can-teach-us-about/images/7323e8b1-5c64-45af-b400-7bafb25a4d76.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Story of Google Wave & Slack**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If the Walkman is a lesson in restraint, Google Wave is a cautionary tale in doing too much at once. Wave tried to be email, instant messaging, collaborative documents, media sharing and social networking, all rolled into one platform. The result? Nobody knew when to use it, or what it was "
+        },
+        {
+          "type": "text",
+          "text": "for",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "A year after Google Wave was officially sunsetted, Slack launched with one feature: team chat with searchable history. Today, they are worth more than $26 billion."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/what-the-walkman-can-teach-us-about/images/5ce5ba5c-0cff-4f39-bf4d-86c243d42752.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**🧩 The Framework**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "1.  "
+        },
+        {
+          "type": "text",
+          "text": "Identify the Core Feature",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Identity Test",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Would people describe you through this one feature?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Behaviour Shift Test",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Does it change user behaviour in a visible way?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Irrelevance Test",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": If you remove it, does the product lose all meaning?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "2.  "
+        },
+        {
+          "type": "text",
+          "text": "Guard Against Internal Bias",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Test feature appeal with target customers "
+        },
+        {
+          "type": "text",
+          "text": "before",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " revealing your favourite."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Frame questions around jobs-to-be-done and workflows, not features."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "3.  "
+        },
+        {
+          "type": "text",
+          "text": "Structure the Roadmap in Layers",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Now",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Core feature alone."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Next",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Features that amplify the core’s value."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "4.  "
+        },
+        {
+          "type": "text",
+          "text": "Use Psychology to Prioritise",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Minimise cognitive load",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": reduce decisions required to understand the product."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Maximise distinctiveness",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": ensure the core is memorable."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "5.  "
+        },
+        {
+          "type": "text",
+          "text": "Expand once the core feature has:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Clear product-market fit signals"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Repeatable acquisition channels"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Customer pull for specific additions"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**🧪 The Action Plan**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "From what we’ve seen today, take the following actions:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Write your one-line category sentence: the one thing you want to be remembered for."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Run the "
+        },
+        {
+          "type": "text",
+          "text": "Identity / Behaviour Shift / Irrelevance",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " tests on your roadmap."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Conduct 10 narrative tests with people in your target audience: ask them to repeat what your product is after hearing your pitch."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Use it in ads or outreach to measure click-through / sign-up intent."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Try using this framework and let me know how it went!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road. The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I had something completely different in mind for today, but then Cal.com dropped a new feature and I couldn’t resist changing plans."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "One of my favourite apps, "
+        },
+        {
+          "type": "text",
+          "text": "Cal.com",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", relaunched this week with an AI-powered scheduling assistant. This time it comes in the form of a voice call agent. In their announcement video, "
+        },
+        {
+          "type": "text",
+          "text": "co-founder Peer Richelsen drives his tractor to his neighbour’s farm",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " and gets him to try the product. It’s a charming little moment, and quite refreshing for a tech demo. What struck me even more is that this narrative barely appears anywhere else in their launch. Which feels like a wasted opportunity."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So today’s question is this: "
+        },
+        {
+          "type": "text",
+          "text": "Why can’t tractors help you sell your AI product?",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s dive in."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/i-only-understood-this-ai-product/images/9f92e0b5-5236-482e-80cb-0304fbf13b80.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**When AI grandeur gets in the way of clear communication**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is only one product newsletter I read, and it’s from "
+        },
+        {
+          "type": "text",
+          "text": "Cal.com",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". I’m not even sure why. Maybe it’s the slightly geeky tone, maybe it’s the fact I use the product every day. In their latest update, they announced the arrival of this AI scheduling tool. Curious to see what they’d done, I clicked straight through."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The landing page loaded with the familiar "
+        },
+        {
+          "type": "text",
+          "text": "Cal.com",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " aesthetic in dark mode. Thirty seconds later I was still scratching my head, reading the headline over and over. It wasn’t obvious what the tool actually did."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Do the test yourself: look at their landing page and see if you get it.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/i-only-understood-this-ai-product/images/e83c2f9d-5a6a-4831-b57b-82770dfab9ac.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So I went back to the email and played the video. There the narrative was completely different."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "In the video, Peer shows his neighbour that he can now call a dentist, hairdresser or restaurant, just as he always did, only this time the line never closes because it’s powered by AI. Forget about opening hours. You now have 24/7 access to a scheduling assistant for your favourite local businesses."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I doubt you, dear reader, would have got that from the headline alone.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And that’s my main issue with so many AI startups today. AI is treated like the secret sauce, the thing that makes the product exciting. Yet this feature is not about “supercharging” my scheduling with AI. It is about being able to book appointments by phone at any time, with a friendly automated agent."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I only understood the product once I saw the tractor video. That narrative never made it to the landing page. Which is a shame, because I bet it is the part people remember the most, and it is a great way to reinforce their brand."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I do understand the instinct though. Putting AI front and centre feels innovative, and perhaps it reassures investors that you are playing in the right space. Most founders are nervous about niching too far, or about telling stories that feel too narrow for their ideal customer profile. Yet the best stories often come from a point of view we do not share ourselves but can instantly recognise. All the great books show this. The more personal it gets, the more universal it feels."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I have never worked a farm, but I do know the frustration of remembering I need to book my chiropractor at ten o’clock on a Sunday night and being forced to wait until the lines open the next morning. That is the kind of lens that makes technology relatable."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Two traps startups keep falling into**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Cal.com",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " isn’t alone here. I keep noticing two recurring habits across startups: an obsession with the .ai domain and a tendency to stuff “AI-powered” into every tagline. Both are easy traps. Both risk blurring your message until no one really knows what you do."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The .ai grab**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Think back to the great domain booms. In the 2000s, .com exploded during the dot-com bubble. Not every business needed to flaunt it, but the extension became shorthand for “I exist online.” Then came .io, which became the darling of developer tools and SaaS before peaking in the 2020s. More recently .app, promoted by Google, signalled you had something mobile-ready."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Now .ai has taken up the mantle. Since 2022 the rush has been enormous, fuelled by the hype around generative AI. Venture capital poured billions into AI startups and grabbing a .ai domain felt like the cheapest way to signal “we belong to this wave.” But like every previous boom, the signal dilutes. What began as a badge of AI modernity quickly becomes background noise. Just as countless .io companies eventually bought .coms when they grew up, we’ll probably see today’s .ai startups retreat to something more neutral once the dust settles. A recent example is Scale AI, which shifted from Scale.ai to Scale.com."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Data on YCombinator companies"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So I did a little bit of data crunching in preparation for this article."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "analysed about 5,000 of the startups that went through Y Combinator over the past five years, and in 2025 the .ai startups represented more than 32% of all companies that year."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/i-only-understood-this-ai-product/images/7ab247e6-931f-4cd1-b804-f17e6a5c2958.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Y Combinator companies are only the visible tip of the iceberg. The rush into AI is undeniable, and the easiest way to spot it is in the scramble for .ai domains."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The ‘AI-powered’ everywhere**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The same saturation applies to taglines. My team recently came across "
+        },
+        {
+          "type": "text",
+          "text": "Basehub",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " describing itself as an “AI-native headless CMS.” The claim does little to help anyone understand what makes it valuable. After a bit of digging, you realise the real innovation is that you can manage the CMS like Git. That is powerful, but it is hidden behind the AI gloss."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "AI is the engine, but nobody buys a car just for the engine.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "They buy it because it takes them places, it makes them look good, and they like how it feels to drive."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The real differentiator**"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Tell more tractor stories**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Scheduling isn’t new. Google has its own. Countless apps offer it. What makes "
+        },
+        {
+          "type": "text",
+          "text": "Cal.com",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " compelling is its simplicity, its clean interface, and its willingness to play with narrative. That is what has kept me using it over the years. And if I could give a small recommendation, it is that this is also where the future lies: not in shouting about AI, but in showing how it fits into people’s existing habits."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Brand is the multiplier here. How you speak, how you present yourself, what stories you choose to tell. A farmer on his tractor making a call is already a small piece of magic, and that story says more about the product than another “AI-powered” headline ever will."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/i-only-understood-this-ai-product/images/297df0ff-8569-4ccd-9e72-de15a0d5fc02.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The risk of the AI commoditisation**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The question of whether AI becomes a commodity is not hypothetical. History suggests most technologies do. Cloud computing was once a differentiator, now it is plumbing. Search algorithms were once proprietary, now they are expected. Even mobile apps went from being a novelty to a given. The same pattern could play out here. As models get cheaper to train, open source alternatives improve, and large platforms bake AI into their core products, the value shifts away from “having AI” to what you do with it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The opposite case is also worth considering. AI could remain a genuine differentiator, at least in certain fields. Training data, compute access and the ability to fine-tune at scale might create enduring moats. If that happens, the winners will be those who not only have the best technology but also manage to tell a story that makes it relevant and desirable to ordinary people."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Either way the conclusion holds. If AI becomes commoditised, the only things that stand out are strong products and strong brands. If it remains a true differentiator, those same foundations help you go further and faster. "
+        },
+        {
+          "type": "text",
+          "text": "Which makes the choice almost like Pascal’s wager.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " Investing in product and brand pays off in every scenario, while chasing the AI label alone leaves you exposed whichever way the future bends."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}

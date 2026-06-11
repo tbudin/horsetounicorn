@@ -1,0 +1,700 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s talk about a mistake I see everywhere: the vision-driven, squishy headline. It sounds big and inspiring, but it’s the easiest thing in your messaging to fix."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s dive in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ "
+        },
+        {
+          "type": "text",
+          "text": "The Insight:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " Capabilities land when outcomes are too blur."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "📚 "
+        },
+        {
+          "type": "text",
+          "text": "The Research:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " Distance, time, attribution, and discounting."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "🧩 "
+        },
+        {
+          "type": "text",
+          "text": "The Framework:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " Five filters to sharpen your headlines."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "🧪 "
+        },
+        {
+          "type": "text",
+          "text": "The Test Lab:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " Rewrite one line and run it through the filters."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/fix-your-squishy-headlines-talk-about/images/3e97de4d-add7-426b-99bb-b1add70b7a53.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ The insight"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Start With Capabilities, Not Outcomes"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Founders often default to the biggest promise they can find. If you’re building in sustainability, you say you’ll “save the planet” or “reinvent energy.” If you’re in AI, you claim you’ll “transform finance” or “augment the workforce.” These outcomes are bold, inspiring, and sometimes even true. But they rarely land."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The problem is that outcomes sit at different levels of separation from what you actually enable. The further away they are, the harder it is for anyone to believe you, credit you, or even feel that your solution matters to them. Your customers don’t wake up asking for an outcome that’s abstract, far in the future, and only loosely connected to your offer. They look for capabilities they can use today."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The Superhuman Headline"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Early startup founders are not the only ones guilty of being “vision-driven” in their statements. Take Superhuman. I’ve been looking at the company for a while, but I’ve never subscribed. The reason might be that I can’t clearly picture the product or how to use it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Superhuman is an email client that reduces the time you spend reading and writing emails. Let’s look at their headline over time."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/fix-your-squishy-headlines-talk-about/images/24b3d0a9-ede0-4640-b9ef-2e6a22d4a150.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Is the latest iteration of their headline, "
+        },
+        {
+          "type": "text",
+          "text": "“Save 4 hours per person every single week”",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", actually better than "
+        },
+        {
+          "type": "text",
+          "text": "“The fastest email experience ever made”",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "? The former speaks to an outcome, while the latter communicates an immediate experience."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Focusing on capabilities doesn’t mean you can’t write original or inspiring copy. What if Superhuman instead said: "
+        },
+        {
+          "type": "text",
+          "text": "“Start every single day with 0 unattended emails.”",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " That would get me interested."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "📚 The Research"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Discounting the Future"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There’s a body of psychological and behavioural economics research that explains why outcome-led messaging so often fails."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Construal Level Theory (CLT)",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " shows that psychological distance (whether in time, space, or abstraction) makes ideas harder to grasp and act upon. The further away something feels, the less motivating it becomes. This is why headlines like “fight climate change” or “achieve financial peace of mind” struggle to prompt behaviour. They are too distant, too abstract, and too hard for people to picture."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Behavioural economics adds another layer. Humans heavily discount the value of future rewards in favour of immediate ones. It’s a principle known as "
+        },
+        {
+          "type": "text",
+          "text": "temporal discounting",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". The famous Stanford "
+        },
+        {
+          "type": "text",
+          "text": "marshmallow experiment",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " illustrates this perfectly: given the choice between one marshmallow now or two later, most children chose the immediate option. In the same way, a promise that pays off in twenty years has almost no weight in today’s decision."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Think of an AI-driven accounting software. “_Automatic expense and invoice reconciliation_” motivates because it’s concrete and immediate. “_Save three hours a month on accounting_” is slightly weaker because the benefit is deferred. And “_Achieve accounting freedom_” fails altogether: it’s vague, distant, and unmeasurable."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Make it yours"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There’s also the issue of "
+        },
+        {
+          "type": "text",
+          "text": "attribution",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". When an outcome has multiple causes, people struggle to credit any single factor. A CFO who improves margins might point to staff changes, new processes, and better forecasting. Your sustainability or AI solution may not even make it into the picture."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And finally, there’s the practical reality of "
+        },
+        {
+          "type": "text",
+          "text": "differentiation",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Outcomes don’t just fail because they’re distant, delayed, or diffuse. They fail because they make you sound like everyone else. Every sustainability startup wants to “_fight climate change_.” Every AI platform claims it will “_deliver efficiency_.” These promises homogenise. Your unique capabilities differentiate."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🧩 The Framework"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The thread through all of this is simple: capabilities win where outcomes fail. A capability is close enough for attribution, controllable enough for the user to feel ownership, immediate enough to avoid discounting, concrete enough to visualise. Then make sure only you can say it to bring disctinction in your messaging and you’ll have a great headline."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Here are the filters to stress-test your message:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Attribution",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": can people clearly credit this to your solution?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Control",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": do they feel it’s within their power to achieve?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Time",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": will they experience it soon enough to matter?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Abstraction",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": is it concrete enough to picture?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Differentiation",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": does it sound like everyone else’s promise?"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🧪 The Test Lab"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Take your one-liner or website headline and run it through the filters."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   If it fails on attribution, it’s too vague."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   If it fails on control, it feels out of reach."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   If it fails on time, it gets discounted to zero."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   If it fails on abstraction, no one can picture it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   And if it fails on differentiation, it disappears in the noise of your competitors."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This doesn’t mean outcomes should disappear entirely. They still inspire, frame a larger story, and provide halo effects. They belong in your vision, your investor narrative, and your long-term context. But they should never be your headline."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Customers don’t buy promises floating decades away. They buy the tools and capabilities that change what they can do tomorrow."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let me know how it goes!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}

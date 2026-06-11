@@ -1,0 +1,353 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Last week we learnt a lesson from "
+        },
+        {
+          "type": "text",
+          "text": "Sony’s Walkman on prioritising a roadmap",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://horsetounicorn.substack.com/p/what-the-walkman-can-teach-us-about",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". This week, we’re looking at how to really define your audience. Not by age or income, but by what they’re trying to do and why they care.",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://horsetounicorn.substack.com/p/what-the-walkman-can-teach-us-about",
+                "target": "_blank"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "LEGO figured this out years ago, and it’s a big reason they went from “toys for kids” into one of the world’s most valuable brands."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s dive in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ "
+        },
+        {
+          "type": "text",
+          "text": "The Insight",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Use cases and emotional drivers."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "📚 "
+        },
+        {
+          "type": "text",
+          "text": "The Business Case",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": How LEGO used segmentation by play passion."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "🧩 "
+        },
+        {
+          "type": "text",
+          "text": "The Framework",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Map use case, trigger, alternatives, nudges."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "🧪 "
+        },
+        {
+          "type": "text",
+          "text": "The Test Lab",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Pick one slice, run a 30-day experiment."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/beyond-demographics-a-practical-guide/images/09d90dd1-92a5-4d3a-b119-bd90d3a7c1ff.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ **The Insight**"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Don’t Stop At Demographics**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Defining your customer segment isn’t about picking a demographic group."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If you’re B2B, and your audience is “small businesses in Singapore with a $2k budget per month”, you could be selling software or a cleaning service. If you’re B2C, and your audience is “young professionals in global cities”, you could be selling fashion clothing or career advice."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You get the point: "
+        },
+        {
+          "type": "text",
+          "text": "segmentation by demographics tells you very little about your audience",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " and risks of misrepresenting who and how big your market is. This is where "
+        },
+        {
+          "type": "text",
+          "text": "psychographics",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " come in. Psychographics give insights into customers’ beliefs, values, lifestyle choices, and motivations. When you understand why someone chooses your product over a competitor’s, you can speak directly to their preferences and priorities."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Your Audience Lives In Their Problems**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Defining your audience is about understanding the "
+        },
+        {
+          "type": "text",
+          "text": "problem",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " they’re trying to solve, the "
+        },
+        {
+          "type": "text",
+          "text": "workflows",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " they go through to solve it, the "
+        },
+        {
+          "type": "text",
+          "text": "moment",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " they realise they need help, the "
+        },
+        {
+          "type": "text",
+          "text": "alternatives",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " they’re weighing, and what can "
+        },
+        {
+          "type": "text",
+          "text": "nudge",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " their choice."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Writing an audience persona should feel like writing a job description. This is the first step in writing great persona or audience cards. It’s not enough though. Once you’ve mapped the problem and the workflow, you need to add texture. This is where use cases and emotional drivers come in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Read more",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.horsetounicorn.com/p/beyond-demographics-a-practical-guide",
+                "target": "_blank"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

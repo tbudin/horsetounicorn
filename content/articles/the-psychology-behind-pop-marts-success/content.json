@@ -1,0 +1,470 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Today I’m writing in a slightly different format than my usual articles. That’s because I’m starting a two-part series on the crazy success of "
+        },
+        {
+          "type": "text",
+          "text": "POP MART and the iconic characters of Labubu",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If someone told you, “You can buy this box but I can’t tell you what’s inside,” it would sound absurd. Yet that’s the exact proposition at the heart of POP MART’s success. For anyone who has never heard of them, the concept is simple: you buy a sealed box with a figurine inside, and you only know what you’ve got after opening it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART is not the first example of the “blind box”. In many ways it’s a toy version of "
+        },
+        {
+          "type": "text",
+          "text": "Storage Wars",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This got me so curious that I set aside time to study it and write down the key learnings I found. "
+        },
+        {
+          "type": "text",
+          "text": "Why do we pay so much for blind boxes?",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " And how does POP MART turn uncertainty into their main feature, while most businesses try to remove it?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So here it is. Part One."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-psychology-behind-pop-marts-success/images/b0bab497-29a2-4a2f-948b-5cbb69535c02.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART sells uncertainty"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART has become a billion-dollar empire on the back of a paradox: we love buying what we don’t know. Customers queue for hours, trade chase figurines, and post their live unboxing reactions to audiences eager to share the thrill."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Why does something that looks like gambling dressed up as toys work so well? As we will see, it’s one of the smartest lessons in choice architecture and consumer psychology I’ve ever seen."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The Origins of the Blind Box"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Blind boxes aren’t new. Japan pioneered them in the 1970s with "
+        },
+        {
+          "type": "text",
+          "text": "Gashapon",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " machines, capsule toys sold at random through vending machines. Even earlier, baseball cards in the 1950s introduced the “chase” card: a rare insert that made children, and plenty of adults, buy pack after pack."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART entered the scene in Beijing in 2010 as a lifestyle and design retailer. The breakthrough came in 2016 with a figurine called Molly, designed by Hong Kong artist Kenny Wong. The blind-box format took off in China’s millennial and Gen Z culture, blending collectability with fashion sensibilities."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "By 2020, POP MART went public in Hong Kong at a valuation of seven billion dollars. Today, they operate hundreds of stores, vending machines across Asia, global collaborations with Disney, Coca-Cola, One Piece and Harry Potter, and are even building theme parks (the first is called POPLAND). The “art toy” category they helped professionalise is projected to hit forty billion dollars by 2030 in Asia alone."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "All from selling boxes you can’t see inside."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-psychology-behind-pop-marts-success/images/b91e7ce0-3b0e-4a53-906f-92bb4fe6667a.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The Mechanics of POP MART’s Blind Boxes"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "At first glance, the blind box looks simple: one sealed box, one figurine inside. But the system has been designed with a precision any founder should study. You’re not asked to choose between different figurines, you’re asked to make one decision only: buy the box or walk away. The paradox of choice disappears and the purchase becomes an instinctive yes or no."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Each series is structured around scarcity. Most figurines are common, but one or two are “chase” editions. The odds of getting them are usually one in seventy-two or worse. It’s rare enough to drive repeat buying, but just plausible enough to keep your hopes up. The odds are no secret, they are directly printed on the box. Everyone knows it’s a gamble."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The figurines are released in sets, often of twelve, which means that after buying a few, you feel as if you’ve only just started. The collection design creates a sense of unfinished business, amplified by the ritual of the unboxing itself."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART wraps all this in physical theatre. Their stores are designed as stages to make the purchase part of the ritual. And because they release new series and collaborations constantly, there’s always another loop waiting to be entered."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The Psychology of Randomness"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The mechanics are only the stage. The real story happens in the brain. And there are many psychological reasons why we keep going for more Labubus."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Randomised rewards have been studied since B. F. Skinner’s experiments on pigeons in the 1930s. When rewards arrive on a variable schedule, dopamine spikes are higher than when they are predictable. The same principle keeps gamblers glued to slot machines, and in the case of POP MART, it keeps collectors coming back for another blind box."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Once you start a collection, you experience what psychologists call the endowed progress effect. Ownership creates a sense of obligation to finish. It’s as if not completing the set was a kind of loss. Related to this is the Zeigarnik effect: unfinished tasks create tension the brain wants to resolve. Ten Labubu figurines out of twelve feel less like success and more like an itch you can’t quite scratch."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Blind boxes also offer decision relief. We dislike complicated choices, and POP MART elegantly sidesteps that problem by collapsing twelve different products into one purchase decision. You buy the box and accept the surprise. It’s oddly comforting."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The POP MART recipe for getting you hooked on buying is almost complete. Add in fear of missing out and the social signalling of the rare chase figurine, and the cycle is locked in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "But can it last forever?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Novelty has a half-life. If every box feels the same, fatigue sets in. POP MART knows this, which is why they launch new intellectual properties like Dimoo, Skullpanda and Labubu, collaborate with franchises, and constantly redesign the theatre of the purchase."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-psychology-behind-pop-marts-success/images/06456860-1684-4aaf-9783-7c7157afabbd.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Marketing as Theatre"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART choreographs the entire customer experience. Each box is beautifully illustrated, and inside is a sealed foil bag that doubles the suspense. Every detail reinforces the drama of the reveal."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "They also fuel the community. Fans collect, trade, swap, display and share. POP MART leans into this by hosting official swap events and cultivating fan groups. A figurine becomes more than a product; it’s an invitation to a larger community."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And crucially, POP MART tells stories. Their characters have backstories and worlds. Labubu isn’t just a toy with big eyes and strange charm; he belongs to a universe you can step into. Retail becomes stagecraft. Stores and vending machines are designed as immersive sets, making the act of purchase feel closer to performance art than to shopping."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Closing Part 1"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "POP MART has built one of the world’s fastest-growing consumer businesses by making uncertainty the star of the show."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Next week in Part Two, we’ll explore how blind-box mechanics show up in trading cards, gaming, sneakers and subscription boxes. We’ll also talk about the dark side when surprise becomes exploitation, and how founders can ethically engineer moments of joy in their own products."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Because uncertainty is a powerful tool. The question is: will you use it to delight, or to exploit?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}

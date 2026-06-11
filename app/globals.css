@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* page bg — burgundy-tinted off-white #FAF7F9 */
+    --background: 322 22% 97%;
+    --foreground: 0 0% 19%; /* ink #303030 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 19%;
+
+    /* Burgundy as primary */
+    --primary: 318 88% 33%; /* #9E0A71 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 318 100% 91%; /* burgundy lighter */
+    --accent-foreground: 318 88% 33%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%; /* ~E8E8E8 — grid line color */
+    --input: 0 0% 91%;
+    --ring: 318 88% 33%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-ink font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-heading text-ink-heading font-medium;
+    line-height: 1.2;
+  }
+  /* h3 reads lighter than h1/h2 — slightly heavier than body-weight serif.
+     The `.prose` rule is needed because @tailwindcss/typography defaults
+     h3 to font-bold inside prose-styled article bodies. */
+  h3,
+  .prose h3 {
+    font-weight: 450;
+  }
+
+  /* Tabular figures for any data shown in tables / charts */
+  table, .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Roboto Mono for numeric values, ticks, data labels */
+  .data-num {
+    @apply font-mono;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* "Puffy" button — tonal gradient + inner highlight + layered shadows,
+     inspired by cofounder.co's primary CTA. Compact corner radius. */
+  .btn-puffy {
+    @apply inline-flex items-center justify-center gap-2 h-10 px-5 rounded-md text-sm font-medium text-burgundy transition-all;
+    background: linear-gradient(180deg, #ffd9f1 0%, #f59bd2 100%);
+    border: 1px solid #d97cb8;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      inset 0 -1px 0 rgba(158, 10, 113, 0.08),
+      0 1px 2px rgba(158, 10, 113, 0.18),
+      0 4px 12px -2px rgba(158, 10, 113, 0.18);
+  }
+  .btn-puffy:hover {
+    background: linear-gradient(180deg, #ffc7ea 0%, #ee8cc7 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(158, 10, 113, 0.1),
+      0 2px 4px rgba(158, 10, 113, 0.22),
+      0 6px 16px -2px rgba(158, 10, 113, 0.22);
+    transform: translateY(-1px);
+  }
+  .btn-puffy:active {
+    transform: translateY(0);
+    box-shadow:
+      inset 0 1px 2px rgba(158, 10, 113, 0.2),
+      0 1px 2px rgba(158, 10, 113, 0.12);
+  }
+  .btn-puffy:focus-visible {
+    outline: 2px solid #9e0a71;
+    outline-offset: 2px;
+  }
+  .btn-puffy:disabled {
+    @apply opacity-60 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Inverse variant — used on the burgundy SubscribeSection panel. */
+  .btn-puffy-inverse {
+    @apply inline-flex items-center justify-center gap-2 h-10 px-5 rounded-md text-sm font-medium text-burgundy transition-all;
+    background: linear-gradient(180deg, #ffffff 0%, #ffd5ee 100%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(158, 10, 113, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.15),
+      0 6px 16px -4px rgba(0, 0, 0, 0.2);
+  }
+  .btn-puffy-inverse:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #ffc4e8 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(158, 10, 113, 0.12),
+      0 2px 4px rgba(0, 0, 0, 0.18),
+      0 8px 20px -4px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+  }
+  .btn-puffy-inverse:active {
+    transform: translateY(0);
+  }
+  .btn-puffy-inverse:disabled {
+    @apply opacity-60 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Embossed surface used by book-style article cards. Multi-layer shadow
+     gives the illusion of paper resting on the page. */
+  .book-card {
+    background: #fafaf7;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow:
+      0 2px 1px 0 #ffffff inset,
+      0 0 0 0.93px rgba(0, 0, 0, 0.08),
+      0 4px 8px 0 rgba(0, 0, 0, 0.03),
+      0 9px 8px 0 rgba(0, 0, 0, 0.02);
+  }
+  /* Container that holds the front cover and the pages stack. Needs to
+     preserve 3D so the pages sit BEHIND the front cover in z-space. */
+  .book-stack {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  /* Pages revealed when the front cover rotates open. Sits behind the
+     front cover at translateZ(-3px), inset from the cover edges so it
+     looks like a stack of cream-colored pages. The repeating stripes on
+     the right approximate the edge of the page block. */
+  .book-pages {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 14px;
+    right: 4px;
+    border-radius: 1px 8px 8px 1px;
+    background: linear-gradient(180deg, #fffdf6 0%, #f7f2e6 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 0, 0, 0.05),
+      inset -3px 0 6px -3px rgba(120, 90, 30, 0.1);
+    transform: translateZ(-3px);
+    overflow: hidden;
+  }
+  /* Faint horizontal "lines of text" hint, visible mostly on the right
+     half — the part of the pages exposed when the cover swings open. */
+  .book-pages::before {
+    content: '';
+    position: absolute;
+    inset: 24px 18px 30px 28px;
+    background:
+      repeating-linear-gradient(
+        180deg,
+        rgba(60, 50, 30, 0.06) 0px,
+        rgba(60, 50, 30, 0.06) 1px,
+        transparent 1px,
+        transparent 7px
+      );
+    opacity: 0.55;
+  }
+  /* Right page edge — thin paper stack effect. */
+  .book-pages::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 4px;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.06) 0,
+      rgba(0, 0, 0, 0.06) 1px,
+      rgba(255, 255, 255, 0.4) 1px,
+      rgba(255, 255, 255, 0.4) 2px
+    );
+  }
+  /* Adds the rotateY "book opening" hover behaviour. Pivot on the spine
+     (left edge), arc the right edge forward, lift slightly. */
+  .book-card-3d {
+    transition:
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+    position: relative;
+  }
+  .group:hover .book-card-3d {
+    /* Pure rotation around the spine. No translateZ / translateY — those
+       were nudging the cover toward the viewer and reading as a scale-up
+       through the perspective. The rotation alone exposes enough of the
+       pages on the right. */
+    transform: rotateY(-30deg);
+    box-shadow:
+      0 2px 1px 0 #ffffff inset,
+      0 0 0 0.93px rgba(0, 0, 0, 0.1),
+      10px 10px 22px 0 rgba(0, 0, 0, 0.08),
+      18px 20px 32px 0 rgba(0, 0, 0, 0.05);
+  }
+  /* Soft “page” shadow rendered under the book card. */
+  .book-card-shadow {
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    height: 30%;
+    border-radius: 0 0 24px 24px;
+    background: rgba(207, 207, 207, 0.16);
+    filter: blur(6px);
+    pointer-events: none;
+  }
+  /* The 16px book spine on the left of each card. */
+  .book-spine {
+    width: 16px;
+    flex-shrink: 0;
+    background: linear-gradient(
+      270deg,
+      rgba(210, 208, 202, 0.2) 0%,
+      rgba(230, 228, 224, 0.1) 60%,
+      rgba(245, 244, 241, 0.02) 100%
+    );
+  }
+
+  /* Engraved horizontal separator — 1px dark line with a 1px white
+     highlight sitting directly underneath, à la classic Mac OS / Windows
+     groove borders. Use instead of border-t / plain <hr>. Same recipe
+     cofounder.co uses for their dividers. */
+  .separator {
+    height: 1px;
+    border: 0;
+    background: rgba(38, 35, 35, 0.1);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.85);
+    margin-bottom: 1px;
+  }
+
+  /* Light highlight at the top of a dark panel — sells the "light hitting
+     the lip" look used on the burgundy SubscribeSection. */
+  .panel-inner-glow {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      inset 0 2px 14px -2px rgba(255, 255, 255, 0.18);
+  }
+}

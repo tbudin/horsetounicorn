@@ -1,0 +1,44 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { LogoutButton } from '@/components/admin/logout-button';
+
+export const metadata: Metadata = {
+  title: 'Admin',
+  robots: { index: false, follow: false },
+};
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen">
+      <header className="border-b border-[#F0E8EE]">
+        <div className="container max-w-5xl flex items-center justify-between py-4">
+          <div className="flex items-center gap-6">
+            <Link
+              href="/admin"
+              className="font-serif text-lg font-medium text-ink-heading"
+            >
+              Admin
+            </Link>
+            <nav className="flex items-center gap-4 text-sm">
+              <Link
+                href="/admin"
+                className="text-ink-muted hover:text-ink-heading transition-colors"
+              >
+                Articles
+              </Link>
+              <Link
+                href="/articles"
+                target="_blank"
+                className="text-ink-muted hover:text-ink-heading transition-colors"
+              >
+                View public site ↗
+              </Link>
+            </nav>
+          </div>
+          <LogoutButton />
+        </div>
+      </header>
+      <main className="container max-w-5xl py-8">{children}</main>
+    </div>
+  );
+}

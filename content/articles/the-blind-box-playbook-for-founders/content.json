@@ -1,0 +1,586 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Happy Friday!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This is part two of the series. In part one, we looked at how "
+        },
+        {
+          "type": "text",
+          "text": "POP MART turned uncertainty into a billion-dollar company",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.horsetounicorn.com/p/the-psychology-behind-pop-marts-success",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " in just ten years.",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.horsetounicorn.com/p/the-psychology-behind-pop-marts-success",
+                "target": "_blank"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The mechanics of the blind box, the psychology of randomness, and the theatre of unboxing created a cultural phenomenon that, I have to say, my wife and I fell into ourselves. Last week’s piece was as much a personal confession as it was an exploration of why it worked so well on us."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "But POP MART isn’t an outlier. Blind-box mechanics appear everywhere once you start looking. Some industries use them to delight (what I call the “_light side_”). Others exploit the psychology and drift into manipulation (the “_dark side_”). The real lesson for founders is how to adapt this responsibly: creating products people chase for joy, not out of compulsion."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So this week, l"
+        },
+        {
+          "type": "text",
+          "text": "et’s write the playbook of the blind box",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-blind-box-playbook-for-founders/images/28ec9375-1ea0-4281-b694-0de6a251aa80.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Blind Boxes Beyond Toys**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Trading cards are the most obvious cousin and the closest to me personally. Pokémon and Magic: The Gathering built empires on packs with a slim chance of pulling a rare card. The “_chase_” card can be worth hundreds or thousands of dollars, which keeps collectors buying pack after pack. In 2023, Post Malone famously bought one of these cards for $2 million. Just like Labubu, the unboxing content for trading card games have become a huge genre in themselves."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Video games leaned heavily on the same psychology. New skins for your characters, rare items hidden in loot boxes, the random friend or foe you encounter in the weeds. The reveal moment is everywhere in gaming."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Sneakers are another clear example. Nike scaled it with their SNKRS app, which gives you a chance to get one of their daily drops. Another blind box in semi-disguise."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And finally, crypto and NFTs. At the peak of the hype cycle, randomised minting and rarity levels created million-dollar sales overnight. Here again, the mechanics were the same."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-blind-box-playbook-for-founders/images/a28ddd52-502d-4304-aae7-438295fe9389.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Dark Side 🌑**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Not all blind boxes end well."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Loot boxes in gaming became a cautionary tale. While researching this article I came across stories of children in the UK draining their parents’ bank accounts through Nintendo Switch online games. What began as a way to inject excitement turned into accusations of predatory monetisation. Several countries have since introduced restrictions."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Randomness can hook people in the short term but erode trust in the long term if used cynically (and may soon face regulatory scrutiny). The line between delight and exploitation is much thinner than it looks."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Light Side 🌕**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Surprise doesn’t have to be manipulative. Done right, it can become one of the most powerful tools a founder has."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Think of the unexpected delight when a brand drops a limited-edition design. Or when your favourite app finally launches a much-wanted feature. Or the small spark of joy when you stumble on a hidden product Easter egg. These are all delightful blind-box moments."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The litmus test 🌓"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So how do you know if your blind-box mechanic sits on the light or the dark side?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The answer has to come from both the customer’s experience and the product owner’s intent."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "On the "
+        },
+        {
+          "type": "text",
+          "text": "light side",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the surprise creates delight without debt. Customers enjoy the reveal, but they feel free to walk away. The mechanic supports curiosity, not compulsion. It adds joy without taking control."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "On the "
+        },
+        {
+          "type": "text",
+          "text": "dark side",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the surprise preys on compulsion. Customers overspend, feel regret, or lose track of how much they’ve invested. Even if they don’t admit it, the design is built to exploit addiction."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "A founder’s responsibility is to ask:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Am I designing for joy, or for dependency?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   If I plotted my users’ long-term wellbeing, would this mechanic leave them happier, or more depleted?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Would I want my own child, partner, or friend using this product daily?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When in doubt, listen less to how excited a user looks in the moment and more to the emotional toll over time. Addiction feels like joy in the short term, but it’s the designer’s job to know the difference. At least that’s my point of view."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**The Founder’s Playbook**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Here are a few principles, paired with real-world examples of companies that leaned to the “_light side_”."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Engineer anticipation.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART has new collaborations. Gmail did it with exclusive invites and slow rollouts."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Simplify choice.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART collapses multiple options into one. Glossier offered only four products at launch."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Engineer moments of joy.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART has the foil-bag reveal. Asana has quirky creature animations when you finish tasks."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Build scarcity.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART has chase characters. Hermès has the Birkin bag."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Design collection loops.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART has collection sets. Apple Watch has completion streaks."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Create community rituals.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " POP MART has swap events. Peloton has live classes."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/the-blind-box-playbook-for-founders/images/5c168598-901a-4dde-bd18-c9692bc07ef0.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The thrill doesn’t have to be tied to gambling mechanics. Ask yourself: does this mechanic make my customer happier or just more dependent?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The blind-box effect can be engineered to drive desire, but your product still has to deliver."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**Closing the Series**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Blind boxes prove something counter-intuitive: people crave the thrill of the unknown, provided it’s wrapped in theatre, community and design."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "As we’ve seen in this series, POP MART and others built empires on the mystery inside a box. The lesson for founders is not whether to use uncertainty, but how. Done responsibly, it can transform ordinary products into experiences people talk about, share, and remember."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Now I’m curious: what blind-box strategies have you seen or even used yourself? And on which side did you land, 🌕 or 🌑 or 🌓?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}

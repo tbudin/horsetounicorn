@@ -1,0 +1,139 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When I was 26, I had a salary for the first time. I also had a long list of reasons why I wasn't ready to invest yet. The market felt expensive. I hadn't picked the right ETF. I wanted to understand things properly before risking real money. Investing was for people who already knew what they were doing."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Looking back, the reasons were never the real problem. The real problem was that I treated the £100 sitting in my account as £100. It wasn't. It was a placeholder for whatever that £100 could have grown into by the time I'd actually need it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "That realisation, late and obvious in retrospect, changed how I think about money. Every spending decision is also a vote on future-me's lifestyle. The £10 I spent on lunch wasn't a £10 decision. At a reasonable long-run return, that £10 could have been worth around £140 by the time I retire. The cost of a coffee habit isn't the coffee. It's the foregone compounding."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This article is what happens when that idea grabs hold and you start asking the obvious follow-up question: "
+        },
+        {
+          "type": "text",
+          "text": "if money today is worth so much more in the future, what's the best way to actually invest it?",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " I went looking for the answer. I'm a curious person with a love for data, no finance background, and a stubborn refusal to take strategy advice on faith. So I tested it myself. What follows is the rabbit hole I went down and what I found at the bottom."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The wealth multiplier"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The shape of compounding is hard to see when you're young. The early years feel almost pointless. £100 grows to £107 in a year at 7%. That's a coffee. Why bother?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The trick is that you're not earning interest on £100 forever. You're earning interest on £107 next year. Then £114. Then £122. Each year, the base grows, and so does the increment. After enough years, the increments dwarf the original deposit. Compounding looks linear in the early years and exponential in the late ones."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "wealth-multiplier",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I built the chart above to make this visceral for myself. Five hypothetical investors, all contributing the same amount each month until age 76. The only difference is when they start. The 26-year-old's curve looks flat for years, then takes off. The 56-year-old's curve barely leaves the ground."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The lesson I wished someone had hammered into 26-year-old me: "
+        },
+        {
+          "type": "text",
+          "text": "time in market is worth more than almost anything else you can do with money",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Spending less, picking the right fund, optimising tax, none of it comes close to the value of just starting earlier."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "attrs": {
+        "headline": "What I'd tell 26-year-old me"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Start the account today. Invest money the day it becomes yours. Stop optimising; start contributing."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

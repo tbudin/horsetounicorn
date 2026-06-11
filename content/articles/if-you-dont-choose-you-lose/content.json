@@ -1,0 +1,886 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Welcome to the very first HtU post!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So, what’s this first issue about?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Today, I’m tackling the most common and most fatal mistake I see founders of every stripe make."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Bad marketing kills more startups than bad tech. So what "
+        },
+        {
+          "type": "text",
+          "text": "is",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " marketing? Over this series, we’ll unpack it. Spoiler: it isn’t ads or logos."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Here is today’s menu:",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "⛳️ "
+        },
+        {
+          "type": "text",
+          "text": "The insight",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Why opportunism undercuts your future 📚 "
+        },
+        {
+          "type": "text",
+          "text": "The research",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": How aligning around one customer turbocharges ROI 🧩 "
+        },
+        {
+          "type": "text",
+          "text": "The framework",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": A quick guide to narrowing your focus 🧪 "
+        },
+        {
+          "type": "text",
+          "text": "The action plan",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Your assignment for next week"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/if-you-dont-choose-you-lose/images/a87dc226-2d71-4cb1-8c8b-d53f5fa90ffa.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**⛳️ Being Opportunistic vs Being Strategic**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "We’re wired to keep our options open and say “yes” to anyone who’ll pay. I’ve fallen into that trap too. But here’s the paradox: the fear of missing out on revenue today creates weaker sales tomorrow."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Being strategic on the other hand, demands courage and willingness to start very narrow."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If your audience is everyone, that’s not ambition, that’s choice avoidance.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You know you’re losing when:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Your sales cycles drag on."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   You and your team are stretched too thin."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   You resort to discounts just to close deals."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   You envy a rival who picked a lane and stuck to it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Pay attention to these signals and take action quickly."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "A scatter‑gun offer makes it impossible for anyone to value or trust you. Can a “jack of all trades” outperform a specialist craftsman? Let’s look at a simple example."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Imagine your Swiss watch needs fixing. Which shop do you trust?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Shop A",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Repairs watches and mounted clocks"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Shop B",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Repairs watches only"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   "
+        },
+        {
+          "type": "text",
+          "text": "Shop C",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Repairs Swiss-made watches only"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The specialist by default earns more trust right away."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "That’s why building for everyone leads to fuzzy product-market-fit.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When you “build for everyone”, it’s hard to know with certainty which features truly matter, and to whom. Narrow down and be strategic in how you allocate resources:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "1.  Choose one core offer."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "2.  Target one customer segment."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "3.  Log objections and praises."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "4.  Iterate or pivot fast."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "5.  Master it, then expand."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I’ll spend the next couple of months on HtU diving into each of these steps."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**📚 The Superpower of Aligning Customer Segment and Resources**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "In "
+        },
+        {
+          "type": "text",
+          "text": "“Choosing the Right Customer” (HBR, March 2014)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://hbr.org/2014/03/choosing-the-right-customer",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", teams that realigned around one segment boosted their ROI by a significant margin. Companies that define an ideal customer, and then shape product, sales and marketing around them, far outperform those chasing everyone.",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://hbr.org/2014/03/choosing-the-right-customer",
+                "target": "_blank"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "HubSpot pivot.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "HubSpot once chased everyone: from freelancers, SMBs, and Fortune 500s. That vague focus slowed support and diluted messaging. Once they narrowed to mid-market businesses using inbound content, their growth flywheel kicked in."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Stripe humble beginnings.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Let’s look at Stripe. They didn’t launch all the financial services they offer today. They started as a payment API for developers."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/if-you-dont-choose-you-lose/images/7093a141-a543-4723-99b1-f71052c0c5ec.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When startups scale we tend to forget where they come from. Choosing now doesn’t mean your business won’t grow. And companies that grow the fastest aren’t always the most capable. They’re the clearest. They focus on "
+        },
+        {
+          "type": "text",
+          "text": "one audience, one use case",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", "
+        },
+        {
+          "type": "text",
+          "text": "one promise",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You’ll know that you’ve made a winning choice when:",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Shorter sales lead times"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Higher conversion rates"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   More referrals from happy clients"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Better output with the same team"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Greater resilience in times of crisis"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "-   Lower stress all around 😉"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**🧩 A Short Guide to Making Your Choice**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Review your latest sales or client conversations and answer these:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "1.  "
+        },
+        {
+          "type": "text",
+          "text": "Feature focus",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Which single feature consistently closes deals?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "2.  "
+        },
+        {
+          "type": "text",
+          "text": "Fan-base",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Who signs up the fastest and would stick around even at double the price?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "3.  "
+        },
+        {
+          "type": "text",
+          "text": "Operational load",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Where does 80% of your and your team’s time go?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "4.  "
+        },
+        {
+          "type": "text",
+          "text": "Profit centres",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": Which activities deliver the highest ROI on time and capital?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Then weight each by revenue impact, profitability and time sunk. The clear winner tells you where your moat is, and where you should double down. Everything else becomes backlog and roadmap."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "**🧪 Your Action Plan for Next Week**"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This week:"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "1.  "
+        },
+        {
+          "type": "text",
+          "text": "Choose one",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " (offer + audience) based on the framework above."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "2.  "
+        },
+        {
+          "type": "text",
+          "text": "Test it",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " with at least a large enough pool of prospects."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "3.  "
+        },
+        {
+          "type": "text",
+          "text": "Log results",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": hits, misses, objections and surprises."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "For paid subscribers, you will have access to the Google Doc Framework."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/if-you-dont-choose-you-lose/images/ea813194-bbf7-4cad-8e37-edc869c876d7.png",
+        "alt": "",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Remember: if your duo flops, you’ll have tried and you’ll then know exactly why. Then you can move on to the next candidate."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Try using this framework and let me know how it went!"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Thanks for reading.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is no road. The road is made by walking.",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "— Thomas"
+        }
+      ]
+    }
+  ]
+}
