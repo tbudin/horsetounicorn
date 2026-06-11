@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { listArticles, type ArticleStatus } from '@/lib/articles';
+import { listArticlesForAdmin, type ArticleStatus } from '@/lib/articles';
 import { formatDate } from '@/lib/format';
 import { cn } from '@/lib/utils';
 
@@ -17,8 +17,8 @@ const STATUS_CLASS: Record<ArticleStatus, string> = {
   archived: 'bg-ink-subtle/20 text-ink-subtle',
 };
 
-export default function AdminHome() {
-  const articles = listArticles();
+export default async function AdminHome() {
+  const articles = await listArticlesForAdmin();
   const drafts = articles.filter((a) => a.status === 'draft');
   const inFlight = articles.filter((a) => a.status === 'inner_circle_sent');
   const published = articles.filter((a) => a.status === 'published');
@@ -61,7 +61,7 @@ function ArticleList({
   emptyHint,
 }: {
   title: string;
-  articles: ReturnType<typeof listArticles>;
+  articles: Awaited<ReturnType<typeof listArticlesForAdmin>>;
   emptyHint: string;
 }) {
   return (

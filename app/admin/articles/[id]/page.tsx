@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { loadArticleById, type ArticleStatus } from '@/lib/articles';
+import { loadArticleByIdForAdmin, type ArticleStatus } from '@/lib/articles';
 import { formatDate } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { ArticleLayout } from '@/components/article/article-layout';
@@ -30,7 +30,7 @@ export default async function AdminArticlePreview({
   const { id } = await params;
   let article;
   try {
-    article = loadArticleById(id);
+    article = await loadArticleByIdForAdmin(id);
   } catch {
     notFound();
   }

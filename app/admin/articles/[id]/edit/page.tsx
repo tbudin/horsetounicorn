@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { loadArticleById, listChartsForId } from '@/lib/articles';
+import { loadArticleByIdForAdmin, listChartsForId } from '@/lib/articles';
 import { RichArticleEditor } from '@/components/admin/rich-article-editor';
 
 export default async function AdminArticleEditPage({
@@ -11,7 +11,7 @@ export default async function AdminArticleEditPage({
   const { id } = await params;
   let article;
   try {
-    article = loadArticleById(id);
+    article = await loadArticleByIdForAdmin(id);
   } catch {
     notFound();
   }

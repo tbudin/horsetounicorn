@@ -182,6 +182,19 @@ export function RichArticleEditor({
         </div>
       </div>
 
+      {/* Post-save deploy notice. Saves commit to GitHub instantly, but the
+          public /articles/[slug] page is served from the deployed bundle,
+          so it doesn't reflect the new content until Vercel finishes the
+          next build (~1-2 min). The admin already reads from GitHub so
+          it's immediately fresh. */}
+      {lastSavedAt && !dirty ? (
+        <div className="border-l-2 border-burgundy bg-burgundy-lighter/30 px-3 py-2 text-xs text-ink">
+          Saved to GitHub. The public page will reflect this once Vercel
+          finishes redeploying (~1–2 min). This admin view is already up to
+          date.
+        </div>
+      ) : null}
+
       <Tabs defaultValue="content">
         <TabsList>
           <TabsTrigger value="content">Content</TabsTrigger>

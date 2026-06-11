@@ -3,7 +3,7 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import {
   invalidateSlugIndex,
-  loadArticleById,
+  loadArticleByIdForAdmin,
   type ArticleMetadata,
 } from '@/lib/articles';
 import type { ArticleDocument } from '@/lib/article-doc';
@@ -65,7 +65,7 @@ export async function PUT(
 
   let current;
   try {
-    current = loadArticleById(id);
+    current = await loadArticleByIdForAdmin(id);
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });
   }
@@ -139,7 +139,7 @@ export async function GET(
 ) {
   const { id } = await params;
   try {
-    const article = loadArticleById(id);
+    const article = await loadArticleByIdForAdmin(id);
     return NextResponse.json({ ok: true, article });
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });

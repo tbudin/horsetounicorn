@@ -207,3 +207,64 @@ export function isGitHubConfigured(): boolean {
     process.env.GITHUB_REPO
   );
 }
+
+/**
+ * Read a single file from the configured branch. Returns the UTF-8 contents,
+ * or null if the file does not exist. Used by the admin loaders so they see
+ * fresh content immediately after a save (the deployed bundle's filesystem
+ * lags behind by one Vercel build).
+ */
+export async function readRepoFile(filePath: string): Promise<string | null> {
+  const octokit = getOctokit();
+  const { owner, repo } = getRepo();
+  const branch = getBranch();
+  const cleanPath = filePath.replace(/^\/+/, '');
+  try {
+    const { data } = await octokit.repos.getContent({
+      owner,
+      repo,
+      path: cleanPath,
+      ref: branch,
+    });
+    // Single-file response — directory responses come back as arrays.
+    if (Array.isArray(data) || !('content' in data) || data.type !== 'file') {
+      return null;
+    }
+    const encoded = data.content.replace(/\n/g, '');
+    return Buffer.from(encoded, data.encoding as BufferEncoding).toString('utf8');
+  } catch (err: unknown) {
+    const e = err as { status?: number };
+    if (e?.status === 404) return null;
+    throw err;
+  }
+}
+
+/**
+ * List the immediate children of a directory in the repo. Returns an array
+ * of { name, type } entries — `type` is "dir" or "file". Used by the admin
+ * to enumerate article folders without depending on the bundled filesystem.
+ */
+export async function listRepoDir(
+  dirPath: string,
+): Promise<Array<{ name: string; type: 'dir' | 'file' }>> {
+  const octokit = getOctokit();
+  const { owner, repo } = getRepo();
+  const branch = getBranch();
+  const cleanPath = dirPath.replace(/^\/+|\/+$/g, '');
+  try {
+    const { data } = await octokit.repos.getContent({
+      owner,
+      repo,
+      path: cleanPath,
+      ref: branch,
+    });
+    if (!Array.isArray(data)) return [];
+    return data
+      .filter((e) => e.type === 'dir' || e.type === 'file')
+      .map((e) => ({ name: e.name, type: e.type as 'dir' | 'file' }));
+  } catch (err: unknown) {
+    const e = err as { status?: number };
+    if (e?.status === 404) return [];
+    throw err;
+  }
+}

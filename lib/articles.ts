@@ -264,6 +264,64 @@ export function listPublishedArticles(): ArticleMetadata[] {
   return listArticles().filter((a) => a.status === 'published');
 }
 
+// -- Admin-side loaders --------------------------------------------------
+// On production, the running Vercel deployment reads from the bundle's
+// filesystem — frozen at the last successful build. The admin commits to
+// GitHub via lib/storage, so there's a ~1-2 min window where saves have
+// landed but the running bundle hasn't caught up. To avoid that staleness
+// the admin reads from the GitHub branch directly when configured. Public
+// routes keep using the fast FS path (they're static anyway and the
+// redeploy carries fresh content to them).
+
+async function loadArticleFromGitHub(id: string): Promise<LoadedArticle> {
+  const { readRepoFile } = await import('./storage/github');
+  const base = `content/articles/${id}`;
+  const [metaRaw, docRaw] = await Promise.all([
+    readRepoFile(`${base}/metadata.json`),
+    readRepoFile(`${base}/content.json`),
+  ]);
+  if (!metaRaw || !docRaw) {
+    throw new Error(`Article "${id}" not found in GitHub repo`);
+  }
+  const metadata = JSON.parse(metaRaw) as ArticleMetadata;
+  const parsedDoc = JSON.parse(docRaw);
+  const document = Array.isArray(parsedDoc)
+    ? migrateBlockArrayToDocument(parsedDoc as Block[])
+    : (parsedDoc as ArticleDocument);
+  return { metadata, document };
+}
+
+/**
+ * Load an article for the admin UI. Reads from GitHub when remote storage
+ * is configured (always fresh), filesystem otherwise (local dev).
+ */
+export async function loadArticleByIdForAdmin(id: string): Promise<LoadedArticle> {
+  const { isGitHubConfigured } = await import('./storage/github');
+  if (isGitHubConfigured()) return loadArticleFromGitHub(id);
+  return loadArticleById(id);
+}
+
+/** Same as listArticles but admin-aware. */
+export async function listArticlesForAdmin(): Promise<ArticleMetadata[]> {
+  const { isGitHubConfigured, listRepoDir } = await import('./storage/github');
+  if (!isGitHubConfigured()) return listArticles();
+
+  const entries = await listRepoDir('content/articles');
+  const dirs = entries.filter((e) => e.type === 'dir').map((e) => e.name);
+  const articles = await Promise.all(
+    dirs.map(async (id) => {
+      try {
+        return (await loadArticleFromGitHub(id)).metadata;
+      } catch {
+        return null;
+      }
+    }),
+  );
+  return articles
+    .filter((a): a is ArticleMetadata => a !== null)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
 // -- Legacy block → document migration ---------------------------------
 
 /**

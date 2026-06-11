@@ -5,7 +5,7 @@ import { render } from '@react-email/components';
 import { PostBroadcastEmail } from '@/emails/post-broadcast';
 import {
   invalidateSlugIndex,
-  loadArticleById,
+  loadArticleByIdForAdmin,
   type ArticleStatus,
   type ArticleMetadata,
 } from '@/lib/articles';
@@ -56,7 +56,7 @@ export async function POST(
 
   let article;
   try {
-    article = loadArticleById(id);
+    article = await loadArticleByIdForAdmin(id);
   } catch {
     return NextResponse.json({ ok: false, error: 'Article not found' }, { status: 404 });
   }
