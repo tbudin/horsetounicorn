@@ -123,15 +123,13 @@ export async function commitFiles({
     })),
   ];
 
+  // The Octokit typings disallow `sha: null` even though the REST API
+  // documents it as the delete signal — cast around the typing.
   const { data: newTree } = await octokit.git.createTree({
     owner,
     repo,
     base_tree: baseTreeSha,
-    // The Octokit typings disallow `sha: null` even though the REST API
-    // documents it as the delete signal; cast around the typing.
-    tree: tree as unknown as Parameters<
-      typeof octokit.git.createTree
-    >[0]['tree'],
+    tree: tree as unknown as { path: string; mode: '100644'; type: 'blob'; sha: string }[],
   });
 
   // 4. Create the commit pointing at the new tree.
