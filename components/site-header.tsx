@@ -43,12 +43,6 @@ export function SiteHeader() {
           >
             About
           </Link>
-          <Link
-            href="/rss.xml"
-            className="text-ink hover:text-burgundy transition-colors"
-          >
-            RSS
-          </Link>
         </nav>
       </div>
     </header>
