@@ -6,7 +6,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Monday afternoon, a cooling breeze, a gloomy sky, I am tired. We got married 3 days ago and my wife had to fly in the morning to Bangkok. I put my AirPods on, I am not in the mood for a conversation. I duck into my grab. I tell my the driver I might fall asleep quickly. "
+          "text": "Monday afternoon, a cooling breeze, a gloomy sky, I am tired. We got married 3 days ago and my wife had to fly to Bangkok in the morning. I put my AirPods on, I am not in the mood for a conversation. I duck into my grab. I tell my the driver I might fall asleep quickly. "
         }
       ]
     },
@@ -15,7 +15,7 @@
       "content": [
         {
           "type": "text",
-          "text": "We somehow start a long conversation. How much do you make as a grab driver? "
+          "text": "He starts with small talk and somehow, I play ball and I reply smiling. As we are crossing Singapore, our conversation goes from how much does a grab driver make, to whether that is enough to raise children, to why Singapore needs immigration to help with the fertility rate."
         }
       ]
     },
@@ -24,20 +24,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Singapore is below the replacement rate: fewer than one child per woman now, the lowest it had ever been. The country's total fertility rate fell to "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ],
-          "text": "0.87 in 2025"
-        },
-        {
-          "type": "text",
-          "text": ", and the number of resident births was the smallest in its recorded history."
+          "text": "Now I am curious. I check online. Singapore is at 0.87 in 2025, below the replacement rate, the lowest resident births in its recorded history."
         }
       ]
     },
@@ -46,7 +33,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I am at the age where this conversation keeps happening. Friends are having their first children; the group chats have turned to sleep schedules and formula brands. And lately the news has been full of it too: a baby-formula recall in one headline, a fight about folate and autism in the next, a government promising to “make our children healthy again.” So when I got home, curious, I did the thing I always do. I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
+          "text": "I am at the age where conversations around kids keep happening. And lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
         }
       ]
     },
