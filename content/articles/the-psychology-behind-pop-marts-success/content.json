@@ -414,57 +414,6 @@
           "text": "Because uncertainty is a powerful tool. The question is: will you use it to delight, or to exploit?"
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
-        }
-      ]
     }
   ]
 }

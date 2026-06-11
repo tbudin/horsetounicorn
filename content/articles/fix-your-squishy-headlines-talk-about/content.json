@@ -132,7 +132,7 @@
       "content": [
         {
           "type": "text",
-          "text": "⛳️ The insight"
+          "text": "The insight"
         }
       ]
     },
@@ -269,7 +269,7 @@
       "content": [
         {
           "type": "text",
-          "text": "📚 The Research"
+          "text": "The Research"
         }
       ]
     },
@@ -420,7 +420,7 @@
       "content": [
         {
           "type": "text",
-          "text": "🧩 The Framework"
+          "text": "The Framework"
         }
       ]
     },
@@ -560,7 +560,7 @@
       "content": [
         {
           "type": "text",
-          "text": "🧪 The Test Lab"
+          "text": "The Test Lab"
         }
       ]
     },
@@ -642,57 +642,6 @@
         {
           "type": "text",
           "text": "Let me know how it goes!"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
         }
       ]
     }

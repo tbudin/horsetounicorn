@@ -101,7 +101,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Blind Boxes Beyond Toys**"
+          "text": "Blind Boxes Beyond Toys"
         }
       ]
     },
@@ -157,7 +157,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Dark Side 🌑**"
+          "text": "The Dark Side"
         }
       ]
     },
@@ -196,7 +196,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Light Side 🌕**"
+          "text": "The Light Side"
         }
       ]
     },
@@ -226,7 +226,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The litmus test 🌓"
+          "text": "The litmus test"
         }
       ]
     },
@@ -345,7 +345,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Founder’s Playbook**"
+          "text": "The Founder’s Playbook"
         }
       ]
     },
@@ -500,7 +500,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Closing the Series**"
+          "text": "Closing the Series"
         }
       ]
     },
@@ -528,57 +528,6 @@
         {
           "type": "text",
           "text": "Now I’m curious: what blind-box strategies have you seen or even used yourself? And on which side did you land, 🌕 or 🌑 or 🌓?"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
         }
       ]
     }

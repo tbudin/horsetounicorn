@@ -141,7 +141,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**⛳️ Being Opportunistic vs Being Strategic**"
+          "text": "Being Opportunistic vs Being Strategic"
         }
       ]
     },
@@ -409,7 +409,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**📚 The Superpower of Aligning Customer Segment and Resources**"
+          "text": "The Superpower of Aligning Customer Segment and Resources"
         }
       ]
     },
@@ -613,7 +613,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**🧩 A Short Guide to Making Your Choice**"
+          "text": "A Short Guide to Making Your Choice"
         }
       ]
     },
@@ -731,7 +731,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**🧪 Your Action Plan for Next Week**"
+          "text": "Your Action Plan for Next Week"
         }
       ]
     },
@@ -842,43 +842,6 @@
         {
           "type": "text",
           "text": "Try using this framework and let me know how it went!"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road. The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
         }
       ]
     }

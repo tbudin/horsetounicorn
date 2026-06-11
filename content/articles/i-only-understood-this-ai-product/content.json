@@ -97,7 +97,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**When AI grandeur gets in the way of clear communication**"
+          "text": "When AI grandeur gets in the way of clear communication"
         }
       ]
     },
@@ -243,7 +243,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Two traps startups keep falling into**"
+          "text": "Two traps startups keep falling into"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The .ai grab**"
+          "text": "The .ai grab"
         }
       ]
     },
@@ -350,7 +350,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The ‘AI-powered’ everywhere**"
+          "text": "The ‘AI-powered’ everywhere"
         }
       ]
     },
@@ -407,7 +407,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The real differentiator**"
+          "text": "The real differentiator"
         }
       ]
     },
@@ -419,7 +419,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Tell more tractor stories**"
+          "text": "Tell more tractor stories"
         }
       ]
     },
@@ -470,7 +470,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The risk of the AI commoditisation**"
+          "text": "The risk of the AI commoditisation"
         }
       ]
     },
@@ -511,57 +511,6 @@
         {
           "type": "text",
           "text": " Investing in product and brand pays off in every scenario, while chasing the AI label alone leaves you exposed whichever way the future bends."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
         }
       ]
     }

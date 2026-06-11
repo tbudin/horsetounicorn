@@ -2,39 +2,30 @@ import { Coffee } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /**
- * Tip-jar section displayed at the bottom of every article, just above the
- * "Share this article" row. Mirrors the share-section pattern (top and
- * bottom separators, small uppercase label, content row) so the two read
- * as a pair.
+ * Tip-jar row. Rendered as the top row inside the <ArticleShare> section
+ * — both rows share the section's separators, so visually there's exactly
+ * one dividing line between "If you liked this" and "Share this article".
  *
- * Hidden when NEXT_PUBLIC_STRIPE_TIP_URL is unset, so the section
- * gracefully disappears pre-Stripe setup.
+ * Hidden when NEXT_PUBLIC_STRIPE_TIP_URL is unset.
  */
 export function BuyMeACoffee() {
   const url = process.env.NEXT_PUBLIC_STRIPE_TIP_URL;
   if (!url) return null;
   return (
-    <section aria-labelledby="article-tip-heading" className="my-12">
-      <hr className="separator" />
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 py-5">
-        <h2
-          id="article-tip-heading"
-          className="text-[11px] uppercase tracking-wider text-ink-subtle data-num"
-        >
-          If you liked this
-        </h2>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={tipButtonCn}
-        >
-          <Coffee className="h-4 w-4" strokeWidth={1.75} aria-hidden />
-          <span>Buy me a coffee</span>
-        </a>
-      </div>
-      <hr className="separator" />
-    </section>
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-3 py-5">
+      <h2 className="text-[11px] uppercase tracking-wider text-ink-subtle data-num">
+        If you liked this
+      </h2>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={tipButtonCn}
+      >
+        <Coffee className="h-4 w-4" strokeWidth={1.75} aria-hidden />
+        <span>Buy me a coffee</span>
+      </a>
+    </div>
   );
 }
 

@@ -117,24 +117,6 @@
           "text": " Subscribe now and start building with more clarity and momentum — one step at a time."
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Wanderer, there is no road. The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " — Thomas"
-        }
-      ]
     }
   ]
 }

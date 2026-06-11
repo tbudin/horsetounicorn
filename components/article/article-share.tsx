@@ -10,6 +10,12 @@ export interface ArticleShareProps {
   title: string;
   /** Optional summary used by some share intents. */
   description?: string;
+  /**
+   * Optional row rendered ABOVE the share row, inside the same section so
+   * a single separator is shared between the two rows instead of stacked.
+   * Used for the "Buy me a coffee" tip jar.
+   */
+  children?: React.ReactNode;
 }
 
 /**
@@ -18,7 +24,7 @@ export interface ArticleShareProps {
  * share sheet. Each platform button opens its standard share URL in a new
  * tab; copy and native share happen in-page.
  */
-export function ArticleShare({ url, title, description }: ArticleShareProps) {
+export function ArticleShare({ url, title, description, children }: ArticleShareProps) {
   const [copied, setCopied] = useState(false);
   const [hasNativeShare, setHasNativeShare] = useState(false);
 
@@ -80,6 +86,12 @@ export function ArticleShare({ url, title, description }: ArticleShareProps) {
   return (
     <section aria-labelledby="article-share-heading" className="my-12">
       <hr className="separator" />
+      {children ? (
+        <>
+          {children}
+          <hr className="separator" />
+        </>
+      ) : null}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 py-5">
         <h2
           id="article-share-heading"

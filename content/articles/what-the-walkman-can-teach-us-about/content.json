@@ -149,7 +149,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**⛳️ The Insight**"
+          "text": "The Insight"
         }
       ]
     },
@@ -161,7 +161,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Simpler Products Win Faster Adoption**"
+          "text": "Simpler Products Win Faster Adoption"
         }
       ]
     },
@@ -209,7 +209,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Inside View Bias**"
+          "text": "The Inside View Bias"
         }
       ]
     },
@@ -279,7 +279,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**Behavioural Psychology in Feature Focus**"
+          "text": "Behavioural Psychology in Feature Focus"
         }
       ]
     },
@@ -450,7 +450,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**De-Risking Without Small-Scale Software Tests**"
+          "text": "De-Risking Without Small-Scale Software Tests"
         }
       ]
     },
@@ -581,7 +581,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**📚 The Business Case**"
+          "text": "The Business Case"
         }
       ]
     },
@@ -593,7 +593,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Story of Sony’s Walkman**"
+          "text": "The Story of Sony’s Walkman"
         }
       ]
     },
@@ -688,7 +688,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**The Story of Google Wave & Slack**"
+          "text": "The Story of Google Wave & Slack"
         }
       ]
     },
@@ -739,7 +739,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**🧩 The Framework**"
+          "text": "The Framework"
         }
       ]
     },
@@ -1053,7 +1053,7 @@
       "content": [
         {
           "type": "text",
-          "text": "**🧪 The Action Plan**"
+          "text": "The Action Plan"
         }
       ]
     },
@@ -1121,43 +1121,6 @@
         {
           "type": "text",
           "text": "Try using this framework and let me know how it went!"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Thanks for reading.",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is no road. The road is made by walking.",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "— Thomas"
         }
       ]
     }
