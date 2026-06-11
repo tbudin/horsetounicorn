@@ -89,7 +89,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Singapore has fewer babies than almost anywhere on earth. It also sits near the very top of the world for searching the term “infant nutrition.” That is not a contradiction the driver would have expected, and at first it confused me too. Then I plotted every country I could against its fertility rate, and the pattern was unmistakable."
+          "text": "Singapore has fewer babies than almost anywhere on earth. It also sits near the very top of the world for searching the terms like “infant nutrition.” At first it confused me. I plotted the top countries in search volume against fertility rate."
         }
       ]
     },
@@ -105,7 +105,7 @@
       "content": [
         {
           "type": "text",
-          "text": "On raw search interest, South Korea, which has the lowest fertility rate ever recorded for a nation, around 0.75, leads the entire world, with Singapore close behind. But divide each country’s interest by the number of babies it actually has, and the ranking inverts: Singapore jumps to first (the taxi driver’s own country, searching harder per child than anywhere on earth), with tiny, wealthy Slovenia beside it. The countries where the most babies are actually born (India, where roughly one in six of the world’s babies arrives, or Nigeria, which now has more births than all of Europe combined) sink to the floor. The chart toggles between raw interest, per birth and per capita, and between a linear and a log scale that spreads out the crowded low end. Switch the chart’s topic and the leaders shuffle: “baby formula” skews Anglophone and US-led, “infant feeding” leans towards China and the Commonwealth, but the per-child pattern survives intact."
+          "text": "The countries where the most babies are actually born (India, where roughly one in six of the world’s babies arrives, or Nigeria, which now has more births than all of Europe combined) sink to the floor. The chart toggles between raw interest, per birth and per capita, and between a linear and a log scale that spreads out the crowded low end. Switch the chart’s topic and the leaders shuffle: “baby formula” skews Anglophone and US-led, “infant feeding” leans towards China and the Commonwealth, but the per-child pattern survives intact."
         }
       ]
     },
