@@ -49,6 +49,15 @@ export interface PublishComposerProps {
   defaultTestEmail: string;
 }
 
+// Segmented-control styling, shared with ToggleGroup's look.
+const SEG_TRACK =
+  'inline-flex flex-wrap items-center gap-1 rounded-[10px] border border-[#EAE1E8] bg-[#F4EFF3] p-1';
+const SEG_PILL =
+  'inline-flex items-center rounded-[7px] px-3 py-1.5 text-xs font-medium outline-none transition-all';
+const SEG_ACTIVE =
+  'border border-[#E7DCE5] bg-white text-ink-heading shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(20,8,16,0.07)]';
+const SEG_IDLE = 'border border-transparent text-ink-muted hover:text-ink-heading';
+
 const SCHEDULE_PRESETS: { label: string; minutes: number }[] = [
   { label: 'Now', minutes: 0 },
   { label: '+10 min', minutes: 10 },
@@ -431,7 +440,7 @@ export function PublishComposer({
 
         {/* 4. Schedule */}
         <Section title="4 · Schedule">
-          <div className="flex flex-wrap gap-1.5">
+          <div className={SEG_TRACK}>
             {SCHEDULE_PRESETS.map((p) => {
               const on = !customWhen && presetMinutes === p.minutes;
               return (
@@ -442,23 +451,13 @@ export function PublishComposer({
                     setPresetMinutes(p.minutes);
                     setCustomWhen('');
                   }}
-                  className={cn(
-                    'border px-3 py-1.5 text-xs transition-colors',
-                    on
-                      ? 'border-burgundy bg-burgundy text-white'
-                      : 'border-[#EEE6EC] bg-white text-ink-muted hover:text-ink-heading',
-                  )}
+                  className={cn(SEG_PILL, on ? SEG_ACTIVE : SEG_IDLE)}
                 >
                   {p.label}
                 </button>
               );
             })}
-            <label
-              className={cn(
-                'inline-flex items-center gap-1.5 border px-3 py-1.5 text-xs',
-                customWhen ? 'border-burgundy text-ink-heading' : 'border-[#EEE6EC] text-ink-muted',
-              )}
-            >
+            <label className={cn(SEG_PILL, 'gap-1.5', customWhen ? SEG_ACTIVE : SEG_IDLE)}>
               <Clock className="h-3.5 w-3.5" />
               <input
                 type="datetime-local"
