@@ -55,6 +55,7 @@ export function ChartToolbar({
 }) {
   return (
     <div
+      data-chart-toolbar
       className={cn(
         'not-prose mb-3 flex flex-wrap items-center gap-2',
         className,

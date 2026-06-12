@@ -38,6 +38,9 @@ yarn-error.log*
 # build-emitted article data — re-generated from content/articles/[slug]/data/
 /public/data
 
+# locally-generated chart screenshots (production stores these in R2)
+/public/articles/*/charts/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

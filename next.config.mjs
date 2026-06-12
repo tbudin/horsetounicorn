@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Keep the headless-chromium layer out of the bundle — loaded at runtime
+  // by the chart-screenshot pipeline (lib/chart-screenshot.ts).
+  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium'],
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'substackcdn.com' },

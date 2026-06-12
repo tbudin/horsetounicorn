@@ -63,6 +63,9 @@ export function PublishComposer({
   const [selected, setSelected] = useState<string[]>([]); // ordered image srcs
   const [presetMinutes, setPresetMinutes] = useState<number | null>(0);
   const [customWhen, setCustomWhen] = useState<string>('');
+  const [chartImages, setChartImages] = useState<Record<string, string>>({});
+  const [chartBusy, setChartBusy] = useState<string | null>(null);
+  const [chartError, setChartError] = useState<string | null>(null);
 
   const [previewHtml, setPreviewHtml] = useState('');
   const [sending, setSending] = useState(false);
@@ -70,13 +73,22 @@ export function PublishComposer({
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
 
+  // src → label lookup across article images + generated chart images.
+  const labelBySrc = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const i of images) m.set(i.src, i.label);
+    for (const [name, src] of Object.entries(chartImages)) m.set(src, name);
+    return m;
+  }, [images, chartImages]);
+
   const blocks = useMemo(
     () =>
-      selected.map((src) => {
-        const img = images.find((i) => i.src === src);
-        return { src, alt: img?.label ?? '', caption: null as string | null };
-      }),
-    [selected, images],
+      selected.map((src) => ({
+        src,
+        alt: labelBySrc.get(src) ?? '',
+        caption: null as string | null,
+      })),
+    [selected, labelBySrc],
   );
 
   const composePayload = useMemo(
@@ -130,6 +142,31 @@ export function PublishComposer({
       prev.includes(src) ? prev.filter((s) => s !== src) : [...prev, src],
     );
   }, []);
+
+  async function generateChart(name: string) {
+    if (chartBusy) return;
+    setChartBusy(name);
+    setChartError(null);
+    try {
+      const res = await fetch('/api/admin/charts/render', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ articleId, chart: name }),
+      });
+      const data = (await res.json()) as { ok: boolean; url?: string; error?: string };
+      if (!res.ok || !data.ok || !data.url) {
+        setChartError(data.error ?? 'Render failed');
+        return;
+      }
+      setChartImages((prev) => ({ ...prev, [name]: data.url! }));
+      // Auto-select the freshly generated chart image.
+      setSelected((prev) => (prev.includes(data.url!) ? prev : [...prev, data.url!]));
+    } catch {
+      setChartError('Network error');
+    } finally {
+      setChartBusy(null);
+    }
+  }
 
   function setHighlight(i: number, v: string) {
     setHighlights((prev) => prev.map((h, j) => (j === i ? v : h)));
@@ -347,19 +384,60 @@ export function PublishComposer({
 
           {chartNames.length > 0 ? (
             <Field label="Charts">
-              <div className="space-y-1.5">
-                {chartNames.map((name) => (
-                  <div
-                    key={name}
-                    className="flex items-center justify-between border border-dashed border-[#EEE6EC] px-3 py-2 text-xs text-ink-subtle"
-                  >
-                    <span className="font-mono">{name}</span>
-                    <span className="text-[10px] uppercase tracking-wider">
-                      image generated in a later step
-                    </span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {chartNames.map((name) => {
+                  const url = chartImages[name];
+                  if (url) {
+                    const on = selected.includes(url);
+                    const order = selected.indexOf(url) + 1;
+                    return (
+                      <div key={name} className="space-y-1">
+                        <button
+                          type="button"
+                          onClick={() => toggleImage(url)}
+                          className={cn(
+                            'relative block w-full overflow-hidden border bg-white transition-colors',
+                            on ? 'border-burgundy' : 'border-[#EEE6EC] hover:border-ink-subtle',
+                          )}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={url} alt={name} className="aspect-[3/2] w-full object-contain" />
+                          {on ? (
+                            <span className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-burgundy text-[10px] font-medium text-white">
+                              {order}
+                            </span>
+                          ) : null}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => generateChart(name)}
+                          disabled={chartBusy === name}
+                          className="w-full text-[10px] text-ink-subtle hover:text-burgundy disabled:opacity-50"
+                        >
+                          {chartBusy === name ? 'Rendering…' : 'Re-generate'}
+                        </button>
+                      </div>
+                    );
+                  }
+                  return (
+                    <button
+                      key={name}
+                      type="button"
+                      onClick={() => generateChart(name)}
+                      disabled={chartBusy === name}
+                      className="flex aspect-[3/2] flex-col items-center justify-center gap-1 border border-dashed border-[#EEE6EC] bg-white px-2 text-center text-ink-subtle hover:border-burgundy hover:text-burgundy disabled:opacity-50 transition-colors"
+                    >
+                      <span className="font-mono text-[10px] leading-tight">{name}</span>
+                      <span className="text-[10px] uppercase tracking-wider">
+                        {chartBusy === name ? 'Rendering…' : 'Generate image'}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
+              {chartError ? (
+                <p className="text-xs text-burgundy">{chartError}</p>
+              ) : null}
             </Field>
           ) : null}
 

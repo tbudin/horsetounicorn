@@ -61,3 +61,29 @@ export function signUnsubscribeToken(email: string): Promise<string> {
 export function verifyUnsubscribeToken(token: string) {
   return verify(token, 'subscribe-unsubscribe');
 }
+
+// -- Chart-shot tokens ---------------------------------------------------
+// Short-lived tokens that let the screenshot pipeline reach the (otherwise
+// public) /chart-shot render route for exactly one article+chart. Same secret,
+// dedicated 'chart-shot' audience so they can't be replayed elsewhere.
+
+const CHART_SHOT_TTL = '5m';
+
+/** `key` is `${articleId}:${chartName}`. */
+export function signChartShotToken(key: string): Promise<string> {
+  return new SignJWT({ sub: key })
+    .setProtectedHeader({ alg: 'HS256' })
+    .setIssuedAt()
+    .setAudience('chart-shot')
+    .setExpirationTime(CHART_SHOT_TTL)
+    .sign(getSecret());
+}
+
+export async function verifyChartShotToken(token: string, key: string): Promise<boolean> {
+  try {
+    const { payload } = await jwtVerify(token, getSecret(), { audience: 'chart-shot' });
+    return payload.sub === key;
+  } catch {
+    return false;
+  }
+}

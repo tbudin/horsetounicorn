@@ -79,6 +79,26 @@ export function removeLocalCoverFiles(articleId: string): void {
   }
 }
 
+/**
+ * Persist a generated chart PNG and return its public URL. Stored under
+ * `articles/<articleId>/charts/<chartName>.png` so the publish composer can
+ * reference it. R2 in remote mode, public/ filesystem locally.
+ */
+export async function saveChartImage(
+  articleId: string,
+  chartName: string,
+  body: Buffer,
+): Promise<string> {
+  const key = `articles/${articleId}/charts/${chartName}.png`;
+  if (isR2Configured()) {
+    return uploadToR2(key, body, 'image/png');
+  }
+  const targetPath = path.join(process.cwd(), 'public', key);
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+  fs.writeFileSync(targetPath, body);
+  return `/${key}`;
+}
+
 export interface SaveArticleOptions {
   articleId: string;
   metadata?: string;
