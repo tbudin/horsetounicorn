@@ -6,6 +6,7 @@ import type {
   Mark,
 } from '@/lib/article-doc';
 import { Callout } from './callout';
+import { ArticleSources } from './article-sources';
 
 export interface ChartRegistry {
   [name: string]: ComponentType;
@@ -138,6 +139,14 @@ function RenderBlock({
 
     case 'video':
       return <VideoEmbed node={node} />;
+
+    case 'sources':
+      return (
+        <ArticleSources
+          title={node.attrs.title ?? undefined}
+          groups={node.attrs.groups ?? []}
+        />
+      );
   }
 }
 

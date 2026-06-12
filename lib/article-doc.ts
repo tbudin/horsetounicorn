@@ -93,6 +93,30 @@ export interface VideoNode {
   };
 }
 
+export interface SourceItem {
+  label: string;
+  href: string;
+}
+
+export interface SourceGroup {
+  /** Optional sub-heading, e.g. "Data", "The news". */
+  heading?: string | null;
+  items: SourceItem[];
+}
+
+/**
+ * End-of-article sources/references. Rendered subdued and small via the
+ * shared <ArticleSources> component — reusable across articles.
+ */
+export interface SourcesNode {
+  type: 'sources';
+  attrs: {
+    /** Section label; defaults to "Sources" when omitted. */
+    title?: string | null;
+    groups: SourceGroup[];
+  };
+}
+
 export type BlockNode =
   | ParagraphNode
   | HeadingNode
@@ -104,7 +128,8 @@ export type BlockNode =
   | ChartNode
   | CalloutNode
   | ImageNode
-  | VideoNode;
+  | VideoNode
+  | SourcesNode;
 
 export interface ArticleDocument {
   type: 'doc';

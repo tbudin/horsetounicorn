@@ -481,444 +481,112 @@
       ]
     },
     {
-      "type": "heading",
+      "type": "sources",
       "attrs": {
-        "level": 2
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Sources"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Data"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Google Trends",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://trends.google.com/trends/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
+        "title": "Sources",
+        "groups": [
+          {
+            "heading": "Data",
+            "items": [
+              {
+                "label": "Google Trends",
+                "href": "https://trends.google.com/trends/"
+              },
+              {
+                "label": "UN, World Fertility Report 2024",
+                "href": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_wfr_2024_final.pdf"
+              },
+              {
+                "label": "Visual Capitalist, Global Births by Country in 2025",
+                "href": "https://www.visualcapitalist.com/global-births-by-country-in-2025/"
+              },
+              {
+                "label": "CDC, Births: Provisional Data for 2025",
+                "href": "https://www.cdc.gov/nchs/data/vsrr/vsrr043.pdf"
+              },
+              {
+                "label": "Singapore Department of Statistics, Population in Brief 2025",
+                "href": "https://www.population.gov.sg/files/media-centre/publications/Population_in_Brief_2025.pdf"
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "UN, World Fertility Report 2024",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_wfr_2024_final.pdf",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
+            ]
+          },
+          {
+            "heading": "The news",
+            "items": [
+              {
+                "label": "Food Safety Magazine, “Make Our Children Healthy Again” and childhood-nutrition overhaul",
+                "href": "https://www.food-safety.com/articles/10402-maha-report-sets-stage-for-overhaul-of-food-chemicals-environmental-contaminants-and-childhood-nutrition"
+              },
+              {
+                "label": "CNN, Legal action over the marketing of “toddler milks” (Aug 2025)",
+                "href": "https://www.cnn.com/2025/08/21/health/toddler-milk-lawsuit-wellness"
+              },
+              {
+                "label": "CDC, Infant botulism outbreak linked to infant formula (Nov 2025)",
+                "href": "https://www.cdc.gov/botulism/outbreaks-investigations/infant-formula-nov-2025/index.html"
+              },
+              {
+                "label": "FDA, ByHeart all-batch recall update",
+                "href": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/byheart-updates-information-regarding-voluntary-recall-all-batches-byheart-whole-nutrition-infant"
+              },
+              {
+                "label": "NPR, FDA says ByHeart recall response was too slow",
+                "href": "https://www.npr.org/2025/12/16/nx-s1-5645651/byheart-baby-formula-recall-too-slow"
+              },
+              {
+                "label": "WHO, Cereulide in infant formula, multi-country recall",
+                "href": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON596"
+              },
+              {
+                "label": "Euronews, Nestlé, Danone, Lactalis pull products after toxin alert",
+                "href": "https://www.euronews.com/health/2026/01/22/global-baby-formula-recall-nestle-danone-lactalis-pull-products-after-toxin-alert"
+              },
+              {
+                "label": "CNN, HHS report linking folate, acetaminophen and autism (Sept 2025)",
+                "href": "https://www.cnn.com/2025/09/05/health/hhs-report-autism-folate-acetaminophen"
+              },
+              {
+                "label": "Consumer Reports, California AB 899 baby-food heavy-metal disclosure",
+                "href": "https://www.consumerreports.org/babies-kids/baby-food/baby-food-labels-heavy-metals-california-ab899-a5779555429/"
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Visual Capitalist, Global Births by Country in 2025",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.visualcapitalist.com/global-births-by-country-in-2025/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
+            ]
+          },
+          {
+            "heading": "The science",
+            "items": [
+              {
+                "label": "NutraIngredients, 5-MTHF matches folic acid while lowering unmetabolised folic acid (2026 RCT)",
+                "href": "https://www.nutraingredients.com/Article/2026/05/06/rtc-5-mthf-matches-folic-acid-while-lowering-unmetabolized-folic-acid-in-prenatal-vitamins/"
+              },
+              {
+                "label": "UKTIS, Use of methylfolate in pregnancy (guidance still recommends folic acid)",
+                "href": "https://uktis.org/monographs/use-of-methylfolate-in-pregnancy/"
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "CDC, Births: Provisional Data for 2025",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.cdc.gov/nchs/data/vsrr/vsrr043.pdf",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
+            ]
+          },
+          {
+            "heading": "Brand campaigns",
+            "items": [
+              {
+                "label": "Ad Age, Bobbie and Cardi B “parental power” campaign",
+                "href": "https://adage.com/creativity/work/aa-bobbie-cardi-b/"
+              },
+              {
+                "label": "BusinessWire, Bobbie and Alex Morgan, “There’s No Scoreboard in Motherhood”",
+                "href": "https://www.businesswire.com/news/home/20250904964101/en/"
+              },
+              {
+                "label": "Ads of the World, Danone/Gallia “MommyPhone”",
+                "href": "https://www.adsoftheworld.com/campaigns/mommyphone-the-first-babyphone-that-listens-to-parents"
+              },
+              {
+                "label": "KFF Health News, Abbott and Mead Johnson preterm-formula (NEC) fight",
+                "href": "https://kffhealthnews.org/health-industry/infant-formula-fortifier-high-stakes-corporate-battle-preemies-abbott-mead-johnson/"
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Singapore Department of Statistics, Population in Brief 2025",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.population.gov.sg/files/media-centre/publications/Population_in_Brief_2025.pdf",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "The news"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Food Safety Magazine, “Make Our Children Healthy Again” and childhood-nutrition overhaul",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.food-safety.com/articles/10402-maha-report-sets-stage-for-overhaul-of-food-chemicals-environmental-contaminants-and-childhood-nutrition",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "CNN, Legal action over the marketing of “toddler milks” (Aug 2025)",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.cnn.com/2025/08/21/health/toddler-milk-lawsuit-wellness",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "CDC, Infant botulism outbreak linked to infant formula (Nov 2025)",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.cdc.gov/botulism/outbreaks-investigations/infant-formula-nov-2025/index.html",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "FDA, ByHeart all-batch recall update",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/byheart-updates-information-regarding-voluntary-recall-all-batches-byheart-whole-nutrition-infant",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "NPR, FDA says ByHeart recall response was too slow",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.npr.org/2025/12/16/nx-s1-5645651/byheart-baby-formula-recall-too-slow",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "WHO, Cereulide in infant formula, multi-country recall",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON596",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Euronews, Nestlé, Danone, Lactalis pull products after toxin alert",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.euronews.com/health/2026/01/22/global-baby-formula-recall-nestle-danone-lactalis-pull-products-after-toxin-alert",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "CNN, HHS report linking folate, acetaminophen and autism (Sept 2025)",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.cnn.com/2025/09/05/health/hhs-report-autism-folate-acetaminophen",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Consumer Reports, California AB 899 baby-food heavy-metal disclosure",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.consumerreports.org/babies-kids/baby-food/baby-food-labels-heavy-metals-california-ab899-a5779555429/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "The science"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "NutraIngredients, 5-MTHF matches folic acid while lowering unmetabolised folic acid (2026 RCT)",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.nutraingredients.com/Article/2026/05/06/rtc-5-mthf-matches-folic-acid-while-lowering-unmetabolized-folic-acid-in-prenatal-vitamins/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "UKTIS, Use of methylfolate in pregnancy (guidance still recommends folic acid)",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://uktis.org/monographs/use-of-methylfolate-in-pregnancy/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Brand campaigns"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Ad Age, Bobbie and Cardi B “parental power” campaign",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://adage.com/creativity/work/aa-bobbie-cardi-b/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "BusinessWire, Bobbie and Alex Morgan, “There’s No Scoreboard in Motherhood”",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.businesswire.com/news/home/20250904964101/en/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Ads of the World, Danone/Gallia “MommyPhone”",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.adsoftheworld.com/campaigns/mommyphone-the-first-babyphone-that-listens-to-parents",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "KFF Health News, Abbott and Mead Johnson preterm-formula (NEC) fight",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://kffhealthnews.org/health-industry/infant-formula-fortifier-high-stakes-corporate-battle-preemies-abbott-mead-johnson/",
-                "target": "_blank",
-                "rel": "noopener noreferrer nofollow"
-              }
-            }
-          ]
-        }
-      ]
+            ]
+          }
+        ]
+      }
     }
   ]
 }

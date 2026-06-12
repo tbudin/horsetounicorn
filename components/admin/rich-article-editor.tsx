@@ -47,6 +47,7 @@ import {
   ImageNode,
   VideoNode,
   CalloutNode,
+  SourcesNode,
 } from './tiptap-nodes';
 import { createSlashCommands } from './slash-menu';
 
@@ -106,6 +107,7 @@ export function RichArticleEditor({
       ImageNode,
       VideoNode,
       CalloutNode,
+      SourcesNode,
       createSlashCommands({ articleId, availableCharts }),
     ],
     [articleId, availableCharts],

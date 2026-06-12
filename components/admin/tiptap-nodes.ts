@@ -109,6 +109,39 @@ export const VideoNode = Node.create({
   },
 });
 
+export const SourcesNode = Node.create({
+  name: 'sources',
+  group: 'block',
+  atom: true,
+  selectable: true,
+  draggable: true,
+  addAttributes() {
+    // title + groups persist in the document JSON (getJSON keeps atom attrs).
+    // We skip DOM rendering for them so the editor placeholder stays clean and
+    // the groups array is never stringified into an HTML attribute.
+    return {
+      title: { default: 'Sources', renderHTML: () => ({}) },
+      groups: { default: [], renderHTML: () => ({}) },
+    };
+  },
+  parseHTML() {
+    return [{ tag: 'div[data-sources]' }];
+  },
+  renderHTML({ node, HTMLAttributes }) {
+    const groups = (node.attrs.groups as { items?: unknown[] }[]) ?? [];
+    const count = groups.reduce((n, g) => n + (g.items?.length ?? 0), 0);
+    return [
+      'div',
+      mergeAttributes(HTMLAttributes, {
+        'data-sources': '',
+        class:
+          'border border-dashed border-ink-subtle bg-[#FAF7F9] p-4 my-4 font-mono text-xs text-ink-muted',
+      }),
+      `🔖 ${node.attrs.title || 'Sources'} (${count} links)`,
+    ];
+  },
+});
+
 export const CalloutNode = Node.create({
   name: 'callout',
   group: 'block',
