@@ -52,43 +52,43 @@ export default async function AdminArticlePreview({
           >
             ← Articles
           </Link>
-          <h1 className="font-serif text-3xl font-medium text-ink-heading truncate">
-            {metadata.title}
-          </h1>
+          <div className="flex min-w-0 items-center gap-3">
+            <h1 className="font-serif text-3xl font-medium text-ink-heading truncate">
+              {metadata.title}
+            </h1>
+            <span
+              className={cn(
+                'shrink-0 px-2 py-1 text-[10px] uppercase tracking-wider data-num',
+                STATUS_CLASS[metadata.status],
+              )}
+            >
+              {STATUS_LABEL[metadata.status]}
+            </span>
+          </div>
           {metadata.subtitle ? (
             <p className="text-sm text-ink-muted mt-1">{metadata.subtitle}</p>
           ) : null}
         </div>
-        <div className="shrink-0 flex flex-col items-end gap-2">
-          <span
-            className={cn(
-              'px-2 py-1 text-[10px] uppercase tracking-wider data-num',
-              STATUS_CLASS[metadata.status],
-            )}
+        <div className="shrink-0 flex items-center gap-3">
+          <Link
+            href={`/admin/articles/${id}/edit`}
+            className="border border-[#EEE6EC] bg-white text-ink-heading px-3 py-1.5 text-xs font-medium hover:border-burgundy hover:text-burgundy transition-colors"
           >
-            {STATUS_LABEL[metadata.status]}
-          </span>
-          <div className="flex items-center gap-3">
-            <Link
-              href={`/admin/articles/${id}/edit`}
-              className="border border-[#EEE6EC] bg-white text-ink-heading px-3 py-1.5 text-xs font-medium hover:border-burgundy hover:text-burgundy transition-colors"
-            >
-              Edit
-            </Link>
-            <Link
-              href={`/admin/articles/${id}/publish`}
-              className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90 transition-colors"
-            >
-              Publish
-            </Link>
-            <Link
-              href={`/articles/${slug}`}
-              target="_blank"
-              className="text-xs text-ink-subtle hover:text-ink-heading transition-colors"
-            >
-              Public ↗
-            </Link>
-          </div>
+            Edit
+          </Link>
+          <Link
+            href={`/admin/articles/${id}/publish`}
+            className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90 transition-colors"
+          >
+            Publish
+          </Link>
+          <Link
+            href={`/articles/${slug}`}
+            target="_blank"
+            className="text-xs text-ink-subtle hover:text-ink-heading transition-colors"
+          >
+            Public ↗
+          </Link>
         </div>
       </header>
 

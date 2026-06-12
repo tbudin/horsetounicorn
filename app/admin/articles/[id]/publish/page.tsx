@@ -66,24 +66,16 @@ export default async function PublishPage({
 
   return (
     <div className="space-y-6">
-      <header className="flex items-baseline justify-between gap-4">
-        <div className="min-w-0">
-          <Link
-            href={`/admin/articles/${id}`}
-            className="text-xs text-ink-subtle hover:text-ink-heading mb-2 inline-block"
-          >
-            ← Preview
-          </Link>
-          <h1 className="font-serif text-3xl font-medium text-ink-heading truncate">
-            Publish — {metadata.title}
-          </h1>
-        </div>
+      <header className="min-w-0">
         <Link
-          href={`/admin/articles/${id}/edit`}
-          className="shrink-0 border border-[#EEE6EC] bg-white text-ink-heading px-3 py-1.5 text-xs font-medium hover:border-burgundy hover:text-burgundy transition-colors"
+          href={`/admin/articles/${id}`}
+          className="text-xs text-ink-subtle hover:text-ink-heading mb-2 inline-block"
         >
-          Edit
+          ← Preview
         </Link>
+        <h1 className="font-serif text-3xl font-medium text-ink-heading truncate">
+          Publish — {metadata.title}
+        </h1>
       </header>
 
       <PublishComposer
