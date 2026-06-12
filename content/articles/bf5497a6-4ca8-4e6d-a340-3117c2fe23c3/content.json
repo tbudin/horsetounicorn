@@ -6,7 +6,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Monday afternoon, a cooling breeze, a gloomy sky, I am tired. We got married 3 days ago and my wife had to fly to Bangkok in the morning. I put my AirPods on, I am not in the mood for a conversation. I duck into my grab. I tell my driver I might fall asleep quickly. "
+          "text": "Monday afternoon. A cooling breeze, a gloomy sky, and I am tired. We got married three days ago and my wife had to fly to Bangkok in the morning. I put my AirPods in, I am not in the mood for a conversation. I duck into my Grab and tell the driver I might fall asleep quickly."
         }
       ]
     },
@@ -15,7 +15,7 @@
       "content": [
         {
           "type": "text",
-          "text": "He still makes small talk and, somehow, I play ball and I reply smiling. As we are crossing Singapore, our conversation goes from how much does a grab driver make, to whether that is enough to raise children, to why Singapore needs immigration to help with the fertility rate."
+          "text": "He makes small talk anyway, and somehow I play ball and reply, smiling. As we cross Singapore, the conversation moves from how much a Grab driver makes, to whether that is enough to raise children, to why Singapore needs immigration to prop up its fertility rate."
         }
       ]
     },
@@ -24,20 +24,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I am curious. I check online. Singapore is at "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ],
-          "text": "0.87 in 2025"
-        },
-        {
-          "type": "text",
-          "text": ", below the replacement rate, the lowest resident births in its recorded history."
+          "text": "I am curious. I check online. Singapore is at 0.87 in 2025, below the replacement rate, the lowest resident births in its recorded history."
         }
       ]
     },
@@ -46,20 +33,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I am at the age where conversations around kids keep happening. Lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ],
-          "text": "what the world actually wants to know about feeding its children"
-        },
-        {
-          "type": "text",
-          "text": "."
+          "text": "I am at the age where conversations around kids keep happening. Lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
         }
       ]
     },
@@ -68,7 +42,7 @@
       "content": [
         {
           "type": "text",
-          "text": "My conversation with that my grab driver uncovered a first surprise."
+          "text": "That conversation with the Grab driver turned up a first surprise."
         }
       ]
     },
@@ -89,7 +63,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Singapore has fewer babies than almost anywhere on earth. Yet it also sits near the very top of the world for searching the terms like “infant nutrition.” This is confusing. Let have a look at the top countries in search volume against fertility rate."
+          "text": "Singapore barely makes babies. Yet for every child it does have, it searches about feeding them harder than almost anywhere on earth. That surprised me, so I plotted every country I could find against its fertility rate."
         }
       ]
     },
@@ -105,7 +79,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The countries where the most babies are actually born barely search for the topic of infant nutrition. India, where roughly one in six of the world’s babies arrives, or Nigeria, which now has more births than all of Europe combined, both sink to the floor. The chart toggles between raw interest, per birth and per capita, and between a linear and a log scale that spreads out the crowded low end. Switch the chart’s topic and the leaders shuffle: “baby formula” skews Anglophone and US-led, “infant feeding” leans towards China and the Commonwealth, but the per-child pattern survives intact."
+          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, as a share of everything they look up, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Slovenia, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States tops baby formula, the United Kingdom tops infant feeding, but per child the pattern holds every time. The fewer the babies, the louder the search."
         }
       ]
     },
@@ -131,7 +105,7 @@
       "content": [
         {
           "type": "text",
-          "text": "A search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare, and spend, and in 2025 and 2026, that worry had an unusually busy year."
+          "text": "So a search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare and spend. That was the cross-section. The next surprise came when I watched it move."
         }
       ]
     },
@@ -143,7 +117,7 @@
       "content": [
         {
           "type": "text",
-          "text": "First, the rhythm of normal"
+          "text": "Then I watched it over time"
         }
       ]
     },
@@ -152,138 +126,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Before you can see a surge, you need to know what calm looks like. For this category, calm is remarkably regular. Breastfeeding is the gravitational centre of the whole subject (it dwarfs formula, weaning and prenatal nutrition in sheer volume) and it follows a seasonal pattern you could set your watch by."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "breastfeeding-seasonality",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Every single year, August is the peak. Averaged across five years it stands clearly above every other month, and it has done so without exception. The cause is not mysterious: the first week of August is World Breastfeeding Week, a global WHO-backed campaign, and search interest rises with it like clockwork. The same calendar logic lifts children's vitamins in January (New Year resolutions) and again in late summer (back to school). This is the baseline: a quiet, cyclical hum of evergreen parental questions."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "It is also more global than the English terms suggest. The interest is led by South Korea, with the United States a clear second and strong demand right across East Asia and Europe."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Keep that distribution in mind, because it explains a tension that runs through the rest of this piece: the "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ],
-          "text": "baseline"
-        },
-        {
-          "type": "text",
-          "text": " is genuinely worldwide, but the "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ],
-          "text": "spikes"
-        },
-        {
-          "type": "text",
-          "text": ", as we will see, are mostly made in America."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "The brands, by attention"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "If you track the formula brands themselves, the products, not the conglomerates that own them, you get a clean read on where attention sits. The incumbents are flat, and have been for years. The interesting line belongs to a challenger."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "formula-brand-search",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Bobbie, the American direct-to-consumer organic brand, climbs through 2025 on the back of an aggressive, culturally fluent marketing push while Similac, Enfamil and Aptamil barely move. One caveat worth stating plainly: this is share of "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ],
-          "text": "attention"
-        },
-        {
-          "type": "text",
-          "text": ", not share of market. Search interest measures who is being talked about, not who is being bought. But as a measure of mindshare the story is clear, and the other brands' spikes, when they come, arrive for reasons no marketing team would ever have wanted."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Then the calm broke"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Against that stable, seasonal, globally-distributed backdrop, late 2025 and the first half of 2026 did something the previous four years had not. The lines stopped following the calendar and started following the news. Three waves, in nine months, each tied to a distinct event."
+          "text": "I lined the same topics up across five years. For most of that stretch, almost nothing happens; the lines sit flat, year after year. Then, from the middle of 2025, the picture changes. A handful of worries climb hard while the rest stay put."
         }
       ]
     },
@@ -299,44 +142,7 @@
       "content": [
         {
           "type": "text",
-          "text": "But size is not the same as momentum. Hold the five-year window up to the light and the still picture comes alive. Breastfeeding, for all its dominance, has barely moved. What has surged is a cluster of newer worries: stage-specific nutrition, infant, toddler and early-childhood, has multiplied off a small base; searches about iron and vitamin D deficiency and about children’s brain development have more than doubled; and folic acid and children’s vitamins are climbing. What parents worry about is shifting faster than how much they worry, and the rest of this piece is the story of why."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Wave one: the whole basket lifts (August 2025)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The first wave is easy to miss if you look at the wrong export. In a dataset where breastfeeding dominates, terms like “toddler nutrition” sit so low they round to zero, and a real surge can hide at the measurement floor. But the broader pattern was already visible: in August 2025, after four flat years, the entire early-life basket stepped up together."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "august-2025-category-lift",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Pull a dedicated export, one where infant and toddler nutrition are scaled to their own peak rather than buried under breastfeeding, and the true size of the move appears. It was not subtle."
+          "text": "Breastfeeding is still far and away the most-searched topic, but it has barely moved in five years. What surges instead is a set of newer worries: stage-specific nutrition (infant, toddler, early-childhood) off a small base, iron and vitamin D deficiency, children’s brain development, folic acid, children’s vitamins. What parents worry about is changing faster than how much they worry."
         }
       ]
     },
@@ -352,7 +158,60 @@
       "content": [
         {
           "type": "text",
-          "text": "Searches for infant nutrition jumped more than fivefold in a single month. The trigger was a collision of two stories: the White House released its “Make Our Children Healthy Again” strategy, putting childhood nutrition and ultra-processed foods on every front page, while a wave of lawsuits over the marketing of “toddler milks” pushed exactly those terms into the conversation. It is also a small lesson in how to read Google Trends: the same reality can look like nothing or like an explosion depending on which terms you let dominate the scale."
+          "text": "The sharpest mover is infant and toddler nutrition: flat for four years, then up more than fivefold in nine months. And it did not climb smoothly. It jumped in three steps, three waves, each one a piece of American news, even though the everyday searching is worldwide."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Wave one: the first jump (August 2025)"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Wave one is August 2025. We have already seen the headline jump, infant and toddler nutrition up fivefold. But which of the broad, everyday topics moved with it? Almost none. Breastfeeding and baby food stayed flat. Only baby formula broke trend."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "august-2025-category-lift",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Could it just be the calendar? Each topic peaks in its own month, and formula’s is May, not August. A spike in formula searches in August is out of season. This is news, not a holiday."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "breastfeeding-seasonality",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Two stories had collided. The White House released its “Make Our Children Healthy Again” strategy, putting childhood nutrition and ultra-processed food on every front page, while a run of lawsuits over the marketing of “toddler milks” pushed those exact terms into the conversation."
         }
       ]
     },
@@ -373,7 +232,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The second wave was fear. In early November 2025 the American brand ByHeart recalled every batch of its infant formula after dozens of babies fell ill with botulism. Search interest in the brand spiked roughly thirty-fold in a single week and then collapsed, the unmistakable signature of a reputational event rather than demand."
+          "text": "The second wave was fear. In early November 2025 the American brand ByHeart recalled every batch of its infant formula after dozens of babies fell ill with botulism. Interest in the brand spiked roughly thirtyfold in a single week, then collapsed. The signature of a reputational shock, not of demand."
         }
       ]
     },
@@ -382,7 +241,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Then the story went global, and it landed squarely back in my taxi driver's part of the world. In January 2026, Nestlé, Danone and Lactalis pulled products in more than sixty countries after a toxin called cereulide was traced to a single Chinese supplier of a formula ingredient. This was the genuinely worldwide chapter: Aptamil, Cow & Gate, SMA and others recalled from Europe to Asia, French prosecutors opening a probe, Nestlé posting its single biggest month of search interest in five years. Two recalls, two months apart, one a domestic scare, one a global one, and the search graph caught both."
+          "text": "Then it went global, and back to my driver’s part of the world. In January 2026, Nestlé, Danone and Lactalis pulled products in more than sixty countries after a toxin called cereulide was traced to a single Chinese supplier. Aptamil, Cow & Gate and SMA recalled from Europe to Asia; French prosecutors opening a probe; Nestlé posting its biggest search month in five years. Two recalls, two months apart, one local, one global, and the graph caught both."
         }
       ]
     },
@@ -394,7 +253,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Wave three: the autism and folate cycle (spring 2026)"
+          "text": "Wave three: folate and autism (spring 2026)"
         }
       ]
     },
@@ -403,7 +262,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The third wave was science, or at least an argument about it. Through spring 2026 an American policy push linking prenatal folate and acetaminophen to autism, and promoting a folate derivative as a treatment, sent searches for folic acid and prenatal vitamins to record highs."
+          "text": "The third wave was science, or an argument about it. Through spring 2026 an American policy push tied prenatal folate and acetaminophen to autism, and floated a folate derivative as a treatment. Searches for folic acid and prenatal vitamins went to record highs."
         }
       ]
     },
@@ -419,20 +278,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Folic acid searches roughly tripled between February and May, with no comparable rise in any prior spring; prenatal vitamins hit an all-time peak; even the niche “breastfeeding diet” rode the same wave. It is worth being careful here, as the piece itself should be: the folate-autism link is scientifically contested, and the established advice on folic acid before and during early pregnancy long predates this news cycle. What the data shows is not that the science changed; it is that the "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ],
-          "text": "conversation"
-        },
-        {
-          "type": "text",
-          "text": " did, and search behaviour moved with it almost in real time."
+          "text": "Folic acid roughly tripled between February and May, with no comparable rise in any earlier spring. Prenatal vitamins hit an all-time peak. Even the niche “breastfeeding diet” rode the wave. One caveat the piece owes you: the folate-autism link is scientifically contested, and the advice to take folic acid in early pregnancy long predates this news cycle. The science did not change. The conversation did, and search moved with it almost in real time."
         }
       ]
     },
@@ -453,7 +299,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Stitch the events together and you get a remarkably busy eighteen months, and a clear view of which companies were ready for it and which were caught flat."
+          "text": "Three news shocks in nine months. Did the companies selling to these parents see them coming?"
         }
       ]
     },
@@ -469,7 +315,32 @@
       "content": [
         {
           "type": "text",
-          "text": "The contrast in strategy is instructive. Bobbie spent the period building cultural goodwill, naming Cardi B its “Chief Confidence Officer,” running campaigns with athletes about the pressure of motherhood, and pushing a “Formula Is Food” transparency message, and when a rival's recall sent anxious parents searching for alternatives, it had both the attention and the supply to catch them. Danone leaned into emotional support, with a French campaign built around postpartum mental health and a 24/7 parent helpline. The big incumbents, Abbott and Reckitt, spent the window largely on the defensive, their messaging shadowed by litigation and clean-label scrutiny."
+          "text": "The contrast is instructive. Bobbie spent the period building goodwill: Cardi B as its “Chief Confidence Officer,” campaigns with athletes about the pressure of motherhood, a “Formula Is Food” transparency message. So when a rival’s recall sent anxious parents looking for alternatives, it had the attention and the supply to catch them. Danone leaned into emotional support, a French campaign around postpartum mental health and a 24/7 helpline. The incumbents, Abbott and Reckitt, spent the window on the defensive, shadowed by litigation and clean-label scrutiny."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You can see it in the search itself. Track the brands, and most sit flat until a recall yanks one of them up for a week."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "formula-brand-search",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "ByHeart is a vertical line in November, a thirtyfold spike that vanishes as fast as it came. Aptamil jumps with the January recall. Only Bobbie rises on purpose, climbing all through 2025 on marketing alone. One caveat: this is share of attention, not share of market, who is talked about, not who is bought. But the difference between a brand that grows and a brand that merely spikes is written right there in the lines."
         }
       ]
     },
@@ -481,7 +352,7 @@
       "content": [
         {
           "type": "text",
-          "text": "What an adjacent brand could learn"
+          "text": "What another brand can take from this"
         }
       ]
     },
@@ -490,7 +361,7 @@
       "content": [
         {
           "type": "text",
-          "text": "You do not have to sell formula for this to be useful. Any brand in a category exposed to seasonal cycles, safety scares or shifting health narratives can read these eighteen months as a playbook, half about crisis, half about timing."
+          "text": "You do not have to sell formula for this to be useful. Any brand exposed to seasonal cycles, safety scares or shifting health stories can read these eighteen months as a playbook."
         }
       ]
     },
@@ -511,7 +382,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Speed and transparency decide who keeps the customers. Regulators publicly faulted ByHeart's recall as too slow; a competitor that had pre-built reassurance, extra safety testing it could point to, and the supply to absorb switchers, turned a rival's disaster into growth. A recall spikes anxiety across the entire category, not just the brand at fault, which means the companies ready with stock, search visibility and honest “here is how we test” content capture the switch; the ones who pause to figure it out lose it. The one thing never to do is feed the fear: formula marketing in particular sits under strict international codes and intense scrutiny, and reassurance must be about your own standards, never about trashing a competitor."
+          "text": "Speed and transparency decide who keeps the customers. Regulators called ByHeart’s recall too slow. A rival’s recall spikes anxiety across the whole category, not just the brand at fault, so the brands ready with stock, search visibility and honest “here is how we test” content caught the parents it lost; the ones who paused to work it out did not. The moment is an opportunity, but only if you are ready before it arrives. The one thing never to do is feed the fear: formula marketing sits under strict codes, and reassurance has to be about your own standards, never about trashing a rival."
         }
       ]
     },
@@ -523,7 +394,7 @@
       "content": [
         {
           "type": "text",
-          "text": "On promotion"
+          "text": "On promotion and growth"
         }
       ]
     },
@@ -532,20 +403,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The seasonality is a gift if you respect the lead time. Intent builds before it peaks, so the moment to start advertising is roughly three months "
-        },
-        {
-          "type": "text",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ],
-          "text": "before"
-        },
-        {
-          "type": "text",
-          "text": " a seasonal high, not during it: you want to own the consideration set before the buying window opens. For breastfeeding products that means ramping from May towards the August peak; for children's vitamins, starting in October for the January surge and again in June for back-to-school."
+          "text": "Seasonality is a gift if you respect the lead time. Intent builds before it peaks, so you start about three months ahead of a seasonal high, not during it. For breastfeeding products, ramp from May towards August. For children’s vitamins, October for January, June for back to school."
         }
       ]
     },
@@ -554,7 +412,16 @@
       "content": [
         {
           "type": "text",
-          "text": "And the geography rewards tailoring. The live concern differs by market: folate and autism is an American conversation; heavy metals and clean labels is largely American too, driven by state law; formula safety and recalls went global. Match the message to the worry that is actually live where you are spending. The premium, low-fertility markets (Korea, Singapore, Israel, Switzerland) reward ingredient science and premium positioning, because each child is a rarer, higher-value customer. The United States rewards agility, with budget held in reserve for the next news moment. And the high-birth markets that barely show up in the English data need their own languages, their own price tiers and their own assumptions, not a translated premium campaign."
+          "text": "Geography rewards tailoring. Folate and autism is an American conversation; heavy metals and clean labels, largely American too; formula recalls went global. Match the message to the worry that is live where you spend. Premium, low-fertility markets (Korea, Singapore, Israel, Switzerland) reward ingredient science and premium positioning, because each child is a rarer, higher-value customer. America rewards agility, with budget held back for the next news moment. The high-birth markets that barely register in English need their own languages and price tiers, not a translated premium campaign."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And a wave is not growth. A recall spike is borrowed attention; it leaves as fast as it came. The brand that compounds is the one, like Bobbie, building its own reasons to be searched between the shocks."
         }
       ]
     },
@@ -566,7 +433,7 @@
       "content": [
         {
           "type": "text",
-          "text": "What search can, and can't, tell you"
+          "text": "What search can, and can’t, tell you"
         }
       ]
     },
@@ -575,7 +442,7 @@
       "content": [
         {
           "type": "text",
-          "text": "A few honest limits. Search is attention, not sales: a brand can be searched without being bought. The monthly geographic data is noisy at the edges. And the science underneath the loudest wave is genuinely disputed, so the right posture is to report what people searched, not to adjudicate whether they were right to."
+          "text": "A few honest limits. Search is attention, not sales. The monthly geographic data is noisy at the edges. And the science under the loudest wave is disputed, so the honest posture is to report what people searched, not to judge whether they were right to."
         }
       ]
     },
@@ -584,7 +451,7 @@
       "content": [
         {
           "type": "text",
-          "text": "But step back and the larger picture is hard to miss, and it brings me back to the taxi. The driver was right that fewer children are coming, across most of the wealthy world, and emphatically in his own country. Yet every one of those increasingly rare children now arrives into more scrutiny, more choice, more competing claims and more marketing than any generation before. The search graph is that paradox made visible: a quiet, shrinking subject that, for one strange and noisy year, became something the whole internet could not stop asking about."
+          "text": "But step back, and the bigger picture is hard to miss. It brings me back to the Grab. The driver was right: fewer children are coming, across most of the wealthy world, and emphatically in his own country. Yet every one of those rarer children now arrives into more scrutiny, more choice and more marketing than any before. The search graph is that paradox made visible: a small, shrinking subject that, for one strange and noisy year, the whole internet could not stop asking about."
         }
       ]
     },
