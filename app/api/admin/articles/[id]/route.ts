@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
+import { revalidatePublicArticleSurfaces } from '@/lib/revalidate';
 import { z } from 'zod';
 import {
   invalidateSlugIndex,
@@ -124,9 +125,8 @@ export async function PUT(
   }
 
   invalidateSlugIndex();
-  revalidatePath(`/articles/${nextSlug}`);
+  revalidatePublicArticleSurfaces(nextSlug);
   if (renamed) revalidatePath(`/articles/${oldSlug}`);
-  revalidatePath('/articles');
 
   return NextResponse.json({
     ok: true,

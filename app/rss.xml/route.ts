@@ -1,7 +1,7 @@
-import { listArticlesForAdmin } from '@/lib/articles';
+import { listPublishedArticlesForAdmin } from '@/lib/articles';
 
-// Re-fetch from GitHub every 10 minutes so newly published articles flow
-// to feed readers without waiting for the next Vercel build.
+// GitHub-fresh + ISR. Also revalidated on publish, so the feed updates
+// immediately rather than waiting on this 10-minute fallback timer.
 export const revalidate = 600;
 
 function escapeXml(unsafe: string): string {
@@ -12,9 +12,7 @@ function escapeXml(unsafe: string): string {
 
 export async function GET() {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
-  const articles = (await listArticlesForAdmin()).filter(
-    (a) => a.status === 'published',
-  );
+  const articles = await listPublishedArticlesForAdmin();
 
   const items = articles
     .map(

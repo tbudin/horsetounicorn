@@ -303,23 +303,41 @@ export async function loadArticleByIdForAdmin(id: string): Promise<LoadedArticle
 
 /** Same as listArticles but admin-aware. */
 export async function listArticlesForAdmin(): Promise<ArticleMetadata[]> {
-  const { isGitHubConfigured, listRepoDir } = await import('./storage/github');
+  return listArticleMetadataForAdmin();
+}
+
+/**
+ * Metadata-only article list from GitHub (or the filesystem when GitHub isn't
+ * configured). Reads just metadata.json per article — half the calls of the
+ * full loader — which is all the list/feed surfaces need. Public pages cache
+ * this via ISR + revalidate-on-publish, so it isn't hit per request.
+ */
+export async function listArticleMetadataForAdmin(): Promise<ArticleMetadata[]> {
+  const { isGitHubConfigured, listRepoDir, readRepoFile } = await import('./storage/github');
   if (!isGitHubConfigured()) return listArticles();
 
   const entries = await listRepoDir('content/articles');
   const dirs = entries.filter((e) => e.type === 'dir').map((e) => e.name);
-  const articles = await Promise.all(
+  const metas = await Promise.all(
     dirs.map(async (id) => {
       try {
-        return (await loadArticleFromGitHub(id)).metadata;
+        const raw = await readRepoFile(`content/articles/${id}/metadata.json`);
+        if (!raw) return null;
+        const meta = JSON.parse(raw) as ArticleMetadata;
+        return meta.id ? meta : null;
       } catch {
         return null;
       }
     }),
   );
-  return articles
+  return metas
     .filter((a): a is ArticleMetadata => a !== null)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+/** Published-only, GitHub-fresh — used by the public home, index, sitemap, RSS. */
+export async function listPublishedArticlesForAdmin(): Promise<ArticleMetadata[]> {
+  return (await listArticleMetadataForAdmin()).filter((a) => a.status === 'published');
 }
 
 // -- Legacy block → document migration ---------------------------------

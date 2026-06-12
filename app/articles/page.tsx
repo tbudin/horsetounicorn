@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { listPublishedArticles } from '@/lib/articles';
+import { listPublishedArticlesForAdmin } from '@/lib/articles';
 import { SubscribeSection } from '@/components/subscribe-section';
 import { ArticlesSearch } from '@/components/articles/articles-search';
 
@@ -8,8 +8,13 @@ export const metadata: Metadata = {
   description: 'Long-form essays on marketing and systems thinking.',
 };
 
-export default function ArticlesIndex() {
-  const articles = listPublishedArticles();
+// GitHub-fresh but cached (force-static): the read happens at build / on
+// revalidate, never per request.
+export const dynamic = 'force-static';
+export const revalidate = 600;
+
+export default async function ArticlesIndex() {
+  const articles = await listPublishedArticlesForAdmin();
 
   return (
     <div className="container max-w-3xl pt-6 md:pt-10">

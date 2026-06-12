@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { listPublishedArticles } from '@/lib/articles';
+import { listPublishedArticlesForAdmin } from '@/lib/articles';
 import { formatDate } from '@/lib/format';
 import { BookCard } from '@/components/article/book-card';
 import { SubscribeSection } from '@/components/subscribe-section';
 
-export default function HomePage() {
-  const published = listPublishedArticles();
+// GitHub-fresh but cached: force-static + revalidate means the GitHub read
+// happens at build / on revalidate (publish or the 10-min timer), never per
+// request — so visitors get a static page and we never hammer the API.
+export const dynamic = 'force-static';
+export const revalidate = 600;
+
+export default async function HomePage() {
+  const published = await listPublishedArticlesForAdmin();
   const [featured, ...rest] = published;
   const bookGrid = rest.slice(0, 6);
   const hasMore = rest.length > bookGrid.length;

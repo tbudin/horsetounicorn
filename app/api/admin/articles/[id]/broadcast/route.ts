@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
+import { revalidatePublicArticleSurfaces } from '@/lib/revalidate';
 import {
   invalidateSlugIndex,
   loadArticleByIdForAdmin,
@@ -149,8 +149,7 @@ export async function POST(
     );
   }
   invalidateSlugIndex();
-  revalidatePath(`/articles/${metadata.slug}`);
-  revalidatePath('/articles');
+  revalidatePublicArticleSurfaces(metadata.slug);
 
   return NextResponse.json({
     ok: true,

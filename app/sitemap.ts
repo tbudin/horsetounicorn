@@ -1,16 +1,13 @@
 import type { MetadataRoute } from 'next';
-import { listArticlesForAdmin } from '@/lib/articles';
+import { listPublishedArticlesForAdmin } from '@/lib/articles';
 
-// Re-fetch from GitHub every 10 minutes so newly published articles show up
-// in the sitemap without waiting for the next Vercel build. Crawlers hit
-// this rarely enough that the GitHub API cost is negligible.
+// GitHub-fresh + ISR. Also revalidated on publish, so newly published articles
+// appear immediately rather than waiting on this 10-minute fallback timer.
 export const revalidate = 600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://horsetounicorn.com';
-  const articles = (await listArticlesForAdmin()).filter(
-    (a) => a.status === 'published',
-  );
+  const articles = await listPublishedArticlesForAdmin();
 
   return [
     { url: `${base}/`, lastModified: new Date(), priority: 1 },

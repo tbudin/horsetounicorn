@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
+import { revalidatePublicArticleSurfaces } from '@/lib/revalidate';
 import { z } from 'zod';
 import { render } from '@react-email/components';
 import { PostBroadcastEmail } from '@/emails/post-broadcast';
@@ -93,24 +93,21 @@ export async function POST(
     nextMeta.status = nextStatus;
     if (!nextMeta.publishedAt) nextMeta.publishedAt = new Date().toISOString();
     await persist(nextMeta, 'Mark as published');
-    revalidatePath(`/articles/${slug}`);
-    revalidatePath('/articles');
+    revalidatePublicArticleSurfaces(slug);
     return NextResponse.json({ ok: true, status: nextStatus });
   }
   if (body.action === 'revert_draft') {
     nextStatus = 'draft';
     nextMeta.status = nextStatus;
     await persist(nextMeta, 'Revert to draft');
-    revalidatePath(`/articles/${slug}`);
-    revalidatePath('/articles');
+    revalidatePublicArticleSurfaces(slug);
     return NextResponse.json({ ok: true, status: nextStatus });
   }
   if (body.action === 'archive') {
     nextStatus = 'archived';
     nextMeta.status = nextStatus;
     await persist(nextMeta, 'Archive');
-    revalidatePath(`/articles/${slug}`);
-    revalidatePath('/articles');
+    revalidatePublicArticleSurfaces(slug);
     return NextResponse.json({ ok: true, status: nextStatus });
   }
 
@@ -211,8 +208,7 @@ export async function POST(
     body.action === 'inner_circle' ? 'Send inner-circle broadcast' : 'Publish + send broadcast',
   );
 
-  revalidatePath(`/articles/${slug}`);
-  revalidatePath('/articles');
+  revalidatePublicArticleSurfaces(slug);
 
   return NextResponse.json({
     ok: true,
