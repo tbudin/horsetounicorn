@@ -11,6 +11,14 @@
       ]
     },
     {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/bf5497a6-4ca8-4e6d-a340-3117c2fe23c3/images/feeding-future.png",
+        "alt": "Illustration of a baby in a high chair drinking from a bottle",
+        "caption": null
+      }
+    },
+    {
       "type": "paragraph",
       "content": [
         {
@@ -290,11 +298,41 @@
       ]
     },
     {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Did the brands catch it?"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "content": [
         {
           "type": "text",
-          "text": "The brands spiked too, each for its own reason."
+          "text": "All that fresh attention is a windfall, and it raises the obvious question for anyone selling into the category: do you catch the wave, with what you say or what you ship, or do you just get dragged along by it? The timeline above is really a record of those choices."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Both levers got pulled, unevenly. On the message, Bobbie was relentless: Cardi B as its “Chief Confidence Officer,” campaigns with athletes about the pressure of motherhood, a “Formula Is Food” push on ingredients. Danone went the other way, into emotional support, with a French campaign built around postpartum mental health and a 24/7 parent helpline. On product, Danone shipped a dairy-and-plants blend formula; supplement brands quietly swapped synthetic folic acid for methylfolate to ride the folate story; baby-food makers leaned into clean-label and heavy-metal testing as a new state law forced disclosure. The incumbents, Abbott and Reckitt, mostly played defence, their messaging shadowed by litigation."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So did any of it move attention their way? You can read the answer off the search lines."
         }
       ]
     },
