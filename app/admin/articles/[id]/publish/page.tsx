@@ -99,6 +99,9 @@ export default async function PublishPage({
         chartNames={chartNames}
         chartCandidates={chartCandidates}
         authorName={author.name}
+        defaultTestEmail={
+          process.env.BROADCAST_TEST_EMAIL ?? process.env.EMAIL_REPLY_TO ?? ''
+        }
       />
     </div>
   );

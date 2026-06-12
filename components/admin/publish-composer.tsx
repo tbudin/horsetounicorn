@@ -30,6 +30,8 @@ export interface PublishComposerProps {
   /** Deterministic URL each chart's PNG would live at, for existence probing. */
   chartCandidates: Record<string, string>;
   authorName: string;
+  /** Prefilled address for the real-inbox test send. */
+  defaultTestEmail: string;
 }
 
 const SCHEDULE_PRESETS: { label: string; minutes: number }[] = [
@@ -53,6 +55,7 @@ export function PublishComposer({
   chartNames,
   chartCandidates,
   authorName,
+  defaultTestEmail,
 }: PublishComposerProps) {
   const router = useRouter();
 
@@ -93,6 +96,9 @@ export function PublishComposer({
   const [statusBusy, setStatusBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  const [testEmail, setTestEmail] = useState(defaultTestEmail);
+  const [testBusy, setTestBusy] = useState(false);
+  const [testMsg, setTestMsg] = useState<string | null>(null);
 
   // src → label lookup across article images + generated chart images.
   const labelBySrc = useMemo(() => {
@@ -197,6 +203,31 @@ export function PublishComposer({
   }
   function removeHighlight(i: number) {
     setHighlights((prev) => prev.filter((_, j) => j !== i));
+  }
+
+  // --- test send (single address, transactional) -----------------------
+  async function sendTest() {
+    if (testBusy) return;
+    const to = testEmail.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) {
+      setTestMsg('Enter a valid email address');
+      return;
+    }
+    setTestBusy(true);
+    setTestMsg(null);
+    try {
+      const res = await fetch(`/api/admin/articles/${articleId}/broadcast/test`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...composePayload, to }),
+      });
+      const data = (await res.json()) as { ok: boolean; error?: string };
+      setTestMsg(res.ok && data.ok ? `Test sent to ${to}` : (data.error ?? 'Test send failed'));
+    } catch {
+      setTestMsg('Network error');
+    } finally {
+      setTestBusy(false);
+    }
   }
 
   // --- send ------------------------------------------------------------
@@ -506,6 +537,42 @@ export function PublishComposer({
                 className="bg-transparent text-xs outline-none"
               />
             </label>
+          </div>
+        </Section>
+
+        {/* Test send */}
+        <Section title="Test send">
+          <p className="text-xs text-ink-muted">
+            Send this exact email to one address to preview it in a real inbox.
+            Subject is prefixed with <span className="font-mono">[TEST]</span>; no
+            one on your list is emailed.
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <Input
+              type="email"
+              value={testEmail}
+              onChange={(e) => setTestEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="max-w-xs"
+            />
+            <button
+              type="button"
+              onClick={sendTest}
+              disabled={testBusy}
+              className="border border-[#EEE6EC] bg-white px-3 py-2 text-xs font-medium text-ink-heading hover:border-burgundy hover:text-burgundy disabled:opacity-50 transition-colors"
+            >
+              {testBusy ? 'Sending…' : 'Send test'}
+            </button>
+            {testMsg ? (
+              <span
+                className={cn(
+                  'text-xs',
+                  testMsg.startsWith('Test sent') ? 'text-green' : 'text-burgundy',
+                )}
+              >
+                {testMsg}
+              </span>
+            ) : null}
           </div>
         </Section>
 
