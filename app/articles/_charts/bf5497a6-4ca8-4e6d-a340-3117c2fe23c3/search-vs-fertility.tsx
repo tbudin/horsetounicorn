@@ -146,7 +146,7 @@ const metricValue = (r: Row, t: Topic, m: Metric): number | null => {
 export function SearchVsFertility() {
   const [topics, setTopics] = useState<Set<Topic>>(new Set(['bf']));
   const [metric, setMetric] = useState<Metric>('perBirth');
-  const [scale, setScale] = useState<Scale>('linear');
+  const [scale, setScale] = useState<Scale>('log');
   const [regions, setRegions] = useState<Set<Row['region']>>(new Set());
   const [trend, setTrend] = useState(false);
 
