@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 import { z } from 'zod';
-import { ADMIN_COOKIE, verifySession } from '@/lib/admin-auth';
+import { requireAdmin } from '@/lib/admin-guard';
 import { signChartShotToken } from '@/lib/subscribe-tokens';
 import { screenshotChart } from '@/lib/chart-screenshot';
 import { saveChartImage } from '@/lib/storage';
@@ -25,10 +24,8 @@ const Body = z.object({
 export async function POST(req: Request) {
   // This route bypasses the admin middleware (under /api), so verify the
   // session ourselves.
-  const session = await verifySession((await cookies()).get(ADMIN_COOKIE)?.value ?? '');
-  if (!session) {
-    return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
-  }
+  const denied = await requireAdmin();
+  if (denied) return denied;
 
   let body: z.infer<typeof Body>;
   try {

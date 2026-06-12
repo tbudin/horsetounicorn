@@ -10,6 +10,7 @@ import {
   type ArticleMetadata,
 } from '@/lib/articles';
 import { saveArticleFiles } from '@/lib/storage';
+import { requireAdmin } from '@/lib/admin-guard';
 import {
   getAudienceId,
   getEmailFrom,
@@ -42,6 +43,9 @@ export async function POST(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
   const { id } = await params;
 
   let body: z.infer<typeof Body>;

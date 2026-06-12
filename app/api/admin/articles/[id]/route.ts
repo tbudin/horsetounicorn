@@ -8,6 +8,7 @@ import {
 } from '@/lib/articles';
 import type { ArticleDocument } from '@/lib/article-doc';
 import { saveArticleFiles } from '@/lib/storage';
+import { requireAdmin } from '@/lib/admin-guard';
 
 // -- Document schema -----------------------------------------------------
 // We accept the full TipTap-style document. Validation here is light: a
@@ -51,6 +52,9 @@ export async function PUT(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
   const { id } = await params;
 
   let parsed: z.infer<typeof PutBody>;
@@ -137,6 +141,9 @@ export async function GET(
   _req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
   const { id } = await params;
   try {
     const article = await loadArticleByIdForAdmin(id);

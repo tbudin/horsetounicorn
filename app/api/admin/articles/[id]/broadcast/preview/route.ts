@@ -5,6 +5,7 @@ import {
   renderBroadcastHtml,
   getSiteUrl,
 } from '@/lib/broadcast';
+import { requireAdmin } from '@/lib/admin-guard';
 
 export const runtime = 'nodejs';
 
@@ -16,6 +17,9 @@ export async function POST(
   req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
   const { id } = await params;
 
   let payload;

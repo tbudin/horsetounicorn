@@ -7,6 +7,7 @@ import {
   removeLocalCoverFiles,
   saveImage,
 } from '@/lib/storage';
+import { requireAdmin } from '@/lib/admin-guard';
 
 const ALLOWED_EXT = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'];
 const MAX_BYTES = 8 * 1024 * 1024; // 8 MB
@@ -80,6 +81,9 @@ function uniqueLocalFilename(dir: string, desired: string): string {
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export async function POST(req: Request) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
   const form = await req.formData();
   const articleId = form.get('articleId');
   const kind = (form.get('kind') as string | null) ?? 'inline';
