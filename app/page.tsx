@@ -69,7 +69,7 @@ export default function HomePage() {
         ) : null}
       </div>
 
-      {/* Book-style cards — next 4 articles in a 2×2 grid */}
+      {/* Book-style cards — 1 col mobile, 2 tablet, 3 desktop */}
       {bookGrid.length > 0 ? (
         <div className="container max-w-5xl">
           <hr className="separator mb-12" />
@@ -77,7 +77,7 @@ export default function HomePage() {
             <p className="text-[11px] uppercase tracking-wider text-ink-subtle data-num mb-10 text-center">
               Recent reading
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12 justify-items-center max-w-[1100px] mx-auto px-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12 justify-items-center max-w-[1100px] mx-auto px-2">
               {bookGrid.map((a, i) => (
                 <BookCard key={a.slug} article={a} index={i + 1} />
               ))}
