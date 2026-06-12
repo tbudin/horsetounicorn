@@ -4,7 +4,7 @@ import { SubscribeSection } from '@/components/subscribe-section';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Horse to Unicorn — weekly marketing and systems thinking for technical founders and operators.',
+    'Horse to Unicorn, essays on marketing, positioning and systems by Thomas Budin, founder of Noodle in Singapore.',
 };
 
 export default function AboutPage() {
@@ -13,21 +13,31 @@ export default function AboutPage() {
       <h1 className="font-serif text-5xl tracking-heading leading-tight mb-6">About</h1>
 
       <div className="prose prose-lg max-w-none">
+        <p>Hi, I&apos;m Thomas, a French founder living in Singapore.</p>
         <p>
-          <strong>Horse to Unicorn</strong> is a weekly publication on marketing and systems
-          thinking for technical founders and operators.
+          By day I run{' '}
+          <a href="https://www.noodle.sg" target="_blank" rel="noopener noreferrer">
+            Noodle
+          </a>
+          , a growth-marketing studio that helps entrepreneurs turn a good idea into a story
+          the market actually hears. The bet behind everything I do: most companies that win
+          don&apos;t have a 10× product. They have a 1.5× product and a 10× story. The product
+          is rarely the hard part. The story is.
         </p>
         <p>
-          The thesis: most great companies don't ship a 10x product — they ship a 1.5x product
-          with a 10x story. The hard part is the story, the positioning, and the system that
-          puts them in front of the right people. That's what we dig into here.
+          <strong>Horse to Unicorn</strong> is where I write that thinking down: marketing,
+          positioning, and the systems that put good work in front of the right people. I
+          publish when a question grabs me, not on a schedule.
         </p>
         <p>
-          Written by <strong>Thomas Budin</strong>. Previously on Substack — moved here to be
-          able to ship things like real interactive charts and proper tooling.
-        </p>
-        <p>
-          The site is open source and built with Next.js, MDX, and Recharts.
+          The other half of me just likes data. I came to code late, after an engineering
+          degree, and never stopped poking at numbers (that habit lives over at{' '}
+          <a href="https://datairl.com" target="_blank" rel="noopener noreferrer">
+            datairl.com
+          </a>
+          ). So the essays here tend to start from data, not opinion: I pull the numbers, build
+          the charts, check them against primary sources, and follow where they lead, even when
+          the answer surprises me.
         </p>
       </div>
 

@@ -279,6 +279,11 @@ const tipLink = { color: '#9E0A71', textDecoration: 'underline', fontWeight: 600
 
 const hr = { borderColor: '#E8E8E8', margin: '24px 0' };
 
-const footer = { color: '#808080', fontSize: '12px', lineHeight: '1.5' };
+const footer = {
+  color: '#808080',
+  fontSize: '12px',
+  lineHeight: '1.5',
+  textAlign: 'center' as const,
+};
 
 const footerLink = { color: '#9E0A71', textDecoration: 'underline' };

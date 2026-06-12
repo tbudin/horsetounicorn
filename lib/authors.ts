@@ -38,14 +38,18 @@ export const DEFAULT_AUTHOR = 'Thomas Budin';
 const AUTHORS: Record<string, AuthorProfile> = {
   'Thomas Budin': {
     name: 'Thomas Budin',
-    role: 'Founder & writer, Horse to Unicorn',
-    bio: 'Weekly marketing and systems thinking for technical founders and operators. The thesis: ship a 1.5× product with a 10× story.',
+    role: 'Founder of Noodle, Singapore',
+    bio: 'Thomas is a French founder living in Singapore. He runs Noodle, a growth-marketing studio for entrepreneurs, and the rest of the time pulls data apart for the fun of it. The throughline: a 1.5× product with a 10× story beats a 10× product with none.',
     avatar: '/authors/htu-author-thomasbudin.png',
     // Drop /public/authors/thomas-signature.png and uncomment to enable the
     // handwritten signature above the author card.
     // signature: '/authors/thomas-signature.png',
-    signatureText: '— Thomas',
-    links: [{ label: 'About', href: '/about' }],
+    signatureText: 'Thomas',
+    links: [
+      { label: 'About', href: '/about' },
+      { label: 'Noodle', href: 'https://www.noodle.sg' },
+      { label: 'datairl', href: 'https://datairl.com' },
+    ],
   },
 };
 
