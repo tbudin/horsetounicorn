@@ -1,6 +1,6 @@
 import {
   Body,
-  Button,
+  Column,
   Container,
   Head,
   Hr,
@@ -8,69 +8,52 @@ import {
   Img,
   Link,
   Preview,
+  Row,
   Section,
   Text,
 } from '@react-email/components';
 
 export type BroadcastVariant = 'standard' | 'minimal';
 
-export interface BroadcastImageBlock {
-  type: 'image';
-  src: string;
-  alt?: string;
-  caption?: string | null;
-}
-
-export interface BroadcastAuthor {
-  name: string;
-  /** Absolute URL to a square avatar. */
-  avatarUrl?: string;
-}
+export type EmailBlock =
+  | { type: 'text'; text: string }
+  | { type: 'image'; src: string; alt?: string; caption?: string | null }
+  | { type: 'highlights'; items: string[] };
 
 export interface BroadcastEmailProps {
   variant?: BroadcastVariant;
-  /** Used for the email preview text + <title>. */
+  /** Email preview text + <title>. */
   subject: string;
-  /** Opening paragraph(s). Blank lines split into separate paragraphs. */
-  intro?: string;
-  /** Short highlight lines rendered as a list. */
-  highlights?: string[];
-  /** Ordered image blocks (article photos + chart PNGs). */
-  blocks?: BroadcastImageBlock[];
-  /** Canonical article URL for the "Read on the web" button. */
+  /** Ordered body blocks — prose, images/charts, highlight lists, interleaved. */
+  blocks?: EmailBlock[];
+  /** Absolute cover URL for the read-on-web card. */
+  coverUrl?: string;
+  articleTitle: string;
   articleUrl: string;
-  author: BroadcastAuthor;
+  /** First-name sign-off, rendered as "— {signoff}". */
+  signoff?: string;
   /** Optional Stripe tip link — coffee CTA hidden when omitted. */
   tipUrl?: string;
   siteUrl: string;
 }
 
 /**
- * Reusable broadcast email. Composed from structured fields in the admin
- * publish flow and rendered to HTML for Resend. Two variants:
- *   standard — branded header image
- *   minimal  — text wordmark, lighter chrome
- *
- * The signature (author avatar + name) and the buy-me-a-coffee line are always
- * appended; the unsubscribe footer uses Resend's {{{RESEND_UNSUBSCRIBE_URL}}}
- * placeholder, substituted on send.
+ * Reusable broadcast email. The body is an ordered list of blocks composed in
+ * the admin, so images and chart snapshots sit inline rather than dumped at the
+ * end. Closes with a "— {signoff}" line, a cover-image read-on-web card, and a
+ * prominent buy-me-a-coffee CTA. No formal author block — it's just from Tom.
  */
 export function BroadcastEmail({
   variant = 'standard',
   subject,
-  intro,
-  highlights = [],
   blocks = [],
+  coverUrl,
+  articleTitle,
   articleUrl,
-  author,
+  signoff = 'Tom',
   tipUrl,
   siteUrl,
 }: BroadcastEmailProps) {
-  const introParas = (intro ?? '')
-    .split(/\n{2,}/)
-    .map((p) => p.trim())
-    .filter(Boolean);
-
   return (
     <Html>
       <Head />
@@ -92,67 +75,50 @@ export function BroadcastEmail({
 
           <Text style={heading}>{subject}</Text>
 
-          {introParas.map((p, i) => (
-            <Text key={i} style={paragraph}>
-              {p}
-            </Text>
+          {blocks.map((block, i) => (
+            <BodyBlock key={i} block={block} />
           ))}
 
-          {highlights.length > 0 ? (
-            <Section style={highlightBox}>
-              {highlights.map((h, i) => (
-                <Text key={i} style={highlightItem}>
-                  <span style={bullet}>—</span> {h}
-                </Text>
-              ))}
+          <Text style={signoffStyle}>— {signoff}</Text>
+
+          {/* Read-on-web card: cover left, title + CTA right. */}
+          <Link href={articleUrl} style={cardLink}>
+            <Section style={card}>
+              <Row>
+                {coverUrl ? (
+                  <Column style={cardCoverCell}>
+                    <Img src={coverUrl} alt={articleTitle} width="150" style={cardCover} />
+                  </Column>
+                ) : null}
+                <Column style={cardBodyCell}>
+                  <Text style={cardKicker}>Read on the web</Text>
+                  <Text style={cardTitle}>{articleTitle}</Text>
+                  <Text style={cardCta}>Read the full article →</Text>
+                </Column>
+              </Row>
             </Section>
-          ) : null}
-
-          {blocks.map((b, i) => (
-            <Section key={i} style={{ margin: '20px 0' }}>
-              <Img src={b.src} alt={b.alt ?? ''} width="520" style={blockImg} />
-              {b.caption ? <Text style={caption}>{b.caption}</Text> : null}
-            </Section>
-          ))}
-
-          <Button href={articleUrl} style={button}>
-            Read on the web →
-          </Button>
-
-          <Hr style={hr} />
-
-          {/* Signature */}
-          <Section style={sigRow}>
-            {author.avatarUrl ? (
-              <Img
-                src={author.avatarUrl}
-                alt={author.name}
-                width="44"
-                height="44"
-                style={sigAvatar}
-              />
-            ) : null}
-            <Text style={sigName}>{author.name}</Text>
-          </Section>
+          </Link>
 
           {tipUrl ? (
-            <Text style={tipLine}>
-              If you liked this,{' '}
-              <Link href={tipUrl} style={tipLink}>
-                ☕ buy me a coffee
-              </Link>
-              .
-            </Text>
+            <Section style={tipBox}>
+              <Text style={tipText}>
+                If this was worth your time,{' '}
+                <Link href={tipUrl} style={tipLink}>
+                  ☕ buy me a coffee
+                </Link>
+                .
+              </Text>
+            </Section>
           ) : null}
 
           <Hr style={hr} />
           <Text style={footer}>
             You&apos;re getting this because you subscribed at{' '}
-            <Link href={siteUrl} style={link}>
+            <Link href={siteUrl} style={footerLink}>
               {siteUrl.replace(/^https?:\/\//, '')}
             </Link>
             .{' '}
-            <Link href="{{{RESEND_UNSUBSCRIBE_URL}}}" style={link}>
+            <Link href="{{{RESEND_UNSUBSCRIBE_URL}}}" style={footerLink}>
               Unsubscribe
             </Link>
             .
@@ -165,6 +131,42 @@ export function BroadcastEmail({
 
 export default BroadcastEmail;
 
+function BodyBlock({ block }: { block: EmailBlock }) {
+  if (block.type === 'image') {
+    return (
+      <Section style={{ margin: '20px 0' }}>
+        <Img src={block.src} alt={block.alt ?? ''} width="520" style={blockImg} />
+        {block.caption ? <Text style={caption}>{block.caption}</Text> : null}
+      </Section>
+    );
+  }
+  if (block.type === 'highlights') {
+    return (
+      <Section style={highlightBox}>
+        {block.items.map((h, i) => (
+          <Text key={i} style={highlightItem}>
+            <span style={bullet}>—</span> {h}
+          </Text>
+        ))}
+      </Section>
+    );
+  }
+  // text — split blank-line-separated paragraphs
+  const paras = block.text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  return (
+    <>
+      {paras.map((p, i) => (
+        <Text key={i} style={paragraph}>
+          {p}
+        </Text>
+      ))}
+    </>
+  );
+}
+
 // -- styles --------------------------------------------------------------
 
 const body = {
@@ -173,18 +175,9 @@ const body = {
   color: '#1A1A1A',
 };
 
-const container = {
-  margin: '0 auto',
-  padding: '40px 20px',
-  maxWidth: '560px',
-};
+const container = { margin: '0 auto', padding: '40px 20px', maxWidth: '560px' };
 
-const headerImg = {
-  width: '100%',
-  height: 'auto',
-  display: 'block',
-  margin: '0 0 8px',
-};
+const headerImg = { width: '100%', height: 'auto', display: 'block', margin: '0 0 8px' };
 
 const wordmark = {
   fontSize: '13px',
@@ -203,11 +196,9 @@ const heading = {
   margin: '8px 0 16px',
 };
 
-const paragraph = {
-  fontSize: '16px',
-  lineHeight: '1.6',
-  margin: '12px 0',
-};
+const paragraph = { fontSize: '16px', lineHeight: '1.6', margin: '12px 0' };
+
+const signoffStyle = { fontSize: '16px', lineHeight: '1.6', margin: '20px 0 8px' };
 
 const highlightBox = {
   borderLeft: '3px solid #9E0A71',
@@ -223,17 +214,9 @@ const highlightItem = {
   color: '#303030',
 };
 
-const bullet = {
-  color: '#9E0A71',
-  fontWeight: 700,
-};
+const bullet = { color: '#9E0A71', fontWeight: 700 };
 
-const blockImg = {
-  width: '100%',
-  height: 'auto',
-  display: 'block',
-  borderRadius: '6px',
-};
+const blockImg = { width: '100%', height: 'auto', display: 'block', borderRadius: '6px' };
 
 const caption = {
   fontSize: '12px',
@@ -243,64 +226,59 @@ const caption = {
   margin: '6px 0 0',
 };
 
-const button = {
-  backgroundColor: '#9E0A71',
-  color: '#ffffff',
-  fontSize: '16px',
-  fontWeight: '500',
-  padding: '12px 24px',
-  borderRadius: '6px',
-  textDecoration: 'none',
-  display: 'inline-block',
-  margin: '16px 0',
-};
+// read-on-web card
+const cardLink = { textDecoration: 'none', color: 'inherit' };
 
-const sigRow = {
-  margin: '4px 0',
-};
-
-const sigAvatar = {
-  borderRadius: '9999px',
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  marginRight: '10px',
+const card = {
   border: '1px solid #EEE6EC',
-};
-
-const sigName = {
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  fontSize: '15px',
-  fontWeight: 600,
-  color: '#1A1A1A',
-  margin: 0,
-};
-
-const link = {
-  color: '#9E0A71',
-  textDecoration: 'underline',
-};
-
-const tipLine = {
-  fontSize: '14px',
-  lineHeight: '1.6',
-  color: '#666',
-  margin: '16px 0 0',
-};
-
-const tipLink = {
-  color: '#9E0A71',
-  textDecoration: 'underline',
-  fontWeight: 500,
-};
-
-const hr = {
-  borderColor: '#E8E8E8',
+  borderRadius: '10px',
+  backgroundColor: '#FAF7F9',
+  padding: '12px',
   margin: '24px 0',
 };
 
-const footer = {
-  color: '#666',
-  fontSize: '12px',
-  lineHeight: '1.5',
+const cardCoverCell = { width: '150px', verticalAlign: 'middle' as const, paddingRight: '14px' };
+
+const cardCover = { width: '150px', height: 'auto', display: 'block', borderRadius: '6px' };
+
+const cardBodyCell = { verticalAlign: 'middle' as const };
+
+const cardKicker = {
+  fontSize: '11px',
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase' as const,
+  color: '#9E0A71',
+  fontWeight: 600,
+  margin: '0 0 4px',
 };
+
+const cardTitle = {
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontSize: '18px',
+  lineHeight: '1.25',
+  color: '#0A0A0A',
+  margin: '0 0 8px',
+};
+
+const cardCta = { fontSize: '14px', fontWeight: 600, color: '#9E0A71', margin: 0 };
+
+// coffee
+const tipBox = {
+  textAlign: 'center' as const,
+  margin: '24px 0 8px',
+};
+
+const tipText = {
+  fontSize: '16px',
+  lineHeight: '1.6',
+  color: '#303030',
+  margin: 0,
+};
+
+const tipLink = { color: '#9E0A71', textDecoration: 'underline', fontWeight: 600 };
+
+const hr = { borderColor: '#E8E8E8', margin: '24px 0' };
+
+const footer = { color: '#808080', fontSize: '12px', lineHeight: '1.5' };
+
+const footerLink = { color: '#9E0A71', textDecoration: 'underline' };

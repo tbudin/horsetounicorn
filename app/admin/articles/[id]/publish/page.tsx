@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { loadArticleByIdForAdmin } from '@/lib/articles';
 import type { BlockNode } from '@/lib/article-doc';
-import { getAuthor } from '@/lib/authors';
 import { chartImagePublicUrl } from '@/lib/storage';
 import { PublishComposer } from '@/components/admin/publish-composer';
 
@@ -46,7 +45,6 @@ export default async function PublishPage({
     notFound();
   }
   const { metadata, document } = article;
-  const author = getAuthor(metadata.author);
 
   const images: ImageOption[] = [];
   if (metadata.cover) {
@@ -98,7 +96,6 @@ export default async function PublishPage({
         images={images}
         chartNames={chartNames}
         chartCandidates={chartCandidates}
-        authorName={author.name}
         defaultTestEmail={
           process.env.BROADCAST_TEST_EMAIL ?? process.env.EMAIL_REPLY_TO ?? ''
         }

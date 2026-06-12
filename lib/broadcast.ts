@@ -3,27 +3,33 @@ import { render } from '@react-email/components';
 import {
   BroadcastEmail,
   type BroadcastEmailProps,
+  type EmailBlock,
 } from '@/emails/broadcast/broadcast-email';
-import { getAuthor } from '@/lib/authors';
 import type { ArticleMetadata } from '@/lib/articles';
 
-/** Shared compose payload sent by the publish composer to the preview + send
- *  routes. The server fills in author / articleUrl / tipUrl / siteUrl. */
+/**
+ * One body block. The email body is an ordered list of these, so the writer
+ * can interleave prose, images/charts, and highlight lists freely.
+ */
+export const BodyBlockSchema = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('text'), text: z.string() }),
+  z.object({
+    type: z.literal('image'),
+    src: z.string().min(1),
+    alt: z.string().optional(),
+    caption: z.string().nullish(),
+  }),
+  z.object({ type: z.literal('highlights'), items: z.array(z.string().min(1)) }),
+]);
+
+/** Compose payload shared by the preview / send / test routes. */
 export const BroadcastComposeSchema = z.object({
   variant: z.enum(['standard', 'minimal']).default('standard'),
   audience: z.enum(['inner_circle', 'main']),
   subject: z.string().min(1),
-  intro: z.string().optional().default(''),
-  highlights: z.array(z.string().min(1)).default([]),
-  blocks: z
-    .array(
-      z.object({
-        src: z.string().min(1),
-        alt: z.string().optional(),
-        caption: z.string().nullish(),
-      }),
-    )
-    .default([]),
+  blocks: z.array(BodyBlockSchema).default([]),
+  /** First-name sign-off rendered as "— {signoff}" at the end of the body. */
+  signoff: z.string().optional().default('Tom'),
   /** ISO timestamp for a scheduled send; null/omitted = send now. */
   scheduledAt: z.string().datetime().nullish(),
 });
@@ -33,11 +39,7 @@ export type BroadcastCompose = z.infer<typeof BroadcastComposeSchema>;
 const absolutize = (src: string, siteUrl: string) =>
   /^https?:\/\//.test(src) ? src : `${siteUrl}${src.startsWith('/') ? '' : '/'}${src}`;
 
-/**
- * Turn a compose payload + article into the props the BroadcastEmail React
- * component expects: image srcs absolutized, author resolved, tip + site URLs
- * injected.
- */
+/** Turn a compose payload + article into the props the email component needs. */
 export function buildBroadcastProps({
   payload,
   metadata,
@@ -47,23 +49,26 @@ export function buildBroadcastProps({
   metadata: ArticleMetadata;
   siteUrl: string;
 }): BroadcastEmailProps {
-  const author = getAuthor(metadata.author);
+  const blocks: EmailBlock[] = payload.blocks.map((b) => {
+    if (b.type === 'image') {
+      return {
+        type: 'image' as const,
+        src: absolutize(b.src, siteUrl),
+        alt: b.alt,
+        caption: b.caption ?? null,
+      };
+    }
+    return b;
+  });
+
   return {
     variant: payload.variant,
     subject: payload.subject,
-    intro: payload.intro,
-    highlights: payload.highlights,
-    blocks: payload.blocks.map((b) => ({
-      type: 'image' as const,
-      src: absolutize(b.src, siteUrl),
-      alt: b.alt,
-      caption: b.caption ?? null,
-    })),
+    blocks,
+    coverUrl: metadata.cover ? absolutize(metadata.cover, siteUrl) : undefined,
+    articleTitle: metadata.title,
     articleUrl: `${siteUrl}/articles/${metadata.slug}`,
-    author: {
-      name: author.name,
-      avatarUrl: author.avatar ? absolutize(author.avatar, siteUrl) : undefined,
-    },
+    signoff: payload.signoff,
     tipUrl: process.env.NEXT_PUBLIC_STRIPE_TIP_URL,
     siteUrl,
   };

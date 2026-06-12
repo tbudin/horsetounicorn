@@ -1,8 +1,19 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check, Plus, X, Clock } from 'lucide-react';
+import {
+  Check,
+  Plus,
+  X,
+  Clock,
+  ArrowUp,
+  ArrowDown,
+  Trash2,
+  Type,
+  List,
+  Image as ImageIcon,
+} from 'lucide-react';
 import type { ArticleStatus, BroadcastRecord } from '@/lib/articles';
 import { cn } from '@/lib/utils';
 import { ToggleGroup } from '@/components/charts/toggle-group';
@@ -18,6 +29,11 @@ interface ImageOption {
 type Audience = 'inner_circle' | 'main';
 type Variant = 'standard' | 'minimal';
 
+type Block =
+  | { id: string; type: 'text'; text: string }
+  | { id: string; type: 'highlights'; items: string[] }
+  | { id: string; type: 'image'; src: string };
+
 export interface PublishComposerProps {
   articleId: string;
   title: string;
@@ -29,7 +45,6 @@ export interface PublishComposerProps {
   chartNames: string[];
   /** Deterministic URL each chart's PNG would live at, for existence probing. */
   chartCandidates: Record<string, string>;
-  authorName: string;
   /** Prefilled address for the real-inbox test send. */
   defaultTestEmail: string;
 }
@@ -54,7 +69,6 @@ export function PublishComposer({
   images,
   chartNames,
   chartCandidates,
-  authorName,
   defaultTestEmail,
 }: PublishComposerProps) {
   const router = useRouter();
@@ -64,17 +78,29 @@ export function PublishComposer({
   );
   const [variant, setVariant] = useState<Variant>('standard');
   const [subject, setSubject] = useState(title);
-  const [intro, setIntro] = useState('');
-  const [highlights, setHighlights] = useState<string[]>(['']);
-  const [selected, setSelected] = useState<string[]>([]); // ordered image srcs
+  const [signoff, setSignoff] = useState('Tom');
+
+  const idRef = useRef(1);
+  const nextId = () => String(++idRef.current);
+  const [blocks, setBlocks] = useState<Block[]>([{ id: '1', type: 'text', text: '' }]);
+
   const [presetMinutes, setPresetMinutes] = useState<number | null>(0);
   const [customWhen, setCustomWhen] = useState<string>('');
   const [chartImages, setChartImages] = useState<Record<string, string>>({});
   const [chartBusy, setChartBusy] = useState<string | null>(null);
   const [chartError, setChartError] = useState<string | null>(null);
 
-  // Probe for already-generated chart PNGs so they show up without a
-  // re-render. An <img> load that succeeds means the file exists.
+  const [previewHtml, setPreviewHtml] = useState('');
+  const [sending, setSending] = useState(false);
+  const [statusBusy, setStatusBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
+  const [testEmail, setTestEmail] = useState(defaultTestEmail);
+  const [testBusy, setTestBusy] = useState(false);
+  const [testMsg, setTestMsg] = useState<string | null>(null);
+
+  // Probe for already-generated chart PNGs so they're pickable without a
+  // re-render.
   useEffect(() => {
     let cancelled = false;
     for (const [name, url] of Object.entries(chartCandidates)) {
@@ -87,20 +113,10 @@ export function PublishComposer({
     return () => {
       cancelled = true;
     };
-    // chartCandidates is stable for the page's lifetime.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [previewHtml, setPreviewHtml] = useState('');
-  const [sending, setSending] = useState(false);
-  const [statusBusy, setStatusBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [info, setInfo] = useState<string | null>(null);
-  const [testEmail, setTestEmail] = useState(defaultTestEmail);
-  const [testBusy, setTestBusy] = useState(false);
-  const [testMsg, setTestMsg] = useState<string | null>(null);
-
-  // src → label lookup across article images + generated chart images.
+  // src → label, across article images + generated charts.
   const labelBySrc = useMemo(() => {
     const m = new Map<string, string>();
     for (const i of images) m.set(i.src, i.label);
@@ -108,26 +124,30 @@ export function PublishComposer({
     return m;
   }, [images, chartImages]);
 
-  const blocks = useMemo(
+  // Compose payload — strip ids, drop empty blocks.
+  const composeBlocks = useMemo(
     () =>
-      selected.map((src) => ({
-        src,
-        alt: labelBySrc.get(src) ?? '',
-        caption: null as string | null,
-      })),
-    [selected, labelBySrc],
+      blocks
+        .map((b) => {
+          if (b.type === 'text') {
+            const text = b.text.trim();
+            return text ? { type: 'text' as const, text } : null;
+          }
+          if (b.type === 'highlights') {
+            const items = b.items.map((h) => h.trim()).filter(Boolean);
+            return items.length ? { type: 'highlights' as const, items } : null;
+          }
+          return b.src
+            ? { type: 'image' as const, src: b.src, alt: labelBySrc.get(b.src) ?? '' }
+            : null;
+        })
+        .filter(Boolean),
+    [blocks, labelBySrc],
   );
 
   const composePayload = useMemo(
-    () => ({
-      variant,
-      audience,
-      subject,
-      intro,
-      highlights: highlights.map((h) => h.trim()).filter(Boolean),
-      blocks,
-    }),
-    [variant, audience, subject, intro, highlights, blocks],
+    () => ({ variant, audience, subject, signoff, blocks: composeBlocks }),
+    [variant, audience, subject, signoff, composeBlocks],
   );
 
   // --- live preview (debounced) ----------------------------------------
@@ -135,41 +155,44 @@ export function PublishComposer({
   useEffect(() => {
     const t = setTimeout(async () => {
       try {
-        const res = await fetch(
-          `/api/admin/articles/${articleId}/broadcast/preview`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: payloadKey,
-          },
-        );
+        const res = await fetch(`/api/admin/articles/${articleId}/broadcast/preview`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payloadKey,
+        });
         const data = (await res.json()) as { ok: boolean; html?: string };
         if (data.ok && data.html) setPreviewHtml(data.html);
       } catch {
-        /* preview is best-effort */
+        /* best-effort */
       }
     }, 450);
     return () => clearTimeout(t);
   }, [articleId, payloadKey]);
 
-  // --- scheduling ------------------------------------------------------
-  function resolveScheduledAt(): string | null {
-    if (customWhen) {
-      const d = new Date(customWhen);
-      return Number.isNaN(d.getTime()) ? null : d.toISOString();
-    }
-    if (presetMinutes && presetMinutes > 0) {
-      return new Date(Date.now() + presetMinutes * 60_000).toISOString();
-    }
-    return null; // now
-  }
+  // --- block ops -------------------------------------------------------
+  const update = (id: string, patch: Partial<Block>) =>
+    setBlocks((prev) => prev.map((b) => (b.id === id ? ({ ...b, ...patch } as Block) : b)));
+  const remove = (id: string) => setBlocks((prev) => prev.filter((b) => b.id !== id));
+  const move = (id: string, dir: -1 | 1) =>
+    setBlocks((prev) => {
+      const i = prev.findIndex((b) => b.id === id);
+      const j = i + dir;
+      if (i < 0 || j < 0 || j >= prev.length) return prev;
+      const next = [...prev];
+      [next[i], next[j]] = [next[j], next[i]];
+      return next;
+    });
+  const addBlock = (type: Block['type']) =>
+    setBlocks((prev) => [
+      ...prev,
+      type === 'text'
+        ? { id: nextId(), type: 'text', text: '' }
+        : type === 'highlights'
+          ? { id: nextId(), type: 'highlights', items: [''] }
+          : { id: nextId(), type: 'image', src: '' },
+    ]);
 
-  const toggleImage = useCallback((src: string) => {
-    setSelected((prev) =>
-      prev.includes(src) ? prev.filter((s) => s !== src) : [...prev, src],
-    );
-  }, []);
-
+  // --- chart generation ------------------------------------------------
   async function generateChart(name: string) {
     if (chartBusy) return;
     setChartBusy(name);
@@ -186,8 +209,6 @@ export function PublishComposer({
         return;
       }
       setChartImages((prev) => ({ ...prev, [name]: data.url! }));
-      // Auto-select the freshly generated chart image.
-      setSelected((prev) => (prev.includes(data.url!) ? prev : [...prev, data.url!]));
     } catch {
       setChartError('Network error');
     } finally {
@@ -195,17 +216,19 @@ export function PublishComposer({
     }
   }
 
-  function setHighlight(i: number, v: string) {
-    setHighlights((prev) => prev.map((h, j) => (j === i ? v : h)));
-  }
-  function addHighlight() {
-    setHighlights((prev) => [...prev, '']);
-  }
-  function removeHighlight(i: number) {
-    setHighlights((prev) => prev.filter((_, j) => j !== i));
+  // --- scheduling ------------------------------------------------------
+  function resolveScheduledAt(): string | null {
+    if (customWhen) {
+      const d = new Date(customWhen);
+      return Number.isNaN(d.getTime()) ? null : d.toISOString();
+    }
+    if (presetMinutes && presetMinutes > 0) {
+      return new Date(Date.now() + presetMinutes * 60_000).toISOString();
+    }
+    return null;
   }
 
-  // --- test send (single address, transactional) -----------------------
+  // --- test send -------------------------------------------------------
   async function sendTest() {
     if (testBusy) return;
     const to = testEmail.trim();
@@ -234,8 +257,7 @@ export function PublishComposer({
   async function send() {
     if (sending) return;
     const scheduledAt = resolveScheduledAt();
-    const already =
-      audience === 'inner_circle' ? broadcasts.innerCircle : broadcasts.main;
+    const already = audience === 'inner_circle' ? broadcasts.innerCircle : broadcasts.main;
     const when = scheduledAt
       ? `scheduled for ${new Date(scheduledAt).toLocaleString()}`
       : 'sent now';
@@ -243,12 +265,7 @@ export function PublishComposer({
     const warn = already?.sentAt
       ? `\n\n⚠ This audience already received a broadcast on ${fmt(already.sentAt)}.`
       : '';
-    if (
-      !window.confirm(
-        `Send to the ${audienceLabel} audience — ${when}?${warn}`,
-      )
-    )
-      return;
+    if (!window.confirm(`Send to the ${audienceLabel} audience — ${when}?${warn}`)) return;
 
     setSending(true);
     setError(null);
@@ -283,7 +300,7 @@ export function PublishComposer({
     }
   }
 
-  // --- status-only transitions (reuse /publish) ------------------------
+  // --- status-only transitions -----------------------------------------
   async function statusAction(
     action: 'publish_only' | 'revert_draft' | 'archive',
     confirmText: string,
@@ -361,141 +378,54 @@ export function PublishComposer({
           <Field label="Subject">
             <Input value={subject} onChange={(e) => setSubject(e.target.value)} />
           </Field>
-          <Field label="Intro">
-            <Textarea
-              rows={4}
-              value={intro}
-              onChange={(e) => setIntro(e.target.value)}
-              placeholder="A line or two to open the email. Blank lines start a new paragraph."
-            />
-          </Field>
 
-          <Field label="Highlights">
-            <div className="space-y-2">
-              {highlights.map((h, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <Input
-                    value={h}
-                    onChange={(e) => setHighlight(i, e.target.value)}
-                    placeholder={`Highlight ${i + 1}`}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeHighlight(i)}
-                    className="shrink-0 border border-[#EEE6EC] bg-white p-2 text-ink-subtle hover:border-burgundy hover:text-burgundy"
-                    aria-label="Remove highlight"
-                  >
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                </div>
+          <Field label="Body">
+            <div className="space-y-3">
+              {blocks.map((block, i) => (
+                <BlockEditor
+                  key={block.id}
+                  block={block}
+                  first={i === 0}
+                  last={i === blocks.length - 1}
+                  images={images}
+                  chartNames={chartNames}
+                  chartImages={chartImages}
+                  chartBusy={chartBusy}
+                  onGenerate={generateChart}
+                  onChange={(patch) => update(block.id, patch)}
+                  onRemove={() => remove(block.id)}
+                  onMove={(dir) => move(block.id, dir)}
+                />
               ))}
-              <button
-                type="button"
-                onClick={addHighlight}
-                className="inline-flex items-center gap-1.5 text-xs text-ink-muted hover:text-burgundy"
-              >
-                <Plus className="h-3.5 w-3.5" /> Add highlight
-              </button>
+              {chartError ? <p className="text-xs text-burgundy">{chartError}</p> : null}
+              <div className="flex flex-wrap gap-2 pt-1">
+                <AddButton icon={Type} onClick={() => addBlock('text')}>
+                  Text
+                </AddButton>
+                <AddButton icon={List} onClick={() => addBlock('highlights')}>
+                  Highlights
+                </AddButton>
+                <AddButton icon={ImageIcon} onClick={() => addBlock('image')}>
+                  Image / chart
+                </AddButton>
+              </div>
             </div>
           </Field>
 
-          <Field label="Images">
-            {images.length === 0 ? (
-              <p className="text-xs text-ink-subtle">No images in this article.</p>
-            ) : (
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {images.map((img) => {
-                  const on = selected.includes(img.src);
-                  const order = selected.indexOf(img.src) + 1;
-                  return (
-                    <button
-                      key={img.src}
-                      type="button"
-                      onClick={() => toggleImage(img.src)}
-                      className={cn(
-                        'relative overflow-hidden border bg-white text-left transition-colors',
-                        on ? 'border-burgundy' : 'border-[#EEE6EC] hover:border-ink-subtle',
-                      )}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={img.src} alt={img.label} className="aspect-[3/2] w-full object-cover" />
-                      {on ? (
-                        <span className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-burgundy text-[10px] font-medium text-white">
-                          {order}
-                        </span>
-                      ) : null}
-                      <span className="block truncate px-2 py-1 text-[10px] text-ink-muted">
-                        {img.label}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+          <Field label="Sign-off">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-ink-muted">—</span>
+              <Input
+                value={signoff}
+                onChange={(e) => setSignoff(e.target.value)}
+                className="max-w-[160px]"
+              />
+            </div>
           </Field>
 
-          {chartNames.length > 0 ? (
-            <Field label="Charts">
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {chartNames.map((name) => {
-                  const url = chartImages[name];
-                  if (url) {
-                    const on = selected.includes(url);
-                    const order = selected.indexOf(url) + 1;
-                    return (
-                      <div key={name} className="space-y-1">
-                        <button
-                          type="button"
-                          onClick={() => toggleImage(url)}
-                          className={cn(
-                            'relative block w-full overflow-hidden border bg-white transition-colors',
-                            on ? 'border-burgundy' : 'border-[#EEE6EC] hover:border-ink-subtle',
-                          )}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={url} alt={name} className="aspect-[3/2] w-full object-contain" />
-                          {on ? (
-                            <span className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-burgundy text-[10px] font-medium text-white">
-                              {order}
-                            </span>
-                          ) : null}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => generateChart(name)}
-                          disabled={chartBusy === name}
-                          className="w-full text-[10px] text-ink-subtle hover:text-burgundy disabled:opacity-50"
-                        >
-                          {chartBusy === name ? 'Rendering…' : 'Re-generate'}
-                        </button>
-                      </div>
-                    );
-                  }
-                  return (
-                    <button
-                      key={name}
-                      type="button"
-                      onClick={() => generateChart(name)}
-                      disabled={chartBusy === name}
-                      className="flex aspect-[3/2] flex-col items-center justify-center gap-1 border border-dashed border-[#EEE6EC] bg-white px-2 text-center text-ink-subtle hover:border-burgundy hover:text-burgundy disabled:opacity-50 transition-colors"
-                    >
-                      <span className="font-mono text-[10px] leading-tight">{name}</span>
-                      <span className="text-[10px] uppercase tracking-wider">
-                        {chartBusy === name ? 'Rendering…' : 'Generate image'}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-              {chartError ? (
-                <p className="text-xs text-burgundy">{chartError}</p>
-              ) : null}
-            </Field>
-          ) : null}
-
           <p className="border-t border-[#EEE6EC] pt-3 text-[11px] text-ink-subtle">
-            Automatically appended: a “Read on the web” button, your signature
-            ({authorName}), the buy-me-a-coffee link, and the unsubscribe footer.
+            Automatically appended after the body: a read-on-web card with the
+            cover image, then the buy-me-a-coffee link and unsubscribe footer.
           </p>
         </Section>
 
@@ -590,7 +520,7 @@ export function PublishComposer({
           {info ? <span className="text-xs text-green">{info}</span> : null}
         </div>
 
-        {/* Status-only transitions */}
+        {/* Status */}
         <Section title="Status">
           <p className="text-xs text-ink-subtle">Current status: {status}</p>
           <div className="flex flex-wrap gap-2 pt-1">
@@ -631,13 +561,224 @@ export function PublishComposer({
           Live preview
         </div>
         <div className="overflow-hidden border border-[#EEE6EC] bg-white">
-          <iframe
-            title="Email preview"
-            srcDoc={previewHtml}
-            className="h-[640px] w-full"
-          />
+          <iframe title="Email preview" srcDoc={previewHtml} className="h-[640px] w-full" />
         </div>
       </div>
+    </div>
+  );
+}
+
+// -- block editor -------------------------------------------------------
+
+function BlockEditor({
+  block,
+  first,
+  last,
+  images,
+  chartNames,
+  chartImages,
+  chartBusy,
+  onGenerate,
+  onChange,
+  onRemove,
+  onMove,
+}: {
+  block: Block;
+  first: boolean;
+  last: boolean;
+  images: ImageOption[];
+  chartNames: string[];
+  chartImages: Record<string, string>;
+  chartBusy: string | null;
+  onGenerate: (name: string) => void;
+  onChange: (patch: Partial<Block>) => void;
+  onRemove: () => void;
+  onMove: (dir: -1 | 1) => void;
+}) {
+  const label =
+    block.type === 'text' ? 'Text' : block.type === 'highlights' ? 'Highlights' : 'Image / chart';
+
+  return (
+    <div className="border border-[#EEE6EC] bg-[#FCFAFB]">
+      <div className="flex items-center justify-between border-b border-[#EEE6EC] px-2 py-1.5">
+        <span className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">
+          {label}
+        </span>
+        <div className="flex items-center gap-0.5">
+          <IconBtn disabled={first} onClick={() => onMove(-1)} title="Move up">
+            <ArrowUp className="h-3.5 w-3.5" />
+          </IconBtn>
+          <IconBtn disabled={last} onClick={() => onMove(1)} title="Move down">
+            <ArrowDown className="h-3.5 w-3.5" />
+          </IconBtn>
+          <IconBtn onClick={onRemove} title="Remove">
+            <Trash2 className="h-3.5 w-3.5" />
+          </IconBtn>
+        </div>
+      </div>
+      <div className="p-2">
+        {block.type === 'text' ? (
+          <Textarea
+            rows={3}
+            value={block.text}
+            onChange={(e) => onChange({ text: e.target.value })}
+            placeholder="Write a paragraph. Blank lines start a new paragraph."
+          />
+        ) : null}
+
+        {block.type === 'highlights' ? (
+          <HighlightsEditor
+            items={block.items}
+            onChange={(items) => onChange({ items })}
+          />
+        ) : null}
+
+        {block.type === 'image' ? (
+          <ImagePicker
+            src={block.src}
+            images={images}
+            chartNames={chartNames}
+            chartImages={chartImages}
+            chartBusy={chartBusy}
+            onGenerate={onGenerate}
+            onPick={(src) => onChange({ src })}
+          />
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function HighlightsEditor({
+  items,
+  onChange,
+}: {
+  items: string[];
+  onChange: (items: string[]) => void;
+}) {
+  return (
+    <div className="space-y-2">
+      {items.map((h, i) => (
+        <div key={i} className="flex items-center gap-2">
+          <Input
+            value={h}
+            onChange={(e) => onChange(items.map((x, j) => (j === i ? e.target.value : x)))}
+            placeholder={`Highlight ${i + 1}`}
+          />
+          <button
+            type="button"
+            onClick={() => onChange(items.filter((_, j) => j !== i))}
+            className="shrink-0 border border-[#EEE6EC] bg-white p-2 text-ink-subtle hover:border-burgundy hover:text-burgundy"
+            aria-label="Remove highlight"
+          >
+            <X className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      ))}
+      <button
+        type="button"
+        onClick={() => onChange([...items, ''])}
+        className="inline-flex items-center gap-1.5 text-xs text-ink-muted hover:text-burgundy"
+      >
+        <Plus className="h-3.5 w-3.5" /> Add highlight
+      </button>
+    </div>
+  );
+}
+
+function ImagePicker({
+  src,
+  images,
+  chartNames,
+  chartImages,
+  chartBusy,
+  onGenerate,
+  onPick,
+}: {
+  src: string;
+  images: ImageOption[];
+  chartNames: string[];
+  chartImages: Record<string, string>;
+  chartBusy: string | null;
+  onGenerate: (name: string) => void;
+  onPick: (src: string) => void;
+}) {
+  if (src) {
+    return (
+      <div className="space-y-1.5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt="" className="max-h-40 w-auto border border-[#EEE6EC]" />
+        <button
+          type="button"
+          onClick={() => onPick('')}
+          className="text-[11px] text-ink-subtle hover:text-burgundy"
+        >
+          Change
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {images.length > 0 ? (
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+          {images.map((img) => (
+            <button
+              key={img.src}
+              type="button"
+              onClick={() => onPick(img.src)}
+              className="overflow-hidden border border-[#EEE6EC] bg-white hover:border-burgundy"
+              title={img.label}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img.src} alt={img.label} className="aspect-[3/2] w-full object-cover" />
+            </button>
+          ))}
+        </div>
+      ) : null}
+
+      {chartNames.length > 0 ? (
+        <>
+          <div className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">
+            Charts
+          </div>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+            {chartNames.map((name) => {
+              const url = chartImages[name];
+              if (url) {
+                return (
+                  <button
+                    key={name}
+                    type="button"
+                    onClick={() => onPick(url)}
+                    className="overflow-hidden border border-[#EEE6EC] bg-white hover:border-burgundy"
+                    title={name}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={url} alt={name} className="aspect-[3/2] w-full object-contain" />
+                  </button>
+                );
+              }
+              return (
+                <button
+                  key={name}
+                  type="button"
+                  onClick={() => onGenerate(name)}
+                  disabled={chartBusy === name}
+                  className="flex aspect-[3/2] flex-col items-center justify-center gap-1 border border-dashed border-[#EEE6EC] bg-white px-1 text-center text-ink-subtle hover:border-burgundy hover:text-burgundy disabled:opacity-50"
+                  title={name}
+                >
+                  <span className="truncate font-mono text-[9px] leading-tight">{name}</span>
+                  <span className="text-[9px] uppercase tracking-wider">
+                    {chartBusy === name ? 'Rendering…' : 'Generate'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 }
@@ -647,9 +788,7 @@ export function PublishComposer({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-3 border border-[#EEE6EC] bg-white p-4">
-      <h2 className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">
-        {title}
-      </h2>
+      <h2 className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">{title}</h2>
       {children}
     </section>
   );
@@ -658,11 +797,53 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
-      <div className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">
-        {label}
-      </div>
+      <div className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">{label}</div>
       {children}
     </div>
+  );
+}
+
+function AddButton({
+  icon: Icon,
+  onClick,
+  children,
+}: {
+  icon: typeof Type;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 border border-[#EEE6EC] bg-white px-2.5 py-1.5 text-xs text-ink-muted hover:border-burgundy hover:text-burgundy transition-colors"
+    >
+      <Icon className="h-3.5 w-3.5" /> {children}
+    </button>
+  );
+}
+
+function IconBtn({
+  children,
+  onClick,
+  disabled,
+  title,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+  title: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className="p-1 text-ink-subtle hover:text-burgundy disabled:opacity-30 disabled:hover:text-ink-subtle"
+    >
+      {children}
+    </button>
   );
 }
 
@@ -700,9 +881,7 @@ function AudienceRow({
       type="button"
       onClick={onSelect}
       disabled={!available}
-      className={cn(
-        'flex w-full items-center gap-3 py-3 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-50',
-      )}
+      className="flex w-full items-center gap-3 py-3 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-50"
     >
       <span
         className={cn(
