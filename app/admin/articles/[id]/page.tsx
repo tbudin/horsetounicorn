@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import { ArticleLayout } from '@/components/article/article-layout';
 import { RenderDocument } from '@/components/article/render-document';
 import { getChartsFor } from '@/app/articles/_charts';
-import { PublishPanel } from '@/components/admin/publish-panel';
 
 const STATUS_LABEL: Record<ArticleStatus, string> = {
   draft: 'Draft',
@@ -72,9 +71,15 @@ export default async function AdminArticlePreview({
           <div className="flex items-center gap-3">
             <Link
               href={`/admin/articles/${id}/edit`}
-              className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90"
+              className="border border-[#EEE6EC] bg-white text-ink-heading px-3 py-1.5 text-xs font-medium hover:border-burgundy hover:text-burgundy transition-colors"
             >
               Edit
+            </Link>
+            <Link
+              href={`/admin/articles/${id}/publish`}
+              className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90 transition-colors"
+            >
+              Publish
             </Link>
             <Link
               href={`/articles/${slug}`}
@@ -121,15 +126,6 @@ export default async function AdminArticlePreview({
           </div>
         ) : null}
       </section>
-
-      <PublishPanel
-        articleId={id}
-        status={metadata.status}
-        hasInnerCircleAudience={Boolean(process.env.RESEND_INNER_CIRCLE_AUDIENCE_ID)}
-        hasMainAudience={Boolean(process.env.RESEND_AUDIENCE_ID)}
-        innerCircleSentAt={metadata.innerCircleSentAt}
-        publishedAt={metadata.publishedAt}
-      />
 
       {/* Stats strip */}
       <div className="flex items-baseline gap-4 text-xs text-ink-subtle data-num">

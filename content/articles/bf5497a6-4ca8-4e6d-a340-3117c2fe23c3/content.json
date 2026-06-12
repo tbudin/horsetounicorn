@@ -489,19 +489,19 @@
             "heading": "Data",
             "items": [
               {
-                "label": "Google Trends",
-                "href": "https://trends.google.com/trends/"
+                "label": "Google Trends, the four topics (breastfeeding, baby formula, infant feeding, baby food)",
+                "href": "https://trends.google.com/trends/explore?date=today%205-y&q=%2Fm%2F0hb2r,%2Fg%2F11fxwmyz6v,%2Fm%2F03kzmq,%2Fm%2F0hc4p&hl=en-GB&legacy"
               },
               {
-                "label": "UN, World Fertility Report 2024",
-                "href": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_wfr_2024_final.pdf"
+                "label": "UN Population Division, World Population Prospects (births by country)",
+                "href": "https://population.un.org/wpp/"
               },
               {
-                "label": "Visual Capitalist, Global Births by Country in 2025",
-                "href": "https://www.visualcapitalist.com/global-births-by-country-in-2025/"
+                "label": "World Bank, Fertility rate, total (births per woman)",
+                "href": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN"
               },
               {
-                "label": "CDC, Births: Provisional Data for 2025",
+                "label": "CDC NCHS, Births: Provisional Data for 2025",
                 "href": "https://www.cdc.gov/nchs/data/vsrr/vsrr043.pdf"
               },
               {
@@ -514,8 +514,8 @@
             "heading": "The news",
             "items": [
               {
-                "label": "Food Safety Magazine, “Make Our Children Healthy Again” and childhood-nutrition overhaul",
-                "href": "https://www.food-safety.com/articles/10402-maha-report-sets-stage-for-overhaul-of-food-chemicals-environmental-contaminants-and-childhood-nutrition"
+                "label": "HHS, MAHA Commission “Make Our Children Healthy Again” Strategy (Sept 2025)",
+                "href": "https://www.hhs.gov/press-room/maha-commission-report-childhood-disease-strategy.html"
               },
               {
                 "label": "CNN, Legal action over the marketing of “toddler milks” (Aug 2025)",
@@ -526,28 +526,28 @@
                 "href": "https://www.cdc.gov/botulism/outbreaks-investigations/infant-formula-nov-2025/index.html"
               },
               {
-                "label": "FDA, ByHeart all-batch recall update",
+                "label": "FDA, ByHeart voluntary recall of all batches",
                 "href": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/byheart-updates-information-regarding-voluntary-recall-all-batches-byheart-whole-nutrition-infant"
               },
               {
-                "label": "NPR, FDA says ByHeart recall response was too slow",
-                "href": "https://www.npr.org/2025/12/16/nx-s1-5645651/byheart-baby-formula-recall-too-slow"
+                "label": "FDA, Action to improve recall effectiveness after the ByHeart investigation",
+                "href": "https://www.fda.gov/news-events/press-announcements/fda-takes-action-improve-recall-effectiveness-following-infant-botulism-outbreak-investigation"
               },
               {
-                "label": "WHO, Cereulide in infant formula, multi-country recall",
+                "label": "WHO, Cereulide in infant formula and ARA oil, multi-country event",
                 "href": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON596"
               },
               {
-                "label": "Euronews, Nestlé, Danone, Lactalis pull products after toxin alert",
-                "href": "https://www.euronews.com/health/2026/01/22/global-baby-formula-recall-nestle-danone-lactalis-pull-products-after-toxin-alert"
+                "label": "EFSA, Precautionary global recall of infant nutrition products",
+                "href": "https://www.efsa.europa.eu/en/news/precautionary-global-recall-infant-nutrition-products-following-detection-bacillus-cereus"
               },
               {
-                "label": "CNN, HHS report linking folate, acetaminophen and autism (Sept 2025)",
-                "href": "https://www.cnn.com/2025/09/05/health/hhs-report-autism-folate-acetaminophen"
+                "label": "HHS, Autism actions: leucovorin, acetaminophen and research (Sept 2025)",
+                "href": "https://www.hhs.gov/press-room/hhs-trump-kennedy-autism-initiatives-leucovorin-tylenol-research-2025.html"
               },
               {
-                "label": "Consumer Reports, California AB 899 baby-food heavy-metal disclosure",
-                "href": "https://www.consumerreports.org/babies-kids/baby-food/baby-food-labels-heavy-metals-california-ab899-a5779555429/"
+                "label": "California Department of Public Health, AB 899 baby-food heavy-metal testing",
+                "href": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/AB899FAQ.aspx"
               }
             ]
           },
@@ -555,11 +555,11 @@
             "heading": "The science",
             "items": [
               {
-                "label": "NutraIngredients, 5-MTHF matches folic acid while lowering unmetabolised folic acid (2026 RCT)",
-                "href": "https://www.nutraingredients.com/Article/2026/05/06/rtc-5-mthf-matches-folic-acid-while-lowering-unmetabolized-folic-acid-in-prenatal-vitamins/"
+                "label": "Frontiers in Nutrition, 6S-5-MTHF vs folic acid in prenatal multivitamin: 24-week RCT (2026)",
+                "href": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1679067/full"
               },
               {
-                "label": "UKTIS, Use of methylfolate in pregnancy (guidance still recommends folic acid)",
+                "label": "UKTIS (UK Teratology Information Service), Use of methylfolate in pregnancy",
                 "href": "https://uktis.org/monographs/use-of-methylfolate-in-pregnancy/"
               }
             ]
@@ -568,16 +568,16 @@
             "heading": "Brand campaigns",
             "items": [
               {
-                "label": "Ad Age, Bobbie and Cardi B “parental power” campaign",
-                "href": "https://adage.com/creativity/work/aa-bobbie-cardi-b/"
+                "label": "Bobbie newsroom, Cardi B joins as Chief Confidence Officer",
+                "href": "https://news.hibobbie.com/press/cardi-b-joins-bobbie-as-chief-confidence-officer"
               },
               {
-                "label": "BusinessWire, Bobbie and Alex Morgan, “There’s No Scoreboard in Motherhood”",
+                "label": "Bobbie, Alex Morgan “There’s No Scoreboard in Motherhood” (BusinessWire release)",
                 "href": "https://www.businesswire.com/news/home/20250904964101/en/"
               },
               {
-                "label": "Ads of the World, Danone/Gallia “MommyPhone”",
-                "href": "https://www.adsoftheworld.com/campaigns/mommyphone-the-first-babyphone-that-listens-to-parents"
+                "label": "BETC, Laboratoire Gallia (Danone) “MommyPhone” campaign",
+                "href": "https://www.betc.com/en/work/gallia-mommy-phone-laboratoire"
               },
               {
                 "label": "KFF Health News, Abbott and Mead Johnson preterm-formula (NEC) fight",
