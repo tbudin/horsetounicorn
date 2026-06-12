@@ -14,11 +14,11 @@ import {
 import { ChartCard } from '@/components/charts/chart-card';
 import { ChartContainer } from '@/components/charts/chart-container';
 import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
+import { ChartToolbar, TopicPill } from '@/components/charts/chart-controls';
 import {
   BURGUNDY,
   BURGUNDY_FADED,
   INK,
-  INK_SUBTLE,
   axisTickStyle,
   gridProps,
   chartDefaults,
@@ -63,23 +63,17 @@ export function BreastfeedingSeasonality() {
       subtitle="Five-year monthly average per topic. Breastfeeding peaks in August, but formula and infant feeding peak in May, and baby food in January. There is no single season for the category."
       source="Google Trends, Worldwide, mean by calendar month 2021–2026, each topic normalised to itself."
     >
-      <div className="not-prose mb-2 flex items-center gap-1">
-        <span className="mr-1 text-[11px] text-ink-subtle">topic</span>
-        {TOPICS.map((t) => {
-          const on = t.key === topic;
-          return (
-            <button
-              key={t.key}
-              type="button"
-              onClick={() => setTopic(t.key)}
-              className="rounded-[6px] border px-2.5 py-1 text-xs"
-              style={{ borderColor: on ? BURGUNDY : '#D3D1C7', background: on ? BURGUNDY : 'transparent', color: on ? '#fff' : INK_SUBTLE }}
-            >
-              {t.label}
-            </button>
-          );
-        })}
-      </div>
+      <ChartToolbar label="topic" className="mb-2">
+        {TOPICS.map((t) => (
+          <TopicPill
+            key={t.key}
+            active={t.key === topic}
+            onClick={() => setTopic(t.key)}
+          >
+            {t.label}
+          </TopicPill>
+        ))}
+      </ChartToolbar>
       <p className="not-prose mb-3 text-xs text-ink-muted">
         <span className="font-medium text-ink">{meta.label}</span> {meta.note}.
       </p>

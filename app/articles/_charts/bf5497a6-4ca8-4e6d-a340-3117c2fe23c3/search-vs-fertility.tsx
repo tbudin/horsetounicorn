@@ -14,9 +14,17 @@ import {
   Cell,
   LabelList,
 } from 'recharts';
+import { Ruler, Activity, Globe, TrendingUp } from 'lucide-react';
 import { ChartCard } from '@/components/charts/chart-card';
 import { ChartContainer } from '@/components/charts/chart-container';
 import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
+import {
+  ChartToolbar,
+  TopicPill,
+  ComboSelect,
+  MultiSelectPopover,
+  ToggleChip,
+} from '@/components/charts/chart-controls';
 import {
   BURGUNDY,
   BLUE,
@@ -95,7 +103,7 @@ const REGION_COLORS: Record<Row['region'], string> = {
 
 type Metric = 'perBirth' | 'perCap' | 'raw';
 type Scale = 'linear' | 'log';
-type Region = 'All' | Row['region'];
+type RechartsShape = 'circle' | 'triangle' | 'diamond' | 'square';
 
 const TOPICS: { key: Topic; label: string }[] = [
   { key: 'bf', label: 'breastfeeding' },
@@ -103,6 +111,20 @@ const TOPICS: { key: Topic; label: string }[] = [
   { key: 'if', label: 'infant feeding' },
   { key: 'ba', label: 'baby food' },
 ];
+// Each topic gets a distinct marker shape so multiple series stay legible
+// when overlaid. The pill echoes the glyph as a legend key.
+const TOPIC_SHAPE: Record<Topic, RechartsShape> = {
+  bf: 'circle',
+  fo: 'triangle',
+  if: 'diamond',
+  ba: 'square',
+};
+const SHAPE_GLYPH: Record<RechartsShape, string> = {
+  circle: '●',
+  triangle: '▲',
+  diamond: '◆',
+  square: '■',
+};
 const METRICS: { key: Metric; label: string }[] = [
   { key: 'perBirth', label: 'per birth' },
   { key: 'perCap', label: 'per capita' },
@@ -112,7 +134,7 @@ const SCALES: { key: Scale; label: string }[] = [
   { key: 'linear', label: 'linear' },
   { key: 'log', label: 'log' },
 ];
-const REGIONS: Region[] = ['All', 'Americas', 'Europe', 'Africa', 'Asia'];
+const REGION_OPTIONS: Row['region'][] = ['Americas', 'Europe', 'Africa', 'Asia'];
 
 const interestOf = (r: Row, t: Topic): number | null => r[t];
 const metricValue = (r: Row, t: Topic, m: Metric): number | null => {
@@ -121,72 +143,94 @@ const metricValue = (r: Row, t: Topic, m: Metric): number | null => {
   return m === 'raw' ? i : m === 'perBirth' ? i / r.births : i / r.pop;
 };
 
-function Seg<T extends string>({
-  label,
-  options,
-  value,
-  onChange,
-}: {
-  label: string;
-  options: { key: T; label: string }[];
-  value: T;
-  onChange: (v: T) => void;
-}) {
-  return (
-    <div className="flex items-center gap-1">
-      <span className="mr-1 text-[11px] text-ink-subtle">{label}</span>
-      {options.map((o) => {
-        const on = o.key === value;
-        return (
-          <button
-            key={o.key}
-            type="button"
-            onClick={() => onChange(o.key)}
-            className="rounded-[6px] border px-2.5 py-1 text-xs"
-            style={{ borderColor: on ? BURGUNDY : '#D3D1C7', background: on ? BURGUNDY : 'transparent', color: on ? '#fff' : INK_SUBTLE }}
-          >
-            {o.label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 export function SearchVsFertility() {
-  const [topic, setTopic] = useState<Topic>('bf');
+  const [topics, setTopics] = useState<Set<Topic>>(new Set(['bf']));
   const [metric, setMetric] = useState<Metric>('perBirth');
   const [scale, setScale] = useState<Scale>('linear');
-  const [region, setRegion] = useState<Region>('All');
+  const [regions, setRegions] = useState<Set<Row['region']>>(new Set());
+  const [trend, setTrend] = useState(false);
 
-  const { points, labelSet } = useMemo(() => {
-    const vals = RAW.map((r) => metricValue(r, topic, metric)).filter((v): v is number => v != null);
-    const max = vals.length ? Math.max(...vals) : 1;
-    const rows = RAW.filter((r) => (region === 'All' || r.region === region) && interestOf(r, topic) != null);
-    const pts = rows.map((r) => {
-      const raw = metricValue(r, topic, metric) as number;
-      const lin = Math.round((raw / max) * 1000) / 10;
-      return {
-        x: r.tfr,
-        yLin: lin,
-        y: scale === 'log' ? Math.max(0.1, lin) : lin,
-        z: Math.sqrt(r.births),
-        country: r.country,
-        region: r.region,
-        interest: interestOf(r, topic) as number,
-        births: r.births,
-      };
+  const isSingleTopic = topics.size === 1;
+
+  const { datasets, labelSet, fit } = useMemo(() => {
+    const baseRows = RAW.filter((r) => regions.size === 0 || regions.has(r.region));
+    const orderedTopics = TOPICS.filter((t) => topics.has(t.key));
+    const dsets = orderedTopics.map(({ key: t }) => {
+      // Normalise each topic against its own global max (across all regions),
+      // ignoring countries that lack data for that topic.
+      const vals = RAW.map((r) => metricValue(r, t, metric)).filter(
+        (v): v is number => v != null,
+      );
+      const max = vals.length ? Math.max(...vals) : 1;
+      const points = baseRows
+        .filter((r) => interestOf(r, t) != null)
+        .map((r) => {
+          const lin = Math.round(((metricValue(r, t, metric) as number) / max) * 1000) / 10;
+          return {
+            x: r.tfr,
+            yLin: lin,
+            y: scale === 'log' ? Math.max(0.1, lin) : lin,
+            z: Math.sqrt(r.births),
+            country: r.country,
+            region: r.region,
+            interest: interestOf(r, t) as number,
+            births: r.births,
+            topic: t,
+          };
+        });
+      return { topic: t, shape: TOPIC_SHAPE[t], points };
     });
-    const sorted = [...pts].sort((a, b) => b.y - a.y);
-    const set = new Set<string>();
-    if (pts.some((p) => p.country === 'United States')) set.add('United States');
-    if (pts.some((p) => p.country === 'India')) set.add('India');
-    for (const p of sorted) {
-      if (set.size >= 4) break;
-      set.add(p.country);
+
+    // Auto-labels and the OLS fit only make sense for a single series.
+    const labelSet = new Set<string>();
+    let fit: { r: number; seg: { x: number; y: number }[] } = { r: 0, seg: [] };
+    if (dsets.length === 1) {
+      const pts = dsets[0].points;
+      const sorted = [...pts].sort((a, b) => b.y - a.y);
+      if (pts.some((p) => p.country === 'United States')) labelSet.add('United States');
+      if (pts.some((p) => p.country === 'India')) labelSet.add('India');
+      for (const p of sorted) {
+        if (labelSet.size >= 4) break;
+        labelSet.add(p.country);
+      }
+      const n = pts.length;
+      if (n >= 2) {
+        const mx = pts.reduce((s, p) => s + p.x, 0) / n;
+        const my = pts.reduce((s, p) => s + p.yLin, 0) / n;
+        let sxy = 0, sxx = 0, syy = 0;
+        for (const p of pts) {
+          sxy += (p.x - mx) * (p.yLin - my);
+          sxx += (p.x - mx) ** 2;
+          syy += (p.yLin - my) ** 2;
+        }
+        const slope = sxx ? sxy / sxx : 0;
+        const intercept = my - slope * mx;
+        const r = sxx && syy ? sxy / Math.sqrt(sxx * syy) : 0;
+        const xs = pts.map((p) => p.x);
+        const x1 = Math.min(...xs), x2 = Math.max(...xs);
+        const clamp = (v: number) => Math.min(120, Math.max(0.1, v));
+        fit = {
+          r,
+          seg: [
+            { x: x1, y: clamp(intercept + slope * x1) },
+            { x: x2, y: clamp(intercept + slope * x2) },
+          ],
+        };
+      }
     }
-    return { points: pts, labelSet: set };
-  }, [topic, metric, scale, region]);
+
+    return { datasets: dsets, labelSet, fit };
+  }, [topics, metric, scale, regions]);
+
+  function toggleTopic(t: Topic) {
+    const next = new Set(topics);
+    if (next.has(t)) {
+      if (next.size > 1) next.delete(t); // keep at least one selected
+    } else {
+      next.add(t);
+    }
+    setTopics(next);
+  }
 
   const metricCaption =
     metric === 'perBirth'
@@ -209,30 +253,45 @@ export function SearchVsFertility() {
       }
       source="Search: Google Trends topics, past 5 years (geoMap). Fertility & births: World Bank, UN, CDC 2024–25. Rescaled globally per topic; controls filter the view. China and some others lack data on certain topics."
     >
-      <div className="not-prose mb-2.5">
-        <Seg label="topic" options={TOPICS} value={topic} onChange={setTopic} />
-      </div>
-      <div className="not-prose mb-2.5 flex flex-wrap items-center gap-x-5 gap-y-2">
-        <Seg label="measure" options={METRICS} value={metric} onChange={setMetric} />
-        <Seg label="scale" options={SCALES} value={scale} onChange={setScale} />
-      </div>
-      <div className="not-prose mb-3 flex flex-wrap items-center gap-2">
-        <span className="mr-1 text-[11px] text-ink-subtle">region</span>
-        {REGIONS.map((r) => {
-          const on = r === region;
+      {/* Topic — pick one or more; each gets its own marker shape. */}
+      <ChartToolbar label="topic">
+        {TOPICS.map((t) => {
+          const active = topics.has(t.key);
           return (
-            <button
-              key={r}
-              type="button"
-              onClick={() => setRegion(r)}
-              className="rounded-[6px] border px-2.5 py-1 text-xs lowercase"
-              style={{ borderColor: on ? BURGUNDY : '#D3D1C7', background: on ? BURGUNDY : 'transparent', color: on ? '#fff' : INK_SUBTLE }}
+            <TopicPill
+              key={t.key}
+              active={active}
+              onClick={() => toggleTopic(t.key)}
+              glyph={SHAPE_GLYPH[TOPIC_SHAPE[t.key]]}
             >
-              {r}
-            </button>
+              {t.label}
+            </TopicPill>
           );
         })}
-      </div>
+      </ChartToolbar>
+
+      {/* Measure / scale / region / trend — one tidy toolbar row. */}
+      <ChartToolbar label="filters">
+        <ComboSelect aria-label="Measure" icon={Ruler} options={METRICS} value={metric} onChange={setMetric} />
+        <ComboSelect aria-label="Scale" icon={Activity} options={SCALES} value={scale} onChange={setScale} />
+        <MultiSelectPopover
+          icon={Globe}
+          options={REGION_OPTIONS}
+          selected={regions}
+          onChange={setRegions}
+          allLabel="All regions"
+          pluralNoun="regions"
+        />
+        <ToggleChip
+          icon={TrendingUp}
+          active={trend && isSingleTopic}
+          onClick={() => setTrend((v) => !v)}
+          disabled={!isSingleTopic}
+          title={!isSingleTopic ? 'Trend line is only available for one topic at a time' : undefined}
+        >
+          trend{trend && isSingleTopic ? ` · r = ${fit.r.toFixed(2)}` : ''}
+        </ToggleChip>
+      </ChartToolbar>
 
       <div className="not-prose mb-2 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-ink-muted">
         {(Object.keys(REGION_COLORS) as Row['region'][]).map((r) => (
@@ -275,13 +334,34 @@ export function SearchVsFertility() {
               strokeDasharray="4 4"
               label={{ value: 'replacement 2.1', position: 'insideTopRight', style: { fontSize: 10, fill: INK_SUBTLE } }}
             />
+            {trend && isSingleTopic && fit.seg.length === 2 ? (
+              <ReferenceLine
+                stroke={INK}
+                strokeWidth={1.5}
+                strokeDasharray="6 3"
+                segment={fit.seg}
+                ifOverflow="extendDomain"
+              />
+            ) : null}
             <Tooltip
               cursor={{ strokeDasharray: '3 3', stroke: BURGUNDY, strokeOpacity: 0.3 }}
               content={({ active, payload }) => {
                 if (!active || !payload?.length) return null;
-                const d = payload[0].payload as (typeof points)[number];
+                const d = payload[0].payload as {
+                  country: string;
+                  region: Row['region'];
+                  topic: Topic;
+                  x: number;
+                  yLin: number;
+                  interest: number;
+                  births: number;
+                };
+                const topicLabel = TOPICS.find((t) => t.key === d.topic)?.label;
                 return (
                   <ChartTooltip title={d.country} accent={REGION_COLORS[d.region]} minWidth={190}>
+                    {!isSingleTopic && topicLabel ? (
+                      <TooltipRow label="Topic" value={topicLabel} />
+                    ) : null}
                     <TooltipRow label="Intensity" value={d.yLin} dotColor={REGION_COLORS[d.region]} />
                     <TooltipRow label="Fertility rate" value={d.x.toFixed(2)} />
                     <TooltipRow label="Raw interest" value={d.interest} />
@@ -290,28 +370,43 @@ export function SearchVsFertility() {
                 );
               }}
             />
-            <Scatter data={points} {...chartDefaults}>
-              {points.map((p) => (
-                <Cell
-                  key={p.country}
-                  fill={`${REGION_COLORS[p.region]}73`}
-                  stroke={p.country === 'United States' ? INK : REGION_COLORS[p.region]}
-                  strokeWidth={p.country === 'United States' ? 1.5 : 1}
-                />
-              ))}
-              <LabelList
-                dataKey="country"
-                content={(props: any) => {
-                  const { x, y, value } = props as { x?: number; y?: number; value?: string | number };
-                  if (x == null || y == null || !labelSet.has(String(value))) return null;
-                  return (
-                    <text x={x} y={y - 12} textAnchor="middle" fontSize={11} fill={INK} fontFamily="var(--font-roboto), sans-serif">
-                      {value}
-                    </text>
-                  );
-                }}
-              />
-            </Scatter>
+            {datasets.map(({ topic: t, shape, points: pts }) => (
+              <Scatter key={t} data={pts} shape={shape} {...chartDefaults}>
+                {pts.map((p) => (
+                  <Cell
+                    key={`${t}-${p.country}`}
+                    fill={`${REGION_COLORS[p.region]}73`}
+                    stroke={p.country === 'United States' ? INK : REGION_COLORS[p.region]}
+                    strokeWidth={p.country === 'United States' ? 1.5 : 1}
+                  />
+                ))}
+                {isSingleTopic ? (
+                  <LabelList
+                    dataKey="country"
+                    content={(props: unknown) => {
+                      const { x, y, value } = props as {
+                        x?: number;
+                        y?: number;
+                        value?: string | number;
+                      };
+                      if (x == null || y == null || !labelSet.has(String(value))) return null;
+                      return (
+                        <text
+                          x={x}
+                          y={y - 12}
+                          textAnchor="middle"
+                          fontSize={11}
+                          fill={INK}
+                          fontFamily="var(--font-roboto), sans-serif"
+                        >
+                          {value}
+                        </text>
+                      );
+                    }}
+                  />
+                ) : null}
+              </Scatter>
+            ))}
           </ScatterChart>
         </ResponsiveContainer>
       </ChartContainer>
