@@ -27,6 +27,8 @@ export interface PublishComposerProps {
   hasMainAudience: boolean;
   images: ImageOption[];
   chartNames: string[];
+  /** Deterministic URL each chart's PNG would live at, for existence probing. */
+  chartCandidates: Record<string, string>;
   authorName: string;
 }
 
@@ -49,6 +51,7 @@ export function PublishComposer({
   hasMainAudience,
   images,
   chartNames,
+  chartCandidates,
   authorName,
 }: PublishComposerProps) {
   const router = useRouter();
@@ -66,6 +69,24 @@ export function PublishComposer({
   const [chartImages, setChartImages] = useState<Record<string, string>>({});
   const [chartBusy, setChartBusy] = useState<string | null>(null);
   const [chartError, setChartError] = useState<string | null>(null);
+
+  // Probe for already-generated chart PNGs so they show up without a
+  // re-render. An <img> load that succeeds means the file exists.
+  useEffect(() => {
+    let cancelled = false;
+    for (const [name, url] of Object.entries(chartCandidates)) {
+      const probe = new Image();
+      probe.onload = () => {
+        if (!cancelled) setChartImages((prev) => (prev[name] ? prev : { ...prev, [name]: url }));
+      };
+      probe.src = url;
+    }
+    return () => {
+      cancelled = true;
+    };
+    // chartCandidates is stable for the page's lifetime.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [previewHtml, setPreviewHtml] = useState('');
   const [sending, setSending] = useState(false);

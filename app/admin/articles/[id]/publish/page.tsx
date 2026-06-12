@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { loadArticleByIdForAdmin } from '@/lib/articles';
 import type { BlockNode } from '@/lib/article-doc';
 import { getAuthor } from '@/lib/authors';
+import { chartImagePublicUrl } from '@/lib/storage';
 import { PublishComposer } from '@/components/admin/publish-composer';
 
 export interface ImageOption {
@@ -59,6 +60,11 @@ export default async function PublishPage({
   }
 
   const chartNames = Array.from(new Set(collectChartNames(document.content)));
+  // Deterministic URLs where each chart's PNG would live; the composer probes
+  // these so an already-generated chart shows up without re-rendering.
+  const chartCandidates: Record<string, string> = Object.fromEntries(
+    chartNames.map((name) => [name, chartImagePublicUrl(id, name)]),
+  );
 
   return (
     <div className="space-y-6">
@@ -91,6 +97,7 @@ export default async function PublishPage({
         hasMainAudience={Boolean(process.env.RESEND_AUDIENCE_ID)}
         images={images}
         chartNames={chartNames}
+        chartCandidates={chartCandidates}
         authorName={author.name}
       />
     </div>

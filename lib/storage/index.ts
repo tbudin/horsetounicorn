@@ -79,6 +79,23 @@ export function removeLocalCoverFiles(articleId: string): void {
   }
 }
 
+const chartKey = (articleId: string, chartName: string) =>
+  `articles/${articleId}/charts/${chartName}.png`;
+
+/**
+ * The deterministic public URL a chart PNG *would* live at, whether or not it
+ * has been generated yet. Lets the composer probe for an existing image
+ * instead of forcing a re-render every session. Mirrors how `uploadToR2`
+ * builds its returned URL.
+ */
+export function chartImagePublicUrl(articleId: string, chartName: string): string {
+  const key = chartKey(articleId, chartName);
+  if (isR2Configured()) {
+    return `${process.env.R2_PUBLIC_BASE_URL}/${key}`;
+  }
+  return `/${key}`;
+}
+
 /**
  * Persist a generated chart PNG and return its public URL. Stored under
  * `articles/<articleId>/charts/<chartName>.png` so the publish composer can
@@ -89,7 +106,7 @@ export async function saveChartImage(
   chartName: string,
   body: Buffer,
 ): Promise<string> {
-  const key = `articles/${articleId}/charts/${chartName}.png`;
+  const key = chartKey(articleId, chartName);
   if (isR2Configured()) {
     return uploadToR2(key, body, 'image/png');
   }
