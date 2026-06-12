@@ -11,14 +11,6 @@
       ]
     },
     {
-      "type": "image",
-      "attrs": {
-        "src": "/articles/bf5497a6-4ca8-4e6d-a340-3117c2fe23c3/images/feeding-future.png",
-        "alt": "Illustration of a baby in a high chair drinking from a bottle",
-        "caption": null
-      }
-    },
-    {
       "type": "paragraph",
       "content": [
         {
@@ -53,6 +45,14 @@
           "text": "That conversation with the Grab driver turned up a first surprise."
         }
       ]
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "/articles/bf5497a6-4ca8-4e6d-a340-3117c2fe23c3/images/feeding-future.png",
+        "alt": "Illustration of a baby in a high chair drinking from a bottle",
+        "caption": null
+      }
     },
     {
       "type": "heading",
