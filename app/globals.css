@@ -139,6 +139,58 @@
     transform: none;
   }
 
+  /* Admin buttons — the site's tactile language at admin scale. Size-agnostic:
+     add px/py/text-size at the call site. */
+  .btn-admin-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md font-medium text-white transition-all;
+    background: linear-gradient(180deg, #b3187f 0%, #9e0a71 100%);
+    border: 1px solid #870a61;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 1px 2px rgba(158, 10, 113, 0.25),
+      0 4px 10px -3px rgba(158, 10, 113, 0.3);
+  }
+  .btn-admin-primary:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      0 2px 4px rgba(158, 10, 113, 0.28),
+      0 6px 14px -3px rgba(158, 10, 113, 0.35);
+  }
+  .btn-admin-primary:active {
+    transform: translateY(0);
+    box-shadow: inset 0 1px 2px rgba(91, 5, 64, 0.35);
+  }
+  .btn-admin-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  .btn-admin-secondary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md font-medium text-ink-heading transition-all;
+    background: #ffffff;
+    border: 1px solid #e7dce5;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 1px 2px rgba(20, 8, 16, 0.06);
+  }
+  .btn-admin-secondary:hover {
+    border-color: #9e0a71;
+    color: #9e0a71;
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      0 2px 5px rgba(158, 10, 113, 0.1);
+  }
+  .btn-admin-secondary:active {
+    transform: translateY(0);
+    box-shadow: inset 0 1px 2px rgba(20, 8, 16, 0.08);
+  }
+  .btn-admin-secondary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
   /* Embossed surface used by book-style article cards. Multi-layer shadow
      gives the illusion of paper resting on the page. */
   .book-card {

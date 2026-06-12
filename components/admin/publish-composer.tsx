@@ -488,7 +488,7 @@ export function PublishComposer({
               type="button"
               onClick={sendTest}
               disabled={testBusy}
-              className="border border-[#EEE6EC] bg-white px-3 py-2 text-xs font-medium text-ink-heading hover:border-burgundy hover:text-burgundy disabled:opacity-50 transition-colors"
+              className="btn-admin-secondary px-3 py-2 text-xs"
             >
               {testBusy ? 'Sending…' : 'Send test'}
             </button>
@@ -511,7 +511,7 @@ export function PublishComposer({
             type="button"
             onClick={send}
             disabled={sending}
-            className="bg-burgundy px-5 py-2.5 text-sm font-medium text-white hover:bg-burgundy/90 disabled:opacity-50 transition-colors"
+            className="btn-admin-primary px-5 py-2.5 text-sm"
           >
             {sending ? 'Sending…' : 'Send broadcast'}
           </button>
@@ -812,11 +812,7 @@ function AddButton({
   children: React.ReactNode;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="inline-flex items-center gap-1.5 border border-[#EEE6EC] bg-white px-2.5 py-1.5 text-xs text-ink-muted hover:border-burgundy hover:text-burgundy transition-colors"
-    >
+    <button type="button" onClick={onClick} className="btn-admin-secondary px-2.5 py-1.5 text-xs">
       <Icon className="h-3.5 w-3.5" /> {children}
     </button>
   );
@@ -913,7 +909,7 @@ function StatusButton({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="border border-[#EEE6EC] bg-white px-3 py-1.5 text-xs text-ink-heading hover:border-burgundy hover:text-burgundy disabled:opacity-40 transition-colors"
+      className="btn-admin-secondary px-3 py-1.5 text-xs"
     >
       {children}
     </button>

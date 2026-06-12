@@ -72,13 +72,13 @@ export default async function AdminArticlePreview({
         <div className="shrink-0 flex items-center gap-3">
           <Link
             href={`/admin/articles/${id}/edit`}
-            className="border border-[#EEE6EC] bg-white text-ink-heading px-3 py-1.5 text-xs font-medium hover:border-burgundy hover:text-burgundy transition-colors"
+            className="btn-admin-secondary px-3 py-1.5 text-xs"
           >
             Edit
           </Link>
           <Link
             href={`/admin/articles/${id}/publish`}
-            className="bg-burgundy text-white px-3 py-1.5 text-xs font-medium hover:bg-burgundy/90 transition-colors"
+            className="btn-admin-primary px-3 py-1.5 text-xs"
           >
             Publish
           </Link>

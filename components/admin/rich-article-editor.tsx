@@ -177,7 +177,7 @@ export function RichArticleEditor({
             type="button"
             onClick={save}
             disabled={!dirty || saving}
-            className="bg-burgundy text-white px-4 py-2 text-xs font-medium hover:bg-burgundy/90 disabled:opacity-50 transition-colors"
+            className="btn-admin-primary px-4 py-2 text-xs"
           >
             {saving ? 'Saving…' : 'Save'}
           </button>
