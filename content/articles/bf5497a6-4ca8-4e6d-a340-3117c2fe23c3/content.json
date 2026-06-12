@@ -79,7 +79,7 @@
       "content": [
         {
           "type": "text",
-          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, as a share of everything they look up, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Slovenia, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States tops baby formula, the United Kingdom tops infant feeding, but per child the pattern holds every time. The fewer the babies, the louder the search."
+          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Slovenia, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States tops baby formula, the United Kingdom tops infant feeding, but per child the pattern holds every time. The fewer the babies, the louder the search."
         }
       ]
     },
@@ -105,7 +105,7 @@
       "content": [
         {
           "type": "text",
-          "text": "So a search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare and spend. That was the cross-section. The next surprise came when I watched it move."
+          "text": "So a search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare and spend. That was the cross-section. Next I wanted to see it move."
         }
       ]
     },
@@ -117,7 +117,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Then I watched it over time"
+          "text": "Five steady years"
         }
       ]
     },
@@ -126,14 +126,14 @@
       "content": [
         {
           "type": "text",
-          "text": "I lined the same topics up across five years. For most of that stretch, almost nothing happens; the lines sit flat, year after year. Then, from the middle of 2025, the picture changes. A handful of worries climb hard while the rest stay put."
+          "text": "I lined the same four topics up over five years, and the surprise is how little happens. Breastfeeding towers over everything and drifts gently down. Baby food holds steady. Baby formula is smaller but creeps up. Infant feeding barely registers at all."
         }
       ]
     },
     {
       "type": "chart",
       "attrs": {
-        "chartName": "parental-search-momentum",
+        "chartName": "yearly-trends",
         "caption": null
       }
     },
@@ -142,60 +142,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Breastfeeding is still far and away the most-searched topic, but it has barely moved in five years. What surges instead is a set of newer worries: stage-specific nutrition (infant, toddler, early-childhood) off a small base, iron and vitamin D deficiency, children’s brain development, folic acid, children’s vitamins. What parents worry about is changing faster than how much they worry."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "infant-toddler-three-waves",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The sharpest mover is infant and toddler nutrition: flat for four years, then up more than fivefold in nine months. And it did not climb smoothly. It jumped in three steps, three waves, each one a piece of American news, even though the everyday searching is worldwide."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Wave one: the first jump (August 2025)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Wave one is August 2025. We have already seen the headline jump, infant and toddler nutrition up fivefold. But which of the broad, everyday topics moved with it? Almost none. Breastfeeding and baby food stayed flat. Only baby formula broke trend."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "august-2025-category-lift",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Could it just be the calendar? Each topic peaks in its own month, and formula’s is May, not August. A spike in formula searches in August is out of season. This is news, not a holiday."
+          "text": "Each also keeps its own calendar. Breastfeeding peaks in August, around World Breastfeeding Week. Formula and infant feeding peak in May. Baby food peaks in January. There is no single season for the category."
         }
       ]
     },
@@ -211,74 +158,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Two stories had collided. The White House released its “Make Our Children Healthy Again” strategy, putting childhood nutrition and ultra-processed food on every front page, while a run of lawsuits over the marketing of “toddler milks” pushed those exact terms into the conversation."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Wave two: the safety scares (November 2025 and January 2026)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The second wave was fear. In early November 2025 the American brand ByHeart recalled every batch of its infant formula after dozens of babies fell ill with botulism. Interest in the brand spiked roughly thirtyfold in a single week, then collapsed. The signature of a reputational shock, not of demand."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Then it went global, and back to my driver’s part of the world. In January 2026, Nestlé, Danone and Lactalis pulled products in more than sixty countries after a toxin called cereulide was traced to a single Chinese supplier. Aptamil, Cow & Gate and SMA recalled from Europe to Asia; French prosecutors opening a probe; Nestlé posting its biggest search month in five years. Two recalls, two months apart, one local, one global, and the graph caught both."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Wave three: folate and autism (spring 2026)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The third wave was science, or an argument about it. Through spring 2026 an American policy push tied prenatal folate and acetaminophen to autism, and floated a folate derivative as a treatment. Searches for folic acid and prenatal vitamins went to record highs."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "autism-news-surge",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Folic acid roughly tripled between February and May, with no comparable rise in any earlier spring. Prenatal vitamins hit an all-time peak. Even the niche “breastfeeding diet” rode the wave. One caveat the piece owes you: the folate-autism link is scientifically contested, and the advice to take folic acid in early pregnancy long predates this news cycle. The science did not change. The conversation did, and search moved with it almost in real time."
+          "text": "Steady sizes, steady seasons, year after year. The story is in what breaks the pattern, and that only shows up when you zoom in on the last twelve months."
         }
       ]
     },
@@ -290,7 +170,7 @@
       "content": [
         {
           "type": "text",
-          "text": "How the brands reacted"
+          "text": "Then the last year"
         }
       ]
     },
@@ -299,7 +179,44 @@
       "content": [
         {
           "type": "text",
-          "text": "Three news shocks in nine months. Did the companies selling to these parents see them coming?"
+          "text": "Narrow the window to the most recent months and a different set of topics, far more specific ones, is climbing fast while the giants sit still."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "parental-search-momentum",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Breastfeeding has barely moved. What surges instead is stage-specific nutrition, infant, toddler and early-childhood, off a small base, along with iron and vitamin D deficiency, children’s brain development, folic acid and children’s vitamins. What parents worry about is changing faster than how much they worry. Something happened. It was the news."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "It was the news"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Three stories, in nine months, each a piece of American news. A government campaign to “make our children healthy again.” A run of infant-formula recalls. A fight over folate and autism. Set against the search graph, the timing is hard to miss, and the companies selling to these parents were dragged along with it."
         }
       ]
     },
@@ -315,7 +232,19 @@
       "content": [
         {
           "type": "text",
-          "text": "The contrast is instructive. Bobbie spent the period building goodwill: Cardi B as its “Chief Confidence Officer,” campaigns with athletes about the pressure of motherhood, a “Formula Is Food” transparency message. So when a rival’s recall sent anxious parents looking for alternatives, it had the attention and the supply to catch them. Danone leaned into emotional support, a French campaign around postpartum mental health and a 24/7 helpline. The incumbents, Abbott and Reckitt, spent the window on the defensive, shadowed by litigation and clean-label scrutiny."
+          "text": "You can watch each story land in the data."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Watching it land"
         }
       ]
     },
@@ -324,7 +253,48 @@
       "content": [
         {
           "type": "text",
-          "text": "You can see it in the search itself. Track the brands, and most sit flat until a recall yanks one of them up for a week."
+          "text": "In August 2025 the White House strategy and a wave of “toddler milk” lawsuits hit, and infant and toddler nutrition jumped more than fivefold. It stepped up again that November, when the American brand ByHeart recalled every batch of its formula after dozens of babies fell ill with botulism, and once more in January, when a toxin called cereulide forced Nestlé, Danone and Lactalis to pull products in sixty countries."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "infant-toddler-three-waves",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Then came the science, or an argument about it. In spring 2026 an American policy push tied prenatal folate and acetaminophen to autism, and folic acid and prenatal vitamins went to record highs. Even the niche “breastfeeding diet” rode along."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "autism-news-surge",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "One caveat the piece owes you: the folate-autism link is scientifically contested, and the advice to take folic acid in early pregnancy long predates this news cycle. The science did not change. The conversation did, and search moved with it almost in real time."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The brands spiked too, each for its own reason."
         }
       ]
     },
@@ -340,7 +310,7 @@
       "content": [
         {
           "type": "text",
-          "text": "ByHeart is a vertical line in November, a thirtyfold spike that vanishes as fast as it came. Aptamil jumps with the January recall. Only Bobbie rises on purpose, climbing all through 2025 on marketing alone. One caveat: this is share of attention, not share of market, who is talked about, not who is bought. But the difference between a brand that grows and a brand that merely spikes is written right there in the lines."
+          "text": "ByHeart is a vertical line in November, a thirtyfold jump that vanishes as fast as it came. Aptamil leaps with the January recall. Only Bobbie rises on purpose, climbing all through 2025 on marketing alone. One caveat: this is share of attention, not share of market, who is talked about, not who is bought. But the difference between a brand that grows and a brand that merely spikes is written right there in the lines."
         }
       ]
     },
@@ -403,7 +373,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Seasonality is a gift if you respect the lead time. Intent builds before it peaks, so you start about three months ahead of a seasonal high, not during it. For breastfeeding products, ramp from May towards August. For children’s vitamins, October for January, June for back to school."
+          "text": "Each topic peaks in its own month, so the lead time differs. Intent builds before a peak, so you start about three months ahead: breastfeeding products from May towards August, formula and infant feeding from February towards May, baby food from October towards January."
         }
       ]
     },
@@ -421,7 +391,7 @@
       "content": [
         {
           "type": "text",
-          "text": "And a wave is not growth. A recall spike is borrowed attention; it leaves as fast as it came. The brand that compounds is the one, like Bobbie, building its own reasons to be searched between the shocks."
+          "text": "And a spike is not growth. A recall lifts a brand for a week, then leaves; the attention is borrowed. The brand that compounds is the one, like Bobbie, building its own reasons to be searched between the shocks."
         }
       ]
     },
@@ -442,7 +412,7 @@
       "content": [
         {
           "type": "text",
-          "text": "A few honest limits. Search is attention, not sales. The monthly geographic data is noisy at the edges. And the science under the loudest wave is disputed, so the honest posture is to report what people searched, not to judge whether they were right to."
+          "text": "A few honest limits. Search is attention, not sales. The monthly geographic data is noisy at the edges, and this export has gaps, China barely registers on several topics. And the science under the loudest story is disputed, so the honest posture is to report what people searched, not to judge whether they were right to."
         }
       ]
     },
