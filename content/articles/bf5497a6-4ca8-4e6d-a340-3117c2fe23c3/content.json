@@ -142,7 +142,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Each also keeps its own calendar. Breastfeeding peaks in August, around World Breastfeeding Week. Formula and infant feeding peak in May. Baby food peaks in January. There is no single season for the category."
+          "text": "Look for a season and there is surprisingly little. Strip out the trend and the one-off spikes and only breastfeeding keeps a rhythm: a mild lift each August, around World Breastfeeding Week. Formula’s apparent May peak turns out to be a single event, the 2022 shortage. The rest is noise."
         }
       ]
     },
@@ -158,7 +158,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Steady sizes, steady seasons, year after year. The story is in what breaks the pattern, and that only shows up when you zoom in on the last twelve months."
+          "text": "Steady sizes, and almost no calendar. Which is the point. In a category that barely has a season, a sudden spike has to be something else. And the spikes only show up in the last twelve months."
         }
       ]
     },
@@ -170,7 +170,44 @@
       "content": [
         {
           "type": "text",
-          "text": "Then the last year"
+          "text": "It was the news"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Those twelve months were not calm at all. Three stories, in nine months, each a piece of American news, swept through the category. A government campaign to “make our children healthy again.” A run of infant-formula recalls. A fight over folate and autism. The companies selling to these parents were dragged along with each one."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "brand-response-timeline",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Line the events up against the search graph and the timing is hard to miss."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "What parents searched instead"
         }
       ]
     },
@@ -195,44 +232,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Breastfeeding has barely moved. What surges instead is stage-specific nutrition, infant, toddler and early-childhood, off a small base, along with iron and vitamin D deficiency, children’s brain development, folic acid and children’s vitamins. What parents worry about is changing faster than how much they worry. Something happened. It was the news."
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "It was the news"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Three stories, in nine months, each a piece of American news. A government campaign to “make our children healthy again.” A run of infant-formula recalls. A fight over folate and autism. Set against the search graph, the timing is hard to miss, and the companies selling to these parents were dragged along with it."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "brand-response-timeline",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "You can watch each story land in the data."
+          "text": "Breastfeeding has barely moved. What surges instead is stage-specific nutrition, infant, toddler and early-childhood, off a small base, along with iron and vitamin D deficiency, children’s brain development, folic acid and children’s vitamins. What parents worry about is changing faster than how much they worry."
         }
       ]
     },
@@ -373,7 +373,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Each topic peaks in its own month, so the lead time differs. Intent builds before a peak, so you start about three months ahead: breastfeeding products from May towards August, formula and infant feeding from February towards May, baby food from October towards January."
+          "text": "Seasonality barely helps here. Only breastfeeding has a usable rhythm, a lift each August, so plan that one about three months ahead, from May. For everything else there is no reliable calendar to lean on. The moments that move these searches are news, not seasons, so hold budget ready for them instead."
         }
       ]
     },
