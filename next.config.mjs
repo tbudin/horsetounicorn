@@ -2,19 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   // Keep the headless-chromium layer out of the bundle — loaded at runtime
-  // by the chart-screenshot pipeline (lib/chart-screenshot.ts).
+  // by the chart-screenshot pipeline (lib/chart-screenshot.ts). On Vercel the
+  // binary itself is fetched at runtime from CHROMIUM_PACK_URL rather than
+  // bundled, so no output-file-tracing config is needed (which Turbopack
+  // builds don't fully support anyway).
   serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium'],
-  // The chromium binary in @sparticuz/chromium/bin is read from disk at
-  // runtime, not imported, so Next's file tracer doesn't include it in the
-  // function bundle by default — causing "input directory ... /bin does not
-  // exist" on Vercel. Force-include it for the render route. Globs cover both
-  // the pnpm (.pnpm/...) and flat node_modules layouts.
-  outputFileTracingIncludes: {
-    '/api/admin/charts/render': [
-      './node_modules/.pnpm/@sparticuz+chromium@*/node_modules/@sparticuz/chromium/bin/**',
-      './node_modules/@sparticuz/chromium/bin/**',
-    ],
-  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'substackcdn.com' },

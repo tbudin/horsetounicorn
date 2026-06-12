@@ -18,9 +18,15 @@ async function launch() {
 
   if (isServerless) {
     const chromium = (await import('@sparticuz/chromium')).default;
+    // The chromium binary isn't bundled (tracing it breaks the Turbopack
+    // build). When CHROMIUM_PACK_URL is set, @sparticuz/chromium downloads and
+    // extracts the pack to /tmp at runtime; otherwise it falls back to the
+    // (likely absent) bundled bin and surfaces a clear error — the publish
+    // flow never depends on this, and `pnpm chart:shots` is the local path.
+    const packUrl = process.env.CHROMIUM_PACK_URL;
     return puppeteer.launch({
       args: chromium.args,
-      executablePath: await chromium.executablePath(),
+      executablePath: await chromium.executablePath(packUrl),
       headless: true,
       defaultViewport: VIEWPORT,
     });
