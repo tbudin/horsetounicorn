@@ -78,7 +78,7 @@ export function PublishComposer({
   );
   const [variant, setVariant] = useState<Variant>('standard');
   const [subject, setSubject] = useState(title);
-  const [signoff, setSignoff] = useState('Tom');
+  const [signoff, setSignoff] = useState('Thomas');
 
   const idRef = useRef(1);
   const nextId = () => String(++idRef.current);

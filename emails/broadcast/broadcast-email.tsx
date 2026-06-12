@@ -50,7 +50,7 @@ export function BroadcastEmail({
   coverUrl,
   articleTitle,
   articleUrl,
-  signoff = 'Tom',
+  signoff = 'Thomas',
   tipUrl,
   siteUrl,
 }: BroadcastEmailProps) {
@@ -91,7 +91,7 @@ export function BroadcastEmail({
                   </Column>
                 ) : null}
                 <Column style={cardBodyCell}>
-                  <Text style={cardKicker}>Read on the web</Text>
+                  <Text style={cardKicker}>New</Text>
                   <Text style={cardTitle}>{articleTitle}</Text>
                   <Text style={cardCta}>Read the full article →</Text>
                 </Column>
@@ -102,7 +102,7 @@ export function BroadcastEmail({
           {tipUrl ? (
             <Section style={tipBox}>
               <Text style={tipText}>
-                If this was worth your time,{' '}
+                If you liked this,{' '}
                 <Link href={tipUrl} style={tipLink}>
                   ☕ buy me a coffee
                 </Link>
