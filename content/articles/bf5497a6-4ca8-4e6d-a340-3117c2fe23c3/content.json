@@ -87,7 +87,7 @@
       "content": [
         {
           "type": "text",
-          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Slovenia, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States tops baby formula, the United Kingdom tops infant feeding, but per child the pattern holds every time. The fewer the babies, the louder the search."
+          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Switzerland, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States leads baby formula, infant feeding leans British and Commonwealth, but per child the pattern holds every time. The fewer the babies, the louder the search."
         }
       ]
     },
@@ -187,7 +187,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Those twelve months were not calm at all. Three stories, in nine months, each a piece of American news, swept through the category. A government campaign to “make our children healthy again.” A run of infant-formula recalls. A fight over folate and autism. The companies selling to these parents were dragged along with each one."
+          "text": "Those twelve months were not calm at all. Three American stories swept through, one after another. In late summer 2025, the White House push to “make our children healthy again,” alongside lawsuits over how “toddler milks” are marketed. Through the autumn and winter, a run of formula recalls. In the spring, a government report linking folate to autism. The companies selling to these parents were dragged along with each one."
         }
       ]
     },
@@ -261,7 +261,7 @@
       "content": [
         {
           "type": "text",
-          "text": "In August 2025 the White House strategy and a wave of “toddler milk” lawsuits hit, and infant and toddler nutrition jumped more than fivefold. It stepped up again that November, when the American brand ByHeart recalled every batch of its formula after dozens of babies fell ill with botulism, and once more in January, when a toxin called cereulide forced Nestlé, Danone and Lactalis to pull products in sixty countries."
+          "text": "In August 2025 the White House strategy and a wave of “toddler milk” lawsuits hit, and infant and toddler nutrition jumped more than fivefold. It stepped up again in November, when the American brand ByHeart recalled every batch of its formula after dozens of babies fell ill with botulism. And it climbed a third time in the spring."
         }
       ]
     },
@@ -277,7 +277,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Then came the science, or an argument about it. In spring 2026 an American policy push tied prenatal folate and acetaminophen to autism, and folic acid and prenatal vitamins went to record highs. Even the niche “breastfeeding diet” rode along."
+          "text": "That third climb was science, or an argument about it. In spring 2026 an American policy push tied prenatal folate and acetaminophen to autism, and folic acid and prenatal vitamins went to record highs. Even the niche “breastfeeding diet” rode along."
         }
       ]
     },
@@ -323,7 +323,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Both levers got pulled, unevenly. On the message, Bobbie was relentless: Cardi B as its “Chief Confidence Officer,” campaigns with athletes about the pressure of motherhood, a “Formula Is Food” push on ingredients. Danone went the other way, into emotional support, with a French campaign built around postpartum mental health and a 24/7 parent helpline. On product, Danone shipped a dairy-and-plants blend formula; supplement brands quietly swapped synthetic folic acid for methylfolate to ride the folate story; baby-food makers leaned into clean-label and heavy-metal testing as a new state law forced disclosure. The incumbents, Abbott and Reckitt, mostly played defence, their messaging shadowed by litigation."
+          "text": "Both levers exist, but the action was mostly in the message. Bobbie was relentless: Cardi B as its “Chief Confidence Officer,” campaigns with athletes about the pressure of motherhood, a “Formula Is Food” push on ingredients. Danone went the other way, into emotional support, with a French campaign built around postpartum mental health and a 24/7 parent helpline. Product moves were quieter and more incremental: baby-food makers leaned into clean-label and heavy-metal testing as a new state law forced disclosure, and supplement brands pushed methylfolate, an active form of folate they market as cleaner than folic acid, as the folate argument put the nutrient in the spotlight. The incumbents, Abbott and Reckitt, mostly played defence, their messaging shadowed by litigation."
         }
       ]
     },
@@ -348,7 +348,7 @@
       "content": [
         {
           "type": "text",
-          "text": "ByHeart is a vertical line in November, a thirtyfold jump that vanishes as fast as it came. Aptamil leaps with the January recall. Only Bobbie rises on purpose, climbing all through 2025 on marketing alone. One caveat: this is share of attention, not share of market, who is talked about, not who is bought. But the difference between a brand that grows and a brand that merely spikes is written right there in the lines."
+          "text": "ByHeart is a vertical line in November, a thirtyfold jump that vanishes as fast as it came. Aptamil leaps in January, when a cereulide toxin pulled Nestlé, Danone and Lactalis products from more than sixty countries. Only Bobbie rises on purpose, climbing all through 2025 on marketing alone. One caveat: this is share of attention, not share of market, who is talked about, not who is bought. But the difference between a brand that grows and a brand that merely spikes is written right there in the lines."
         }
       ]
     },
@@ -420,7 +420,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Geography rewards tailoring. Folate and autism is an American conversation; heavy metals and clean labels, largely American too; formula recalls went global. Match the message to the worry that is live where you spend. Premium, low-fertility markets (Korea, Singapore, Israel, Switzerland) reward ingredient science and premium positioning, because each child is a rarer, higher-value customer. America rewards agility, with budget held back for the next news moment. The high-birth markets that barely register in English need their own languages and price tiers, not a translated premium campaign."
+          "text": "Geography rewards tailoring. Folate and autism is an American conversation; heavy metals and clean labels, largely American too; formula recalls went global. Match the message to the worry that is live where you spend. Premium, low-fertility markets (Korea, Singapore, Switzerland and Ireland) reward ingredient science and premium positioning, because each child is a rarer, higher-value customer. America rewards agility, with budget held back for the next news moment. The high-birth markets that barely register in English need their own languages and price tiers, not a translated premium campaign."
         }
       ]
     },
@@ -475,6 +475,446 @@
             {
               "type": "text",
               "text": "The countries having the fewest babies are the ones searching hardest about how to feed them, and in 2025–26, the news taught all of them to search even harder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Sources"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Data"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Google Trends",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://trends.google.com/trends/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "UN, World Fertility Report 2024",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_wfr_2024_final.pdf",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Visual Capitalist, Global Births by Country in 2025",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.visualcapitalist.com/global-births-by-country-in-2025/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "CDC, Births: Provisional Data for 2025",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.cdc.gov/nchs/data/vsrr/vsrr043.pdf",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Singapore Department of Statistics, Population in Brief 2025",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.population.gov.sg/files/media-centre/publications/Population_in_Brief_2025.pdf",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The news"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Food Safety Magazine, “Make Our Children Healthy Again” and childhood-nutrition overhaul",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.food-safety.com/articles/10402-maha-report-sets-stage-for-overhaul-of-food-chemicals-environmental-contaminants-and-childhood-nutrition",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "CNN, Legal action over the marketing of “toddler milks” (Aug 2025)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.cnn.com/2025/08/21/health/toddler-milk-lawsuit-wellness",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "CDC, Infant botulism outbreak linked to infant formula (Nov 2025)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.cdc.gov/botulism/outbreaks-investigations/infant-formula-nov-2025/index.html",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "FDA, ByHeart all-batch recall update",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/byheart-updates-information-regarding-voluntary-recall-all-batches-byheart-whole-nutrition-infant",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "NPR, FDA says ByHeart recall response was too slow",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.npr.org/2025/12/16/nx-s1-5645651/byheart-baby-formula-recall-too-slow",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "WHO, Cereulide in infant formula, multi-country recall",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON596",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Euronews, Nestlé, Danone, Lactalis pull products after toxin alert",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.euronews.com/health/2026/01/22/global-baby-formula-recall-nestle-danone-lactalis-pull-products-after-toxin-alert",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "CNN, HHS report linking folate, acetaminophen and autism (Sept 2025)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.cnn.com/2025/09/05/health/hhs-report-autism-folate-acetaminophen",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Consumer Reports, California AB 899 baby-food heavy-metal disclosure",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.consumerreports.org/babies-kids/baby-food/baby-food-labels-heavy-metals-california-ab899-a5779555429/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The science"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "NutraIngredients, 5-MTHF matches folic acid while lowering unmetabolised folic acid (2026 RCT)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.nutraingredients.com/Article/2026/05/06/rtc-5-mthf-matches-folic-acid-while-lowering-unmetabolized-folic-acid-in-prenatal-vitamins/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "UKTIS, Use of methylfolate in pregnancy (guidance still recommends folic acid)",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://uktis.org/monographs/use-of-methylfolate-in-pregnancy/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Brand campaigns"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Ad Age, Bobbie and Cardi B “parental power” campaign",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://adage.com/creativity/work/aa-bobbie-cardi-b/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "BusinessWire, Bobbie and Alex Morgan, “There’s No Scoreboard in Motherhood”",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.businesswire.com/news/home/20250904964101/en/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Ads of the World, Danone/Gallia “MommyPhone”",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.adsoftheworld.com/campaigns/mommyphone-the-first-babyphone-that-listens-to-parents",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "KFF Health News, Abbott and Mead Johnson preterm-formula (NEC) fight",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://kffhealthnews.org/health-industry/infant-formula-fortifier-high-stakes-corporate-battle-preemies-abbott-mead-johnson/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
             }
           ]
         }
