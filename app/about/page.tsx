@@ -15,14 +15,10 @@ export default function AboutPage() {
       <div className="prose prose-lg max-w-none">
         <p>Hi, I&apos;m Thomas, a French founder living in Singapore.</p>
         <p>
-          By day I run{' '}
-          <a href="https://www.noodle.sg" target="_blank" rel="noopener noreferrer">
-            Noodle
-          </a>
-          , a growth-marketing studio that helps entrepreneurs turn a good idea into a story
-          the market actually hears. The bet behind everything I do: most companies that win
-          don&apos;t have a 10× product. They have a 1.5× product and a 10× story. The product
-          is rarely the hard part. The story is.
+          By day I run Noodle, a growth-marketing studio that helps entrepreneurs turn a good
+          idea into a story the market actually hears. The bet behind everything I do: most
+          companies that win don&apos;t have a 10× product. They have a 1.5× product and a 10×
+          story. The product is rarely the hard part. The story is.
         </p>
         <p>
           <strong>Horse to Unicorn</strong> is where I write that thinking down: marketing,
@@ -31,11 +27,8 @@ export default function AboutPage() {
         </p>
         <p>
           The other half of me just likes data. I came to code late, after an engineering
-          degree, and never stopped poking at numbers (that habit lives over at{' '}
-          <a href="https://datairl.com" target="_blank" rel="noopener noreferrer">
-            datairl.com
-          </a>
-          ). So the essays here tend to start from data, not opinion: I pull the numbers, build
+          degree, and never stopped poking at numbers (that habit lives over at datairl.com).
+          So the essays here tend to start from data, not opinion: I pull the numbers, build
           the charts, check them against primary sources, and follow where they lead, even when
           the answer surprises me.
         </p>

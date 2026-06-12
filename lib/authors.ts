@@ -47,8 +47,6 @@ const AUTHORS: Record<string, AuthorProfile> = {
     signatureText: 'Thomas',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Noodle', href: 'https://www.noodle.sg' },
-      { label: 'datairl', href: 'https://datairl.com' },
     ],
   },
 };
