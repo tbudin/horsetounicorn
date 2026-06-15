@@ -27,6 +27,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 Articles
               </Link>
               <Link
+                href="/admin/audience"
+                className="text-ink-muted hover:text-ink-heading transition-colors"
+              >
+                Audience
+              </Link>
+              <Link
                 href="/articles"
                 target="_blank"
                 className="text-ink-muted hover:text-ink-heading transition-colors"
