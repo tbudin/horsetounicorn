@@ -42,7 +42,7 @@
       "content": [
         {
           "type": "text",
-          "text": "That conversation with the Grab driver turned up a first surprise."
+          "text": "And I got my first surprise."
         }
       ]
     },
@@ -87,7 +87,7 @@
       "content": [
         {
           "type": "text",
-          "text": "At first the raw map looks almost sensible: the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Switzerland, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. Switch the topic and the leaders move, the United States leads baby formula, infant feeding leans British and Commonwealth, but per child the pattern holds every time. The fewer the babies, the louder the search."
+          "text": "On first look, the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Switzerland, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. The fewer the babies, the louder the search."
         }
       ]
     },
@@ -113,7 +113,7 @@
       "content": [
         {
           "type": "text",
-          "text": "So a search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare and spend. That was the cross-section. Next I wanted to see it move."
+          "text": "So a search graph for early-life nutrition is not a map of where children are. It is a map of where parents worry, compare and spend. Next I wanted to see it move over time and understand the broader trends."
         }
       ]
     },
@@ -150,7 +150,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Look for a season and there is surprisingly little. Strip out the trend and the one-off spikes and only breastfeeding keeps a rhythm: a mild lift each August, around World Breastfeeding Week. Formula’s apparent May peak turns out to be a single event, the 2022 shortage. The rest is noise."
+          "text": "Unsurprisingly, there is little seasonality. Strip out the trend and the one-off spikes and only breastfeeding keeps a rhythm: a mild lift each August, around World Breastfeeding Week. Formula’s apparent May peak turns out to be a single event, the 2022 shortage."
         }
       ]
     },
@@ -166,7 +166,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Steady sizes, and almost no calendar. Which is the point. In a category that barely has a season, a sudden spike has to be something else. And the spikes only show up in the last twelve months."
+          "text": "In a category that barely has a season, a sudden spike has to be something news related."
         }
       ]
     },
@@ -187,7 +187,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Those twelve months were not calm at all. Three American stories swept through, one after another. In late summer 2025, the White House push to “make our children healthy again,” alongside lawsuits over how “toddler milks” are marketed. Through the autumn and winter, a run of formula recalls. In the spring, a government report linking folate to autism. The companies selling to these parents were dragged along with each one."
+          "text": "The last twelve months were not calm at all. Three American stories swept through, one after another. In late summer 2025, the White House push to “make our children healthy again,” alongside lawsuits over how “toddler milks” are marketed. Through the autumn and winter, a run of formula recalls. In the spring, a government report linking folate to autism. The companies selling to these parents were dragged along with each one. Line the events up against the search graph and the timing is hard to miss."
         }
       ]
     },
@@ -197,15 +197,6 @@
         "chartName": "brand-response-timeline",
         "caption": null
       }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Line the events up against the search graph and the timing is hard to miss."
-        }
-      ]
     },
     {
       "type": "heading",
@@ -224,7 +215,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Narrow the window to the most recent months and a different set of topics, far more specific ones, is climbing fast while the giants sit still."
+          "text": "In the most recent months, breastfeeding has barely moved. What surges instead is stage-specific nutrition, infant, toddler and early-childhood, off a small base, along with iron and vitamin D deficiency, children’s brain development, folic acid and children’s vitamins. What parents worry about is changing faster than how much they worry."
         }
       ]
     },
@@ -234,15 +225,6 @@
         "chartName": "parental-search-momentum",
         "caption": null
       }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Breastfeeding has barely moved. What surges instead is stage-specific nutrition, infant, toddler and early-childhood, off a small base, along with iron and vitamin D deficiency, children’s brain development, folic acid and children’s vitamins. What parents worry about is changing faster than how much they worry."
-        }
-      ]
     },
     {
       "type": "heading",
@@ -289,11 +271,19 @@
       }
     },
     {
-      "type": "paragraph",
+      "type": "callout",
+      "attrs": {
+        "headline": "One science caveat the piece owes you"
+      },
       "content": [
         {
-          "type": "text",
-          "text": "One caveat the piece owes you: the folate-autism link is scientifically contested, and the advice to take folic acid in early pregnancy long predates this news cycle. The science did not change. The conversation did, and search moved with it almost in real time."
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "The folate-autism link is scientifically contested, and the advice to take folic acid in early pregnancy long predates this news cycle. The science did not change. The conversation did, and search moved with it almost in real time."
+            }
+          ]
         }
       ]
     },
@@ -369,7 +359,7 @@
       "content": [
         {
           "type": "text",
-          "text": "You do not have to sell formula for this to be useful. Any brand exposed to seasonal cycles, safety scares or shifting health stories can read these eighteen months as a playbook."
+          "text": "You do not have to sell formula for this insight to be useful. Any brand exposed to seasonal cycles, safety scares or shifting health stories can read these eighteen months as a playbook."
         }
       ]
     },
@@ -390,7 +380,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Speed and transparency decide who keeps the customers. Regulators called ByHeart’s recall too slow. A rival’s recall spikes anxiety across the whole category, not just the brand at fault, so the brands ready with stock, search visibility and honest “here is how we test” content caught the parents it lost; the ones who paused to work it out did not. The moment is an opportunity, but only if you are ready before it arrives. The one thing never to do is feed the fear: formula marketing sits under strict codes, and reassurance has to be about your own standards, never about trashing a rival."
+          "text": "Speed and transparency decide who keeps the customers. Regulators called ByHeart’s recall too slow. A rival’s recall spikes anxiety across the whole category, not just the brand at fault, so the brands ready with stock, search visibility and honest “here is how we test” content caught the parents it lost; the ones who paused to work it out did not. The moment is an opportunity, but only if you are ready before it arrives. The one thing never to do is feed the fear: formula marketing sits under strict codes, and reassurance has to be about your own standards, never about trashing a rival. Keep accountable and cross correct quickly."
         }
       ]
     },
@@ -450,7 +440,7 @@
       "content": [
         {
           "type": "text",
-          "text": "A few honest limits. Search is attention, not sales. The monthly geographic data is noisy at the edges, and this export has gaps, China barely registers on several topics. And the science under the loudest story is disputed, so the honest posture is to report what people searched, not to judge whether they were right to."
+          "text": "A few honest limits."
         }
       ]
     },
@@ -459,7 +449,25 @@
       "content": [
         {
           "type": "text",
-          "text": "But step back, and the bigger picture is hard to miss. It brings me back to the Grab. The driver was right: fewer children are coming, across most of the wealthy world, and emphatically in his own country. Yet every one of those rarer children now arrives into more scrutiny, more choice and more marketing than any before. The search graph is that paradox made visible: a small, shrinking subject that, for one strange and noisy year, the whole internet could not stop asking about."
+          "text": "Search is attention, not sales. The monthly geographic data is noisy at the edges, and this export has gaps, China barely registers on several topics which is to be expected since the data comes from Google and the country uses predominantly Baidu."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The science under the loudest story is disputed, so the honest posture is to report what people searched, not to judge whether they were right to."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "But the bigger picture is hard to miss: fewer children are coming, across most of the wealthy world, and emphatically in Singapore. Yet every one of those rarer children now arrives into more scrutiny, more choice and more marketing than any before. The search graph is that paradox made visible: a small, shrinking subject that, for one strange and noisy year, the whole internet could not stop asking about."
         }
       ]
     },
