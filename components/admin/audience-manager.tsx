@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Search, UserPlus, X, Upload } from 'lucide-react';
+import { Search, UserPlus, X, Upload, Pencil, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -44,7 +44,11 @@ export function AudienceManager() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'subscribed' | 'unsubscribed'>('all');
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editFirst, setEditFirst] = useState('');
+  const [editLast, setEditLast] = useState('');
 
   const [newEmail, setNewEmail] = useState('');
   const [newFirst, setNewFirst] = useState('');
@@ -120,13 +124,16 @@ export function AudienceManager() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return contacts;
-    return contacts.filter(
-      (c) =>
+    return contacts.filter((c) => {
+      if (statusFilter === 'subscribed' && c.unsubscribed) return false;
+      if (statusFilter === 'unsubscribed' && !c.unsubscribed) return false;
+      if (!q) return true;
+      return (
         c.email.toLowerCase().includes(q) ||
-        `${c.first_name ?? ''} ${c.last_name ?? ''}`.toLowerCase().includes(q),
-    );
-  }, [contacts, query]);
+        `${c.first_name ?? ''} ${c.last_name ?? ''}`.toLowerCase().includes(q)
+      );
+    });
+  }, [contacts, query, statusFilter]);
 
   async function addContact() {
     if (adding) return;
@@ -191,6 +198,38 @@ export function AudienceManager() {
       const data = (await res.json()) as { ok: boolean; error?: string };
       if (!res.ok || !data.ok) setError(data.error ?? 'Remove failed');
       else void loadContacts();
+    } catch {
+      setError('Network error');
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  function startEdit(c: Contact) {
+    setEditingId(c.id);
+    setEditFirst(c.first_name ?? '');
+    setEditLast(c.last_name ?? '');
+  }
+
+  async function saveName(c: Contact) {
+    if (busyId) return;
+    setBusyId(c.id);
+    try {
+      const res = await fetch(`/api/admin/audience/${audienceId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: c.id,
+          firstName: editFirst.trim(),
+          lastName: editLast.trim(),
+        }),
+      });
+      const data = (await res.json()) as { ok: boolean; error?: string };
+      if (!res.ok || !data.ok) setError(data.error ?? 'Update failed');
+      else {
+        setEditingId(null);
+        void loadContacts();
+      }
     } catch {
       setError('Network error');
     } finally {
@@ -385,15 +424,34 @@ export function AudienceManager() {
         ) : null}
       </section>
 
-      {/* Search */}
-      <div className="relative max-w-sm">
-        <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-subtle" />
-        <Input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search email or name…"
-          className="pl-8"
-        />
+      {/* Search + status filter */}
+      <div className="flex flex-wrap items-center gap-3">
+        <div className="relative max-w-sm flex-1">
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-subtle" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search email or name…"
+            className="pl-8"
+          />
+        </div>
+        <div className="inline-flex gap-1 rounded-[10px] border border-[#EAE1E8] bg-[#F4EFF3] p-1">
+          {(['all', 'subscribed', 'unsubscribed'] as const).map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => setStatusFilter(s)}
+              className={cn(
+                'rounded-[7px] px-3 py-1.5 text-xs font-medium capitalize transition-all',
+                statusFilter === s
+                  ? 'border border-[#E7DCE5] bg-white text-ink-heading shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(20,8,16,0.07)]'
+                  : 'border border-transparent text-ink-muted hover:text-ink-heading',
+              )}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
       </div>
 
       {error ? <p className="text-xs text-burgundy">{error}</p> : null}
@@ -412,13 +470,56 @@ export function AudienceManager() {
           <ul className="divide-y divide-[#EEE6EC]">
             {filtered.map((c) => {
               const name = `${c.first_name ?? ''} ${c.last_name ?? ''}`.trim();
+              const editing = editingId === c.id;
               return (
                 <li key={c.id} className="flex items-center gap-3 px-4 py-2.5">
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-sm text-ink-heading">{c.email}</div>
-                    <div className="text-[11px] text-ink-subtle">
-                      {name ? `${name} · ` : ''}added {fmtDate(c.created_at)}
-                    </div>
+                    {editing ? (
+                      <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                        <Input
+                          value={editFirst}
+                          onChange={(e) => setEditFirst(e.target.value)}
+                          placeholder="First name"
+                          className="h-7 max-w-[150px] text-xs"
+                        />
+                        <Input
+                          value={editLast}
+                          onChange={(e) => setEditLast(e.target.value)}
+                          placeholder="Last name"
+                          className="h-7 max-w-[150px] text-xs"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => saveName(c)}
+                          disabled={busyId === c.id}
+                          className="btn-admin-primary px-2 py-1 text-[11px]"
+                        >
+                          <Check className="h-3 w-3" /> Save
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setEditingId(null)}
+                          className="text-[11px] text-ink-subtle hover:text-ink-heading"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1.5 text-[11px] text-ink-subtle">
+                        <span>
+                          {name ? `${name} · ` : ''}added {fmtDate(c.created_at)}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => startEdit(c)}
+                          title="Edit name"
+                          className="text-ink-subtle hover:text-burgundy"
+                        >
+                          <Pencil className="h-3 w-3" />
+                        </button>
+                      </div>
+                    )}
                   </div>
                   <span
                     className={cn(

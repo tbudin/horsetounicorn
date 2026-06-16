@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { LogoutButton } from '@/components/admin/logout-button';
 
@@ -13,11 +14,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <header className="border-b border-[#F0E8EE]">
         <div className="container max-w-5xl flex items-center justify-between py-4">
           <div className="flex items-center gap-6">
-            <Link
-              href="/admin"
-              className="font-serif text-lg font-medium text-ink-heading"
-            >
-              Admin
+            <Link href="/admin" aria-label="Admin home" className="shrink-0">
+              <Image
+                src="/brand/htu-logo.png"
+                alt="Horse to Unicorn"
+                width={32}
+                height={32}
+                className="rounded-md border border-[#EEE6EC]"
+              />
             </Link>
             <nav className="flex items-center gap-4 text-sm">
               <Link

@@ -81,8 +81,13 @@ export async function POST(
   return NextResponse.json({ ok: true, id: data?.id });
 }
 
-// -- PATCH: toggle subscribed / unsubscribed ---------------------------
-const PatchBody = z.object({ id: z.string().min(1), unsubscribed: z.boolean() });
+// -- PATCH: update subscribed status and/or name -----------------------
+const PatchBody = z.object({
+  id: z.string().min(1),
+  unsubscribed: z.boolean().optional(),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+});
 
 export async function PATCH(
   req: Request,
@@ -106,7 +111,9 @@ export async function PATCH(
   const { error } = await getResend().contacts.update({
     audienceId,
     id: body.id,
-    unsubscribed: body.unsubscribed,
+    ...(body.unsubscribed !== undefined ? { unsubscribed: body.unsubscribed } : {}),
+    ...(body.firstName !== undefined ? { firstName: body.firstName } : {}),
+    ...(body.lastName !== undefined ? { lastName: body.lastName } : {}),
   });
   if (error) {
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });

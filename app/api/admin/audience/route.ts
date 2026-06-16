@@ -20,12 +20,14 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
   const raw = (data as unknown as { data?: ResendAudience[] })?.data ?? [];
-  const audiences = raw.map((a) => ({ id: a.id, name: a.name }));
+  const mainId = process.env.RESEND_AUDIENCE_ID ?? null;
+  const innerId = process.env.RESEND_INNER_CIRCLE_AUDIENCE_ID ?? null;
 
-  return NextResponse.json({
-    ok: true,
-    audiences,
-    mainId: process.env.RESEND_AUDIENCE_ID ?? null,
-    innerId: process.env.RESEND_INNER_CIRCLE_AUDIENCE_ID ?? null,
-  });
+  // Subscribers (main) first, then inner-circle, then the rest.
+  const rank = (id: string) => (id === mainId ? 0 : id === innerId ? 1 : 2);
+  const audiences = raw
+    .map((a) => ({ id: a.id, name: a.name }))
+    .sort((a, b) => rank(a.id) - rank(b.id));
+
+  return NextResponse.json({ ok: true, audiences, mainId, innerId });
 }
