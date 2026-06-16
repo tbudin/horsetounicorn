@@ -4,6 +4,7 @@ import { headers } from 'next/headers';
 import { Toaster } from 'sonner';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
+import { Analytics } from '@/components/analytics/analytics';
 import './globals.css';
 
 const robotoSerif = Roboto_Serif({
@@ -97,6 +98,7 @@ export default async function RootLayout({
         {isAdmin ? null : <SiteHeader />}
         <main className="flex-1">{children}</main>
         {isAdmin ? null : <SiteFooter />}
+        {isAdmin ? null : <Analytics />}
         <Toaster position="bottom-right" />
       </body>
     </html>

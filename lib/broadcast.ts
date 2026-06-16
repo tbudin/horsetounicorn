@@ -61,13 +61,20 @@ export function buildBroadcastProps({
     return b;
   });
 
+  // Tag the article link with the recipient's email (Resend substitutes the
+  // {{{EMAIL}}} merge tag per contact) so a click identifies the subscriber in
+  // analytics. The site reads ?s=, identifies, then strips it from the URL.
+  // Harmless when unsubstituted (test sends): the value isn't an email, so the
+  // identify is skipped.
+  const articleUrl = `${siteUrl}/articles/${metadata.slug}?s={{{EMAIL}}}`;
+
   return {
     variant: payload.variant,
     subject: payload.subject,
     blocks,
     coverUrl: metadata.cover ? absolutize(metadata.cover, siteUrl) : undefined,
     articleTitle: metadata.title,
-    articleUrl: `${siteUrl}/articles/${metadata.slug}`,
+    articleUrl,
     signoff: payload.signoff,
     tipUrl: process.env.NEXT_PUBLIC_STRIPE_TIP_URL,
     siteUrl,
