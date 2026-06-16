@@ -60,6 +60,47 @@ export function AudienceManager() {
   const [importing, setImporting] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
 
+  const [analyticsOn, setAnalyticsOn] = useState(false);
+  const [engagement, setEngagement] = useState<
+    Record<string, { opens: number; reads: number; lastSeen: string | null }>
+  >({});
+  const [summary, setSummary] = useState<{
+    opens: number;
+    reads: number;
+    readers: number;
+    identified: number;
+  } | null>(null);
+
+  // PostHog engagement (opens + article reads per subscriber). Inert until the
+  // PostHog read key is configured — then this lights up automatically.
+  useEffect(() => {
+    (async () => {
+      try {
+        const [mRes, sRes] = await Promise.all([
+          fetch('/api/admin/analytics/members'),
+          fetch('/api/admin/analytics/summary'),
+        ]);
+        const m = (await mRes.json()) as {
+          ok: boolean;
+          configured?: boolean;
+          members?: Record<string, { opens: number; reads: number; lastSeen: string | null }>;
+        };
+        const s = (await sRes.json()) as {
+          ok: boolean;
+          configured?: boolean;
+          summary?: { opens: number; reads: number; readers: number; identified: number };
+        };
+        if (m.ok && m.configured) {
+          setEngagement(m.members ?? {});
+          setAnalyticsOn(true);
+        }
+        if (s.ok && s.configured && s.summary) setSummary(s.summary);
+      } catch {
+        /* analytics is best-effort */
+      }
+    })();
+  }, []);
+
   // -- boot: list audiences --------------------------------------------
   useEffect(() => {
     (async () => {
@@ -341,6 +382,21 @@ export function AudienceManager() {
         <Stat label="Unsubscribed" value={counts.unsubscribed} tone="muted" />
       </div>
 
+      {/* Engagement totals (PostHog) */}
+      {summary ? (
+        <div className="space-y-2">
+          <div className="text-[10px] uppercase tracking-wider text-ink-subtle data-num">
+            Engagement · last 90 days
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Stat label="Email opens" value={summary.opens} />
+            <Stat label="Article reads" value={summary.reads} />
+            <Stat label="Readers" value={summary.readers} />
+            <Stat label="Identified" value={summary.identified} />
+          </div>
+        </div>
+      ) : null}
+
       {/* Add + bulk import */}
       <section className="space-y-3 border border-[#EEE6EC] bg-white p-4">
         <div className="flex items-center justify-between">
@@ -509,6 +565,15 @@ export function AudienceManager() {
                       <div className="flex items-center gap-1.5 text-[11px] text-ink-subtle">
                         <span>
                           {name ? `${name} · ` : ''}added {fmtDate(c.created_at)}
+                          {(() => {
+                            const e = engagement[c.email.toLowerCase()];
+                            return analyticsOn && e ? (
+                              <span className="text-burgundy">
+                                {' · '}
+                                {e.opens} opens · {e.reads} reads
+                              </span>
+                            ) : null;
+                          })()}
                         </span>
                         <button
                           type="button"
