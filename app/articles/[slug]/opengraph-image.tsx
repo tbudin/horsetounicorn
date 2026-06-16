@@ -20,7 +20,7 @@ export function generateStaticParams() {
   return params;
 }
 
-const PINK = '#FF80DF'; // brand pink (burgundy.light) — matches logo + site
+const PINK_BG = '#FFCEF4'; // brand pink (burgundy.lighter) — title bg
 const BURGUNDY = '#9E0A71';
 const INK = '#2B0A1F';
 
@@ -50,9 +50,10 @@ async function loadCover(cover: string): Promise<string | null> {
 }
 
 /**
- * Per-article Open Graph / Twitter card (1200×630) on the brand pink.
- * Shows the article cover when there is one, otherwise the title. A glossy
- * square logo + horsetounicorn.com sits centered along the bottom.
+ * Per-article Open Graph / Twitter card (1200×630). The cover fills the whole
+ * frame (no border/shadow); the glossy square logo + horsetounicorn.com sits
+ * above it, centered along the bottom. When there's no cover, the title shows
+ * on the brand-pink background.
  */
 export default async function Image({ params }: { params: { slug: string } }) {
   const resolved = resolveSlug(params.slug);
@@ -67,61 +68,64 @@ export default async function Image({ params }: { params: { slug: string } }) {
     (
       <div
         style={{
+          position: 'relative',
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          background: PINK,
-          padding: 44,
+          justifyContent: 'center',
+          background: PINK_BG,
           fontFamily: 'serif',
         }}
       >
-        {/* Cover, or the title when there's no cover */}
+        {/* Cover fills the frame; title fallback when there's none */}
+        {cover ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={cover}
+            alt=""
+            width={1200}
+            height={630}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              display: 'flex',
+              textAlign: 'center',
+              fontSize: title.length > 55 ? 60 : 80,
+              fontWeight: 600,
+              color: INK,
+              lineHeight: 1.07,
+              letterSpacing: -1,
+              maxWidth: 980,
+              padding: 64,
+            }}
+          >
+            {title}
+          </div>
+        )}
+
+        {/* Glossy logo + domain, above the cover */}
         <div
           style={{
-            flex: 1,
+            position: 'absolute',
+            bottom: 34,
+            left: 0,
+            right: 0,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
+            gap: 18,
           }}
         >
-          {cover ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={cover}
-              alt=""
-              width={648}
-              height={432}
-              style={{
-                objectFit: 'cover',
-                borderRadius: 24,
-                border: '8px solid #ffffff',
-                boxShadow: '0 22px 50px rgba(91,5,64,0.35)',
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                display: 'flex',
-                textAlign: 'center',
-                fontSize: title.length > 55 ? 60 : 80,
-                fontWeight: 600,
-                color: INK,
-                lineHeight: 1.07,
-                letterSpacing: -1,
-                maxWidth: 980,
-              }}
-            >
-              {title}
-            </div>
-          )}
-        </div>
-
-        {/* Glossy logo + domain */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
           <div style={{ position: 'relative', display: 'flex', width: 78, height: 78 }}>
             {logo ? (
               // eslint-disable-next-line @next/next/no-img-element
