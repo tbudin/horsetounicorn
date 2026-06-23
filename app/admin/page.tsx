@@ -26,7 +26,7 @@ export default async function AdminHome() {
 
   return (
     <div className="space-y-10">
-      <div className="flex items-baseline justify-between">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
         <h1 className="font-serif text-3xl font-medium text-ink-heading">
           Articles
         </h1>

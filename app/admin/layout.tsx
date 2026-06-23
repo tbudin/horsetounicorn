@@ -12,8 +12,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen">
       <header className="border-b border-[#F0E8EE]">
-        <div className="container max-w-5xl flex items-center justify-between py-4">
-          <div className="flex items-center gap-6">
+        <div className="container max-w-5xl flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-4">
+          <div className="flex items-center gap-3 sm:gap-6">
             <Link href="/admin" aria-label="Admin home" className="shrink-0">
               <Image
                 src="/brand/htu-logo.png"
@@ -23,7 +23,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 className="rounded-md border border-[#EEE6EC]"
               />
             </Link>
-            <nav className="flex items-center gap-4 text-sm">
+            <nav className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm sm:gap-4">
               <Link
                 href="/admin"
                 className="text-ink-muted hover:text-ink-heading transition-colors"

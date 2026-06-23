@@ -528,7 +528,7 @@ export function AudienceManager() {
               const name = `${c.first_name ?? ''} ${c.last_name ?? ''}`.trim();
               const editing = editingId === c.id;
               return (
-                <li key={c.id} className="flex items-center gap-3 px-4 py-2.5">
+                <li key={c.id} className="flex flex-col gap-2 px-4 py-2.5 sm:flex-row sm:items-center sm:gap-3">
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-sm text-ink-heading">{c.email}</div>
                     {editing ? (
@@ -586,6 +586,7 @@ export function AudienceManager() {
                       </div>
                     )}
                   </div>
+                  <div className="flex items-center gap-2 sm:gap-3">
                   <span
                     className={cn(
                       'shrink-0 px-2 py-0.5 text-[10px] uppercase tracking-wider data-num',
@@ -611,6 +612,7 @@ export function AudienceManager() {
                   >
                     <X className="h-3.5 w-3.5" />
                   </button>
+                  </div>
                 </li>
               );
             })}
