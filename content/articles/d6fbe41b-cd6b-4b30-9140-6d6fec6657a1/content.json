@@ -924,7 +924,7 @@
         },
         {
           "type": "text",
-          "text": "Plateau",
+          "text": "Sustained",
           "marks": [
             {
               "type": "bold"
@@ -934,6 +934,66 @@
         {
           "type": "text",
           "text": " is the rare, valuable case of an external spark that then caught and spread on its own."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is a quieter pattern hiding in all four. Whatever a country’s shape, the initial fall is almost identical: once a curve turns over, interest halves in about "
+        },
+        {
+          "type": "text",
+          "text": "five to seven weeks",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Wu and Huberman found the same characteristic decay time for online attention back in 2007. Countries do not differ in how fast the spike collapses; they differ only in whether anything brings it back."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And occasionally something does. A few markets, having already faded, lift again into December and the new year, the gift-giving season when the bar first went mainstream. I measured it for every market that had peaked and was still alive, comparing the festive months against the autumn trough."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "festive-rebound",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "It is real, but it is the exception. Only "
+        },
+        {
+          "type": "text",
+          "text": "four of twenty",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " markets genuinely rebounded, Singapore most of all, nearly doubling, while most kept sliding into the new year. Still, that is roughly what the birth of a seasonal tradition looks like from the inside: a fad beginning, in a few places, to reappear on a calendar. (I did check whether the Muslim-majority markets were reviving for Ramadan rather than Christmas. Tantalising, but the numbers will not separate the two, so I will not claim it.)"
         }
       ]
     },

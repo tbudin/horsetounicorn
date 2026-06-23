@@ -48,7 +48,7 @@ const data = MONTHS.map((m, i) => ({
 const SERIES = [
   { key: 'flash', label: 'Flash: instant spike, instant crash', short: 'Flash', color: BURGUNDY },
   { key: 'spike', label: 'Spike: the mainstream fad', short: 'Spike', color: BLUE },
-  { key: 'plateau', label: 'Plateau: viral, then it stuck', short: 'Plateau', color: GREEN },
+  { key: 'plateau', label: 'Sustained: faded slowly, stayed high', short: 'Sustained', color: GREEN },
   { key: 'slow', label: 'Slow burn: a late, climbing peak', short: 'Slow burn', color: ORANGE },
 ] as const;
 
@@ -64,9 +64,9 @@ export function ShapeClasses() {
       headline={
         <p className="text-sm leading-relaxed text-ink">
           One trend, four curves. A near-vertical <b>Flash</b> that is gone in a
-          month; a clean <b>Spike</b>; a <b>Plateau</b> whose tail refuses to die;
-          and a <b>Slow burn</b> that doesn’t even peak until 2026. Same product,
-          four different physics.
+          month; a clean <b>Spike</b>; a <b>Sustained</b> curve whose tail refuses
+          to die; and a <b>Slow burn</b> that doesn’t even peak until 2026. Same
+          product, four different physics.
         </p>
       }
       footnote={
@@ -74,10 +74,10 @@ export function ShapeClasses() {
           <b>Flash</b> (Germany, Austria, Switzerland): an external jolt with no
           word-of-mouth, the “exogenous, subcritical” curve.{' '}
           <b>Spike</b> (France, UK, Greece, Turkey and 13 more): the mainstream
-          fad. <b>Plateau</b> (US, UAE, Singapore, Malaysia, Indonesia, Australia,
-          Canada, Mexico, Brazil, Sweden): a shock that caught on and held, the
-          heavy-tailed “exogenous, critical” curve. <b>Slow burn</b> (Japan,
-          Taiwan): a gentle, organic “endogenous” climb to a late peak.
+          fad. <b>Sustained</b> (US, UAE, Singapore, Malaysia, Indonesia, Australia,
+          Canada, Mexico, Brazil, Sweden): a shock that caught on and faded only
+          slowly, the heavy-tailed “exogenous, critical” curve. <b>Slow burn</b>
+          (Japan, Taiwan): a gentle, organic “endogenous” climb to a late peak.
         </span>
       }
       source="k-means (k = 4) over 32 countries’ weekly “Dubai chocolate” series, each self-indexed to its own peak and aggregated monthly; lines are cluster centroids. Method after Yang & Leskovec (2011); mechanism labels after Crane & Sornette (2008)."
