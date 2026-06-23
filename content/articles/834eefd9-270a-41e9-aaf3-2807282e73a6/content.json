@@ -46,7 +46,7 @@
         },
         {
           "type": "text",
-          "text": " I went looking for the answer. I'm a curious person with a love for data, no finance background, and a stubborn refusal to take strategy advice on faith. So I tested it myself. What follows is the rabbit hole I went down and what I found at the bottom."
+          "text": " I went looking for the answer. I'm a curious person with a love for data, no finance background, and a stubborn refusal to take strategy advice on faith. So I tested it myself, one question at a time. What follows is the rabbit hole in the order I fell down it."
         }
       ]
     },
@@ -58,7 +58,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The wealth multiplier"
+          "text": "The first question: what is money today actually worth later?"
         }
       ]
     },
@@ -67,7 +67,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The shape of compounding is hard to see when you're young. The early years feel almost pointless. £100 grows to £107 in a year at 7%. That's a coffee. Why bother?"
+          "text": "Before working out how to invest, I had to feel why it mattered. Compounding has a shape, and the shape is hard to see when you're young. £100 grows to £107 in a year at 7%. That's a coffee. Why bother?"
         }
       ]
     },
@@ -76,7 +76,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The trick is that you're not earning interest on £100 forever. You're earning interest on £107 next year. Then £114. Then £122. Each year, the base grows, and so does the increment. After enough years, the increments dwarf the original deposit. Compounding looks linear in the early years and exponential in the late ones."
+          "text": "The trick is that the base keeps moving. Next year you earn on £107, then £114, then £122. The increment grows every year until it dwarfs the original deposit. Early on it looks almost linear. Later it goes nearly vertical."
         }
       ]
     },
@@ -92,7 +92,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I built the chart above to make this visceral for myself. Five hypothetical investors, all contributing the same amount each month until age 76. The only difference is when they start. The 26-year-old's curve looks flat for years, then takes off. The 56-year-old's curve barely leaves the ground."
+          "text": "I built this to make it visceral for myself. Five investors put in the same amount each month until 76, and the only thing that changes is when they start. The 26-year-old's line looks flat for years, then lifts off. The 56-year-old's barely leaves the ground. To test the rest of these questions I used real US market history, priced in dollars, so I'll switch currency from here. Over 1994 to 2024 the S&P 500 returned about 10.6% a year with dividends reinvested, turning each dollar into roughly 23, and almost all of that arrived in the final stretch."
         }
       ]
     },
@@ -101,11 +101,11 @@
       "content": [
         {
           "type": "text",
-          "text": "The lesson I wished someone had hammered into 26-year-old me: "
+          "text": "The lesson I wish someone had hammered into me: "
         },
         {
           "type": "text",
-          "text": "time in market is worth more than almost anything else you can do with money",
+          "text": "time in the market is worth more than almost anything else you can do with money",
           "marks": [
             {
               "type": "bold"
@@ -114,7 +114,298 @@
         },
         {
           "type": "text",
-          "text": ". Spending less, picking the right fund, optimising tax, none of it comes close to the value of just starting earlier."
+          "text": ". That one idea sent me looking for the next answer."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "So should I invest it all at once, or feed it in slowly?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "My instinct said spread it out. Putting everything in on a single day felt reckless, like I was daring the market to drop the morning after. Drip-feeding sounded safer. So I tested it on real history."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I took a $12,000 windfall and compared two investors across every starting year from 1994 onward: one who invests the lot immediately, one who spreads it in equal yearly pieces, both then left to grow to a common finish line."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "lump-sum-vs-dca",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Investing it all at once won most of the time, and won by more the longer the other investor dithered. It makes sense once you see it. The market spends most of its life going up, so money waiting on the sidelines is usually money missing the climb. Vanguard found the same across decades and countries: lump-sum beat averaging in about two thirds of cases."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There's an honest caveat. Spreading money in does soften the rare case where you buy right before a crash, and it can help a nervous investor actually press the button. If drip-feeding is what gets me invested, it beats sitting in cash. As a pure return strategy, though, all at once was the better bet."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Fine. But what if I'm clever and wait for the dips?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This was the strategy I was secretly proudest of. Keep some cash ready, pounce when the market falls, buy the bargain. Surely a little patience beats blindly buying at any price."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So I ran it. One investor adds $12,000 every year and invests it the day it arrives. The other holds each year's cash and only deploys after a down year, waiting for the discount."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "hybrid-trap",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The dip-waiter does buy cheaper sometimes. They also spend most of three decades parked in cash while the market climbs without them. Same money in, and they finish about 27% poorer, roughly $664,000 left on the table. The bargains were real and far too rare to pay for all that time spent out."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This is the hybrid trap: "
+        },
+        {
+          "type": "text",
+          "text": "trying to combine investing with timing leaves you worse off than doing either one cleanly",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". The cost of being out swamps the discount of buying in."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Is there at least a good time of year to buy?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "If timing the cycle was a losing game, maybe there was a smaller edge hiding in the calendar. Everyone has heard 'sell in May and go away'. I wanted to know whether the months actually differ enough to act on."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "seasonality-noise",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There's a faint pattern. November and December have been kind, September has been the grump of the year. But the whole spread from best month to worst is about 2.5 percentage points of average return, and any single year scrambles it. In 2024 the historically weak September rose and the historically strong December fell."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This is the null result, and I've come to like it. The seasonal signal is real and far too small to trade on. Waiting for the 'right' month is just another way of standing outside the market while it does its quiet work."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "What if I buy at the worst possible moment?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Every excuse I'd invented for waiting really came down to one fear: starting just before a crash. So I made the fear concrete. I put $10,000 in at the eve of the three worst drawdowns of my investing lifetime and simply held."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "regime-stress-test",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The early years are genuinely grim. Buy the dot-com peak in 2000 and you watch $10,000 sink to about $6,200 before it recovers. Buy the top in 2007 and 2008 takes it down just as hard. And yet by 2025 the dot-com buyer is sitting on roughly $75,000 and the 2007 buyer on about $66,000. Only the most recent peak is still early in its story."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I'm not pretending the drawdowns are painless. They last years and they test you. But time in the market did the repairing. The worst-timed lump still recovered, and sitting in cash to dodge the crash would have cost far more than the crash itself."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "I'm in Singapore. Does it matter which S&P fund I buy?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "By now I was convinced of the big things: start early, invest it all, stay in, ignore the calendar. The last question was smaller and very specific to me. I invest from Singapore through IBKR, and I can buy the same index in different wrappers. Does the wrapper matter?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "It does, through a cost layer most people never see. Singapore has no tax treaty with the US, so a US-listed fund like SPY loses 30% of its dividends to American withholding tax. An Ireland-domiciled fund holding the very same companies loses only 15%, because Ireland does have that treaty."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "singapore-cost-layers",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "On $100,000 over twenty years, that quiet gap of about 0.22% a year, even after the Irish fund's slightly higher fee, compounds into roughly $16,700. Same index, same market, same gross return. The only thing that changed was the fund's country of registration."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There's a second reason I hold the Irish version. US-domiciled assets above US$60,000 can expose a non-American investor to US estate tax of up to 40%. For someone in Singapore building a large position over decades, the Ireland-domiciled route quietly steps around that too."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "What the rabbit hole actually taught me"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "I went down this expecting to find a clever strategy. What I found was a short list of unglamorous truths, and the quiet realisation that 26-year-old me was never really missing knowledge. He was missing time, and spending it."
         }
       ]
     },
@@ -129,11 +420,49 @@
           "content": [
             {
               "type": "text",
-              "text": "Start the account today. Invest money the day it becomes yours. Stop optimising; start contributing."
+              "text": "Open the account today and invest money the day it becomes yours. Put it in all at once, then leave it alone. Don't wait for dips or for the perfect month. Hold through the crashes, because time in the market is the whole game. And if you're investing from Singapore, buy the Ireland-domiciled fund. Stop optimising. Start contributing."
             }
           ]
         }
       ]
+    },
+    {
+      "type": "sources",
+      "attrs": {
+        "title": "Sources",
+        "groups": [
+          {
+            "heading": "Market data",
+            "items": [
+              {
+                "label": "S&P 500 total returns by year (dividends reinvested), 1994-2025",
+                "href": "https://www.slickcharts.com/sp500/returns"
+              },
+              {
+                "label": "Average S&P 500 return by month since 1950 (YCharts via Bilello, charted by Visual Capitalist)",
+                "href": "https://www.visualcapitalist.com/charted-average-sp-500-return-by-month-since-1950/"
+              }
+            ]
+          },
+          {
+            "heading": "Methodology and references",
+            "items": [
+              {
+                "label": "Vanguard, on lump-sum investing versus cost averaging",
+                "href": "https://www.nl.vanguard/professional/vanguard-365/cost-averaging"
+              },
+              {
+                "label": "Endowus, dividend withholding and estate taxes on US-listed ETFs for Singapore investors",
+                "href": "https://endowus.com/insights/an-inconvenient-truth-tax-on-us-listed-etfs-04c7532c5d"
+              },
+              {
+                "label": "StashAway, a guide to Ireland-domiciled ETF investing in Singapore",
+                "href": "https://www.stashaway.sg/r/guide-ireland-domiciled-etfs-singapore"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

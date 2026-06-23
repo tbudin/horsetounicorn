@@ -14,6 +14,7 @@ import type { ChartRegistry } from '@/components/article/render-blocks';
 const loaders: Record<string, () => Promise<{ default: ChartRegistry }>> = {
   '834eefd9-270a-41e9-aaf3-2807282e73a6': () => import('./834eefd9-270a-41e9-aaf3-2807282e73a6'),
   'bf5497a6-4ca8-4e6d-a340-3117c2fe23c3': () => import('./bf5497a6-4ca8-4e6d-a340-3117c2fe23c3'),
+  'd6fbe41b-cd6b-4b30-9140-6d6fec6657a1': () => import('./d6fbe41b-cd6b-4b30-9140-6d6fec6657a1'),
 };
 
 export async function getChartsFor(articleId: string): Promise<ChartRegistry> {
