@@ -15,7 +15,7 @@
       "content": [
         {
           "type": "text",
-          "text": "So I did what I always do when the world starts repeating a word at me. I pulled the Google Trends and went looking for the shape of the thing, and (because I could not help myself) for whether the thing was being "
+          "text": "So I did what I always do when the world starts repeating a word at me. I pulled the Google Trends and went looking for the shape of the thing, and, because I cannot help myself, for whether the thing was being "
         },
         {
           "type": "text",
@@ -41,7 +41,7 @@
         },
         {
           "type": "text",
-          "text": ". Was the world suddenly making too many pistachios and needing somewhere to put them? Or suddenly wanting them and scrambling to find enough? Supply, or demand?"
+          "text": ". Was the world suddenly making too many pistachios and needing somewhere to put them, or suddenly wanting them and scrambling to find enough? Supply, or demand?"
         }
       ]
     },
@@ -54,7 +54,7 @@
         },
         {
           "type": "text",
-          "text": "both, but on two completely different clocks",
+          "text": "both, on two completely different clocks",
           "marks": [
             {
               "type": "bold"
@@ -63,7 +63,7 @@
         },
         {
           "type": "text",
-          "text": ", and the gap between those clocks is the whole story. It is also, I think, a near-perfect little parable for anyone whose job is to ride a trend or to keep one supplied."
+          "text": ", and the gap between those clocks is the whole story. It is also, once you pull on the threads, a story about a viral chocolate bar, a forty-year-old trade war, a single Iranian seed, and the strange fact that every country on earth caught the same craving in a slightly different way. Let me show you what the data says."
         }
       ]
     },
@@ -100,16 +100,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Two things jump out, and they pull in opposite directions."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The first is the spike everyone remembers. Pistachio hit its all-time peak in "
+          "text": "Two things jump out, and they pull in opposite directions. The first is the spike everyone remembers: pistachio hit its all-time peak in "
         },
         {
           "type": "text",
@@ -200,7 +191,7 @@
         },
         {
           "type": "text",
-          "text": ", the shredded filo you find in knafeh. Her company, Fix Dessert Chocolatier, sold it locally under the irresistible name “Can’t Get Knafeh of It.” A few hundred bars a day, sold out in minutes, roughly twenty dollars each."
+          "text": ", the shredded filo you find in knafeh. Her company, Fix Dessert Chocolatier, released it in 2022 under the irresistible name “Can’t Get Knafeh of It.”"
         }
       ]
     },
@@ -209,7 +200,33 @@
       "content": [
         {
           "type": "text",
-          "text": "For two years it stayed a Dubai cult item. Then, on "
+          "text": "The economics were deliberately tiny. The bars were handmade and hand-painted, a few dozen a day. Fix sold them only through a delivery app, in Dubai, in a window that opened at 5pm and sold out within minutes, capped at a few hundred orders, at around twenty dollars a bar. Hamouda is "
+        },
+        {
+          "type": "text",
+          "text": "adamant the scarcity was not a marketing ploy",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.cnn.com/travel/dubai-viral-chocolate-bar-fix-hnk-spc",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " but a consequence of insisting on quality; she has said there was never a real marketing budget. Whether by design or not, the effect was textbook: a product you mostly could not buy is a product everyone wants to talk about."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Then, on "
         },
         {
           "type": "text",
@@ -222,20 +239,7 @@
         },
         {
           "type": "text",
-          "text": ", a local food influencer named Maria Vehera filmed herself eating one in her car: an ASMR close-up, all glossy green ooze and audible crunch. The clip did something north of a hundred million views. That is the near-vertical bit of the burgundy line, and it is worth sitting with how "
-        },
-        {
-          "type": "text",
-          "text": "specific",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " the trigger was: not a campaign, not a launch, a single phone in a single car."
+          "text": ", a Dubai food influencer named Maria Vehera filmed herself eating one in her car. It was an ASMR close-up, all glossy green ooze and audible crunch. The clip snowballed through early 2024 and now sits north of a hundred million views. There is no evidence anyone paid for that particular video; the breakout looks genuinely organic, which is exactly why it worked. You cannot buy that crunch. You can only make something worth filming and hope."
         }
       ]
     },
@@ -244,7 +248,7 @@
       "content": [
         {
           "type": "text",
-          "text": "What happened next is the part that should interest anyone who makes things. The trend did not stay a bar; it "
+          "text": "And here is the part worth dwelling on, because it is the part marketers get wrong. The trend did not stay a bar. It "
         },
         {
           "type": "text",
@@ -257,28 +261,19 @@
         },
         {
           "type": "text",
-          "text": ". By late 2024 the big chocolate houses had piled in: "
-        },
+          "text": ". Within months the conversation had detached from Fix entirely and reattached to pistachio itself: pistachio lattes, pistachio croissants, pistachio everything. The viral product became a category input. That abstraction is what turned a Dubai curiosity into a global commodity shock."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
         {
           "type": "text",
-          "text": "Lindt, Läderach, Lidl and Aldi all shipped “Dubai-style” bars, supermarkets started "
-        },
-        {
-          "type": "text",
-          "text": "rationing them two-per-customer",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.telegraph.co.uk/news/2025/03/27/dubai-chocolate-bar-sales-limit-waitrose/",
-                "target": "_blank"
-              }
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", and a German court even ruled that “Dubai chocolate” had to actually come from Dubai. The viral product had become a category input."
+          "text": "Why every brand launched at once (and none of them was early)"
         }
       ]
     },
@@ -287,11 +282,20 @@
       "content": [
         {
           "type": "text",
-          "text": "And that category input had a very particular appetite. Dubai chocolate doesn’t want pistachios in the shell; it wants "
+          "text": "One of the questions I kept circling was how the big brands seemed to launch their versions at exactly the same moment, as if someone had fired a starting gun. Lindt, Läderach, Lidl, Aldi, Ritter Sport, Marks & Spencer, Trader Joe’s, Crumbl, Shake Shack: a wall of “Dubai-style” products that all hit between late 2024 and early 2025. Was it coordination? Did somebody spot the trend early?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The unglamorous answer is no on both counts. "
         },
         {
           "type": "text",
-          "text": "kernels",
+          "text": "They were all reacting to the same public signal, and they were all late.",
           "marks": [
             {
               "type": "bold"
@@ -300,11 +304,94 @@
         },
         {
           "type": "text",
-          "text": ", the soft green centres that get milled into cream. As "
+          "text": " Fix created the product in 2022. The TikTok lit in December 2023. The big brands did not move until roughly "
         },
         {
           "type": "text",
-          "text": "the Financial Times and the Guardian reported",
+          "text": "ten to twelve months later",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Nobody had inside information; they were watching the same view counter you were."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "What synchronised them was not a conspiracy but a calendar and a supply chain. The cluster lands on the "
+        },
+        {
+          "type": "text",
+          "text": "Christmas 2024 confectionery season",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the highest-volume gifting window of the year, so every retailer was racing to get product on the holiday shelf at once. And the fastest movers were not the famous brands at all: they were the "
+        },
+        {
+          "type": "text",
+          "text": "discounters’ private labels",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". A normal branded confectionery launch takes twelve to twenty-four months. Lidl and Aldi put own-label “Dubai-style” bars on German shelves within "
+        },
+        {
+          "type": "text",
+          "text": "weeks",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " of peak demand, because a copycat of a known recipe with pre-proven demand skips almost every step that makes new-product development slow."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Which raises the obvious follow-up: did they launch because pistachio supply and price were favourable? No, and this is the causal arrow people reverse. The brands did not ride a cheap-pistachio wave. "
+        },
+        {
+          "type": "text",
+          "text": "Their launches helped cause the price spike.",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " As the Financial Times reported, chocolatiers were "
+        },
+        {
+          "type": "text",
+          "text": "buying up every kernel they could find",
           "marks": [
             {
               "type": "link",
@@ -317,11 +404,48 @@
         },
         {
           "type": "text",
-          "text": " in April 2025, chocolatiers were buying up every kernel they could find. One nut trader, Giles Hacking, put it memorably: the pistachio world was “basically tapped out.” Kernel prices roughly doubled. Iran, in the six months to March 2025, shipped about "
+          "text": "; in the six months to March 2025, Iran shipped about 40% more pistachios to the UAE than in all of the prior year. Demand created the shortage. The shortage did not invite the demand."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The same craving, eight different shapes"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You noticed something in the country data that turned out to be the most interesting thing in this whole project: each nation’s curve has its own signature. So I pulled “Dubai chocolate” for eight countries, indexed each one to its own peak, and lined them up in the order they caught it."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "diffusion-by-country",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Look at "
         },
         {
           "type": "text",
-          "text": "40% more pistachios to the UAE",
+          "text": "Germany",
           "marks": [
             {
               "type": "bold"
@@ -330,14 +454,118 @@
         },
         {
           "type": "text",
-          "text": " than it had in all of the prior year. A dessert craze, in other words, reached all the way back up the supply chain and yanked."
+          "text": ". It caught the craze weeks before anyone else, in October 2024, exploded almost vertically, and then "
+        },
+        {
+          "type": "text",
+          "text": "crashed",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", losing nearly all of it by spring. That is not random. Germany has a large Turkish and Arab diaspora for whom knafeh is not exotic but Tuesday, and the discounters driving the trend, Aldi, Lidl, Ritter Sport, are German. The trend had the shortest distance to travel there, and the German market saturated and moved on faster than anywhere else. (It also produced the only courtroom drama: a "
+        },
+        {
+          "type": "text",
+          "text": "Cologne court ordered Aldi to stop",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.dw.com/en/dubai-chocolate-must-come-from-dubai-german-court-rules/a-71290421",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " calling its Turkish-made bar “Dubai” chocolate.)"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Now look at "
+        },
+        {
+          "type": "text",
+          "text": "Japan",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", at the opposite extreme. Japan barely registered through all of 2025 and then, a full year after everyone else, surged to its peak in early 2026. A slow, late, durable burn: the signature of a market that adopts cautiously and then commits. "
+        },
+        {
+          "type": "text",
+          "text": "Australia",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " peaked in May, neatly inside its own southern-hemisphere autumn. "
+        },
+        {
+          "type": "text",
+          "text": "France",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", a country with a deep, confident pastry culture of its own, gave the trend one polite March spike and then forgot it almost entirely. The home markets, the "
+        },
+        {
+          "type": "text",
+          "text": "UAE",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " and "
+        },
+        {
+          "type": "text",
+          "text": "Singapore",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", held the craving longest, Singapore even mounting a second wave in late 2025."
         }
       ]
     },
     {
       "type": "callout",
       "attrs": {
-        "headline": "The bullwhip, in one nut"
+        "headline": "A trend is a fluid, and every culture is a differently-shaped glass"
       },
       "content": [
         {
@@ -345,22 +573,31 @@
           "content": [
             {
               "type": "text",
-              "text": "This is the bullwhip effect you read about in operations textbooks, except real and delicious. A small wobble at the consumer end (one influencer, one bar) amplifies as it travels upstream until it’s violently shaking a global commodity market. The signal moved from a phone to a farm in about "
-            },
-            {
-              "type": "text",
-              "text": "twenty-one months",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "text": ". The trouble is that the farm cannot answer on anything like that timescale. Which brings us to the slow clock."
+              "text": "This is the part with the most transfer value for anyone launching globally. There is no such thing as “the” trend curve. The same product, hitting the same planet in the same season, produced a flash-and-crash in Germany, a slow burn in Japan, a polite shrug in France and a year-long plateau in the Gulf. If you plan a worldwide rollout off a single global trendline, you will over-supply the markets that are about to crash and under-supply the ones just waking up. The shape is local even when the spark is global."
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is one more tell hiding in the data. I also pulled "
+        },
+        {
+          "type": "text",
+          "text": "knafeh",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the actual Middle-Eastern dessert the bar is built on. It surged too, peaking alongside the chocolate. People were not only buying a novelty; a good number went looking for the real thing behind it. The countries with the deepest existing knafeh familiarity, Germany and the UAE, had the highest baselines before the craze and, not coincidentally, the fastest reactions to it. Culture is the kindling. Virality is just the match."
         }
       ]
     },
@@ -410,46 +647,7 @@
         },
         {
           "type": "text",
-          "text": " and is still climbing, a record crop of about 1.57 billion pounds forecast for 2025. This is not an accident of one good season; it is the harvest of a planting boom. California’s bearing acreage has multiplied roughly five-fold in twenty years, to around "
-        },
-        {
-          "type": "text",
-          "text": "488,000 acres",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", with another 124,000 acres of young trees not yet in production. The supply was being planted long before the demand arrived to meet it."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Two structural things tilted the board America’s way. The first is a piece of trade history almost nobody remembers: a "
-        },
-        {
-          "type": "text",
-          "text": "241% anti-dumping tariff on Iranian pistachios",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.salon.com/2026/05/06/a-40-year-old-iran-tariff-quietly-built-americas-pistachio-empire/",
-                "target": "_blank"
-              }
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " imposed in 1986 and quietly renewed in 2025, which walled Iran out of the US market for forty years and handed the home crop to California. The second is that Iran’s own output has been grinding down for years under drought, water depletion and sanctions; in 2025–26, conflict on top of all three."
+          "text": " and is still climbing, with a record crop of about 1.57 billion pounds forecast for 2025. This is not an accident of one good season; it is the harvest of a planting boom. California’s bearing acreage has multiplied roughly five-fold in twenty years to around 488,000 acres, with another 124,000 acres of young trees not yet in production. The supply was being planted long before the demand arrived to meet it."
         }
       ]
     },
@@ -471,7 +669,7 @@
         },
         {
           "type": "text",
-          "text": ": a heavy crop one year, a light one the next, as the tree rests. It’s why 2022 and 2024 sag between the peaks. Across a whole industry this is mostly noise, until the off-years start to line up globally, which is exactly what happened in 2025–26, when Turkey’s crop fell by something like 70% in the same window Iran’s was hit. The supply side has its own metronome, and it does not keep time with TikTok."
+          "text": ": a heavy crop one year, a light one the next, as the tree rests. It is why 2022 and 2024 sag between the peaks. Across a whole industry this is mostly noise, until the off-years start to line up globally, which is exactly what happened in 2025-26, when Turkey’s crop fell by something like 70% in the same window Iran’s was hit."
         }
       ]
     },
@@ -499,9 +697,195 @@
             },
             {
               "type": "text",
-              "text": " from planting to a worthwhile crop, and a dozen or more to hit full stride. So the supply that meets a 2024 demand spike was decided around 2017; the trees going in today are aimed, blind, at the demand of the early 2030s. Agricultural supply is the most inelastic thing in the world on a one-year view. That mismatch between instant demand and seven-year supply is the engine of the whole boom."
+              "text": " from planting to a worthwhile crop, and a dozen or more to hit full stride. So the supply that meets a 2024 demand spike was decided around 2017, and the trees going in today are aimed, blind, at the demand of the early 2030s. Agricultural supply is the most inelastic thing in the world on a one-year view. That mismatch, instant demand against seven-year supply, is the engine of the whole boom."
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "An empire grown from a single Iranian seed"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Here is where the supply story stops being agronomy and starts being geopolitics, and where your instinct that there was “a bigger story” turns out to be right. Because California’s pistachio empire is not really Californian. It is Iranian, transplanted."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "In 1929, a USDA botanist named William Whitehouse spent six months in Iran collecting pistachios. One selection from an orchard near Kerman, the carpet-making city in Iran’s pistachio heartland, thrived in Chico, California, and was named "
+        },
+        {
+          "type": "text",
+          "text": "“Kerman.”",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " It became, and largely remains, the genetic backbone of the American crop. The United States did not out-breed Iran. It transplanted Iran’s own tree and then industrialised it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "What turned that head start into a monopoly was a piece of trade history almost nobody remembers. After the 1979 revolution and hostage crisis, and a dumping complaint from American growers, the US slapped a "
+        },
+        {
+          "type": "text",
+          "text": "241% anti-dumping duty",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " on Iranian in-shell pistachios in 1986. Because the years of outright embargo do not count against its sunset clock, that duty has effectively "
+        },
+        {
+          "type": "text",
+          "text": "walled Iran out of the US market for forty years",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.salon.com/2026/05/06/a-40-year-old-iran-tariff-quietly-built-americas-pistachio-empire/",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", and it was renewed yet again in 2025. As one trade economist put it, the policy was punitive toward Iran rather than designed as industrial strategy, but it functioned as a forty-year shield that handed California its home market during the formative decades."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "California then did the strategic work that converts an opening into dominance. A newer, earlier-maturing cultivar (“Golden Hills”) triggered the planting surge after 2012. Branding turned a fiddly nut into a snack: Wonderful Pistachios’ “Get Crackin’” campaign, from Stewart and Lynda Resnick’s "
+        },
+        {
+          "type": "text",
+          "text": "five-billion-dollar agricultural empire",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.theguardian.com/us-news/2025/jan/03/pistachio-california",
+                "target": "_blank"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", spent its way to ubiquity. And critically, the Resnicks captured the one input that actually gates Central Valley farming: water. Through the 1990s they gained control of the majority of the Kern Water Bank, a publicly-built underground reservoir, and their farms now drink more water in a year than the city of Los Angeles."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "attrs": {
+        "headline": "The honest version of the “water barons” story"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "It is tempting to write this as “one family owns California’s water and your pistachios.” Resist it. Fact-checkers have "
+            },
+            {
+              "type": "text",
+              "text": "debunked the strongest version",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.politifact.com/",
+                    "target": "_blank"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " of that claim; Wonderful grows only about 15 to 20% of the US crop and uses well under 1% of the state’s water. The real story is subtler and more durable: scale, branding, processing and water-security advantages that compound, inside a Valley where the 2014 groundwater law (SGMA) will soon cap new planting and freeze today’s incumbents in place. It is agribusiness power, not a cartoon."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Meanwhile the only rival who could have competed collapsed, largely from self-inflicted wounds. Iran is enduring its worst drought in forty years, with yields in the Rafsanjan heartland reportedly halved and groundwater drawn down far past the safe line. Add sanctions, currency rules that punish exporters, an "
+        },
+        {
+          "type": "text",
+          "text": "EU ban on Iranian pistachios over aflatoxin contamination",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " in late 2024, and finally the 2025-26 conflict choking exports, and Iranian shipments fell from roughly 175,000 tons in 2024 to around 100,000 in 2025. So when a TikTok detonated global demand, California was very nearly the last reliable, machine-harvested, food-safety-compliant supplier left standing."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "That is the bigger story. Not a master plan, but a "
+        },
+        {
+          "type": "text",
+          "text": "compounding of advantages",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": an Iranian seed, a punitive forty-year tariff, a water-and-branding machine, and a rival’s drought-and-sanctions collapse, all of which left America holding the world’s pistachio supply at the precise moment the world fell in love with it. The craze didn’t just make California rich. It completed a transfer of culinary ownership four decades in the making. The pistachio is now, improbably, an American crop with an Iranian soul."
         }
       ]
     },
@@ -522,7 +906,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Put the two clocks on one chart and the answer stops being either/or."
+          "text": "Put the two clocks on one chart and the answer stops being either-or."
         }
       ]
     },
@@ -560,7 +944,29 @@
       "content": [
         {
           "type": "text",
-          "text": "Because they’re answering different questions. The "
+          "text": "Partly because “the price of pistachios” is at least three different numbers, and the craze pulled them apart. The price a grower gets for ordinary in-shell nuts barely moved. But Dubai chocolate does not want nuts in a shell; it wants "
+        },
+        {
+          "type": "text",
+          "text": "kernels",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the soft green centres milled into cream, and more specifically peeled, food-grade kernels. That is a narrow, processing-constrained slice of the crop. When demand for it tripled, the bottleneck was not how many trees exist but how fast you can shell and peel them. Handlers ended up cracking lower-grade closed-shell nuts just to get at the kernels inside, and the kernel price detached upward to more than double the in-shell grade."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "So the cleanest way I can put it: the "
         },
         {
           "type": "text",
@@ -573,7 +979,7 @@
         },
         {
           "type": "text",
-          "text": " story is supply: a decade of California planting has built what is, on a long enough view, a glut: more pounds every on-year, with a wall of young trees still to come. The "
+          "text": " story is supply, a decade of California planting building what is, on a long enough view, a glut. The "
         },
         {
           "type": "text",
@@ -586,7 +992,7 @@
         },
         {
           "type": "text",
-          "text": " 2024–26 story is demand: a kernel-specific shock from Dubai chocolate, slamming into a supply system that physically could not flex: inelastic by seven years, alternate-bearing, and concentrated in three countries (the US, Iran and Turkey grow ~90% of the world’s pistachios) just as two of them got hit by drought and war."
+          "text": " 2024-26 story is demand, a kernel-specific shock from one dessert slamming into the one part of the supply chain that physically could not flex, made worse by a globally synchronised off-year and a war. The match was demand. The kindling was a supply system that looked abundant in aggregate and was bone-dry exactly where it got hit."
         }
       ]
     },
@@ -595,20 +1001,20 @@
       "content": [
         {
           "type": "text",
-          "text": "The cleanest way I can put it: "
+          "text": "If that pattern sounds familiar, it should. The same year, matcha did the identical thing: a viral green flavour, a processing-constrained input (shade-grown tencha, stone-ground slowly), and a price that jumped not double but "
         },
         {
           "type": "text",
-          "text": "the demand was the match; the supply system was the kindling: bone-dry, tightly packed, and impossible to rearrange in a hurry.",
+          "text": "triple",
           "marks": [
             {
-              "type": "bold"
+              "type": "italic"
             }
           ]
         },
         {
           "type": "text",
-          "text": " Ask “supply or demand” and the data answers “yes, and the timing is everything.”"
+          "text": " as TikTok demand met a supply that takes a season and a stone mill to expand. Viral demand is a flood. Specialty agricultural supply is a straw. The flood always wins, briefly, and expensively."
         }
       ]
     },
@@ -629,11 +1035,11 @@
       "content": [
         {
           "type": "text",
-          "text": "This is the question I actually care about, because it’s the one with transfer value. And the uncomfortable first answer is: "
+          "text": "This is the question I actually care about, because it is the one with transfer value. And the uncomfortable first answer is: "
         },
         {
           "type": "text",
-          "text": "not from this chart",
+          "text": "not from the chart you just spent this article looking at",
           "marks": [
             {
               "type": "bold"
@@ -655,7 +1061,7 @@
         },
         {
           "type": "text",
-          "text": " indicator. People search for a thing after they’ve already heard of it, tasted it, seen it on a friend’s phone. By the time pistachio is spiking on Trends, it is on the café menu and in the supermarket: the trade is over."
+          "text": " indicator. People search for a thing after they have already heard of it, tasted it, seen it on a friend’s phone. By the time pistachio is spiking on Trends, it is on the café menu and in the supermarket, and the trade is over."
         }
       ]
     },
@@ -664,7 +1070,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The leading signals lived in two quieter places. The first was social chatter among early adopters. The trend-forecasting firm Nextatlas "
+          "text": "The leading signals lived in two quieter places. The first was social chatter among early adopters: the trend-forecasting firm Nextatlas "
         },
         {
           "type": "text",
@@ -681,42 +1087,7 @@
         },
         {
           "type": "text",
-          "text": " (the exact ingredient Dubai chocolate runs on), from a measurable rise in innovator conversations, months before mainstream search moved. (They’re selling forecasting, so discount accordingly; but the mechanism is sound: weak signals precede strong ones.)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The second place the future was hiding is the one I find more interesting, because it needed no special tool: "
-        },
-        {
-          "type": "text",
-          "text": "the supply chart itself",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ". A commodity quietly building a structural glut is a coiled spring looking for a demand story. Add the cultural priming that was already obvious by 2023: the health halo of nuts, the Instagram-perfect green (pistachio is, not coincidentally, “the new matcha”), Middle-Eastern flavours going mainstream, a centuries-old Sicilian pistachio-cream tradition sitting right there. Put those together and you have a market that was "
-        },
-        {
-          "type": "text",
-          "text": "over-determined",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ". It didn’t need Dubai chocolate specifically. It needed "
+          "text": ", the exact ingredient Dubai chocolate runs on, months before mainstream search moved. The second was the supply chart itself. A commodity quietly building a structural glut is a coiled spring looking for a demand story; add the cultural priming that was already obvious by 2023, the health halo of nuts, the Instagram-perfect green, Middle-Eastern flavours going mainstream, and you had a market that was over-determined. It did not need Dubai chocolate specifically. It needed "
         },
         {
           "type": "text",
@@ -729,7 +1100,7 @@
         },
         {
           "type": "text",
-          "text": " spark, and sparks are cheap. Something was going to light it."
+          "text": " spark, and sparks are cheap."
         }
       ]
     },
@@ -750,7 +1121,7 @@
       "content": [
         {
           "type": "text",
-          "text": "One more chart, because it settles the “is this over?” question and sets up the lessons."
+          "text": "So is it over? The product, yes. The flavour, not even close."
         }
       ]
     },
@@ -766,11 +1137,36 @@
       "content": [
         {
           "type": "text",
-          "text": "Dubai chocolate, the product, is doing what fads do: it’s down roughly 70% from its peak as the supermarket dupes flood in and the novelty wears off. But pistachio, the flavour, has barely flinched. That divergence is the whole game. The bar was a fad; the flavour graduated into a "
+          "text": "Dubai chocolate, the specific bar, is doing what fads do: down roughly 70% from its peak as the supermarket dupes flood in and the novelty wears off. But pistachio, the flavour, has barely flinched. That divergence is the whole game. The bar was a fad; the flavour graduated into a category."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "And the surest sign it has graduated is where the conversation has spread. I pulled a couple of thousand Reddit posts mentioning pistachio and sorted them by community."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "cross-category",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Three of the ten busiest communities are not about food at all. They are about "
         },
         {
           "type": "text",
-          "text": "category",
+          "text": "fragrance and makeup",
           "marks": [
             {
               "type": "bold"
@@ -779,7 +1175,20 @@
         },
         {
           "type": "text",
-          "text": ": pistachio milk, pistachio butter, and Starbucks now selling a Pistachio Matcha Latte that fuses the two reigning green obsessions into one cup. The match burned out. The fire is still going."
+          "text": ". When a taste jumps from the kitchen into perfume swaps and indie-cosmetics threads, it has stopped being a flavour of the month and become an aesthetic, a thing people want to "
+        },
+        {
+          "type": "text",
+          "text": "smell",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " like and decorate with. That is what a real category looks like from the inside, and it is why “what’s next” for pistachio is not a single bar but a long tail: pistachio milk, pistachio butter, and a Starbucks Pistachio Matcha Latte that fuses the two reigning green obsessions into one cup. The match burned out. The fire is still going."
         }
       ]
     },
@@ -831,7 +1240,7 @@
         },
         {
           "type": "text",
-          "text": " (pistachio, Middle-Eastern, green, nutty-indulgent) was forecastable a year out. The brands that won (Trader Joe’s, Crumbl, Lindt) didn’t bet on the bar; they bet on the flavour and shipped within months."
+          "text": ", pistachio, Middle-Eastern, green, nutty-indulgent, was forecastable a year out. The brands that won bet on the flavour and shipped fast; the ones that bet on the specific bar arrived to a price war."
         }
       ]
     },
@@ -849,11 +1258,29 @@
         },
         {
           "type": "text",
-          "text": "If you wait until a trend is visible on Google Trends to act, you are buying at the top. The window to win is the gap between the weak signal and the spike: own the search terms, pre-build the product, get on the shelf "
+          "text": "If you wait until a trend is visible on Google Trends to act, you are buying at the top. The window to win is the gap between the weak signal (early-adopter chatter, a category creeping into adjacent communities) and the spike."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Localise the curve, not just the language. ",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
         },
         {
           "type": "text",
-          "text": "before",
+          "text": "Germany crashed while Japan was still warming up. A global trend is eight different trends wearing the same coat. Match your supply, spend and timing to each market’s "
+        },
+        {
+          "type": "text",
+          "text": "shape",
           "marks": [
             {
               "type": "italic"
@@ -862,7 +1289,7 @@
         },
         {
           "type": "text",
-          "text": " it’s googleable."
+          "text": ", not to a worldwide average that describes none of them."
         }
       ]
     },
@@ -871,7 +1298,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Scarcity is a feature. ",
+          "text": "Scarcity is a feature, and abstraction is the goal. ",
           "marks": [
             {
               "type": "bold"
@@ -880,25 +1307,20 @@
         },
         {
           "type": "text",
-          "text": "Fix made a few hundred bars a day and let them sell out. That manufactured a cult, and the cult spawned an army of dupes who did the marketing for free. Restraint compounded."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
+          "text": "Fix’s sold-out bar manufactured a cult and the dupes did its marketing for free. But the durable prize was never the bar; it was getting the "
+        },
         {
           "type": "text",
-          "text": "Arrive at the abstraction, not the saturation. ",
+          "text": "flavour",
           "marks": [
             {
-              "type": "bold"
+              "type": "italic"
             }
           ]
         },
         {
           "type": "text",
-          "text": "Early entrants built a category. Late entrants arrived to find price wars, supermarket own-brands and naming lawsuits. Same flavour, completely different economics, decided by timing."
+          "text": " to escape the product. Arrive at the abstraction and you build a category; arrive at the saturation and you get markdowns and lawsuits."
         }
       ]
     },
@@ -928,7 +1350,38 @@
         },
         {
           "type": "text",
-          "text": "A consumer signal moves in days; a tree moves in years. If your input is agricultural, your nightmare scenario is precisely a TikTok-speed demand shock you cannot answer for seven seasons. Model it before it happens."
+          "text": "A consumer signal moves in days; a tree moves in years. If your input is agricultural, your nightmare is exactly a TikTok-speed demand shock you cannot answer for seven seasons. Model it before it happens."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Know which SKU the trend actually wants. ",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The crop was fine; the "
+        },
+        {
+          "type": "text",
+          "text": "kernel",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " was not. The shortage lived in one processing-constrained grade. Map your bill of materials to the specific input a trend consumes, because that is where the price will detonate, not in the headline commodity."
         }
       ]
     },
@@ -946,25 +1399,7 @@
         },
         {
           "type": "text",
-          "text": "Three countries, biological off-years that can sync up, a thin kernel market: that’s a system primed to whip. Hedge, forward-contract, and hold buffer stock you’d normally consider wasteful, because the cost of being caught empty is a competitor’s capture."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "A rival’s stockout is your best growth quarter, if you’re ready. ",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "When the category goes short, demand sloshes to whoever has product, SEO and a “[brand] alternative” page live. The pistachio shortage minted winners; they were simply the ones with inventory and a landing page when everyone else hit empty."
+          "text": "Three countries grow nearly all the world’s pistachios, with biological off-years that can sync up and a war that can sever one of them. Hedge, forward-contract, and hold buffer stock you would normally consider wasteful, because the cost of being caught empty is a competitor’s capture."
         }
       ]
     },
@@ -1007,7 +1442,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The trick was never one graph. It was three, read together: "
+          "text": "The trick was never one graph. It was layering several: "
         },
         {
           "type": "text",
@@ -1020,7 +1455,7 @@
         },
         {
           "type": "text",
-          "text": " (what people search), "
+          "text": " against "
         },
         {
           "type": "text",
@@ -1033,7 +1468,7 @@
         },
         {
           "type": "text",
-          "text": " (what the trees are doing), and "
+          "text": " against "
         },
         {
           "type": "text",
@@ -1046,7 +1481,33 @@
         },
         {
           "type": "text",
-          "text": " (where the two collide). Lay them side by side and a trend stops being a mystery and becomes an anatomy: you can see where it came from, whether it’s push or pull, and roughly how long it has to run."
+          "text": ", and then breaking the attention apart "
+        },
+        {
+          "type": "text",
+          "text": "by country",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " and "
+        },
+        {
+          "type": "text",
+          "text": "by category",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " until the single global spike dissolved into eight national curves and a dozen adjacent obsessions. Do that and a trend stops being a mystery and becomes an anatomy: you can see where it came from, whether it is push or pull, who caught it first, and roughly how long it has to run."
         }
       ]
     },
@@ -1055,7 +1516,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The pistachio, it turns out, was never really a surprise. It was a supply chart that had spent a decade quietly loading, waiting for a story. In December 2023, a woman in a car with a phone handed it one. The only genuinely unpredictable part was which spark, and when. Everything else was sitting in the data, green and patient, the whole time."
+          "text": "The pistachio, it turns out, was never really a surprise. It was a supply chart that had spent forty years quietly loading, a tariff, a drought, a transplanted Iranian tree, all waiting for a story. In December 2023, a woman in a car with a phone handed it one. The only genuinely unpredictable part was which spark, and when. Everything else was sitting in the data, green and patient, the whole time."
         }
       ]
     },
@@ -1068,83 +1529,87 @@
             "heading": "Data",
             "items": [
               {
-                "label": "Google Trends: “Pistachio” and “Dubai chocolate,” worldwide, 2004–2026 (author’s export)",
+                "label": "Google Trends, “Pistachio,” “Dubai chocolate” and “Knafeh,” worldwide and by country, 2004-2026 (author’s exports)",
                 "href": "https://trends.google.com/trends/explore?q=pistachio,Dubai%20chocolate"
               },
               {
-                "label": "USDA FAS: Tree Nuts: World Markets and Trade",
+                "label": "Reddit search export, ~2,000 pistachio-related posts by subreddit (author’s export)",
+                "href": "https://www.reddit.com/search/?q=pistachio"
+              },
+              {
+                "label": "USDA FAS, Tree Nuts: World Markets and Trade",
                 "href": "https://www.fas.usda.gov/data/production/commodity/0577907"
               },
               {
-                "label": "Administrative Committee for Pistachios: crop statistics",
+                "label": "Administrative Committee for Pistachios, crop statistics",
                 "href": "https://acpistachios.org/industry-resources/statistics-archives/"
               },
               {
-                "label": "American Pistachio Growers: acreage & production",
-                "href": "https://americanpistachios.org/about-us/pistachio-power-unshelled/press-releases/california-pistachio-acreageproduction-expected"
+                "label": "Rabobank / PerishableNews, US production and exports outlook",
+                "href": "https://perishablenews.com/produce/the-pistachio-market-keeps-growing-led-by-us-production-and-exports/"
               }
             ]
           },
           {
-            "heading": "The demand spark",
+            "heading": "The bar and the launches",
             "items": [
               {
-                "label": "The Guardian: TikTok trend for Dubai chocolate causes international pistachio shortage (Apr 2025)",
+                "label": "CNN, the Dubai chocolate bar and Fix Dessert Chocolatier",
+                "href": "https://www.cnn.com/travel/dubai-viral-chocolate-bar-fix-hnk-spc"
+              },
+              {
+                "label": "DW, German court: “Dubai chocolate” must come from Dubai",
+                "href": "https://www.dw.com/en/dubai-chocolate-must-come-from-dubai-german-court-rules/a-71290421"
+              },
+              {
+                "label": "The Grocer, Lidl rolls out own-label Dubai-style chocolate",
+                "href": "https://www.thegrocer.co.uk/news/lidl-rolling-out-own-label-dubai-style-chocolate-to-stores/702636.article"
+              },
+              {
+                "label": "CNBC, Walmart, Shake Shack, Trader Joe’s and the Dubai chocolate wave",
+                "href": "https://www.cnbc.com/2025/05/31/walmart-shake-shack-trader-joes-dubai-chocolate.html"
+              }
+            ]
+          },
+          {
+            "heading": "Shortage, price and geopolitics",
+            "items": [
+              {
+                "label": "The Guardian, TikTok trend for Dubai chocolate causes international pistachio shortage",
                 "href": "https://www.theguardian.com/food/2025/apr/19/tiktok-trend-for-dubai-chocolate-causes-international-shortage-of-pistachios"
               },
               {
-                "label": "Fast Company: Viral Dubai chocolate and the pistachio shortage",
-                "href": "https://www.fastcompany.com/91320386/viral-dubai-chocolate-pistachio-shortage"
+                "label": "The Guardian, the Resnicks and California’s pistachio empire (Jan 2025)",
+                "href": "https://www.theguardian.com/us-news/2025/jan/03/pistachio-california"
               },
               {
-                "label": "TasteTech: Why we all went pistachio nuts in 2024",
-                "href": "https://www.tastetech.com/updates/why-we-all-went-pistachio-nuts-in-2024/"
-              },
-              {
-                "label": "Telegraph: Waitrose limits Dubai chocolate to two per customer",
-                "href": "https://www.telegraph.co.uk/news/2025/03/27/dubai-chocolate-bar-sales-limit-waitrose/"
-              },
-              {
-                "label": "Wikipedia: Dubai chocolate (origin & timeline)",
-                "href": "https://en.wikipedia.org/wiki/Dubai_chocolate"
-              }
-            ]
-          },
-          {
-            "heading": "The supply boom",
-            "items": [
-              {
-                "label": "Salon: A 40-year-old Iran tariff quietly built America’s pistachio empire",
+                "label": "Salon, a 40-year-old Iran tariff quietly built America’s pistachio empire",
                 "href": "https://www.salon.com/2026/05/06/a-40-year-old-iran-tariff-quietly-built-americas-pistachio-empire/"
               },
               {
-                "label": "Capital Press: Pistachio harvest expected to be largest ever in 2025/26",
-                "href": "https://capitalpress.com/2025/04/07/pistachio-harvest-expected-to-be-largest-ever-in-2025-26/"
+                "label": "FreshPlaza, pistachio prices reach eight-year high on supply constraints",
+                "href": "https://www.freshplaza.com/north-america/article/9828885/pistachio-prices-reach-eight-year-high-on-supply-constraints/"
               },
               {
-                "label": "FreshPlaza: Global pistachio production forecast down 8% in 2025/26",
-                "href": "https://www.freshplaza.com/north-america/article/9812856/global-pistachio-production-forecast-down-8-in-2025-26/"
-              },
-              {
-                "label": "Bloomberg: Pistachio prices hit eight-year high on war in Iran",
-                "href": "https://www.bloomberg.com/news/articles/2026-04-13/pistachio-prices-hit-eight-year-high-on-war-in-major-grower-iran"
+                "label": "The Grocer, pistachio craze continues despite elevated kernel costs",
+                "href": "https://www.thegrocer.co.uk/news/pistachio-craze-continues-despite-elevated-kernel-costs/714852.article"
               }
             ]
           },
           {
-            "heading": "Forecasting & lessons",
+            "heading": "Forecasting and the matcha parallel",
             "items": [
               {
-                "label": "Nextatlas: How we saw the pistachio boom coming",
+                "label": "Nextatlas, how we saw the pistachio boom coming",
                 "href": "https://blog.nextatlas.com/article/how-we-saw-the-pistachio-boom-coming-and-whats-next"
               },
               {
-                "label": "Global Agriculture: Is pistachio the new matcha?",
+                "label": "Global Agriculture, is pistachio the new matcha?",
                 "href": "https://www.global-agriculture.com/global-agriculture/is-pistachio-the-new-matcha-why-its-becoming-2025s-fastest-growing-global-flavour/"
               },
               {
-                "label": "BBC Food: the pistachio trend",
-                "href": "https://www.bbc.co.uk/food/articles/cedwpdv975vo"
+                "label": "Supply Chain Dive, the matcha shortage",
+                "href": "https://www.supplychaindive.com/news/matcha-shortage-social-medias-latest-obsession/761258/"
               }
             ]
           }
