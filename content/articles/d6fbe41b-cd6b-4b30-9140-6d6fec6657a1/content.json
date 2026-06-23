@@ -1308,14 +1308,14 @@
       "content": [
         {
           "type": "text",
-          "text": "And the surest sign it has graduated is where the conversation has spread. I pulled a couple of thousand Reddit posts mentioning pistachio and sorted them by community."
+          "text": "And the surest sign it has graduated is where the craving went next. Pistachio did not just stay popular; it escaped the kitchen. Pull its search interest apart inside Google’s own product categories and you can watch it colonise one aisle after another."
         }
       ]
     },
     {
       "type": "chart",
       "attrs": {
-        "chartName": "cross-category",
+        "chartName": "category-spread",
         "caption": null
       }
     },
@@ -1324,11 +1324,11 @@
       "content": [
         {
           "type": "text",
-          "text": "Three of the ten busiest communities are not about food at all. They are about "
+          "text": "It spread outward like rings in water: from baking (its old Italian home) to the café counter (the Starbucks pistachio latte, biggest in the Gulf and Korea), to the supplement shelf (a protein-and-health halo), and then, most tellingly, to the perfume counter. Pistachio-as-a-fragrance barely existed before 2023; by 2025 it was one of the fastest-rising scent notes, and it is the only one of the five still climbing. The cause even rhymes with the chocolate: the wave is led by the UAE, and the brand behind it, "
         },
         {
           "type": "text",
-          "text": "fragrance and makeup",
+          "text": "Kayali",
           "marks": [
             {
               "type": "bold"
@@ -1337,11 +1337,20 @@
         },
         {
           "type": "text",
-          "text": ". When a taste jumps from the kitchen into perfume swaps and indie-cosmetics threads, it has stopped being a flavour of the month and become an aesthetic, a thing people want to "
+          "text": ", is a Dubai beauty house. The same city that gave the world the bar gave it the perfume."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The last ring to light up is the one that joins this essay back to its other half: the wallet. Searches for "
         },
         {
           "type": "text",
-          "text": "smell",
+          "text": "pistachio price",
           "marks": [
             {
               "type": "italic"
@@ -1350,7 +1359,20 @@
         },
         {
           "type": "text",
-          "text": " like and decorate with. That is what a real category looks like from the inside, and it is why “what’s next” for pistachio is not a single bar but a long tail: pistachio milk, pistachio butter, and a Starbucks Pistachio Matcha Latte that fuses the two reigning green obsessions into one cup. The match burned out. The fire is still going."
+          "text": " were flat for twenty years, then spiked to an all-time high in "
+        },
+        {
+          "type": "text",
+          "text": "August 2025",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", exactly as kernel prices crested, with “pistachio cream price” and “dubai chocolate price” riding alongside. You can watch ordinary shoppers, mostly across South Asia and the Gulf, feel the shortage in real time as they priced the ingredients for a dessert they had only just learned to crave."
         }
       ]
     },

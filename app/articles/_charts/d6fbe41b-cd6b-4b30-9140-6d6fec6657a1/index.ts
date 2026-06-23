@@ -4,7 +4,7 @@ import ProductionOvertake from './production-overtake';
 import SupplyDemandCollision from './supply-demand-collision';
 import FadVsCategory from './fad-vs-category';
 import DiffusionByCountry from './diffusion-by-country';
-import CrossCategory from './cross-category';
+import CategorySpread from './category-spread';
 import RedditVsTrends from './reddit-vs-trends';
 import AdoptionTiming from './adoption-timing';
 import AlignedArcs from './aligned-arcs';
@@ -17,7 +17,7 @@ const registry: ChartRegistry = {
   'supply-demand-collision': SupplyDemandCollision,
   'fad-vs-category': FadVsCategory,
   'diffusion-by-country': DiffusionByCountry,
-  'cross-category': CrossCategory,
+  'category-spread': CategorySpread,
   'reddit-vs-trends': RedditVsTrends,
   'adoption-timing': AdoptionTiming,
   'aligned-arcs': AlignedArcs,
