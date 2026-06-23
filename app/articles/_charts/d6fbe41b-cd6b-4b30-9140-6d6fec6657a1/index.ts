@@ -6,8 +6,8 @@ import FadVsCategory from './fad-vs-category';
 import DiffusionByCountry from './diffusion-by-country';
 import CrossCategory from './cross-category';
 import RedditVsTrends from './reddit-vs-trends';
-import AdoptionMap from './adoption-map';
-import ShapeClasses from './shape-classes';
+import AdoptionTiming from './adoption-timing';
+import AlignedArcs from './aligned-arcs';
 import FestiveRebound from './festive-rebound';
 
 /** Charts registered for the pistachio-boom article. */
@@ -19,8 +19,8 @@ const registry: ChartRegistry = {
   'diffusion-by-country': DiffusionByCountry,
   'cross-category': CrossCategory,
   'reddit-vs-trends': RedditVsTrends,
-  'adoption-map': AdoptionMap,
-  'shape-classes': ShapeClasses,
+  'adoption-timing': AdoptionTiming,
+  'aligned-arcs': AlignedArcs,
   'festive-rebound': FestiveRebound,
 };
 

@@ -433,7 +433,7 @@
       "content": [
         {
           "type": "text",
-          "text": "You noticed something in the country data that turned out to be the most interesting thing in this whole project: each nation’s curve has its own signature. So I pulled “Dubai chocolate” for eight countries, indexed each one to its own peak, and lined them up in the order they caught it."
+          "text": "You noticed something in the country data that turned out to be the richest thread in the whole project: each nation’s curve has its own signature. So I pulled “Dubai chocolate” for thirty-two countries. Here are eight of them, each indexed to its own peak so the shapes are comparable."
         }
       ]
     },
@@ -449,11 +449,11 @@
       "content": [
         {
           "type": "text",
-          "text": "Look at "
+          "text": "Germany caught the craze weeks before anyone else and had largely forgotten it by spring. Japan barely registered through 2025, then climbed to a peak only in early 2026. France gave it one polite spike; the Gulf and Singapore held on for a year. Stare at enough of these and you notice two different things are varying at once, and the eye keeps blurring them together: "
         },
         {
           "type": "text",
-          "text": "Germany",
+          "text": "when",
           "marks": [
             {
               "type": "bold"
@@ -462,50 +462,11 @@
         },
         {
           "type": "text",
-          "text": ". It caught the craze weeks before anyone else, in October 2024, exploded almost vertically, and then "
+          "text": " a country caught the trend, and what "
         },
         {
           "type": "text",
-          "text": "crashed",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", losing nearly all of it by spring. That is not random. Germany has a large Turkish and Arab diaspora for whom knafeh is not exotic but Tuesday, and the discounters driving the trend, Aldi, Lidl, Ritter Sport, are German. The trend had the shortest distance to travel there, and the German market saturated and moved on faster than anywhere else. (It also produced the only courtroom drama: a "
-        },
-        {
-          "type": "text",
-          "text": "Cologne court ordered Aldi to stop",
-          "marks": [
-            {
-              "type": "link",
-              "attrs": {
-                "href": "https://www.dw.com/en/dubai-chocolate-must-come-from-dubai-german-court-rules/a-71290421",
-                "target": "_blank"
-              }
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " calling its Turkish-made bar “Dubai” chocolate.)"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Now look at "
-        },
-        {
-          "type": "text",
-          "text": "Japan",
+          "text": "shape",
           "marks": [
             {
               "type": "bold"
@@ -514,59 +475,7 @@
         },
         {
           "type": "text",
-          "text": ", at the opposite extreme. Japan barely registered through all of 2025 and then, a full year after everyone else, surged to its peak in early 2026. A slow, late, durable burn: the signature of a market that adopts cautiously and then commits. "
-        },
-        {
-          "type": "text",
-          "text": "Australia",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " peaked in May, neatly inside its own southern-hemisphere autumn. "
-        },
-        {
-          "type": "text",
-          "text": "France",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", a country with a deep, confident pastry culture of its own, gave the trend one polite March spike and then forgot it almost entirely. The home markets, the "
-        },
-        {
-          "type": "text",
-          "text": "UAE",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " and "
-        },
-        {
-          "type": "text",
-          "text": "Singapore",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", held the craving longest, Singapore even mounting a second wave in late 2025."
+          "text": " its curve took once it did. They turn out to be independent, so it is worth pulling them apart."
         }
       ]
     },
@@ -610,123 +519,14 @@
       ]
     },
     {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "None of this is lawless, even if no textbook has a tidy name for it. The shapes map onto a century of diffusion research. Frank Bass’s 1969 model splits any adoption curve into two forces: a coefficient of "
-        },
-        {
-          "type": "text",
-          "text": "innovation",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " (external push, advertising, a viral video) and a coefficient of "
-        },
-        {
-          "type": "text",
-          "text": "imitation",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " (plain word of mouth). Germany’s Flash is high-innovation, low-imitation, media-ignited and quick to burn out. Japan’s Slow burn is the mirror image, low-innovation and high-imitation, climbing person by person and so peaking late. A Plateau is a balanced mix with a high ceiling."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "The textbook even makes a falsifiable prediction. Cultures high in what Hofstede called "
-        },
-        {
-          "type": "text",
-          "text": "uncertainty avoidance",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ", their collective discomfort with the untested, ought to be the laggards: Japan, France, Greece and Portugal should hang back while bolder, lower-anxiety markets ignite first. It is a clean, testable claim, so I gathered thirty-two countries and checked it."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "It did not hold. Place every market by how fast it peaked and how much of the craving survived, and uncertainty avoidance does "
-        },
-        {
-          "type": "text",
-          "text": "essentially nothing",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "; its correlation with peak timing is about zero. The tidy predictor flatlines."
-        }
-      ]
-    },
-    {
-      "type": "chart",
+      "type": "heading",
       "attrs": {
-        "chartName": "adoption-map",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
+        "level": 3
+      },
       "content": [
         {
           "type": "text",
-          "text": "What sorts the countries instead is plain geography. Almost every Western market, from Germany to Brazil to the Gulf, did the same thing: a fast spike and a crash back to near nothing, a textbook fad. The exception is a single, startling cluster, "
-        },
-        {
-          "type": "text",
-          "text": "East and Southeast Asia",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ". Singapore, Japan, Taiwan, Malaysia and Indonesia adopted later and "
-        },
-        {
-          "type": "text",
-          "text": "kept",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " it, still holding 35 to 46 per cent of their peak a year on. Mexico is the lone Western market that behaved like Asia. Whatever made the craving stick tracks region far better than any culture score."
+          "text": "First question: when did each country catch it?"
         }
       ]
     },
@@ -735,20 +535,7 @@
       "content": [
         {
           "type": "text",
-          "text": "The "
-        },
-        {
-          "type": "text",
-          "text": "onset",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " has its own geography. The first markets to catch it were not the boldest but the "
+          "text": "Order the countries by when interest first lifted and you get the familiar ladder from Everett Rogers: a few innovators, an early and a late majority, then a tail of laggards. The innovators are not the boldest cultures (national “uncertainty avoidance,” the textbook’s favourite predictor of who tries new things first, does nothing here; its correlation with timing is about zero) but the "
         },
         {
           "type": "text",
@@ -761,7 +548,86 @@
         },
         {
           "type": "text",
-          "text": ": German-speaking Europe, where a Turkish diaspora makes knafeh familiar and where Aldi, Lidl and Ritter Sport are local; Greece and the Balkans, with their Ottoman dessert heritage; and the Gulf itself. Proximity, culinary and physical, lit the fuse; region decided how long it burned."
+          "text": " ones. German-speaking Europe went first, where a large Turkish diaspora makes knafeh ordinary and the discounters Aldi, Lidl and Ritter Sport are local; then Greece and the Balkans, with their Ottoman dessert heritage; and the Gulf, where the bar was born. The laggards are the far side of that distance: France, Portugal, Argentina, and finally Taiwan, which did not catch it until 2026. Proximity, culinary and physical, sets the clock."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "adoption-timing",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "That ladder is only the horizontal story. Plot each country by when it started against how fast it then rose, and a second axis appears that owes nothing to the first. Most countries, early or late, did the same thing once they started: a near-vertical climb to a peak in a month or two. A handful did something else, drifting upward over the better part of a year. The split matters because it separates two countries the calendar disguises. Taiwan and Japan both peaked in 2026, yet they are opposites: Taiwan is a "
+        },
+        {
+          "type": "text",
+          "text": "late starter",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " that then spiked in six weeks, an ordinary fad simply running a year behind, while Japan is a genuine "
+        },
+        {
+          "type": "text",
+          "text": "slow climber",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " that took fifty-six weeks to crest. One is the same shape shifted; the other is a different shape."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Second question: what shape, once they started?"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "That difference has a pedigree. Frank Bass split any adoption curve into two forces, external push (advertising, a viral video) and internal imitation (plain word of mouth); Crane and Sornette, dissecting millions of YouTube videos in 2008, showed the mix leaves a fingerprint in the curve: an external jolt makes a sharp spike, slow word of mouth a gentle hump. So I lined every country up at its own peak and averaged the fast risers against the slow ones."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "aligned-arcs",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The symmetry is the surprise, and it corrects something I had got wrong. The sharp, externally-driven spikes fall about as fast as they rose, halving within a month of the peak. The slow, word-of-mouth climbs come down just as gently, still holding nearly half their interest three months on. Rise speed and decay speed are the same property seen twice: a market jolted from outside forgets quickly, a market that talked itself into the trend lets go slowly. The tidy “the West flashes, Asia sustains” line I reached for earlier was really this, a mechanism rather than a map, with the slow, durable climbs simply happening to cluster in East and Southeast Asia."
         }
       ]
     },
@@ -776,11 +642,11 @@
           "content": [
             {
               "type": "text",
-              "text": "We did not confirm a textbook here; we broke one. The neat prediction that anxious cultures adopt late did not survive contact with thirty-two countries. What the data does support is humbler and more useful: a trend’s "
+              "text": "Two axes, not one. A trend’s "
             },
             {
               "type": "text",
-              "text": "onset",
+              "text": "timing",
               "marks": [
                 {
                   "type": "bold"
@@ -789,11 +655,11 @@
             },
             {
               "type": "text",
-              "text": " follows proximity (diaspora, cuisine, local retail), and its "
+              "text": " (who catches it first) follows proximity: diaspora, cuisine, local retail, the lead-and-lag of Rogers’ ladder. Its "
             },
             {
               "type": "text",
-              "text": "persistence",
+              "text": "shape",
               "marks": [
                 {
                   "type": "bold"
@@ -802,160 +668,22 @@
             },
             {
               "type": "text",
-              "text": " splits sharply by region, with Asian markets quietly converting a Western fad into something durable. The "
+              "text": " (a sharp exogenous spike versus a slow endogenous climb, and the matching fast or slow decay) follows the mechanism that spread it, after Bass and after Crane and Sornette. The two are independent, a country can be early or late in either shape, and the cultural anxiety score the textbook reaches for first predicts "
             },
             {
               "type": "text",
-              "text": "fad-versus-trend",
+              "text": "neither",
               "marks": [
                 {
-                  "type": "bold"
+                  "type": "italic"
                 }
               ]
             },
             {
               "type": "text",
-              "text": " distinction (Meyersohn and Katz, 1957) and the "
-            },
-            {
-              "type": "text",
-              "text": "lead-versus-lag market",
-              "marks": [
-                {
-                  "type": "bold"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "text": " idea give us the vocabulary; the curves give us the verdict."
+              "text": "."
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is one last way to look at this, and it is the cleanest. Forget geography, forget culture, and ask only: what "
-        },
-        {
-          "type": "text",
-          "text": "shape",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " did each curve trace? Cluster all thirty-two countries on shape alone and they collapse into four."
-        }
-      ]
-    },
-    {
-      "type": "chart",
-      "attrs": {
-        "chartName": "shape-classes",
-        "caption": null
-      }
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Reassuringly, these are not shapes I invented. There is a quiet literature on the morphology of attention itself. Crane and Sornette, dissecting millions of YouTube videos in 2008, showed that a popularity curve betrays its own origin: an "
-        },
-        {
-          "type": "text",
-          "text": "exogenous",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " shock, someone with reach sharing a thing, gives a sudden spike that decays fast, while an "
-        },
-        {
-          "type": "text",
-          "text": "endogenous",
-          "marks": [
-            {
-              "type": "italic"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " process of slow word of mouth gives a gentle climb to a late peak. Yang and Leskovec, clustering hundreds of millions of posts in 2011, found that online attention collapses into just six canonical shapes. Our four are a subset of theirs, and they line up with the mechanism: the "
-        },
-        {
-          "type": "text",
-          "text": "Flash",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " is a pure external jolt that nobody passed on; the "
-        },
-        {
-          "type": "text",
-          "text": "Slow burn",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " of Japan and Taiwan is the endogenous, word-of-mouth climb; and the "
-        },
-        {
-          "type": "text",
-          "text": "Sustained",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": " is the rare, valuable case of an external spark that then caught and spread on its own."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "There is a quieter pattern hiding in all four. Whatever a country’s shape, the initial fall is almost identical: once a curve turns over, interest halves in about "
-        },
-        {
-          "type": "text",
-          "text": "five to seven weeks",
-          "marks": [
-            {
-              "type": "bold"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": ". Wu and Huberman found the same characteristic decay time for online attention back in 2007. Countries do not differ in how fast the spike collapses; they differ only in whether anything brings it back."
         }
       ]
     },
