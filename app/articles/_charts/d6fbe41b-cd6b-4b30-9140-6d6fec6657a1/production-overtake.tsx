@@ -24,7 +24,7 @@ import {
 
 // In-shell production, million pounds. US = industry (ACP) crop figures;
 // Iran converted from USDA in-shell metric tons (x 2.2046). Pistachios
-// "alternate bear" — a heavy crop one year, a light one the next — which is
+// "alternate bear": a heavy crop one year, a light one the next, which is
 // why both lines zig-zag. Crop years labelled by harvest year.
 const data = [
   { y: '2020', us: 1045, iran: 298 },
@@ -46,10 +46,10 @@ export function ProductionOvertake() {
   return (
     <ChartCard
       title="While the world wasn’t looking, California planted a pistachio empire"
-      subtitle="In-shell production, billion pounds. The US now grows roughly three times what Iran does and is still climbing — the supply was being planted a decade before the demand showed up."
+      subtitle="In-shell production, billion pounds. The US now grows roughly three times what Iran does and is still climbing, the supply was being planted a decade before the demand showed up."
       headline={
         <p className="text-sm leading-relaxed text-ink">
-          The 2025 US crop is forecast at a record <b>~1.57 billion pounds</b> — up
+          The 2025 US crop is forecast at a record <b>~1.57 billion pounds</b>, up
           from ~1 billion in 2020. The saw-tooth is the trees’ natural
           <b> alternate-bearing</b> cycle: a big year, then a small one.
         </p>

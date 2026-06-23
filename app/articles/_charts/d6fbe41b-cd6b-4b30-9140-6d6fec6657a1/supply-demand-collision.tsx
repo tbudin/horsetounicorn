@@ -25,7 +25,7 @@ import {
 } from '@/lib/chart-colors';
 
 // US in-shell production (billion lb, left axis) vs wholesale pistachio
-// KERNEL price (USD/lb, right axis) — kernels are the cut used in pistachio
+// KERNEL price (USD/lb, right axis); kernels are the cut used in pistachio
 // cream and Dubai chocolate. Price points are approximate, drawn from trade
 // reporting; 2026 has no US crop figure yet (harvested in autumn).
 const data = [
@@ -39,11 +39,11 @@ const data = [
 export function SupplyDemandCollision() {
   return (
     <ChartCard
-      title="Record supply, record prices — at the same time"
+      title="Record supply, record prices, at the same time"
       subtitle="US production hit an all-time high in 2025, yet the kernel price kept climbing. When demand is instant and supply takes seven years, even a record crop can feel like a shortage."
       headline={
         <p className="text-sm leading-relaxed text-ink">
-          The kernel grade — the cut Dubai chocolate needs — went from
+          The kernel grade, the cut Dubai chocolate needs, went from
           <b> ~$7.65/lb in 2024 to ~$10.30 in 2025</b> and neared
           <b> $11 by early 2026</b>, a roughly <b>50% jump</b> even as America
           harvested its biggest crop ever.
@@ -87,12 +87,12 @@ export function SupplyDemandCollision() {
                   <ChartTooltip title={String(label)}>
                     <TooltipRow
                       label="US production"
-                      value={d.prod != null ? `${d.prod.toFixed(2)} bn lb` : '—'}
+                      value={d.prod != null ? `${d.prod.toFixed(2)} bn lb` : 'n/a'}
                       dotColor={GREEN}
                     />
                     <TooltipRow
                       label="Kernel price"
-                      value={d.price != null ? `$${d.price.toFixed(2)}/lb` : '—'}
+                      value={d.price != null ? `$${d.price.toFixed(2)}/lb` : 'n/a'}
                       dotColor={BURGUNDY}
                     />
                   </ChartTooltip>

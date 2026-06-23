@@ -16,7 +16,6 @@ import { ChartLegend } from '@/components/charts/chart-legend';
 import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
 import {
   BURGUNDY,
-  BURGUNDY_LIGHTER,
   GREEN,
   INK,
   axisTickStyle,
@@ -64,7 +63,7 @@ export function FadVsCategory() {
       subtitle="Worldwide search interest, zoomed to the boom. Dubai chocolate (burgundy) crested in March 2025 and has since lost roughly two-thirds of its peak. Pistachio (green) barely blinked."
       headline={
         <p className="text-sm leading-relaxed text-ink">
-          A year past its peak, “Dubai chocolate” is down ~70% — a textbook fad
+          A year past its peak, “Dubai chocolate” is down ~70%, a textbook fad
           curve. “Pistachio” is still bouncing around <b>80–95</b>, near its
           all-time highs. The bar lit the match; the flavour outlived it.
         </p>

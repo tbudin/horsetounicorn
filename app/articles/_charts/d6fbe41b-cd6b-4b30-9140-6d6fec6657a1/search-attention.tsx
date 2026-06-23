@@ -146,9 +146,9 @@ const fmtYear = (m: string) => {
 };
 
 const EVENTS = [
-  { x: '2023-12', label: 'Dec 2023: a Dubai food influencer’s ASMR TikTok of the "Can’t Get Knafeh of It" bar goes viral — 100M+ views.' },
+  { x: '2023-12', label: 'Dec 2023: a Dubai food influencer’s ASMR TikTok of the "Can’t Get Knafeh of It" bar goes viral, 100M+ views.' },
   { x: '2024-11', label: 'Nov–Dec 2024: Lindt, Läderach, Lidl, Aldi and others ship "Dubai-style" bars; supermarkets ration them.' },
-  { x: '2025-04', label: 'Apr 2025: the FT and Guardian report a global pistachio shortage — chocolatiers buying up every kernel.' },
+  { x: '2025-04', label: 'Apr 2025: the FT and Guardian report a global pistachio shortage, chocolatiers buying up every kernel.' },
   { x: '2026-03', label: 'Mar 2026: pistachio prices hit an eight-year high as conflict and drought cut Iran’s supply.' },
 ];
 
@@ -182,7 +182,7 @@ export function SearchAttention() {
       headline={
         <p className="text-sm leading-relaxed text-ink">
           Pistachio search hit its all-time peak in <b>March 2025</b> (100), the same
-          month Dubai chocolate crested — but pistachio was already running at
+          month Dubai chocolate crested, but pistachio was already running at
           <b> ~3× its 2010 level</b> before the bar existed, and it stayed near the
           top long after the bar faded.
         </p>
