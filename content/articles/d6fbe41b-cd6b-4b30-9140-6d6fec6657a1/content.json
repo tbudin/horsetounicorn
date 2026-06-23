@@ -602,6 +602,231 @@
       ]
     },
     {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "None of this is lawless, even if no textbook has a tidy name for it. The shapes map onto a century of diffusion research. Frank Bass’s 1969 model splits any adoption curve into two forces: a coefficient of "
+        },
+        {
+          "type": "text",
+          "text": "innovation",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " (external push, advertising, a viral video) and a coefficient of "
+        },
+        {
+          "type": "text",
+          "text": "imitation",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " (plain word of mouth). Germany’s Flash is high-innovation, low-imitation, media-ignited and quick to burn out. Japan’s Slow burn is the mirror image, low-innovation and high-imitation, climbing person by person and so peaking late. A Plateau is a balanced mix with a high ceiling."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The textbook even makes a falsifiable prediction. Cultures high in what Hofstede called "
+        },
+        {
+          "type": "text",
+          "text": "uncertainty avoidance",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", their collective discomfort with the untested, ought to be the laggards: Japan, France, Greece and Portugal should hang back while bolder, lower-anxiety markets ignite first. It is a clean, testable claim, so I gathered thirty-two countries and checked it."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "It did not hold. Place every market by how fast it peaked and how much of the craving survived, and uncertainty avoidance does "
+        },
+        {
+          "type": "text",
+          "text": "essentially nothing",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "; its correlation with peak timing is about zero. The tidy predictor flatlines."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "adoption-map",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "What sorts the countries instead is plain geography. Almost every Western market, from Germany to Brazil to the Gulf, did the same thing: a fast spike and a crash back to near nothing, a textbook fad. The exception is a single, startling cluster, "
+        },
+        {
+          "type": "text",
+          "text": "East and Southeast Asia",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ". Singapore, Japan, Taiwan, Malaysia and Indonesia adopted later and "
+        },
+        {
+          "type": "text",
+          "text": "kept",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " it, still holding 35 to 46 per cent of their peak a year on. Mexico is the lone Western market that behaved like Asia. Whatever made the craving stick tracks region far better than any culture score."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The "
+        },
+        {
+          "type": "text",
+          "text": "onset",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " has its own geography. The first markets to catch it were not the boldest but the "
+        },
+        {
+          "type": "text",
+          "text": "closest",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ": German-speaking Europe, where a Turkish diaspora makes knafeh familiar and where Aldi, Lidl and Ritter Sport are local; Greece and the Balkans, with their Ottoman dessert heritage; and the Gulf itself. Proximity, culinary and physical, lit the fuse; region decided how long it burned."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "attrs": {
+        "headline": "What we are actually claiming"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "We did not confirm a textbook here; we broke one. The neat prediction that anxious cultures adopt late did not survive contact with thirty-two countries. What the data does support is humbler and more useful: a trend’s "
+            },
+            {
+              "type": "text",
+              "text": "onset",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " follows proximity (diaspora, cuisine, local retail), and its "
+            },
+            {
+              "type": "text",
+              "text": "persistence",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " splits sharply by region, with Asian markets quietly converting a Western fad into something durable. The "
+            },
+            {
+              "type": "text",
+              "text": "fad-versus-trend",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " distinction (Meyersohn and Katz, 1957) and the "
+            },
+            {
+              "type": "text",
+              "text": "lead-versus-lag market",
+              "marks": [
+                {
+                  "type": "bold"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " idea give us the vocabulary; the curves give us the verdict."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "heading",
       "attrs": {
         "level": 2
@@ -647,7 +872,7 @@
         },
         {
           "type": "text",
-          "text": " and is still climbing, with a record crop of about 1.57 billion pounds forecast for 2025. This is not an accident of one good season; it is the harvest of a planting boom. California’s bearing acreage has multiplied roughly five-fold in twenty years to around 488,000 acres, with another 124,000 acres of young trees not yet in production. The supply was being planted long before the demand arrived to meet it."
+          "text": " and is still climbing, with a record crop of about 1.57 billion pounds forecast for 2025. The crossover was decisive: the two traded the lead through the 2000s, but 2015 was the last year Iran ever out-grew America. From the 2016 crop the US pulled away for good, its share of world output roughly doubling, from about a third to nearly two-thirds. This is not an accident of one good season; it is the harvest of a planting boom. California’s bearing acreage has multiplied roughly five-fold in twenty years to around 488,000 acres, with another 124,000 acres of young trees not yet in production. The supply was being planted long before the demand arrived to meet it."
         }
       ]
     },
@@ -656,7 +881,7 @@
       "content": [
         {
           "type": "text",
-          "text": "But notice the saw-tooth in both lines. Pistachio trees "
+          "text": "But notice the saw-tooth in every line. Pistachio trees "
         },
         {
           "type": "text",
@@ -906,7 +1131,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Put the two clocks on one chart and the answer stops being either-or."
+          "text": "There is a cleaner way to see the collision. Plot every crop year as a single point, how much America grew against what its growers were paid, and the story draws itself."
         }
       ]
     },
@@ -922,20 +1147,20 @@
       "content": [
         {
           "type": "text",
-          "text": "Here is the paradox that confused me at the start, resolved. America harvested its "
+          "text": "For most of the 2010s the dots obey the oldest law in the book: a big crop pushes the price down (2016, a bumper year, sits near $1.68) and a frost-hit crop sends it up (2015, top-left, $3.29). Then the path bends. In 2023 and 2025 America brought in its "
         },
         {
           "type": "text",
-          "text": "biggest crop in history",
+          "text": "two largest harvests ever",
           "marks": [
             {
-              "type": "italic"
+              "type": "bold"
             }
           ]
         },
         {
           "type": "text",
-          "text": " in 2025, and the kernel price climbed anyway, from roughly $7.65 a pound in 2024 to about $10.30 in 2025, nudging $11 by early 2026. Record supply and record prices, at the same time. How?"
+          "text": ", and yet the grower price climbed, from $1.87 to $2.48. More supply and a higher price, at the same time: the rule broke. How?"
         }
       ]
     },
@@ -944,7 +1169,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Partly because “the price of pistachios” is at least three different numbers, and the craze pulled them apart. The price a grower gets for ordinary in-shell nuts barely moved. But Dubai chocolate does not want nuts in a shell; it wants "
+          "text": "Partly because “the price of pistachios” is at least three different numbers, and the craze pulled them apart. The price a grower gets for ordinary in-shell nuts rose only modestly. But Dubai chocolate does not want nuts in a shell; it wants "
         },
         {
           "type": "text",
@@ -1062,6 +1287,44 @@
         {
           "type": "text",
           "text": " indicator. People search for a thing after they have already heard of it, tasted it, seen it on a friend’s phone. By the time pistachio is spiking on Trends, it is on the café menu and in the supermarket, and the trade is over."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "To check that, I lined up a completely different attention signal against the search line: about two thousand pistachio posts scraped from Reddit, counted by month."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "reddit-vs-trends",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "They trace almost the same curve, the correlation is about 0.7, which is reassuring. But notice the forum chatter, if anything, "
+        },
+        {
+          "type": "text",
+          "text": "trails",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " the search spike rather than leading it. A subreddit is no more a crystal ball than a search box. (With the standard caution that Reddit’s own search over-weights recent months, so the very last stretch is inflated.) The lesson holds either way: the mainstream signals all light up together, and all of them light up late."
         }
       ]
     },
@@ -1593,6 +1856,31 @@
               {
                 "label": "The Grocer, pistachio craze continues despite elevated kernel costs",
                 "href": "https://www.thegrocer.co.uk/news/pistachio-craze-continues-despite-elevated-kernel-costs/714852.article"
+              }
+            ]
+          },
+          {
+            "heading": "On how trends spread",
+            "items": [
+              {
+                "label": "Everett Rogers, Diffusion of Innovations (the S-curve and adopter categories)",
+                "href": "https://en.wikipedia.org/wiki/Diffusion_of_innovations"
+              },
+              {
+                "label": "Frank Bass, A New Product Growth Model: innovation vs imitation, 1969",
+                "href": "https://en.wikipedia.org/wiki/Bass_diffusion_model"
+              },
+              {
+                "label": "Meyersohn & Katz, Notes on a Natural History of Fads (1957)",
+                "href": "https://www.journals.uchicago.edu/doi/abs/10.1086/222108"
+              },
+              {
+                "label": "Tellis, Stremersch & Yin, The International Takeoff of New Products (2003)",
+                "href": "https://pubsonline.informs.org/doi/abs/10.1287/mksc.22.2.188.16041"
+              },
+              {
+                "label": "Steenkamp, ter Hofstede & Wedel, national culture and consumer innovativeness (1999)",
+                "href": "https://journals.sagepub.com/doi/10.1177/002224299906300204"
               }
             ]
           },
