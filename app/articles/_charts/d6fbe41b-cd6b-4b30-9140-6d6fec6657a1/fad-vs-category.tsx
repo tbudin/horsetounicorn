@@ -1,7 +1,7 @@
 'use client';
 
 import {
-  AreaChart,
+  ComposedChart,
   Area,
   Line,
   XAxis,
@@ -72,7 +72,7 @@ export function FadVsCategory() {
     >
       <ChartContainer>
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data} margin={{ top: 16, right: 16, bottom: 8, left: 4 }}>
+          <ComposedChart data={data} margin={{ top: 16, right: 16, bottom: 8, left: 4 }}>
             <defs>
               <linearGradient id="dubaiFill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor={BURGUNDY} stopOpacity={0.18} />
@@ -123,7 +123,7 @@ export function FadVsCategory() {
               dot={false}
               {...chartDefaults}
             />
-          </AreaChart>
+          </ComposedChart>
         </ResponsiveContainer>
       </ChartContainer>
       <ChartLegend
