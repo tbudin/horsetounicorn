@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, Activity } from 'lucide-react';
 import {
   ScatterChart,
   Scatter,
@@ -18,7 +18,7 @@ import { ChartCard } from '@/components/charts/chart-card';
 import { ChartContainer } from '@/components/charts/chart-container';
 import { ChartLegend } from '@/components/charts/chart-legend';
 import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
-import { ChartToolbar, MultiSelectPopover } from '@/components/charts/chart-controls';
+import { ChartToolbar, ComboSelect, MultiSelectPopover } from '@/components/charts/chart-controls';
 import {
   BURGUNDY,
   BLUE,
@@ -31,10 +31,10 @@ import {
   gridProps,
 } from '@/lib/chart-colors';
 
-// Two independent axes. x = WHEN a country took off (month its "Dubai
-// chocolate" interest first passed 20% of its own peak). y = how fast it then
-// rose (weeks from take-off to peak): a low value is a sharp external spike, a
-// high value a slow word-of-mouth climb. Weekly Google Trends, 32 markets.
+// Two independent axes. x = WHEN a country took off, in weeks since the first
+// market crossed 20% of its own peak (a shared t=0). y = how fast it then rose
+// (weeks from take-off to peak): a low value is a sharp external spike, a high
+// value a slow word-of-mouth climb. Weekly Google Trends, 32 markets.
 type Pt = { iso: string; region: string; takeoff: number; rise: number };
 const DATA: Pt[] = [
   { iso: 'AT', region: 'Europe', takeoff: 9.6, rise: 4 },
@@ -82,19 +82,29 @@ const COLOR: Record<string, string> = Object.fromEntries(REGIONS.map((r) => [r.k
 const REGION_LABELS = REGIONS.map((r) => r.label);
 const LABEL_BY_KEY: Record<string, string> = Object.fromEntries(REGIONS.map((r) => [r.key, r.label]));
 
-// month index -> short label (1 = Jan 2024)
+// month index -> short label (1 = Jan 2024), kept for the tooltip's calendar anchor
 const ML = ['', 'Jan 24', 'Feb 24', 'Mar 24', '', '', '', '', '', '', 'Oct 24', '', 'Dec 24', 'Jan 25', '', 'Mar 25', '', '', 'Jun 25', '', '', 'Sep 25', '', '', 'Dec 25', 'Jan 26', '', 'Mar 26'];
-const fmtX = (v: number) => ML[Math.round(v)] ?? '';
+const fmtMonth = (v: number) => ML[Math.round(v)] ?? '';
+
+// Re-express take-off as weeks since the earliest market took off (shared t=0).
+const T0 = Math.min(...DATA.map((d) => d.takeoff));
+const toWeeks = (monthIdx: number) => Math.round(((monthIdx - T0) * 52) / 12);
+
+type Scale = 'linear' | 'log';
+const SCALES: { key: Scale; label: string }[] = [
+  { key: 'linear', label: 'linear' },
+  { key: 'log', label: 'log' },
+];
 
 export function AdoptionTiming() {
   const [regions, setRegions] = useState<Set<string>>(new Set());
-  const shown = useMemo(
-    () =>
-      regions.size === 0
-        ? DATA
-        : DATA.filter((d) => regions.has(LABEL_BY_KEY[d.region])),
-    [regions],
-  );
+  const [scale, setScale] = useState<Scale>('linear');
+  const shown = useMemo(() => {
+    const pts = DATA.map((d) => ({ ...d, xw: toWeeks(d.takeoff) }));
+    return regions.size === 0
+      ? pts
+      : pts.filter((d) => regions.has(LABEL_BY_KEY[d.region]));
+  }, [regions]);
   return (
     <ChartCard
       title="Two separate questions: when, and how fast"
@@ -109,7 +119,8 @@ export function AdoptionTiming() {
       }
       source="Google Trends, weekly “Dubai chocolate” by country. Take-off = first week above 20% of the country’s own peak; rise = weeks from take-off to peak. Colour is region."
     >
-      <ChartToolbar label="regions">
+      <ChartToolbar label="filters">
+        <ComboSelect aria-label="Scale" icon={Activity} options={SCALES} value={scale} onChange={setScale} />
         <MultiSelectPopover
           icon={Globe}
           options={REGION_LABELS}
@@ -126,19 +137,22 @@ export function AdoptionTiming() {
             <ReferenceLine y={12} stroke={INK_SUBTLE} strokeDasharray="4 4" label={{ value: 'slow climb ↑   /   fast spike ↓', position: 'insideTopLeft', fill: INK_SUBTLE, fontSize: 10 }} />
             <XAxis
               type="number"
-              dataKey="takeoff"
-              domain={[9, 26]}
-              ticks={[10, 12, 13, 15, 25]}
+              dataKey="xw"
+              domain={[-2, 70]}
+              ticks={[0, 13, 26, 39, 52, 65]}
               tick={axisTickStyle}
               axisLine={{ stroke: INK }}
               tickLine={false}
-              tickFormatter={fmtX}
-              label={{ value: 'when it took off →', position: 'insideBottom', offset: -14, fill: INK_SUBTLE, fontSize: 11 }}
+              tickFormatter={(v) => `${v}w`}
+              label={{ value: 'weeks since the first market took off →', position: 'insideBottom', offset: -14, fill: INK_SUBTLE, fontSize: 11 }}
             />
             <YAxis
               type="number"
               dataKey="rise"
-              domain={[0, 60]}
+              scale={scale === 'log' ? 'log' : 'linear'}
+              domain={scale === 'log' ? [1, 60] : [0, 60]}
+              ticks={scale === 'log' ? [1, 2, 5, 10, 20, 50] : undefined}
+              allowDataOverflow
               tick={axisTickStyle}
               axisLine={{ stroke: INK }}
               tickLine={false}
@@ -150,10 +164,10 @@ export function AdoptionTiming() {
               cursor={{ strokeDasharray: '3 3', stroke: INK_SUBTLE }}
               content={({ active, payload }) => {
                 if (!active || !payload?.length) return null;
-                const d = payload[0]?.payload as Pt;
+                const d = payload[0]?.payload as Pt & { xw: number };
                 return (
                   <ChartTooltip title={d.iso}>
-                    <TooltipRow label="Took off" value={fmtX(d.takeoff)} dotColor={COLOR[d.region]} />
+                    <TooltipRow label="Took off" value={`wk ${d.xw} · ${fmtMonth(d.takeoff)}`} dotColor={COLOR[d.region]} />
                     <TooltipRow label="Weeks to peak" value={`${d.rise}`} />
                   </ChartTooltip>
                 );
