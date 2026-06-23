@@ -1,5 +1,7 @@
 'use client';
 
+import { useMemo, useState } from 'react';
+import { Globe } from 'lucide-react';
 import {
   ScatterChart,
   Scatter,
@@ -16,6 +18,7 @@ import { ChartCard } from '@/components/charts/chart-card';
 import { ChartContainer } from '@/components/charts/chart-container';
 import { ChartLegend } from '@/components/charts/chart-legend';
 import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
+import { ChartToolbar, MultiSelectPopover } from '@/components/charts/chart-controls';
 import {
   BURGUNDY,
   BLUE,
@@ -76,12 +79,22 @@ const REGIONS: { key: string; label: string; color: string }[] = [
   { key: 'MEast', label: 'Middle East', color: BLUE_LIGHT },
 ];
 const COLOR: Record<string, string> = Object.fromEntries(REGIONS.map((r) => [r.key, r.color]));
+const REGION_LABELS = REGIONS.map((r) => r.label);
+const LABEL_BY_KEY: Record<string, string> = Object.fromEntries(REGIONS.map((r) => [r.key, r.label]));
 
 // month index -> short label (1 = Jan 2024)
 const ML = ['', 'Jan 24', 'Feb 24', 'Mar 24', '', '', '', '', '', '', 'Oct 24', '', 'Dec 24', 'Jan 25', '', 'Mar 25', '', '', 'Jun 25', '', '', 'Sep 25', '', '', 'Dec 25', 'Jan 26', '', 'Mar 26'];
 const fmtX = (v: number) => ML[Math.round(v)] ?? '';
 
 export function AdoptionTiming() {
+  const [regions, setRegions] = useState<Set<string>>(new Set());
+  const shown = useMemo(
+    () =>
+      regions.size === 0
+        ? DATA
+        : DATA.filter((d) => regions.has(LABEL_BY_KEY[d.region])),
+    [regions],
+  );
   return (
     <ChartCard
       title="Two separate questions: when, and how fast"
@@ -96,6 +109,16 @@ export function AdoptionTiming() {
       }
       source="Google Trends, weekly “Dubai chocolate” by country. Take-off = first week above 20% of the country’s own peak; rise = weeks from take-off to peak. Colour is region."
     >
+      <ChartToolbar label="regions">
+        <MultiSelectPopover
+          icon={Globe}
+          options={REGION_LABELS}
+          selected={regions}
+          onChange={setRegions}
+          allLabel="All regions"
+          pluralNoun="regions"
+        />
+      </ChartToolbar>
       <ChartContainer>
         <ResponsiveContainer width="100%" height="100%">
           <ScatterChart margin={{ top: 18, right: 20, bottom: 26, left: 10 }}>
@@ -137,7 +160,7 @@ export function AdoptionTiming() {
               }}
             />
             {REGIONS.map((r) => (
-              <Scatter key={r.key} data={DATA.filter((d) => d.region === r.key)} fill={r.color} fillOpacity={0.85} isAnimationActive={false}>
+              <Scatter key={r.key} data={shown.filter((d) => d.region === r.key)} fill={r.color} fillOpacity={0.85} isAnimationActive={false}>
                 <LabelList dataKey="iso" position="top" fontSize={9} fill={INK} />
               </Scatter>
             ))}
