@@ -827,6 +827,109 @@
       ]
     },
     {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is one last way to look at this, and it is the cleanest. Forget geography, forget culture, and ask only: what "
+        },
+        {
+          "type": "text",
+          "text": "shape",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " did each curve trace? Cluster all thirty-two countries on shape alone and they collapse into four."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "shape-classes",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Reassuringly, these are not shapes I invented. There is a quiet literature on the morphology of attention itself. Crane and Sornette, dissecting millions of YouTube videos in 2008, showed that a popularity curve betrays its own origin: an "
+        },
+        {
+          "type": "text",
+          "text": "exogenous",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " shock, someone with reach sharing a thing, gives a sudden spike that decays fast, while an "
+        },
+        {
+          "type": "text",
+          "text": "endogenous",
+          "marks": [
+            {
+              "type": "italic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " process of slow word of mouth gives a gentle climb to a late peak. Yang and Leskovec, clustering hundreds of millions of posts in 2011, found that online attention collapses into just six canonical shapes. Our four are a subset of theirs, and they line up with the mechanism: the "
+        },
+        {
+          "type": "text",
+          "text": "Flash",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " is a pure external jolt that nobody passed on; the "
+        },
+        {
+          "type": "text",
+          "text": "Slow burn",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " of Japan and Taiwan is the endogenous, word-of-mouth climb; and the "
+        },
+        {
+          "type": "text",
+          "text": "Plateau",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " is the rare, valuable case of an external spark that then caught and spread on its own."
+        }
+      ]
+    },
+    {
       "type": "heading",
       "attrs": {
         "level": 2
@@ -1881,6 +1984,14 @@
               {
                 "label": "Steenkamp, ter Hofstede & Wedel, national culture and consumer innovativeness (1999)",
                 "href": "https://journals.sagepub.com/doi/10.1177/002224299906300204"
+              },
+              {
+                "label": "Crane & Sornette, the response function of a social system (YouTube dynamics), PNAS 2008",
+                "href": "https://www.pnas.org/doi/10.1073/pnas.0803685105"
+              },
+              {
+                "label": "Yang & Leskovec, Patterns of Temporal Variation in Online Media, WSDM 2011",
+                "href": "https://cs.stanford.edu/people/jure/pubs/memeshapes-wsdm11.pdf"
               }
             ]
           },

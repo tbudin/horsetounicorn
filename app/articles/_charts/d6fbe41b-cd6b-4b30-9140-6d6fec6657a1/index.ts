@@ -7,6 +7,7 @@ import DiffusionByCountry from './diffusion-by-country';
 import CrossCategory from './cross-category';
 import RedditVsTrends from './reddit-vs-trends';
 import AdoptionMap from './adoption-map';
+import ShapeClasses from './shape-classes';
 
 /** Charts registered for the pistachio-boom article. */
 const registry: ChartRegistry = {
@@ -18,6 +19,7 @@ const registry: ChartRegistry = {
   'cross-category': CrossCategory,
   'reddit-vs-trends': RedditVsTrends,
   'adoption-map': AdoptionMap,
+  'shape-classes': ShapeClasses,
 };
 
 export default registry;
