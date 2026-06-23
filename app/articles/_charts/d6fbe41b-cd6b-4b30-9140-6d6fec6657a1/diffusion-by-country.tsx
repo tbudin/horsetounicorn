@@ -3,10 +3,13 @@
 import {
   AreaChart,
   Area,
+  XAxis,
   YAxis,
+  Tooltip,
   ResponsiveContainer,
 } from 'recharts';
 import { ChartCard } from '@/components/charts/chart-card';
+import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
 import { BURGUNDY, GREEN, BLUE } from '@/lib/chart-colors';
 
 // Google Trends, "Dubai chocolate" by country, weekly interest resampled to
@@ -64,10 +67,16 @@ const PANELS: { key: string; name: string; arch: Arch; caught: string; note: str
   { key: 'fr', name: 'France', arch: 'flash', caught: 'caught it Mar ’25', note: 'Last and briefest: one March spike, then forgotten.' },
 ];
 
+const MONTHS = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const fmtMonth = (m: string) => {
+  const [y, mo] = m.split('-');
+  return `${MONTHS[+mo]} ${y.slice(2)}`;
+};
+
 function MiniChart({ k, color }: { k: string; color: string }) {
   const gid = `fill-${k}`;
   return (
-    <ResponsiveContainer width="100%" height={72}>
+    <ResponsiveContainer width="100%" height={92}>
       <AreaChart data={data} margin={{ top: 4, right: 2, bottom: 0, left: 2 }}>
         <defs>
           <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
@@ -75,7 +84,23 @@ function MiniChart({ k, color }: { k: string; color: string }) {
             <stop offset="100%" stopColor={color} stopOpacity={0.03} />
           </linearGradient>
         </defs>
+        <XAxis dataKey="m" hide />
         <YAxis hide domain={[0, 100]} />
+        <Tooltip
+          cursor={{ stroke: color, strokeOpacity: 0.45, strokeWidth: 1 }}
+          content={({ active, payload, label }) => {
+            if (!active || !payload?.length) return null;
+            return (
+              <ChartTooltip title={fmtMonth(String(label))}>
+                <TooltipRow
+                  label="Interest (vs own peak)"
+                  value={`${payload[0].value}`}
+                  dotColor={color}
+                />
+              </ChartTooltip>
+            );
+          }}
+        />
         <Area
           type="monotone"
           dataKey={k}
@@ -118,7 +143,7 @@ export function DiffusionByCountry() {
           </span>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-x-5 gap-y-5 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-x-5 gap-y-5 md:grid-cols-2">
         {PANELS.map((p) => (
           <div key={p.key} className="min-w-0">
             <div className="flex items-baseline justify-between gap-2">
