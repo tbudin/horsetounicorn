@@ -5,10 +5,12 @@ import {
   Area,
   XAxis,
   YAxis,
+  Tooltip,
   ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
 import { ChartCard } from '@/components/charts/chart-card';
+import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
 import {
   BURGUNDY,
   BLUE,
@@ -109,7 +111,10 @@ const ROWS: { key: string; aisle: string; what: string; where: string; color: st
   { key: 'price', aisle: 'The wallet', what: '“pistachio price”', where: 'South Asia & the Gulf, spiked Aug 2025', color: INK_SUBTLE },
 ];
 
-function MiniArea({ k, color }: { k: string; color: string }) {
+const MN = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const fmtMonth = (m: string) => { const [y, mo] = m.split('-'); return `${MN[+mo]} ${y.slice(2)}`; };
+
+function MiniArea({ k, color, name }: { k: string; color: string; name: string }) {
   const gid = `cat-${k}`;
   return (
     <ResponsiveContainer width="100%" height={56}>
@@ -122,6 +127,17 @@ function MiniArea({ k, color }: { k: string; color: string }) {
         </defs>
         <XAxis dataKey="m" hide />
         <YAxis hide domain={[0, 100]} />
+        <Tooltip
+          cursor={{ stroke: color, strokeOpacity: 0.45, strokeWidth: 1 }}
+          content={({ active, payload, label }) => {
+            if (!active || !payload?.length) return null;
+            return (
+              <ChartTooltip title={fmtMonth(String(label))}>
+                <TooltipRow label={name} value={`${payload[0].value} / 100`} dotColor={color} />
+              </ChartTooltip>
+            );
+          }}
+        />
         <ReferenceLine x="2023-12" stroke={INK_SUBTLE} strokeDasharray="2 3" strokeOpacity={0.6} />
         <Area type="monotone" dataKey={k} stroke={color} strokeWidth={1.75} fill={`url(#${gid})`} isAnimationActive={false} />
       </AreaChart>
@@ -157,7 +173,7 @@ export function CategorySpread() {
               <div className="pl-4 text-[10px] leading-tight text-ink-subtle">{r.where}</div>
             </div>
             <div className="min-w-0 flex-1">
-              <MiniArea k={r.key} color={r.color} />
+              <MiniArea k={r.key} color={r.color} name={r.what} />
             </div>
           </div>
         ))}
