@@ -5,6 +5,7 @@ import { formatDate } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { ArticleLayout } from '@/components/article/article-layout';
 import { RenderDocument } from '@/components/article/render-document';
+import { ChartDownloadProvider } from '@/components/charts/chart-download';
 import { getChartsFor } from '@/app/articles/_charts';
 
 const STATUS_LABEL: Record<ArticleStatus, string> = {
@@ -152,7 +153,9 @@ export default async function AdminArticlePreview({
           readingTime={metadata.readingTime}
           embedded
         >
-          <RenderDocument document={document} charts={charts} />
+          <ChartDownloadProvider allowUnwatermarked>
+            <RenderDocument document={document} charts={charts} />
+          </ChartDownloadProvider>
         </ArticleLayout>
       </section>
     </div>

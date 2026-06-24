@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { ChartDownloadButton } from './chart-download';
 
 export interface ChartCardProps {
   /** Chart title, rendered in display serif at the top. */
   title: string;
   /** Short description below the title, rendered in muted body text. */
   subtitle?: string;
-  /** Alias for subtitle — backward-compat for existing MDX usages. */
+  /** Alias for subtitle, backward-compat for existing MDX usages. */
   description?: string;
   /** Optional pull-quote callout above the chart (e.g. headline statistic). */
   headline?: ReactNode;
@@ -66,15 +67,19 @@ export function ChartCard({
 
   return (
     <div
+      data-chart-card
       className={cn(
         'not-prose mx-auto my-8 bg-white border border-[#F0E8EE] p-5 md:p-6 text-ink',
         className,
       )}
       style={maxWidth ? { maxWidth } : undefined}
     >
-      <h2 className="font-serif text-base md:text-lg font-medium tracking-heading text-ink-heading leading-tight mb-2">
-        {title}
-      </h2>
+      <div className="mb-2 flex items-start justify-between gap-3">
+        <h2 className="font-serif text-base md:text-lg font-medium tracking-heading text-ink-heading leading-tight">
+          {title}
+        </h2>
+        <ChartDownloadButton title={title} />
+      </div>
       {subText ? (
         <p className="text-sm text-ink-muted leading-relaxed mb-6">{subText}</p>
       ) : null}
