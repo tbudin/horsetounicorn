@@ -1150,6 +1150,90 @@
       "content": [
         {
           "type": "text",
+          "text": "Even the calendar is local"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "There is a third mismatch between the two clocks, and it is the one nobody plans for. The supply lands once a year, in a single autumn harvest; the demand peaks months later, in winter. Worse, the demand does not even agree with itself on when winter is. Plot pistachio search by month of the year and the world splits into separate calendars."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "seasonal-calendars",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The West peaks at Christmas, all baking and gift tins. India peaks in November, for Diwali. The Gulf and North Africa peak in spring, for Ramadan. And Iran, the grower, peaks every "
+        },
+        {
+          "type": "text",
+          "text": "September",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ", the month the trees come in, its consumers tracking the harvest while everyone else tracks a holiday. One nut, four seasons."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The Ramadan calendar is the strangest of the four, because the holiday itself will not hold still. Ramadan is lunar, so it slides about eleven days earlier every year, and the craving slides with it."
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "attrs": {
+        "chartName": "ramadan-slide",
+        "caption": null
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Egypt’s pistachio peak marched from May in 2018 to February in 2026, shadowing Ramadan month for month. For a marketer that is the difference between a campaign that lands and one that misses by a season: a fixed-December plan, built for the West, would be wrong across the entire Muslim world, and wrong by a different amount each year."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Stand back, and the supply side has its own brutal calendar to match. The harvest is a single event in the autumn, and because the trees alternate-bear it is a heavy event only every other year. So a once-a-year, every-other-year supply has to be coaxed by cold storage and inventory across all twelve months to meet a demand that crests in December here, in spring there, in November somewhere else. The wonder is not that pistachios ran short. It is that the calendar ever lines up at all."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
           "text": "Could you have seen it coming?"
         }
       ]

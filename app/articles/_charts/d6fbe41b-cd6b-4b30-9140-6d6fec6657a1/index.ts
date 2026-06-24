@@ -9,6 +9,8 @@ import RedditVsTrends from './reddit-vs-trends';
 import AdoptionTiming from './adoption-timing';
 import AlignedArcs from './aligned-arcs';
 import FestiveRebound from './festive-rebound';
+import SeasonalCalendars from './seasonal-calendars';
+import RamadanSlide from './ramadan-slide';
 
 /** Charts registered for the pistachio-boom article. */
 const registry: ChartRegistry = {
@@ -22,6 +24,8 @@ const registry: ChartRegistry = {
   'adoption-timing': AdoptionTiming,
   'aligned-arcs': AlignedArcs,
   'festive-rebound': FestiveRebound,
+  'seasonal-calendars': SeasonalCalendars,
+  'ramadan-slide': RamadanSlide,
 };
 
 export default registry;

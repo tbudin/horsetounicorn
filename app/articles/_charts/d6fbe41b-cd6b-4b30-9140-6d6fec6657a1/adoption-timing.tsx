@@ -34,7 +34,7 @@ import {
 // Two independent axes. x = WHEN a country took off, in weeks since the first
 // market crossed 20% of its own peak (a shared t=0). y = how fast it then rose
 // (weeks from take-off to peak): a low value is a sharp external spike, a high
-// value a slow word-of-mouth climb. Weekly Google Trends, 32 markets.
+// value a slow word-of-mouth climb. Weekly Google Trends, 35 markets.
 type Pt = { iso: string; region: string; takeoff: number; rise: number };
 const DATA: Pt[] = [
   { iso: 'AT', region: 'Europe', takeoff: 9.6, rise: 4 },
@@ -69,10 +69,13 @@ const DATA: Pt[] = [
   { iso: 'PT', region: 'Europe', takeoff: 14.5, rise: 1 },
   { iso: 'AR', region: 'LatAm', takeoff: 15.2, rise: 13 },
   { iso: 'TW', region: 'Asia', takeoff: 25.0, rise: 6 },
+  { iso: 'SA', region: 'MEast', takeoff: 12.1, rise: 7 },
+  { iso: 'EG', region: 'MEast', takeoff: 11.5, rise: 8 },
+  { iso: 'IN', region: 'Asia', takeoff: 11.5, rise: 13 },
 ];
 
 const REGIONS: { key: string; label: string; color: string }[] = [
-  { key: 'Asia', label: 'East / SE Asia', color: GREEN },
+  { key: 'Asia', label: 'Asia', color: GREEN },
   { key: 'Europe', label: 'Europe', color: BLUE },
   { key: 'Anglo', label: 'Anglosphere', color: BURGUNDY },
   { key: 'LatAm', label: 'Latin America', color: ORANGE },
