@@ -24,9 +24,10 @@ import {
 } from '@/lib/chart-colors';
 
 // The calendar month in which "pistachio" search interest peaked, each year,
-// for Egypt and the UAE, against the month Ramadan fell in. A lunar month
-// drifts ~11 days earlier each year, and the pistachio peak drifts with it.
-// UAE 2024 omitted: the Dubai-chocolate craze threw its peak to September.
+// for Egypt and the UAE (plotted as dots), against the month Ramadan fell in
+// (the line). A lunar month drifts ~11 days earlier each year, and the peak
+// dots ride the Ramadan line down with it. UAE 2024 omitted: the
+// Dubai-chocolate craze threw its peak to September.
 const data = [
   { yr: '2018', eg: 5, uae: 5, ram: 5 },
   { yr: '2019', eg: 5, uae: 5, ram: 5 },
@@ -39,20 +40,14 @@ const data = [
   { yr: '2026', eg: 2, uae: 2, ram: 2 },
 ];
 
-const MONTHS = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
-const fmtMon = (v: number) => MONTHS[v] ?? '';
-
-const SERIES = [
-  { key: 'eg', label: 'Egypt: pistachio peak', color: GREEN, dash: undefined },
-  { key: 'uae', label: 'UAE: pistachio peak', color: BLUE, dash: undefined },
-  { key: 'ram', label: 'Ramadan (the month it fell in)', color: INK_SUBTLE, dash: '5 4' },
-] as const;
+const MN = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+const fmtMon = (v: number) => MN[Math.round(v)] ?? '';
 
 export function RamadanSlide() {
   return (
     <ChartCard
       title="A pistachio season that moves: the Gulf follows Ramadan"
-      subtitle="The month each year when “pistachio” search peaked in Egypt and the UAE, against the month Ramadan fell in. Because Ramadan is lunar, it slides about eleven days earlier every year, and the pistachio peak slides with it."
+      subtitle="The month each year when “pistachio” search peaked in Egypt and the UAE (dots), against the month Ramadan fell in (line). Because Ramadan is lunar, it slides about eleven days earlier every year, and the pistachio peak slides with it."
       headline={
         <p className="text-sm leading-relaxed text-ink">
           Egypt’s pistachio peak marched from <b>May 2018</b> to <b>February 2026</b>,
@@ -77,44 +72,74 @@ export function RamadanSlide() {
               tick={axisTickStyle}
               axisLine={{ stroke: INK }}
               tickLine={false}
-              domain={[1, 6]}
+              domain={[1.5, 5.5]}
               ticks={[2, 3, 4, 5]}
               tickFormatter={fmtMon}
               reversed
+              label={{
+                value: 'month of peak →',
+                angle: -90,
+                position: 'insideLeft',
+                offset: 6,
+                style: { fontSize: 11, fill: INK_SUBTLE },
+              }}
             />
             <Tooltip
-              cursor={{ stroke: GREEN, strokeOpacity: 0.2 }}
+              cursor={{ stroke: INK_SUBTLE, strokeOpacity: 0.3 }}
               content={({ active, payload, label }) => {
                 if (!active || !payload?.length) return null;
+                const d = payload[0].payload as { eg: number; uae: number | null; ram: number };
                 return (
                   <ChartTooltip title={String(label)}>
-                    {SERIES.map((s) => {
-                      const p = payload.find((pp) => pp.dataKey === s.key);
-                      if (p?.value == null) return null;
-                      return <TooltipRow key={s.key} label={s.label} value={fmtMon(p.value as number)} dotColor={s.color} />;
-                    })}
+                    <TooltipRow label="Ramadan" value={fmtMon(d.ram)} dotColor={INK_SUBTLE} />
+                    <TooltipRow label="Egypt peak" value={fmtMon(d.eg)} dotColor={GREEN} />
+                    {d.uae != null ? (
+                      <TooltipRow label="UAE peak" value={fmtMon(d.uae)} dotColor={BLUE} />
+                    ) : null}
                   </ChartTooltip>
                 );
               }}
             />
-            {SERIES.map((s) => (
-              <Line
-                key={s.key}
-                type="monotone"
-                dataKey={s.key}
-                stroke={s.color}
-                strokeWidth={s.key === 'ram' ? 1.5 : 2}
-                strokeDasharray={s.dash}
-                dot={{ r: 2.5, fill: s.color }}
-                connectNulls
-                name={s.label}
-                {...chartDefaults}
-              />
-            ))}
+            {/* Ramadan: the reference spine */}
+            <Line
+              type="monotone"
+              dataKey="ram"
+              stroke={INK_SUBTLE}
+              strokeWidth={2}
+              dot={{ r: 2, fill: INK_SUBTLE }}
+              name="Ramadan month"
+              {...chartDefaults}
+            />
+            {/* Pistachio peaks: dots that ride the Ramadan line */}
+            <Line
+              type="monotone"
+              dataKey="eg"
+              stroke={GREEN}
+              strokeWidth={0}
+              dot={{ r: 5, fill: GREEN, stroke: '#ffffff', strokeWidth: 1.5 }}
+              name="Egypt pistachio peak"
+              {...chartDefaults}
+            />
+            <Line
+              type="monotone"
+              dataKey="uae"
+              stroke={BLUE}
+              strokeWidth={0}
+              dot={{ r: 4, fill: BLUE, stroke: '#ffffff', strokeWidth: 1.5 }}
+              connectNulls={false}
+              name="UAE pistachio peak"
+              {...chartDefaults}
+            />
           </LineChart>
         </ResponsiveContainer>
       </ChartContainer>
-      <ChartLegend items={SERIES.map((s) => ({ label: s.label, color: s.color, shape: 'line' }))} />
+      <ChartLegend
+        items={[
+          { label: 'Ramadan month', color: INK_SUBTLE, shape: 'line' },
+          { label: 'Egypt pistachio peak', color: GREEN, shape: 'square' },
+          { label: 'UAE pistachio peak', color: BLUE, shape: 'square' },
+        ]}
+      />
     </ChartCard>
   );
 }

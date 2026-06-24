@@ -1,53 +1,30 @@
 'use client';
 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
 import { ChartCard } from '@/components/charts/chart-card';
-import { ChartContainer } from '@/components/charts/chart-container';
-import { ChartLegend } from '@/components/charts/chart-legend';
-import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
-import {
-  BURGUNDY,
-  GREEN,
-  ORANGE,
-  BLUE,
-  INK,
-  axisTickStyle,
-  gridProps,
-  chartDefaults,
-} from '@/lib/chart-colors';
+import { cn } from '@/lib/utils';
+import { BURGUNDY, GREEN, ORANGE, BLUE, INK, INK_MUTED } from '@/lib/chart-colors';
 
 // Month-of-year seasonal index for "pistachio" search interest, averaged over
 // 2010-2023 (before the craze distorted things), 100 = each country's own
-// annual average. Four countries, four different peak months.
-const data = [
-  { mon: 'Jan', us: 107, eg: 83, ir: 87, in: 100 },
-  { mon: 'Feb', us: 103, eg: 83, ir: 94, in: 91 },
-  { mon: 'Mar', us: 112, eg: 108, ir: 116, in: 92 },
-  { mon: 'Apr', us: 100, eg: 125, ir: 100, in: 90 },
-  { mon: 'May', us: 94, eg: 122, ir: 89, in: 94 },
-  { mon: 'Jun', us: 96, eg: 105, ir: 77, in: 96 },
-  { mon: 'Jul', us: 93, eg: 101, ir: 73, in: 96 },
-  { mon: 'Aug', us: 87, eg: 96, ir: 98, in: 99 },
-  { mon: 'Sep', us: 82, eg: 98, ir: 145, in: 97 },
-  { mon: 'Oct', us: 86, eg: 92, ir: 127, in: 109 },
-  { mon: 'Nov', us: 111, eg: 94, ir: 97, in: 129 },
-  { mon: 'Dec', us: 128, eg: 92, ir: 97, in: 108 },
+// annual average. Four countries, four different peak months. Shown as a
+// heatmap: each row shaded to its own range, the peak month outlined.
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+type Row = { key: string; label: string; note: string; color: string; vals: number[] };
+const ROWS: Row[] = [
+  { key: 'us', label: 'United States', note: 'December (Christmas)', color: BURGUNDY, vals: [107, 103, 112, 100, 94, 96, 93, 87, 82, 86, 111, 128] },
+  { key: 'eg', label: 'Egypt', note: 'spring (Ramadan)', color: GREEN, vals: [83, 83, 108, 125, 122, 105, 101, 96, 98, 92, 94, 92] },
+  { key: 'ir', label: 'Iran', note: 'September (the harvest)', color: ORANGE, vals: [87, 94, 116, 100, 89, 77, 73, 98, 145, 127, 97, 97] },
+  { key: 'in', label: 'India', note: 'November (Diwali)', color: BLUE, vals: [100, 91, 92, 90, 94, 96, 96, 99, 97, 109, 129, 108] },
 ];
 
-const SERIES = [
-  { key: 'us', label: 'United States: December (Christmas)', short: 'US (Christmas)', color: BURGUNDY },
-  { key: 'eg', label: 'Egypt: spring (Ramadan)', short: 'Egypt (Ramadan)', color: GREEN },
-  { key: 'ir', label: 'Iran: September (the harvest)', short: 'Iran (harvest)', color: ORANGE },
-  { key: 'in', label: 'India: November (Diwali)', short: 'India (Diwali)', color: BLUE },
-] as const;
+// Per-row min/max → opacity ramp, so each country reads against its own range.
+const alphaHex = (t: number) =>
+  Math.round((0.1 + 0.82 * t) * 255)
+    .toString(16)
+    .padStart(2, '0');
+
+const GRID = 'grid grid-cols-[104px_repeat(12,minmax(0,1fr))] gap-px';
 
 export function SeasonalCalendars() {
   return (
@@ -62,47 +39,58 @@ export function SeasonalCalendars() {
           season for a nut.
         </p>
       }
-      source="Google Trends, “pistachio”, monthly per country, 2010–2023 averaged by calendar month (100 = each country’s mean). Ramadan is a lunar month, so Egypt’s spring bump is its 2010–2023 average position; see the next chart for the slide."
+      source="Google Trends, “pistachio”, monthly per country, 2010–2023 averaged by calendar month (100 = each country’s mean). Each row is shaded against its own range and the peak month is outlined. Ramadan is a lunar month, so Egypt’s spring bump is its 2010–2023 average position; see the next chart for the slide."
     >
-      <ChartContainer>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 16, right: 16, bottom: 8, left: 4 }}>
-            <CartesianGrid {...gridProps} />
-            <XAxis
-              dataKey="mon"
-              tick={axisTickStyle}
-              axisLine={{ stroke: INK }}
-              tickLine={false}
-              interval={0}
-            />
-            <YAxis
-              tick={axisTickStyle}
-              axisLine={{ stroke: INK }}
-              tickLine={false}
-              domain={[60, 160]}
-              tickFormatter={(v) => `${v}`}
-            />
-            <Tooltip
-              cursor={{ stroke: BURGUNDY, strokeOpacity: 0.2 }}
-              content={({ active, payload, label }) => {
-                if (!active || !payload?.length) return null;
-                return (
-                  <ChartTooltip title={String(label)}>
-                    {SERIES.map((s) => {
-                      const p = payload.find((pp) => pp.dataKey === s.key);
-                      return <TooltipRow key={s.key} label={s.short} value={p?.value as number} dotColor={s.color} />;
-                    })}
-                  </ChartTooltip>
-                );
-              }}
-            />
-            {SERIES.map((s) => (
-              <Line key={s.key} type="monotone" dataKey={s.key} stroke={s.color} strokeWidth={2} dot={false} name={s.short} {...chartDefaults} />
+      <div className="overflow-x-auto">
+        <div className="min-w-[440px]">
+          {/* month header */}
+          <div className={GRID}>
+            <div />
+            {MONTHS.map((m) => (
+              <div key={m} className="pb-1 text-center text-[10px] text-ink-subtle data-num">
+                {m[0]}
+              </div>
             ))}
-          </LineChart>
-        </ResponsiveContainer>
-      </ChartContainer>
-      <ChartLegend items={SERIES.map((s) => ({ label: s.label, color: s.color, shape: 'line' }))} />
+          </div>
+
+          {ROWS.map((r) => {
+            const max = Math.max(...r.vals);
+            const min = Math.min(...r.vals);
+            return (
+              <div key={r.key} className={cn(GRID, 'py-px')}>
+                <div className="flex flex-col justify-center pr-2">
+                  <span className="text-xs font-medium leading-tight text-ink-heading">{r.label}</span>
+                  <span className="text-[10px] leading-tight text-ink-subtle">{r.note}</span>
+                </div>
+                {r.vals.map((v, i) => {
+                  const t = (v - min) / (max - min || 1);
+                  const peak = v === max;
+                  return (
+                    <div
+                      key={i}
+                      title={`${r.label}, ${MONTHS[i]}: ${v}`}
+                      className="flex h-9 items-center justify-center text-[10px] data-num"
+                      style={{
+                        backgroundColor: `${r.color}${alphaHex(t)}`,
+                        color: t > 0.55 ? '#ffffff' : INK_MUTED,
+                        outline: peak ? `2px solid ${INK}` : undefined,
+                        outlineOffset: '-2px',
+                      }}
+                    >
+                      {v}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <p className="mt-3 text-[11px] leading-relaxed text-ink-subtle">
+        Darker = higher search interest that month (each country scaled to its own
+        range). The outlined cell is each country’s peak month.
+      </p>
     </ChartCard>
   );
 }
