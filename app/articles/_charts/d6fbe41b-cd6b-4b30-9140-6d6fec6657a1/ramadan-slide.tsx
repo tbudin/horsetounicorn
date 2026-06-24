@@ -1,34 +1,17 @@
 'use client';
 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
 import { ChartCard } from '@/components/charts/chart-card';
-import { ChartContainer } from '@/components/charts/chart-container';
-import { ChartLegend } from '@/components/charts/chart-legend';
-import { ChartTooltip, TooltipRow } from '@/components/charts/chart-tooltip';
-import {
-  GREEN,
-  BLUE,
-  INK,
-  INK_SUBTLE,
-  axisTickStyle,
-  gridProps,
-  chartDefaults,
-} from '@/lib/chart-colors';
+import { cn } from '@/lib/utils';
+import { GREEN, BLUE, INK_SUBTLE } from '@/lib/chart-colors';
 
-// The calendar month in which "pistachio" search interest peaked, each year,
-// for Egypt and the UAE (plotted as dots), against the month Ramadan fell in
-// (the line). A lunar month drifts ~11 days earlier each year, and the peak
-// dots ride the Ramadan line down with it. UAE 2024 omitted: the
-// Dubai-chocolate craze threw its peak to September.
-const data = [
+// One row per year (2018 at top, 2026 at the bottom). Each row is a Jan-Dec
+// strip: the shaded cell is the month Ramadan fell in, the dots are the month
+// "pistachio" search peaked (green = Egypt, blue = UAE). Because Ramadan is
+// lunar it lands ~11 days earlier each year, so the shading and the dots march
+// leftward together down the rows. UAE 2024 omitted (the craze threw its peak
+// to September).
+type Year = { yr: string; eg: number; uae: number | null; ram: number };
+const ROWS: Year[] = [
   { yr: '2018', eg: 5, uae: 5, ram: 5 },
   { yr: '2019', eg: 5, uae: 5, ram: 5 },
   { yr: '2020', eg: 5, uae: 5, ram: 4 },
@@ -40,14 +23,21 @@ const data = [
   { yr: '2026', eg: 2, uae: 2, ram: 2 },
 ];
 
-const MN = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
-const fmtMon = (v: number) => MN[Math.round(v)] ?? '';
+const INITIALS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+const FULL = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const GRID = 'grid grid-cols-[44px_repeat(12,minmax(0,1fr))] gap-px';
+const Dot = ({ color }: { color: string }) => (
+  <span
+    className="inline-block h-2.5 w-2.5 rounded-full"
+    style={{ backgroundColor: color, boxShadow: '0 0 0 1.5px #fff' }}
+  />
+);
 
 export function RamadanSlide() {
   return (
     <ChartCard
       title="A pistachio season that moves: the Gulf follows Ramadan"
-      subtitle="The month each year when “pistachio” search peaked in Egypt and the UAE (dots), against the month Ramadan fell in (line). Because Ramadan is lunar, it slides about eleven days earlier every year, and the pistachio peak slides with it."
+      subtitle="Each row is a year. The shaded cell is the month Ramadan fell in; the dots are the month “pistachio” search peaked (green = Egypt, blue = UAE). Because Ramadan is lunar, it slides about eleven days earlier every year, and the pistachio peak slides with it, marching left down the rows."
       headline={
         <p className="text-sm leading-relaxed text-ink">
           Egypt’s pistachio peak marched from <b>May 2018</b> to <b>February 2026</b>,
@@ -58,88 +48,59 @@ export function RamadanSlide() {
       }
       source="Google Trends, “pistachio”, monthly per country. Peak = the calendar month of highest interest that year. Ramadan month from the Islamic calendar. UAE 2024 omitted (the craze shifted its peak to September)."
     >
-      <ChartContainer>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 16, right: 16, bottom: 8, left: 8 }}>
-            <CartesianGrid {...gridProps} />
-            <XAxis
-              dataKey="yr"
-              tick={axisTickStyle}
-              axisLine={{ stroke: INK }}
-              tickLine={false}
-            />
-            <YAxis
-              tick={axisTickStyle}
-              axisLine={{ stroke: INK }}
-              tickLine={false}
-              domain={[1.5, 5.5]}
-              ticks={[2, 3, 4, 5]}
-              tickFormatter={fmtMon}
-              reversed
-              label={{
-                value: 'month of peak →',
-                angle: -90,
-                position: 'insideLeft',
-                offset: 6,
-                style: { fontSize: 11, fill: INK_SUBTLE },
-              }}
-            />
-            <Tooltip
-              cursor={{ stroke: INK_SUBTLE, strokeOpacity: 0.3 }}
-              content={({ active, payload, label }) => {
-                if (!active || !payload?.length) return null;
-                const d = payload[0].payload as { eg: number; uae: number | null; ram: number };
+      <div className="overflow-x-auto">
+        <div className="min-w-[460px]">
+          {/* month-initial header */}
+          <div className={cn(GRID, 'mb-1')}>
+            <div />
+            {INITIALS.map((m, i) => (
+              <div key={i} className="text-center text-[10px] text-ink-subtle data-num">
+                {m}
+              </div>
+            ))}
+          </div>
+
+          {ROWS.map((r) => (
+            <div key={r.yr} className={cn(GRID, 'items-center py-px')}>
+              <div className="pr-1 text-[11px] text-ink-muted data-num">{r.yr}</div>
+              {INITIALS.map((_, i) => {
+                const mo = i + 1;
+                const isRam = r.ram === mo;
+                const hasEg = r.eg === mo;
+                const hasUae = r.uae === mo;
+                const bits: string[] = [];
+                if (isRam) bits.push('Ramadan');
+                if (hasEg) bits.push('Egypt peak');
+                if (hasUae) bits.push('UAE peak');
                 return (
-                  <ChartTooltip title={String(label)}>
-                    <TooltipRow label="Ramadan" value={fmtMon(d.ram)} dotColor={INK_SUBTLE} />
-                    <TooltipRow label="Egypt peak" value={fmtMon(d.eg)} dotColor={GREEN} />
-                    {d.uae != null ? (
-                      <TooltipRow label="UAE peak" value={fmtMon(d.uae)} dotColor={BLUE} />
-                    ) : null}
-                  </ChartTooltip>
+                  <div
+                    key={i}
+                    title={bits.length ? `${r.yr} ${FULL[mo]}: ${bits.join(', ')}` : undefined}
+                    className="flex h-7 items-center justify-center gap-1 rounded-sm"
+                    style={{ backgroundColor: isRam ? `${INK_SUBTLE}29` : undefined }}
+                  >
+                    {hasEg ? <Dot color={GREEN} /> : null}
+                    {hasUae ? <Dot color={BLUE} /> : null}
+                  </div>
                 );
-              }}
-            />
-            {/* Ramadan: the reference spine */}
-            <Line
-              type="monotone"
-              dataKey="ram"
-              stroke={INK_SUBTLE}
-              strokeWidth={2}
-              dot={{ r: 2, fill: INK_SUBTLE }}
-              name="Ramadan month"
-              {...chartDefaults}
-            />
-            {/* Pistachio peaks: dots that ride the Ramadan line */}
-            <Line
-              type="monotone"
-              dataKey="eg"
-              stroke={GREEN}
-              strokeWidth={0}
-              dot={{ r: 5, fill: GREEN, stroke: '#ffffff', strokeWidth: 1.5 }}
-              name="Egypt pistachio peak"
-              {...chartDefaults}
-            />
-            <Line
-              type="monotone"
-              dataKey="uae"
-              stroke={BLUE}
-              strokeWidth={0}
-              dot={{ r: 4, fill: BLUE, stroke: '#ffffff', strokeWidth: 1.5 }}
-              connectNulls={false}
-              name="UAE pistachio peak"
-              {...chartDefaults}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </ChartContainer>
-      <ChartLegend
-        items={[
-          { label: 'Ramadan month', color: INK_SUBTLE, shape: 'line' },
-          { label: 'Egypt pistachio peak', color: GREEN, shape: 'square' },
-          { label: 'UAE pistachio peak', color: BLUE, shape: 'square' },
-        ]}
-      />
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-ink-muted">
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: `${INK_SUBTLE}29` }} />
+          Ramadan month
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <Dot color={GREEN} /> Egypt pistachio peak
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <Dot color={BLUE} /> UAE pistachio peak
+        </span>
+      </div>
     </ChartCard>
   );
 }
