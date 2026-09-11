@@ -111,7 +111,7 @@ export function ArticlesSearch({ articles }: ArticlesSearchProps) {
         </div>
         {allYears.length > 1 ? (
           <Select value={selectedYear} onValueChange={setSelectedYear}>
-            <SelectTrigger className="w-full sm:w-40 bg-white">
+            <SelectTrigger className="h-10 w-full sm:w-40 bg-white">
               <SelectValue placeholder="Year" />
             </SelectTrigger>
             <SelectContent>
