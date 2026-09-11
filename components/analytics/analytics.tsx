@@ -3,6 +3,7 @@
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import posthog from 'posthog-js';
+import { markSubscribed } from '@/components/subscriber-state';
 
 let initialized = false;
 
@@ -31,15 +32,16 @@ function Tracker() {
   const search = useSearchParams();
 
   useEffect(() => {
-    if (!ensureInit()) return;
-
-    // A subscriber arriving from a tagged email link carries ?s=<email>.
-    // Identify them, then strip the param so the email doesn't linger in the
-    // URL / browser history / referrers.
+    // A subscriber arriving from a tagged email link carries ?s=<email>. Mark
+    // them as a subscriber (for the CTA) and strip the param so the email
+    // doesn't linger in the URL / history / referrers. This runs regardless of
+    // whether PostHog is configured; identify + pageview only when it is.
     const s = search.get('s');
     if (s) {
       const email = decodeURIComponent(s).trim().toLowerCase();
-      if (email.includes('@')) posthog.identify(email, { email });
+      const valid = email.includes('@');
+      if (valid) markSubscribed();
+      if (valid && ensureInit()) posthog.identify(email, { email });
       const url = new URL(window.location.href);
       url.searchParams.delete('s');
       window.history.replaceState(
@@ -49,7 +51,7 @@ function Tracker() {
       );
     }
 
-    posthog.capture('$pageview');
+    if (ensureInit()) posthog.capture('$pageview');
   }, [pathname, search]);
 
   return null;

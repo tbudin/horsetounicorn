@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { SubscribeButton } from './subscribe-button';
 
 const LOGO_URL =
   'https://substackcdn.com/image/fetch/$s_!LIK7!,e_trim:10:white/e_trim:10:transparent/h_72,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6318765c-3106-48ab-b994-193cf2ef4cb2_1344x256.png';
@@ -21,9 +22,7 @@ export function SiteHeader() {
             />
           </Link>
 
-          <Link href="/articles#subscribe" className="btn-puffy h-9 px-4 text-xs">
-            Subscribe
-          </Link>
+          <SubscribeButton className="btn-puffy h-9 px-4 text-xs" />
         </div>
 
         {/* Divider — full width of the container only */}

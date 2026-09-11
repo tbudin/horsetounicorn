@@ -1,6 +1,13 @@
+'use client';
+
 import { SubscribeForm } from './subscribe-form';
+import { useSubscribed } from './subscriber-state';
 
 export function SubscribeSection() {
+  const subscribed = useSubscribed();
+  // Known subscribers don't need the "It's time to subscribe" panel.
+  if (subscribed) return null;
+
   return (
     <section
       id="subscribe"

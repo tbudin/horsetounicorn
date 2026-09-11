@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import { markSubscribed } from './subscriber-state';
 
 type Status =
   | { kind: 'idle' }
@@ -33,6 +34,7 @@ export function SubscribeForm({ inverted = false }: { inverted?: boolean }) {
         setStatus({ kind: 'idle' });
         return;
       }
+      markSubscribed();
       setStatus({ kind: 'sent', email: data.email ?? email });
     } catch {
       toast.error('Network error. Try again?');

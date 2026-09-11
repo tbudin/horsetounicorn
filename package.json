@@ -24,6 +24,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@octokit/rest": "^22.0.1",
+    "@radix-ui/react-dialog": "^1.1.23",
     "@radix-ui/react-label": "^2.1.9",
     "@radix-ui/react-popover": "^1.1.16",
     "@radix-ui/react-select": "^2.3.0",

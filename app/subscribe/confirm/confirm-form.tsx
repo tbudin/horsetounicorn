@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { markSubscribed } from '@/components/subscriber-state';
 
 type Outcome = 'new' | 'resubscribed' | 'already-confirmed';
 
@@ -36,6 +37,7 @@ export function ConfirmForm({ token }: { token: string }) {
           setStatus({ kind: 'error', message: data.error ?? 'Could not confirm.' });
           return;
         }
+        markSubscribed();
         setStatus({
           kind: 'success',
           email: data.email ?? 'your email',
