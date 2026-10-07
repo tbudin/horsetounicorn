@@ -15,7 +15,7 @@
       "content": [
         {
           "type": "text",
-          "text": "He makes small talk anyway, and somehow I play ball and reply, smiling. As we cross Singapore, the conversation moves from how much a Grab driver makes, to whether that is enough to raise children, to why Singapore needs immigration to prop up its fertility rate."
+          "text": "He makes small talk anyway, I play ball and reply, smiling. As we cross Singapore, the conversation moves from how much a Grab driver makes, to whether that is enough to raise children, to why Singapore needs immigration because the country has not enough babies."
         }
       ]
     },
@@ -24,7 +24,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I am curious. I check online. Singapore is at 0.87 in 2025, below the replacement rate, the lowest resident births in its recorded history."
+          "text": "Singapore is at 0.87 in 2025, below the replacement rate, the lowest resident births in its recorded history."
         }
       ]
     },
@@ -33,7 +33,7 @@
       "content": [
         {
           "type": "text",
-          "text": "I am at the age where conversations around kids keep happening. Lately the news has been full of it too: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” So when I got home, I did the thing I always do. I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
+          "text": "Lately the news has been full of stories: a baby-formula recall, a fight about folate and autism, a government promising to “make our children healthy again.” When I got home, I pulled five years of Google Trends and went looking for what the world actually wants to know about feeding its children."
         }
       ]
     },
@@ -42,7 +42,7 @@
       "content": [
         {
           "type": "text",
-          "text": "And I got my first surprise."
+          "text": "I got my first surprise."
         }
       ]
     },
@@ -71,7 +71,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Singapore barely makes babies. Yet for every child it does have, it searches about feeding them harder than almost anywhere on earth. That surprised me, so I plotted every country I could find against its fertility rate."
+          "text": "Singapore barely makes babies. Yet for every child it does have, it searches about feeding them harder than almost anywhere on earth."
         }
       ]
     },
@@ -87,7 +87,7 @@
       "content": [
         {
           "type": "text",
-          "text": "On first look, the countries having the most babies search breastfeeding the most, with Kenya, Indonesia, Egypt and Nigeria near the top. Then I divided each country’s interest by its actual number of births, and it inverted. Singapore rose to the top, beside Ireland, Finland and Switzerland, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. The fewer the babies, the louder the search."
+          "text": "Each country’s interest for breastfeeding is divided by the actual number of births. Singapore rose to the top, beside Ireland, Finland and Switzerland, tiny, wealthy and barely reproducing, while India and Nigeria sank to the floor. The fewer the babies, the louder the search."
         }
       ]
     },
